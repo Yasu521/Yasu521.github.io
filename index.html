@@ -145,7 +145,7 @@
 
     <!-- ボタン -->
     <div id="audioControlButton">
-        <img id="audioIcon" src="soundon.png" alt="Audio Control">
+        <img id="audioIcon" src="https://dl.dropboxusercontent.com/scl/fi/kjakxmywwrmzstaluoe6g/soundon.png?rlkey=i0qm0ee92nc9aw5xszz5u3kjt" alt="Audio Control">
     </div>
 
     <div class="language-menu">
@@ -170,15 +170,15 @@
     const audioElement = document.getElementById("backgroundAudio");
     const button = document.getElementById("audioControlButton");
     const icon = document.getElementById("audioIcon");
-    icon.src = "soundoff.png"; // 初期状態の画像を設定
+    icon.src = "https://dl.dropboxusercontent.com/scl/fi/n3igqec4a5gspy8k8l6oq/soundoff.png?rlkey=6lh9mtawqbw2ymo5538bee0te"; // 初期状態の画像を設定
     audioElement.pause();
     button.addEventListener("click", () => {
       if (audioElement.muted) {
         audioElement.muted = false; // ミュート解除
-        icon.src = "soundon.png"; // 音声ONの画像に変更
+        icon.src = "https://dl.dropboxusercontent.com/scl/fi/kjakxmywwrmzstaluoe6g/soundon.png?rlkey=i0qm0ee92nc9aw5xszz5u3kjt"; // 音声ONの画像に変更
       } else {
         audioElement.muted = true; // ミュート解除
-        icon.src = "soundoff.png"; // 音声OFFの画像に変更
+        icon.src = "https://dl.dropboxusercontent.com/scl/fi/n3igqec4a5gspy8k8l6oq/soundoff.png?rlkey=6lh9mtawqbw2ymo5538bee0te"; // 音声OFFの画像に変更
       }
       audioElement.play();
 
