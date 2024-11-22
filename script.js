@@ -248,7 +248,7 @@ let cameraZ = 0;
 let lastCameraZ = 0;
 let startX = 0;
 let startY = 0;
-const renderRange = { zMin: -100, zMax: 50 };
+const renderRange = { zMin: -100, zMax: 0 };
 const shiftThreshold = 2;
 const scale = Math.random() * 2;
 const random_1 = Math.random() * 2;
@@ -515,7 +515,7 @@ for (let i = objectsList.length - 1; i >= 0; i--) {
         objectsList.splice(i, 1);
     }}}
 function removeFlowersOutOfRange(zMin, zMax) {
-const objectLists = [growingFlowers, growingFlowers2,growingFlowers3,growingFlowers4,fallingFlowers, sideFlowers];
+const objectLists = [growingFlowers, growingFlowers2,growingFlowers3,growingFlowers4,fallingFlowers, sideFlowers,dustPlants,dustPlants2];
 objectLists.forEach(list => removeObjectsOutOfRange(list, zMin, zMax));
 }
 function update() {
@@ -566,7 +566,13 @@ camera.position.z = currentZ;
 dustupFlowers();
 dustdownFlowers();
 update();
-removeFlowersOutOfRange(renderRange.zMin - 1, renderRange.zMax + 1); 
+removeFlowersOutOfRange(renderRange.zMin - 20, renderRange.zMax + 20); 
+createtopGround(-100, 100);
+createGround(-100,100);
+createGround_left(-100,100);
+createGround_right(-100,100);
+dustFlowers(-100,100);
+dustFlowers2(-100,100);
 if(Math.random()<=0.05){
 createpinkFlowers_right(renderRange.zMin, renderRange.zMax);
 createpinkFlowers_left(renderRange.zMin, renderRange.zMax);
@@ -622,10 +628,4 @@ function onTouchEnd() {
 document.addEventListener("touchmove", onTouchMove, { passive: false });
 document.addEventListener("touchend", onTouchEnd);
 document.addEventListener("touchcancel", onTouchEnd);
-createtopGround(-100, 100);
-createGround(-100,100);
-createGround_left(-100,100);
-createGround_right(-100,100);
-dustFlowers(-100,100);
-dustFlowers2(-100,100);
 animate();
