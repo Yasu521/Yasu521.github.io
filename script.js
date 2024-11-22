@@ -249,7 +249,7 @@ let lastCameraZ = 0;
 let startX = 0;
 let startY = 0;
 let firstcount = 0;
-const renderRange = { zMin: -100, zMax: 50};
+const renderRange = { zMin: -100, zMax:0};
 const shiftThreshold = 2;
 const scale = Math.random() * 2;
 const random_1 = Math.random() * 2;
@@ -482,7 +482,7 @@ for (let x = -20; x < 20; x += 5) {
     const material = new THREE.SpriteMaterial({ map: cachedTexture });
     const sprite = new THREE.Sprite(material);
         const posX = x + random_1 + 5 ;
-        const posY = Math.random() * 50 + 0;
+        const posY = Math.random() * 50 ;
         const posZ = z + Math.random() * 10 - 10;
         sprite.position.set(posX, posY, posZ);
         sprite.scale.set(scale, scale, 1);
@@ -562,28 +562,10 @@ const totalSpeed = autoSpeed + scrollSpeed;
 currentZ -= totalSpeed * 0.3;
 camera.position.z = currentZ;
 scrollSpeed *= 0.8;
-if(firstcount<=100){
-    createtopGround(-150, 50);
-    createGround(-150,50);
-    createGround_left(-150,50);
-    createGround_right(-150,50);
-    dustFlowers(-150,50);
-    dustFlowers2(-150,50);
-    createpinkFlowers_right(-150,50);
-    createpinkFlowers_left(-150,50);
-    createwhiteFlowers_right(-150,50);
-    createwhiteFlowers_left(-150,50);
-    creategroundFlowers(-150,150);
-    createtopFlowers(-150,50);
-}
-if(camera.position.z<=-100)
-    {
-    removeFlowersOutOfRange(renderRange.zMin - 20, renderRange.zMax + 20);
-}
+removeFlowersOutOfRange(renderRange.zMin - 20, renderRange.zMax + 20);
 dustupFlowers();
 dustdownFlowers();
 update();
-firstcount+=1
 if(Math.random()<=0.05){
 createpinkFlowers_right(renderRange.zMin, renderRange.zMax);
 createpinkFlowers_left(renderRange.zMin, renderRange.zMax);
