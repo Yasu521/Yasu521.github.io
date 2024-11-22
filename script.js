@@ -243,7 +243,7 @@ let lastMouseY = 0;
 const topflower = 0 ;
 camera.position.x = 0
 camera.position.y = 0
-camera.position.z = 30;
+camera.position.z = 0;
 let cameraZ = 0;
 let lastCameraZ = 0;
 let startX = 0;
@@ -622,4 +622,10 @@ function onTouchEnd() {
 document.addEventListener("touchmove", onTouchMove, { passive: false });
 document.addEventListener("touchend", onTouchEnd);
 document.addEventListener("touchcancel", onTouchEnd);
+createtopGround(-100, 100);
+createGround(-100,100);
+createGround_left(-100,100);
+createGround_right(-100,100);
+dustFlowers(-100,100);
+dustFlowers2(-100,100);
 animate();
