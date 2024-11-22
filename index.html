@@ -12,29 +12,6 @@
       height: 100%;
       overflow: hidden;
     }
-    #audioControlButton {
-      position: fixed;
-      background-color: #ffffff;
-      top: 13px;
-      right: 60px;
-      width: 30px;
-      border-radius: 50%;
-      cursor: pointer;
-      height: 30px;
-      cursor: pointer;
-      z-index: 10;
-    }
-
-    #audioControlButton img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    audio {
-      display: none;
-    }
-
     .blur-overlay {
     position: fixed;
     top: 0;
@@ -133,13 +110,6 @@
 <body>
   <canvas id="three-canvas"></canvas>
   <div class="blur-overlay"></div>
-    <audio id="backgroundAudio" muted loop>
-        <source src="https://dl.dropboxusercontent.com/scl/fi/4p969qczh64dl244yas3d/Debussy-Arabesque-No.1-and-No.2.mp3?rlkey=e1todwphjjr50plud8vpp02me" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-    <div id="audioControlButton">
-        <img id="audioIcon" src="https://dl.dropboxusercontent.com/scl/fi/kjakxmywwrmzstaluoe6g/soundon.png?rlkey=i0qm0ee92nc9aw5xszz5u3kjt" alt="Audio Control">
-    </div>
     <div class="language-menu">
         <button class="language-toggle"></button>
         <div class="language-list">
@@ -153,22 +123,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
 <script>
-
-    const audioElement = document.getElementById("backgroundAudio");
-    const button = document.getElementById("audioControlButton");
-    const icon = document.getElementById("audioIcon");
-    icon.src = "https://dl.dropboxusercontent.com/scl/fi/n3igqec4a5gspy8k8l6oq/soundoff.png?rlkey=6lh9mtawqbw2ymo5538bee0te"; // 初期状態の画像を設定
-    audioElement.pause();
-    button.addEventListener("click", () => {
-      if (audioElement.muted) {
-        audioElement.muted = false;
-        icon.src = "https://dl.dropboxusercontent.com/scl/fi/kjakxmywwrmzstaluoe6g/soundon.png?rlkey=i0qm0ee92nc9aw5xszz5u3kjt"; // 音声ONの画像に変更
-      } else {
-        audioElement.muted = true;
-        icon.src = "https://dl.dropboxusercontent.com/scl/fi/n3igqec4a5gspy8k8l6oq/soundoff.png?rlkey=6lh9mtawqbw2ymo5538bee0te"; // 音声OFFの画像に変更
-      }
-      audioElement.play();
-    });
     const buttonsConfig = [
             {
                 id: "About Me",
@@ -326,7 +280,7 @@
     const cubes = [];
     
     let clickCount = 0;
-    const maxClicks = 10;
+    const maxClicks = 20;
     const clock = new THREE.Clock();
     let appear = true;
     function createLabeledCube(position, size, labelText) {
@@ -375,25 +329,27 @@
         scene.add(cube);
         cubes.push(cube);
     });
-
-    const MAX_SCROLL_SPEED = 3;
-    const MIN_SCROLL_SPEED = -3;
-    let autoSpeed = 0.7;
-    let scrollSpeed = 0 ;
-    let currentZ = 0;
-    let lastMouseY = 0;
-    const topflower = 0 ;
-    
-    camera.position.x = 0
-    camera.position.y = 0
-    camera.position.z = 0;
-    let cameraZ = 0;
-    let lastCameraZ = cameraZ;
-    const renderRange = { zMin: -100, zMax: 0 };
-    const shiftThreshold = 2;
-    const scale = Math.random() *1.5;
-    const cameraPositionDisplay = document.getElementById('camera-position');
-    function createtopFlowers(startZ, endZ) {
+  const MAX_SCROLL_SPEED = 3;
+  const MIN_SCROLL_SPEED = -3;
+  let autoSpeed = 0.5;
+  let scrollSpeed = 0 ;
+  let currentZ = 0;
+  let lastMouseY = 0;
+  const topflower = 0 ;  
+  camera.position.x = 0
+  camera.position.y = 0
+  camera.position.z = 0;
+  let cameraZ = 0;
+  let lastCameraZ = cameraZ;
+  const renderRange = { zMin: -100, zMax: 0 };
+  const shiftThreshold = 2;
+  const random_1 = Math.random() * 1.5;
+  const random_2 = Math.random() * 30;
+  const maxTilt_side = Math.PI / 4 + (posY + 40) / 50;
+  const minTilt_side = Math.PI / 8 + (posY + 40) / 200;
+  
+  const cameraPositionDisplay = document.getElementById('camera-position');
+  function createtopFlowers(startZ, endZ) {
     for (let x = -5; x <= 75; x += Math.random()*10) {
         for (let z = startZ; z <= endZ; z += 10) 
             { 
@@ -447,14 +403,12 @@
             const material = new THREE.SpriteMaterial({ map: texture });
             const sprite = new THREE.Sprite(material);
 
-            const posX = x + Math.random() * 1.5 + 12; 
-            const posY = x + Math.random() * 30 - 25; 
-            const posZ = z + Math.random() * 1.5;    
+            const posX = x + random_1 + 12; 
+            const posY = x + random_2 - 25; 
+            const posZ = z + random_1;    
             sprite.position.set(posX, posY, posZ);
             sprite.scale.set(scale, scale, 1);
-            const maxTilt = Math.PI / 4 + (posY + 40) / 50;
-            const minTilt = Math.PI / 8 + (posY + 40) / 200;
-            sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt;
+            sprite.material.rotation = Math.random() * (maxTilt_side - minTilt_side) + minTilt_side;
             sideFlowers.push(sprite);
             scene.add(sprite);
         }}}
@@ -464,14 +418,12 @@
             const texture = loader.load(pinkTextures[Math.floor(Math.random() * pinkTextures.length)]);
             const material = new THREE.SpriteMaterial({ map: texture });
             const sprite = new THREE.Sprite(material);
-            const posX = x + Math.random() *1.5 ; // Slight random offset for natural look
-            const posY = x + Math.random() * 30 - 30; // Y position increases tilt
-            const posZ = z + Math.random() * 1.5 - 8;
+            const posX = x + random_1 ;
+            const posY = x + random_2 - 30;
+            const posZ = z + random_1 - 8;
             sprite.position.set(posX, posY, posZ);
             sprite.scale.set(scale, scale, 1);
-            const maxTilt = Math.PI / 4 + (posY + 40) / 50;
-            const minTilt = Math.PI / 8 + (posY + 40) / 200;
-            sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt;
+            sprite.material.rotation = Math.random() * (maxTilt_side - minTilt_side) + minTilt_side;
             sideFlowers.push(sprite);
             scene.add(sprite);
         }}}
@@ -481,35 +433,28 @@
             const texture = loader.load(blueTextures[Math.floor(Math.random() * blueTextures.length)]);
             const material = new THREE.SpriteMaterial({ map: texture });
             const sprite = new THREE.Sprite(material);
-            const posX = x + Math.random() * 1.5 - 10 ; 
-            const posY = - x + Math.random() * 30 - 30;
-            const posZ = z + Math.random() * 1.5;
+            const posX = x + random_1 - 10 ; 
+            const posY = - x + random_2 - 30;
+            const posZ = z + random_1;
     
             sprite.position.set(posX, posY, posZ);
             sprite.scale.set(scale, scale, 1);
-            const maxTilt = - Math.PI / 4 + (posY + 40) / 50;
-            const minTilt = - Math.PI / 8 + (posY + 40) / 200; 
-            sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt;
-    
+            sprite.material.rotation = Math.random() * (- maxTilt_side + minTilt_side) - minTilt_side;
             sideFlowers.push(sprite);
             scene.add(sprite);
         }}}
 function createpinkFlowers_left(startZ, endZ) {
-    for (let x = - 30; x < -20 ; x += 3) { // Spaced horizontally
-      for (let z = startZ; z < endZ; z += 40) { // Spaced in depth
+    for (let x = - 30; x < -20 ; x += 3) {
+      for (let z = startZ; z < endZ; z += 40) {
         const texture = loader.load(pinkTextures[Math.floor(Math.random() * pinkTextures.length)]);
         const material = new THREE.SpriteMaterial({ map: texture });
         const sprite = new THREE.Sprite(material);
-        const posX = x + Math.random() * 1.5 - 4; // Slight random offset for natural look
-        const posY = - x + Math.random() * 30 - 30; // Y position increases tilt
-        const posZ = z + Math.random() * 1.5 - 8;
-  
+        const posX = x + random_1 - 4;
+        const posY = - x + random_2 - 30;
+        const posZ = z + random_1 - 8;
         sprite.position.set(posX, posY, posZ);
         sprite.scale.set(scale, scale, 1);
-        const maxTilt = - Math.PI / 4 + (posY + 40) / 150;
-        const minTilt = - Math.PI / 8 + (posY + 40) / 200; 
-        sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt -10;
-  
+        sprite.material.rotation = Math.random() * (- maxTilt_side + minTilt_side) - minTilt_side;
         sideFlowers.push(sprite);
         scene.add(sprite);
       }}}
@@ -520,9 +465,9 @@ function createtopGround(startZ, endZ) {
         const material = new THREE.SpriteMaterial({ map: texture });
         const sprite = new THREE.Sprite(material);
         sprite.position.set(
-          x + Math.random() * 1.5 - 35,
+          x + random_1 - 35,
           10 + 10 * Math.sin((x / 70) * Math.PI) + Math.random() * 5,
-          z + Math.random() * 1.5
+          z + random_1
         );
         sprite.scale.set(scale, scale, 1);
         const baseRotation = Math.PI - 5.5;
@@ -538,9 +483,9 @@ function createGround(startZ, endZ) {
       const material = new THREE.SpriteMaterial({ map: texture });
       const sprite = new THREE.Sprite(material);
       sprite.position.set(
-        x + Math.random() * 1.5 + 5, 
+        x + random_1 + 5, 
         Math.random() * 5 - 20, 
-        z + Math.random() * 1.5
+        z + random_1
       );
       sprite.scale.set(scale, scale, 1);
       growingFlowers2.push(sprite);
@@ -552,9 +497,9 @@ function createGround_right(startZ, endZ) {
         const texture = loader.load(groundTextures3[Math.floor(Math.random() * groundTextures3.length)]);
         const material = new THREE.SpriteMaterial({ map: texture });
         const sprite = new THREE.Sprite(material);
-        const posX = x + Math.random() * 1.5 + 20; 
-        const posY = x + Math.random() * 30 - 30;
-        const posZ = z + Math.random() * 1.5;
+        const posX = x + random_1 + 20; 
+        const posY = x + random_2 - 30;
+        const posZ = z + random_1;
   
         sprite.position.set(posX, posY, posZ);
         sprite.scale.set(scale, scale, 1);
@@ -571,9 +516,9 @@ function createGround_right(startZ, endZ) {
         const texture = loader.load(groundTextures4[Math.floor(Math.random() * groundTextures4.length)]);
         const material = new THREE.SpriteMaterial({ map: texture });
         const sprite = new THREE.Sprite(material);
-        const posX = x + Math.random() * 1.5 - 20;
-        const posY = - x + Math.random() * 30 - 30;
-        const posZ = z + Math.random() * 1.5;
+        const posX = x + random_1 - 20;
+        const posY = - x + random_2 - 30;
+        const posZ = z + random_1;
         sprite.position.set(posX, posY, posZ);
         sprite.scale.set(scale, scale, 1);
         const maxTilt = - Math.PI / 4 + (posY + 40) / 100;
@@ -588,7 +533,7 @@ function createGround_right(startZ, endZ) {
                 const texture = loader.load(dustTextures[Math.floor(Math.random() * dustTextures.length)]);
                 const material = new THREE.SpriteMaterial({ map: texture });
                 const sprite = new THREE.Sprite(material);
-                const posX = x + Math.random() * 1.5 + 5;
+                const posX = x + random_1 + 5;
                 const posY = Math.random() * 50 - 15;
                 const posZ = z + Math.random() * 2 + 10;
         
@@ -613,7 +558,7 @@ function createGround_right(startZ, endZ) {
                 const texture = loader.load(fallingTextures2[Math.floor(Math.random() * fallingTextures2.length)]);
                 const material = new THREE.SpriteMaterial({ map: texture });
                 const sprite = new THREE.Sprite(material);
-                const posX = x + Math.random() * 1.5 + 5 ;
+                const posX = x + random_1 + 5 ;
                 const posY = Math.random() * 50 + 0;
                 const posZ = z + Math.random() * 10 - 10;
     
@@ -663,7 +608,6 @@ function createGround_right(startZ, endZ) {
             const shiftAmount = cameraZ - lastCameraZ;
             renderRange.zMin += shiftAmount;
             renderRange.zMax += shiftAmount;
-            if(clickCount>=0){clickCount -= 0.1;}
             removeFlowersOutOfRange(renderRange.zMin - 1, renderRange.zMax + 1); // マージンを追加
             if (shiftAmount > 0) {
                 createtopGround(renderRange.zMax - shiftAmount, renderRange.zMax);
@@ -682,8 +626,7 @@ function createGround_right(startZ, endZ) {
                 dustFlowers2(renderRange.zMin, renderRange.zMin - shiftAmount);
             }
             lastCameraZ = cameraZ;
-        }
-    }
+        }}
     function growFlowers(flowers, maxScale) {
         flowers.forEach(flower => {
             const growth = Math.random() * 0.1 + 0.6;
@@ -691,10 +634,7 @@ function createGround_right(startZ, endZ) {
                 flower.scale.set(
                     flower.scale.x + growth,
                     flower.scale.y + growth
-                );
-            }
-        });
-    }
+                );}});}
     window.addEventListener('resize', () => {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
@@ -736,9 +676,7 @@ function createGround_right(startZ, endZ) {
           growFlowers(growingFlowers4, 8);
           growFlowers(sideFlowers, 7);
           growFlowers(fallingFlowers, 9);
-        }
-    });
-
+        }});
     function animate() {
       requestAnimationFrame(animate);
       const totalSpeed = autoSpeed + scrollSpeed;
@@ -749,12 +687,14 @@ function createGround_right(startZ, endZ) {
       dustupFlowers();
       dustdownFlowers();
       update();
-      if(Math.random()<=0.06)createpinkFlowers_right(renderRange.zMin, renderRange.zMax);
-      if(Math.random()<=0.06)createpinkFlowers_left(renderRange.zMin, renderRange.zMax);
-      if(Math.random()<=0.06)createwhiteFlowers_left(renderRange.zMin, renderRange.zMax);
-      if(Math.random()<=0.06)createwhiteFlowers_right(renderRange.zMin, renderRange.zMax);
-      if(Math.random()<=0.04)creategroundFlowers(renderRange.zMin, renderRange.zMax);
-      if(Math.random()<=0.04)createtopFlowers(renderRange.zMin, renderRange.zMax);  
+      if(Math.random()<=0.06){createpinkFlowers_right(renderRange.zMin, renderRange.zMax);
+                              createpinkFlowers_left(renderRange.zMin, renderRange.zMax);
+                              createwhiteFlowers_left(renderRange.zMin, renderRange.zMax);
+                              createwhiteFlowers_right(renderRange.zMin, renderRange.zMax);
+                             }
+      if(Math.random()<=0.04){creategroundFlowers(renderRange.zMin, renderRange.zMax);
+                              createtopFlowers(renderRange.zMin, renderRange.zMax); 
+                             }
       removeFlowersOutOfRange(renderRange.zMin - 1, renderRange.zMax + 1); // マージンを追加
       renderer.render(scene, camera);
     }
