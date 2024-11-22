@@ -567,7 +567,6 @@ camera.position.z = currentZ;
 dustupFlowers();
 dustdownFlowers();
 update();
-removeFlowersOutOfRange(renderRange.zMin - 20, renderRange.zMax + 20);
 if(firstcount<=2){
     createtopGround(-100, 100);
     createGround(-100,100);
@@ -575,6 +574,8 @@ if(firstcount<=2){
     createGround_right(-100,100);
     dustFlowers(-100,100);
     dustFlowers2(-100,100);
+}else{
+    removeFlowersOutOfRange(renderRange.zMin - 20, renderRange.zMax + 20);
 }
 firstcount+=1
 if(Math.random()<=0.05){
