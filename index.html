@@ -99,7 +99,7 @@ audio {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.7) 60%, rgb(0, 0, 0) 100%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.7) 50%, rgb(0, 0, 0) 100%);
   backdrop-filter: blur(0.5px);
   z-index: 10;
   }
@@ -304,21 +304,13 @@ audio {
         "https://dl.dropboxusercontent.com/scl/fi/qr8kqeoxkz3dm2rhn6jcr/plant_precise_130.png?rlkey=yfrun5y4qsifs8scqrkyr39f3",
         "https://dl.dropboxusercontent.com/scl/fi/2scrur6tzb5j43rk1fvwl/plant_precise_214.png?rlkey=dfziafr6i3jwckl80mmrei6q3",
         "https://dl.dropboxusercontent.com/scl/fi/qzoadtbtro8iwdky9meyj/plant_precise_216.png?rlkey=s9h9cj33eaefbnta0oidzvlut",
-        "https://dl.dropboxusercontent.com/scl/fi/l87xs77jt4da78uxt37ae/plant_precise_220.png?rlkey=68v8uogkr0ft0qtq3xphdzhr0",
-        "https://dl.dropboxusercontent.com/scl/fi/inrp4743y26jpo6o2mdkx/plant_precise_373.png?rlkey=gkdpre7lv42eq57quolrqlbes",
-        "https://dl.dropboxusercontent.com/scl/fi/ecjhoxexulhxd4amxa2ij/plant_precise_391.png?rlkey=wvg56jmehave4i4lrvt8g27rk",
-        "https://dl.dropboxusercontent.com/scl/fi/uh84eo8btp8l3xe151gwa/plant_precise_403.png?rlkey=ia4xvok8288vnu2an9p554n26",
-        ],
+           ],
         pinkTextures : [
         "https://dl.dropboxusercontent.com/scl/fi/yizqmfomoc0xuag4y32bm/plant_precise_258.png?rlkey=zhrhsbr2gx9m8idfb189ffqco",
         "https://dl.dropboxusercontent.com/scl/fi/qyi72q9i0sg6mpdrfpyp7/plant_precise_260.png?rlkey=nzyc222lc7b9mf4chvapp08uv",
         "https://dl.dropboxusercontent.com/scl/fi/j53zthropm0dtemo19az4/plant_precise_261.png?rlkey=2m7t71tjvze2k7eo5zmo4tdxc",
         "https://dl.dropboxusercontent.com/scl/fi/qk96rs4954mmvsye7e1j6/plant_precise_262.png?rlkey=v7b37b82xu2n65bhtv5w4x2h7",
-        "https://dl.dropboxusercontent.com/scl/fi/ua37hsw2t97odcs7lbxcb/plant_precise_263.png?rlkey=xoquijqovku7geavfblkj83ff",
-        "https://dl.dropboxusercontent.com/scl/fi/m2n649a21wx8fiuh4lxjl/plant_precise_264.png?rlkey=q6xhndzo10auw8i3cb7mf7jke",
-        "https://dl.dropboxusercontent.com/scl/fi/lqol7xy7htboet7ak7pdg/plant_precise_265.png?rlkey=83h4zgr2gzlral7m59oqyujdv",
-        "https://dl.dropboxusercontent.com/scl/fi/m7hgvvp5h4wqkihl7ei5j/plant_precise_266.png?rlkey=x1fafwuka16f4vl4wij2p5jy9",
-        ],
+             ],
         groundTextures : [
         "https://dl.dropboxusercontent.com/scl/fi/5pnr4rzo8w9ielzwxc1se/plant_precise_11.png?rlkey=ih3lrxpt5auq30sdy20um5six",
         "https://dl.dropboxusercontent.com/scl/fi/cjh8oqk0i4vg150v653gu/plant_precise_12.png?rlkey=opv8k1mry2nrn6vwt6nzdbns0",
@@ -478,22 +470,25 @@ audio {
     const random_1 = Math.random() * 2;
     const cameraPositionDisplay = document.getElementById('camera-position');
     function createtopFlowers(startZ, endZ) {
-        for (let x = -5; x <= 75; x += 10) {
-            for (let z = startZ; z <= endZ; z += 20) {
-                const textureUrl = textures.orangeTextures[Math.floor(Math.random() * textures.orangeTextures.length)];
-                const cachedTexture = textureCache.get(textureUrl);
-                if (cachedTexture) {
-                    const material = new THREE.SpriteMaterial({ map: cachedTexture });
-                    const sprite = new THREE.Sprite(material);
-                    sprite.position.set(
-                        -35 + x,
-                        5 + Math.sin(x / 70 * Math.PI) * 10,
-                        z + Math.random() * 50
-                    );
-                    sprite.scale.set(scale, scale, 1);
-                    fallingFlowers.push(sprite);
-                    scene.add(sprite);
-                }}}}
+    for (let x = -5; x <= 75; x += Math.random() * 10) {
+        for (let z = startZ; z <= endZ; z += 10) {
+            const textureUrl = textures.orangeTextures[Math.floor(Math.random() * textures.orangeTextures.length)];
+            const cachedTexture = textureCache.get(textureUrl);
+            if (cachedTexture) {
+                const material = new THREE.SpriteMaterial({ map: cachedTexture });
+                const sprite = new THREE.Sprite(material);
+                const posX = -35 + x;
+                const posY = 5 + 10 * Math.sin((x / 70) * Math.PI) + Math.random() * 5;
+                const posZ = z + Math.random() * 50 + 10;
+                sprite.position.set(posX, posY, posZ);
+                sprite.scale.set(scale, scale, 1);
+                const baseRotation = Math.PI - 5.5;
+                const rotationOffset = (Math.random() - 0.5) * Math.PI / 6;
+                sprite.material.rotation = baseRotation + rotationOffset;
+                fallingFlowers.push(sprite);
+                scene.add(sprite);
+            }}}}
+
     function creategroundFlowers(startZ, endZ) {
     for (let x = -40; x < 40; x += 10) {
         for (let z = startZ; z < endZ; z += 20) {
@@ -515,32 +510,25 @@ audio {
             fallingFlowers.push(sprite); 
             scene.add(sprite);         
         }}}}
-    function creategroundFlowers(startZ, endZ) {
-        for (let x = -40; x < 40; x += 10) {
-            const randomOffsetsX = Array.from({ length: Math.ceil((endZ - startZ) / 20) }, () => Math.random() * 10 - 5);
-            const randomOffsetsZ = Array.from({ length: Math.ceil((endZ - startZ) / 20) }, () => Math.random() * 10 - 5);
-            const randomTilts = Array.from({ length: Math.ceil((endZ - startZ) / 20) }, () => 
-                Math.random() * (Math.PI / 3) - Math.PI / 6
-            );
-    
-            for (let zIndex = 0; zIndex < randomOffsetsZ.length; zIndex++) {
-                const z = startZ + zIndex * 20;
-                const textureUrl = textures.whiteTextures[Math.floor(Math.random() * textures.whiteTextures.length)];
-                const cachedTexture = textureCache.get(textureUrl);
-    
-                if (cachedTexture) {
-                    const material = new THREE.SpriteMaterial({ map: cachedTexture });
-                    const sprite = new THREE.Sprite(material);
-                    sprite.position.set(
-                        x + randomOffsetsX[zIndex],
-                        Math.random() * 3 - 15,
-                        z + randomOffsetsZ[zIndex]
-                    );
-                    sprite.scale.set(scale, scale, 1);
-                    sprite.material.rotation = randomTilts[zIndex];
-                    fallingFlowers.push(sprite);
-                    scene.add(sprite);
-                }}}}
+    function createwhiteFlowers_right(startZ, endZ) {
+        for (let x = 5; x < 18; x += 5) {
+        for (let z = startZ; z < endZ; z += 40) {
+            const textureUrl = textures.blueTextures[Math.floor(Math.random() * textures.blueTextures.length)];
+            const cachedTexture = textureCache.get(textureUrl);
+            if (cachedTexture) {
+            const material = new THREE.SpriteMaterial({ map: cachedTexture });
+            const sprite = new THREE.Sprite(material);
+            const posX = x + random_1 + 12; 
+            const posY = x + Math.random() * 30 - 25; 
+            const posZ = z + random_1;    
+            sprite.position.set(posX, posY, posZ);
+            sprite.scale.set(scale, scale, 1);
+            const maxTilt = Math.PI / 4 + (posY + 40) / 50;
+            const minTilt = Math.PI / 8 + (posY + 40) / 200;
+            sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt;
+            sideFlowers.push(sprite);
+            scene.add(sprite);
+        }}}}
     function createpinkFlowers_right(startZ, endZ) {
         for (let x = 20; x < 30 ; x += 5) {
         for (let z = startZ; z < endZ; z += 40) {
@@ -795,6 +783,7 @@ function createGround_right(startZ, endZ) {
       }
       renderer.render(scene, camera);
     }
+
     window.addEventListener('resize', () => {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
@@ -811,6 +800,32 @@ function createGround_right(startZ, endZ) {
         scrollSpeed = Math.max(MIN_SCROLL_SPEED, Math.min(MAX_SCROLL_SPEED, scrollSpeed));
         growAllFlowers();});
     window.addEventListener('click', () => growAllFlowers());
+
+    window.addEventListener("touchstart", (event) => {
+    if (event.touches.length === 1) { 
+        lastTouchY = event.touches[0].clientY;
+        lastTouchX = event.touches[0].clientX;
+    }
+    });
+    window.addEventListener("touchmove", (event) => {
+        const touchY = event.touches[0].clientY;
+        const touchX = event.touches[0].clientX;
+        const deltaY = lastTouchY - touchY;
+        const deltaX = touchX - lastTouchX;
+    if (event.touches.length === 1) { 
+        const mouseX = (deltaX / window.innerWidth) * 2 - 1;
+        const mouseY = -(deltaY / window.innerHeight) * 2 + 1;
+        camera.rotation.y += mouseX * 0.5;
+        camera.rotation.x += mouseY * 0.2;
+        growAllFlowers();
+        lastTouchY = touchY;
+        lastTouchX = touchX;
+    }
+    if(event.touches.length === 2){
+    scrollSpeed -= deltaY * 0.05;
+    scrollSpeed = Math.max(MIN_SCROLL_SPEED, Math.min(MAX_SCROLL_SPEED, scrollSpeed));
+    }});
+    animate();
   </script>
 </body>
 </html>
