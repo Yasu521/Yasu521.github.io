@@ -248,6 +248,7 @@ let cameraZ = 0;
 let lastCameraZ = 0;
 let startX = 0;
 let startY = 0;
+let firstcount = 0;
 const renderRange = { zMin: -100, zMax: 0 };
 const shiftThreshold = 2;
 const scale = Math.random() * 2;
@@ -566,13 +567,16 @@ camera.position.z = currentZ;
 dustupFlowers();
 dustdownFlowers();
 update();
-removeFlowersOutOfRange(renderRange.zMin - 20, renderRange.zMax + 20); 
-createtopGround(-100, 100);
-createGround(-100,100);
-createGround_left(-100,100);
-createGround_right(-100,100);
-dustFlowers(-100,100);
-dustFlowers2(-100,100);
+removeFlowersOutOfRange(renderRange.zMin - 20, renderRange.zMax + 20);
+if(firstcount<=2){
+    createtopGround(-100, 100);
+    createGround(-100,100);
+    createGround_left(-100,100);
+    createGround_right(-100,100);
+    dustFlowers(-100,100);
+    dustFlowers2(-100,100);
+}
+firstcount+=1
 if(Math.random()<=0.05){
 createpinkFlowers_right(renderRange.zMin, renderRange.zMax);
 createpinkFlowers_left(renderRange.zMin, renderRange.zMax);
