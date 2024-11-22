@@ -393,7 +393,7 @@
     const cubes = []; // キューブの参照を格納する配列
     
     let clickCount = 0; // クリック回数をカウントする変数
-    const maxClicks = 3; // 最大クリック回数
+    const maxClicks = 5; // 最大クリック回数
     // 時間管理用
     const clock = new THREE.Clock();
     let appear = true; // 徐々に現れるか消えるかのフラグ
@@ -946,6 +946,18 @@ function createGround_right(startZ, endZ) {
             lastCameraZ = cameraZ; // カメラ位置を更新
         }
     }
+      // 共通成長処理を関数化
+    function growFlowers(flowers, maxScale) {
+        flowers.forEach(flower => {
+            const growth = Math.random() * 0.1 + 0.6; // 成長量
+            if (flower.scale.x < maxScale) {
+                flower.scale.set(
+                    flower.scale.x + growth,
+                    flower.scale.y + growth
+                );
+            }
+        });
+    }
 
 
             // ウィンドウサイズ変更対応
@@ -970,19 +982,6 @@ function createGround_right(startZ, endZ) {
         growFlowers(sideFlowers, 7);
         growFlowers(fallingFlowers, 9);
         });
-
-    // 共通成長処理を関数化
-    function growFlowers(flowers, maxScale) {
-        flowers.forEach(flower => {
-            const growth = Math.random() * 0.1 + 0.6; // 成長量
-            if (flower.scale.x < maxScale) {
-                flower.scale.set(
-                    flower.scale.x + growth,
-                    flower.scale.y + growth
-                );
-            }
-        });
-    }
 
     // マウスホイール動作を検知してスクロール速度を設定
     window.addEventListener("wheel", (event) => {
@@ -1019,16 +1018,14 @@ function createGround_right(startZ, endZ) {
     // クリックイベントを追加
     window.addEventListener('click', () => {
         if (clickCount < maxClicks) {
-        clickCount++; // クリック回数を増やす
-        growingFlowers.forEach(flower => {
-            const growth = Math.random() * 0.1 + 0.5; // 成長量
-            flower.scale.set(
-            flower.scale.x + growth,
-            flower.scale.y + growth
-            );
-        });
+          clickCount++; // クリック回数を増やす
+          growFlowers(growingFlowers, 8);
+          growFlowers(growingFlowers2, 8);
+          growFlowers(growingFlowers3, 8);
+          growFlowers(growingFlowers4, 8);
+          growFlowers(sideFlowers, 7);
+          growFlowers(fallingFlowers, 9);
         }
-
     });
 
     // アニメーション
