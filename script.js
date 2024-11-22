@@ -465,6 +465,11 @@ function dustFlowers(startZ, endZ) {
               {
               dustPlants.push(sprite);
               scene.add(sprite);
+                        setTimeout(() => {
+                        scene.remove(sprite);
+                        dustPlants = dustPlants.filter(f => f !== sprite);
+                        }, Math.random() * 5000 + 10000);
+                }
           }}}}}
 function dustFlowers2(startZ, endZ) {
   for (let x = -20; x < 20; x += 5) {
@@ -487,6 +492,11 @@ function dustFlowers2(startZ, endZ) {
               {
               dustPlants2.push(sprite);
               scene.add(sprite);
+                        setTimeout(() => {
+                        scene.remove(sprite);
+                        dustPlants = dustPlants.filter(f => f !== sprite);
+                        }, Math.random() * 5000 + 10000);
+                }
           }}}}}
 function dustupFlowers() {
   dustPlants.forEach(sprite => {
@@ -584,8 +594,8 @@ window.addEventListener("wheel", (event) => {
   scrollSpeed = Math.max(MIN_SCROLL_SPEED, Math.min(MAX_SCROLL_SPEED, scrollSpeed));
   growAllFlowers();});
 window.addEventListener('click', () => growAllFlowers());
-const maxYRotation = 2.61799; 
-const minYRotation = -2.61799; 
+const maxYRotation = 1.91986; 
+const minYRotation = -1.91986; 
 const maxXRotation = Math.PI / 4;
 const minXRotation = -Math.PI / 4;
 function onTouchMove(event) {
