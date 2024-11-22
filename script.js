@@ -588,8 +588,6 @@ const maxYRotation = 2.61799;
 const minYRotation = -2.61799; 
 const maxXRotation = Math.PI / 4;
 const minXRotation = -Math.PI / 4;
-let lastTouchX = null;
-let lastTouchY = null; 
 function onTouchMove(event) {
     if (event.touches.length === 1) {
         const touch = event.touches[0];
