@@ -562,11 +562,7 @@ const totalSpeed = autoSpeed + scrollSpeed;
 currentZ -= totalSpeed * 0.3;
 camera.position.z = currentZ;
 scrollSpeed *= 0.8;
-camera.position.z = currentZ;
-dustupFlowers();
-dustdownFlowers();
-update();
-if(firstcount<=1){
+if(firstcount<=100){
     createtopGround(-150, 50);
     createGround(-150,50);
     createGround_left(-150,50);
@@ -584,6 +580,9 @@ if(camera.position.z<=-100)
     {
     removeFlowersOutOfRange(renderRange.zMin - 20, renderRange.zMax + 20);
 }
+dustupFlowers();
+dustdownFlowers();
+update();
 firstcount+=1
 if(Math.random()<=0.05){
 createpinkFlowers_right(renderRange.zMin, renderRange.zMax);
