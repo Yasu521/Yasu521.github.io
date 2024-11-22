@@ -99,7 +99,7 @@ audio {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.7) 50%, rgb(0, 0, 0) 100%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.7) 60%, rgb(0, 0, 0) 100%);
   backdrop-filter: blur(0.5px);
   z-index: 10;
   }
@@ -815,24 +815,6 @@ function createGround_right(startZ, endZ) {
         lastTouchX = event.touches[0].clientX;
     }
     });
-    window.addEventListener("touchmove", (event) => {
-        const touchY = event.touches[0].clientY;
-        const touchX = event.touches[0].clientX;
-        const deltaY = lastTouchY - touchY;
-        const deltaX = touchX - lastTouchX;
-    if (event.touches.length === 1) { 
-        const mouseX = (deltaX / window.innerWidth) * 2 - 1;
-        const mouseY = -(deltaY / window.innerHeight) * 2 + 1;
-        camera.rotation.y += mouseX * 0.5;
-        camera.rotation.x += mouseY * 0.2;
-        growAllFlowers();
-        lastTouchY = touchY;
-        lastTouchX = touchX;
-    }
-    if(event.touches.length === 2){
-    scrollSpeed -= deltaY * 0.05;
-    scrollSpeed = Math.max(MIN_SCROLL_SPEED, Math.min(MAX_SCROLL_SPEED, scrollSpeed));
-    }});
   </script>
 </body>
 </html>
