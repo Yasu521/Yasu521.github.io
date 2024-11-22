@@ -576,29 +576,34 @@ window.addEventListener("wheel", (event) => {
   scrollSpeed = Math.max(MIN_SCROLL_SPEED, Math.min(MAX_SCROLL_SPEED, scrollSpeed));
   growAllFlowers();});
 window.addEventListener('click', () => growAllFlowers());
-
-window.addEventListener("touchstart", (event) => {
-if (event.touches.length === 1) { 
-  lastTouchY = event.touches[0].clientY;
-  lastTouchX = event.touches[0].clientX;
+const maxYRotation = 2.61799; 
+const minYRotation = -2.61799; 
+const maxXRotation = Math.PI / 4;
+const minXRotation = -Math.PI / 4;
+let lastTouchX = null;
+let lastTouchY = null; 
+function onTouchMove(event) {
+    if (event.touches.length === 1) {
+        const touch = event.touches[0];
+        
+        if (lastTouchX !== null && lastTouchY !== null) {
+            const deltaX = (touch.clientX - lastTouchX) * 0.005;
+            const deltaY = (touch.clientY - lastTouchY) * 0.005;
+            camera.rotation.y += deltaX;
+            camera.rotation.y = Math.max(minYRotation, Math.min(maxYRotation, camera.rotation.y));
+            camera.rotation.x += deltaY;
+            camera.rotation.x = Math.max(minXRotation, Math.min(maxXRotation, camera.rotation.x));
+            growAllFlowers();
+        }
+        lastTouchX = touch.clientX;
+        lastTouchY = touch.clientY;
+    }
 }
-});
-window.addEventListener("touchmove", (event) => {
-  const touchY = event.touches[0].clientY;
-  const touchX = event.touches[0].clientX;
-  const deltaY = lastTouchY - touchY;
-  const deltaX = touchX - lastTouchX;
-if (event.touches.length === 1) { 
-  const mouseX = (deltaX / window.innerWidth) * 2 - 1;
-  const mouseY = -(deltaY / window.innerHeight) * 2 + 1;
-  camera.rotation.y += mouseX * 0.5;
-  camera.rotation.x += mouseY * 0.2;
-  growAllFlowers();
-  lastTouchY = touchY;
-  lastTouchX = touchX;
+function onTouchEnd() {
+    lastTouchX = null;
+    lastTouchY = null;
 }
-if(event.touches.length === 2){
-scrollSpeed -= deltaY * 0.05;
-scrollSpeed = Math.max(MIN_SCROLL_SPEED, Math.min(MAX_SCROLL_SPEED, scrollSpeed));
-}});
+document.addEventListener("touchmove", onTouchMove, { passive: false });
+document.addEventListener("touchend", onTouchEnd);
+document.addEventListener("touchcancel", onTouchEnd);
 animate();
