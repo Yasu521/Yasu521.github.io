@@ -16,10 +16,10 @@
     /* 画像ボタンのスタイル */
     #audioControlButton {
       position: fixed; /* 画面の端に固定 */
-      padding: 2px 2px;
+      
       background-color: #ffffff; /* ボタンの背景色 */
-      top: 10px; /* 上端からの距離 */
-      right: 100px; /* 右端からの距離 */
+      top: 13px; /* 上端からの距離 */
+      right: 60px; /* 右端からの距離 */
       width: 30px; /* ボタンの幅 */
       border-radius: 50%; /* 丸くする */
       cursor: pointer; /* ポインタカーソル */
@@ -51,16 +51,21 @@
     }
     .language-menu {
         position: absolute;
-        top: 13px;
+        top: 10px;
         right: 10px;
         display: inline-block;
     }
     .language-toggle {
-        background: none;
-        border: none;
-        color: rgb(255, 255, 255);
-        font-size: 16px;
-        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px; /* アイコンサイズ */
+        height: 35px; /* アイコンサイズ */
+        border-radius: 50%; /* 円形 */
+        background-image: url('https://dl.dropboxusercontent.com/scl/fi/wwqqmcio1p1tsck22czrq/7592.png?rlkey=2kz87faydbpnjmv1m4fi8fjzi');
+        background-size: cover; /* 背景画像のサイズ調整 */
+        background-position: center; /* 背景画像の位置調整 */
+        overflow: hidden; /* アイコンがはみ出さないようにする */
     }
     .language-list {
         display: none;
@@ -149,7 +154,7 @@
     </div>
 
     <div class="language-menu">
-        <button class="language-toggle">Language</button>
+        <button class="language-toggle"></button>
         <div class="language-list">
             <button class="language-option" data-lang="en">English</button>
             <button class="language-option" data-lang="fr">Français</button>
@@ -159,7 +164,6 @@
     </div>
     <!-- ボタンのコンテナ -->
     <div id="buttonContainer"></div>
-
 
   <!-- Three.js ライブラリ -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -188,13 +192,13 @@
             {
                 id: "About Me",
                 texts: { en: "About Me", ja: "自己紹介", fr: "Qui suis-je", zh: "关于我" },
-                links: { en: "https://example.com/en", ja: "https://example.com/ja", fr: "https://example.com/fr", zh: "https://example.com/zh" },
+                links: { en: "https://aicurion.com/aboutme-ja", ja: "https://aicurion.com/aboutme-ja", fr: "https://aicurion.com/aboutme-ja", zh: "https://aicurion.com/aboutme-ja" },
                 position: { top: "30%", left: `20%` }
             },
             {
                 id: "Project",
                 texts: { en: " Projects", ja: "活動", fr: "Projets", zh: "项目" },
-                links: { en: "https://example.com/about-en", ja: "https://example.com/about-ja", fr: "https://example.com/about-fr", zh: "https://example.com/about-zh" },
+                links: { en: "https://aicurion.com/project-ja", ja:"https://aicurion.com/project-ja", fr: "https://aicurion.com/project-ja", zh:"https://aicurion.com/project-ja" },
                 position: { top: "40%", left: "20%" }
             },
             {
@@ -253,6 +257,33 @@
                 alert(languageMessages[selectedLanguage]);
             });
         });
+        document.addEventListener('DOMContentLoaded', () => {
+        const toggleButton = document.querySelector('.language-toggle');
+        const languageOptions = document.querySelectorAll('.language-option');
+        languageOptions.forEach(option => {
+            option.addEventListener('click', (e) => {
+                const selectedLang = e.target.getAttribute('data-lang');
+                // 言語に対応した画像URL（仮の例）
+                const langIcons = {
+                    en: 'https://dl.dropboxusercontent.com/scl/fi/wwqqmcio1p1tsck22czrq/7592.png?rlkey=2kz87faydbpnjmv1m4fi8fjzi',
+                    fr: 'https://dl.dropboxusercontent.com/scl/fi/qjaswgxqp6m07af0doc1j/7596.png?rlkey=pjcv2qioez0r034ea4iyndgl3&st=0t6mwxtk&dl=0',
+                    ja: 'https://dl.dropboxusercontent.com/scl/fi/qnaqgpxi7sfdoxraomw6n/7591.png?rlkey=s4v0scvff2chpmjc3gc8hvgos',
+                    zh: 'https://dl.dropboxusercontent.com/scl/fi/etl7rqlcpn25xe2ti6hl3/7607.png?rlkey=cp5edcvttjbaorwhz44cnpsps'
+                };
+
+                // アイコンを変更
+                if (langIcons[selectedLang]) {
+                    toggleButton.style.backgroundImage = `url(${langIcons[selectedLang]})`;
+                    toggleButton.style.backgroundSize = 'cover';
+                    toggleButton.style.backgroundPosition = 'center';
+                    toggleButton.style.width = '35px'; // アイコンサイズ調整
+                    toggleButton.style.height = '35px'; // アイコンサイズ調整
+                    toggleButton.style.borderRadius = '50%'; // 円形にする
+                    toggleButton.textContent = ''; // テキストを非表示
+                }
+            });
+        });
+    });
 
     // Three.jsのセットアップ
     const scene = new THREE.Scene();
@@ -346,7 +377,7 @@
     { position: { x: 3, y: -3, z: -40 }, size: { x: 3, y: 3, z: 3 }, label: 'Bonjour' },
     { position: { x: -3, y: 3, z: -40 }, size: { x: 3, y: 3, z: 3 }, label:  "こんにちは"},
     { position: { x: -3, y: -3, z: -40 }, size: { x: 3, y: 3, z: 3 }, label: 'Wellcome' },
-    { position: { x: 0, y: 0, z: -40 }, size: { x: 1, y: 1, z: 1 }, label: 'Ciao521' },
+    { position: { x: 0, y: 0, z: -40 }, size: { x: 1, y: 1, z: 1 }, label: 'Yasu521' },
     ];
 
     const loader = new THREE.TextureLoader();
