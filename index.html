@@ -237,6 +237,15 @@
             button.style.style = config.position.style;
             buttonContainer.appendChild(button);
         });
+          const languageButtons = document.querySelectorAll('.language-option');
+        languageButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const selectedLanguage = button.getAttribute('data-lang');
+                buttonsConfig.forEach(config => {
+                    const btn = document.getElementById(config.id);
+                    btn.textContent = config.texts[selectedLanguage];
+                    btn.href = config.links[selectedLanguage];
+                });});});
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('three-canvas') });
@@ -353,33 +362,7 @@
     setInterval(() => {
         dotCount = (dotCount + 1) % 4;
         loadingDots.textContent = ".".repeat(dotCount);
-    }, 500);
-    const audioElement = document.getElementById("backgroundAudio");
-    const button = document.getElementById("audioControlButton");
-    const icon = document.getElementById("audioIcon");
-    const audioUrl = textures.audio[0];
-    const soundOnIconUrl = textures.audioicon[0];
-    const soundOffIconUrl = textures.audioicon[1];
-
-    const cachedAudio = textureCache.get(audioUrl);
-    if (cachedAudio) {
-        audioElement.src = cachedAudio.src;
-    } else {
-        console.error("Audio not found in cache.");
-    }
-    icon.src = soundOffIconUrl;
-    audioElement.muted = true;
-    audioElement.pause();
-    button.addEventListener("click", () => {
-        if (audioElement.muted) {
-            audioElement.muted = false;
-            icon.src = textureCache.get(soundOnIconUrl)?.src || soundOnIconUrl;
-        } else {
-            audioElement.muted = true;
-            icon.src = textureCache.get(soundOffIconUrl)?.src || soundOffIconUrl;
-        }
-        audioElement.play();
-    });           
+    }, 500); 
     let dustPlants = [];
     let dustPlants2 = [];
     let fallingFlowers = [];
@@ -389,7 +372,6 @@
     let growingFlowers4 = [];
     let sideFlowers = [];
     const cubes = [];
-
     const cubeData = [
     { position: { x: 3, y: 3, z: -50 }, size: { x: 3, y: 3, z: 3 }, label: '欢迎' },
     { position: { x: 3, y: -3, z: -50 }, size: { x: 3, y: 3, z: 3 }, label: 'Bonjour' },
