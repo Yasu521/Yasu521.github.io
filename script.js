@@ -566,7 +566,7 @@ removeFlowersOutOfRange(renderRange.zMin - 20, renderRange.zMax + 20);
 dustupFlowers();
 dustdownFlowers();
 update();
-if(Math.random()<=0.05){
+if(Math.random()<=0.03){
 createpinkFlowers_right(renderRange.zMin, renderRange.zMax);
 createpinkFlowers_left(renderRange.zMin, renderRange.zMax);
 createwhiteFlowers_right(renderRange.zMin, renderRange.zMax);
