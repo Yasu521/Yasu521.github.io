@@ -568,20 +568,20 @@ dustupFlowers();
 dustdownFlowers();
 update();
 if(firstcount<=1){
-    createtopGround(-100, 100);
-    createGround(-100,100);
-    createGround_left(-100,100);
-    createGround_right(-100,100);
-    dustFlowers(-100,100);
-    dustFlowers2(-100,100);
-    createpinkFlowers_right(-100,100);
-    createpinkFlowers_left(-100,100);
-    createwhiteFlowers_right(-100,100);
-    createwhiteFlowers_left(-100,100);
-    creategroundFlowers(-100,100);
-    createtopFlowers(-100,100);
+    createtopGround(-150, 50);
+    createGround(-150,50);
+    createGround_left(-150,50);
+    createGround_right(-150,50);
+    dustFlowers(-150,50);
+    dustFlowers2(-150,50);
+    createpinkFlowers_right(-150,50);
+    createpinkFlowers_left(-150,50);
+    createwhiteFlowers_right(-150,50);
+    createwhiteFlowers_left(-150,50);
+    creategroundFlowers(-150,150);
+    createtopFlowers(-150,50);
 }
-if(camera.position.z<=-30)
+if(camera.position.z<=-100)
     {
     removeFlowersOutOfRange(renderRange.zMin - 20, renderRange.zMax + 20);
 }
