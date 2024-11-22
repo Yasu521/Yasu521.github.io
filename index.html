@@ -962,44 +962,14 @@ function createGround_right(startZ, endZ) {
     
         camera.rotation.y = - mouseX * 0.5; // Rotate horizontally
         camera.rotation.x =  mouseY * 0.2; // Rotate vertically
-
-        if (Math.random()<=0.5){
-            growingFlowers.forEach(flower => {
-                const growth = Math.random() * 0.01 + 0.01; // 成長量
-                flower.scale.set(
-                flower.scale.x + growth,
-                flower.scale.y + growth
-                );
-            });
-        } 
-        if (Math.random()<=0.5){
-            growingFlowers2.forEach(flower => {
-                const growth = Math.random() * 0.01 + 0.01; // 成長量
-                flower.scale.set(
-                flower.scale.x + growth,
-                flower.scale.y + growth
-                );
-            });
-        } 
-        if (Math.random()<=0.5){
-            growingFlowers3.forEach(flower => {
-                const growth = Math.random() * 0.01 + 0.01; // 成長量
-                flower.scale.set(
-                flower.scale.x + growth,
-                flower.scale.y + growth
-                );
-            });
-        } 
-        if (Math.random()<=0.5){
-            growingFlowers4.forEach(flower => {
-                const growth = Math.random() * 0.01 + 0.01; // 成長量
-                flower.scale.set(
-                flower.scale.x + growth,
-                flower.scale.y + growth
-                );
-            });
-        } 
-    });
+      
+        growFlowers(growingFlowers, 8);
+        growFlowers(growingFlowers2, 8);
+        growFlowers(growingFlowers3, 8);
+        growFlowers(growingFlowers4, 8);
+        growFlowers(sideFlowers, 7);
+        growFlowers(fallingFlowers, 9);
+        });
 
     // 共通成長処理を関数化
     function growFlowers(flowers, maxScale) {
