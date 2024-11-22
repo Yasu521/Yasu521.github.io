@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{Ciao:Yasu521}</title>
+
   <style>
     body, html {
       margin: 0;
@@ -100,6 +101,7 @@
             background: white;
             transition: width 0.3s ease;
         }
+
         .menu-button:hover::after {
             width: 100%;
         }
@@ -147,6 +149,7 @@
                 position: { top: "60%", left: "20%" }
             }
         ];
+
         const languageMessages = {
             en: "Language changed to English!",
             ja: "言語を日本語に変更しました！",
@@ -183,12 +186,14 @@
         languageOptions.forEach(option => {
             option.addEventListener('click', (e) => {
                 const selectedLang = e.target.getAttribute('data-lang');
+
                 const langIcons = {
                     en: 'https://dl.dropboxusercontent.com/scl/fi/wwqqmcio1p1tsck22czrq/7592.png?rlkey=2kz87faydbpnjmv1m4fi8fjzi',
                     fr: 'https://dl.dropboxusercontent.com/scl/fi/qjaswgxqp6m07af0doc1j/7596.png?rlkey=pjcv2qioez0r034ea4iyndgl3&st=0t6mwxtk&dl=0',
                     ja: 'https://dl.dropboxusercontent.com/scl/fi/qnaqgpxi7sfdoxraomw6n/7591.png?rlkey=s4v0scvff2chpmjc3gc8hvgos',
                     zh: 'https://dl.dropboxusercontent.com/scl/fi/etl7rqlcpn25xe2ti6hl3/7607.png?rlkey=cp5edcvttjbaorwhz44cnpsps'
                 };
+
                 if (langIcons[selectedLang]) {
                     toggleButton.style.backgroundImage = `url(${langIcons[selectedLang]})`;
                     toggleButton.style.backgroundSize = 'cover';
@@ -226,8 +231,9 @@
     ];
     const blueTextures = [
     "https://dl.dropboxusercontent.com/scl/fi/5scqus7wsfmzc7zmzpywl/plant_precise_128.png?rlkey=api5p4joynhvrlc7j5a1iuc7v",
-    "https://dl.dropboxusercontent.com/scl/fi/o0z3jedp00h0m2ammrg7w/plant_precise_129.png?rlkey=c4321d422isk61n5oie909g0s",
-    "https://dl.dropboxusercontent.com/scl/fi/qr8kqeoxkz3dm2rhn6jcr/plant_precise_130.png?rlkey=yfrun5y4qsifs8scqrkyr39f3",
+    "https://dl.dropboxusercontent.com/scl/fi/l87xs77jt4da78uxt37ae/plant_precise_220.png?rlkey=68v8uogkr0ft0qtq3xphdzhr0",
+    "https://dl.dropboxusercontent.com/scl/fi/inrp4743y26jpo6o2mdkx/plant_precise_373.png?rlkey=gkdpre7lv42eq57quolrqlbes",
+    "https://dl.dropboxusercontent.com/scl/fi/ecjhoxexulhxd4amxa2ij/plant_precise_391.png?rlkey=wvg56jmehave4i4lrvt8g27rk",
     ];
     const pinkTextures = [
     "https://dl.dropboxusercontent.com/scl/fi/yizqmfomoc0xuag4y32bm/plant_precise_258.png?rlkey=zhrhsbr2gx9m8idfb189ffqco",
@@ -247,22 +253,14 @@
     "https://dl.dropboxusercontent.com/scl/fi/irm28o48uzjnqylh9rg8u/plant_precise_18.png?rlkey=v67uox08hp73yawb9uecj3i8e",
     "https://dl.dropboxusercontent.com/scl/fi/bqoqotikbdcgmvaah5bbt/plant_precise_32.png?rlkey=kyc73m4t1sopg5a4ftuywyiku",
     "https://dl.dropboxusercontent.com/scl/fi/bok9d2xbvcxvj3g5zkqfe/plant_precise_33.png?rlkey=0yhl2km0e7szdmukh92mfou8b"
+
     ];
     const groundTextures4=[
     "https://dl.dropboxusercontent.com/scl/fi/xgsocs6syv0ws8y4ta9aj/plant_precise_28.png?rlkey=joc3t9hs44bamiy74u8918aho",
     "https://dl.dropboxusercontent.com/scl/fi/s0ptb2twg2wy1iwgi9oul/plant_precise_29.png?rlkey=gwk3w1ip3uljxbgrhl0vo67ui"
     ];
 
-    const cubeData = [
-    { position: { x: 3, y: 3, z: -40 }, size: { x: 3, y: 3, z: 3 }, label: '欢迎' },
-    { position: { x: 3, y: -3, z: -40 }, size: { x: 3, y: 3, z: 3 }, label: 'Bonjour' },
-    { position: { x: -3, y: 3, z: -40 }, size: { x: 3, y: 3, z: 3 }, label:  "こんにちは"},
-    { position: { x: -3, y: -3, z: -40 }, size: { x: 3, y: 3, z: 3 }, label: 'Wellcome' },
-    { position: { x: 0, y: 0, z: -40 }, size: { x: 1, y: 1, z: 1 }, label: 'Yasu521' },
-    ];
-
     const loader = new THREE.TextureLoader();
-
     let dustPlants = [];
     let dustPlants2 = [];
     let fallingFlowers = [];
@@ -273,8 +271,22 @@
     let sideFlowers = [];
     const cubes = [];
 
-    let clickCount = 0;
-    const maxClicks = 20;
+    const cubeData = [
+    { position: { x: 3, y: 3, z: -50 }, size: { x: 3, y: 3, z: 3 }, label: '欢迎' },
+    { position: { x: 3, y: -3, z: -50 }, size: { x: 3, y: 3, z: 3 }, label: 'Bonjour' },
+    { position: { x: -3, y: 3, z: -50 }, size: { x: 3, y: 3, z: 3 }, label:  "こんにちは"},
+    { position: { x: -3, y: -3, z: -50 }, size: { x: 3, y: 3, z: 3 }, label: 'Wellcome' },
+    { position: { x: 0, y: 0, z: -50 }, size: { x: 0.5, y: 0.5, z: 0.5 }, label: ' "Touch" ' },
+    ];
+    const flowerGroups = [
+    { flowers: growingFlowers, maxScale: 8 },
+    { flowers: growingFlowers2, maxScale: 8 },
+    { flowers: growingFlowers3, maxScale: 8 },
+    { flowers: growingFlowers4, maxScale: 8 },
+    { flowers: sideFlowers, maxScale: 7 },
+    { flowers: fallingFlowers, maxScale: 9 },
+    ];
+
     const clock = new THREE.Clock();
     let appear = true;
     function createLabeledCube(position, size, labelText) {
@@ -299,7 +311,7 @@
         const textMaterial = new THREE.MeshBasicMaterial({ 
             map: texture,
             transparent: true,
-            opacity: 0.5
+            opacity: 1
             });
         const materials = [
             textMaterial,
@@ -317,27 +329,26 @@
         scene.add(cube);
         cubes.push(cube);
     });
-  const MAX_SCROLL_SPEED = 3;
-  const MIN_SCROLL_SPEED = -3;
-  let autoSpeed = 0.5;
-  let scrollSpeed = 0 ;
-  let currentZ = 0;
-  let lastMouseY = 0;
-  const topflower = 0 ;  
-  camera.position.x = 0
-  camera.position.y = 0
-  camera.position.z = 0;
-  let cameraZ = 0;
-  let lastCameraZ = cameraZ;
-  const renderRange = { zMin: -100, zMax: 0 };
-  const shiftThreshold = 2;
-  const random_1 = Math.random() * 1.5;
-  const random_2 = Math.random() * 30;
-  const random_3 = Math.random() * 50;
-  const maxTilt_side = Math.PI / 4 + (posY + 40) / 50;
-  const minTilt_side = Math.PI / 8 + (posY + 40) / 200;
-  const cameraPositionDisplay = document.getElementById('camera-position');
-  function createtopFlowers(startZ, endZ) {
+    const MAX_SCROLL_SPEED = 3;
+    const MIN_SCROLL_SPEED = -3;
+    let autoSpeed = 0.5;
+    let scrollSpeed = 0 ;
+    let currentZ = 0;
+    let lastMouseY = 0;
+    const topflower = 0 ;
+    camera.position.x = 0
+    camera.position.y = 0
+    camera.position.z = 0;
+    let cameraZ = 0;
+    let lastCameraZ = 0;
+    let startX = 0;
+    let startY = 0;
+    const renderRange = { zMin: -80, zMax: 0 };
+    const shiftThreshold = 2;
+    const scale = Math.random() * 2;
+    const random_1 = Math.random() * 2;
+    const cameraPositionDisplay = document.getElementById('camera-position');
+    function createtopFlowers(startZ, endZ) {
     for (let x = -5; x <= 75; x += Math.random()*10) {
         for (let z = startZ; z <= endZ; z += 10) 
             { 
@@ -348,10 +359,11 @@
                     const sprite = new THREE.Sprite(material);
                     const posX = - 35 + x;
                     const posY = 5 + 10 * Math.sin((x / 70) * Math.PI) + Math.random() * 5;
-                    const posZ = z + random_3 + 10;
+                    const posZ = z + Math.random() * 50 + 10;
+  
                     sprite.position.set(posX, posY, posZ);
-                    const scales = Math.random() * 2 + 0.5;
-                    sprite.scale.set(scales, scales, 1);
+                    const scales = scale + 0.5;
+                    sprite.scale.set(scale, scale, 1);
                     const baseRotation = Math.PI - 5.5;
                     const rotationOffset = (Math.random() - 0.5) * Math.PI / 6;
                     sprite.material.rotation = baseRotation + rotationOffset;
@@ -377,32 +389,36 @@
             scene.add(sprite);         
         }}}
     function createwhiteFlowers_right(startZ, endZ) {
-        for (let x = 5; x < 18; x += 5) { // Spaced horizontally
+        for (let x = 5; x < 18; x += 5) {
         for (let z = startZ; z < endZ; z += 40) {
             const texture = loader.load(blueTextures[Math.floor(Math.random() * blueTextures.length)]);
             const material = new THREE.SpriteMaterial({ map: texture });
             const sprite = new THREE.Sprite(material);
             const posX = x + random_1 + 12; 
-            const posY = x + random_2 - 25; 
+            const posY = x + Math.random() * 30 - 25; 
             const posZ = z + random_1;    
             sprite.position.set(posX, posY, posZ);
             sprite.scale.set(scale, scale, 1);
-            sprite.material.rotation = Math.random() * (maxTilt_side - minTilt_side) + minTilt_side;
+            const maxTilt = Math.PI / 4 + (posY + 40) / 50;
+            const minTilt = Math.PI / 8 + (posY + 40) / 200;
+            sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt;
             sideFlowers.push(sprite);
             scene.add(sprite);
         }}}
     function createpinkFlowers_right(startZ, endZ) {
-        for (let x = 20; x < 30 ; x += 5) { // Spaced horizontally
-        for (let z = startZ; z < endZ; z += 40) { // Spaced in depth
+        for (let x = 20; x < 30 ; x += 5) {
+        for (let z = startZ; z < endZ; z += 40) {
             const texture = loader.load(pinkTextures[Math.floor(Math.random() * pinkTextures.length)]);
             const material = new THREE.SpriteMaterial({ map: texture });
             const sprite = new THREE.Sprite(material);
-            const posX = x + random_1 ;
-            const posY = x + random_2 - 30;
+            const posX = x + Math.random() *1.5 ;
+            const posY = x + Math.random() * 30 - 30;
             const posZ = z + random_1 - 8;
             sprite.position.set(posX, posY, posZ);
             sprite.scale.set(scale, scale, 1);
-            sprite.material.rotation = Math.random() * (maxTilt_side - minTilt_side) + minTilt_side;
+            const maxTilt = Math.PI / 4 + (posY + 40) / 50;
+            const minTilt = Math.PI / 8 + (posY + 40) / 200;
+            sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt;
             sideFlowers.push(sprite);
             scene.add(sprite);
         }}}
@@ -413,11 +429,13 @@
             const material = new THREE.SpriteMaterial({ map: texture });
             const sprite = new THREE.Sprite(material);
             const posX = x + random_1 - 10 ; 
-            const posY = - x + random_2 - 30;
+            const posY = - x + Math.random() * 30 - 30;
             const posZ = z + random_1;
             sprite.position.set(posX, posY, posZ);
             sprite.scale.set(scale, scale, 1);
-            sprite.material.rotation = Math.random() * (- maxTilt_side + minTilt_side) - minTilt_side;
+            const maxTilt = - Math.PI / 4 + (posY + 40) / 50;
+            const minTilt = - Math.PI / 8 + (posY + 40) / 200; 
+            sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt;
             sideFlowers.push(sprite);
             scene.add(sprite);
         }}}
@@ -428,17 +446,19 @@ function createpinkFlowers_left(startZ, endZ) {
         const material = new THREE.SpriteMaterial({ map: texture });
         const sprite = new THREE.Sprite(material);
         const posX = x + random_1 - 4;
-        const posY = - x + random_2 - 30;
+        const posY = - x + Math.random() * 30 - 30;
         const posZ = z + random_1 - 8;
         sprite.position.set(posX, posY, posZ);
         sprite.scale.set(scale, scale, 1);
-        sprite.material.rotation = Math.random() * (- maxTilt_side + minTilt_side) - minTilt_side;
+        const maxTilt = - Math.PI / 4 + (posY + 40) / 150;
+        const minTilt = - Math.PI / 8 + (posY + 40) / 200; 
+        sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt -10;
         sideFlowers.push(sprite);
         scene.add(sprite);
       }}}
 function createtopGround(startZ, endZ) {
-    for (let x = -12; x < 80; x += 3) { 
-      for (let z = startZ; z < endZ; z += 3) {
+    for (let x = -12; x < 80; x += Math.random()*5) { 
+      for (let z = startZ; z < endZ; z += Math.random()*5) {
         const texture = loader.load(groundTextures[Math.floor(Math.random() * groundTextures.length)]);
         const material = new THREE.SpriteMaterial({ map: texture });
         const sprite = new THREE.Sprite(material);
@@ -476,7 +496,7 @@ function createGround_right(startZ, endZ) {
         const material = new THREE.SpriteMaterial({ map: texture });
         const sprite = new THREE.Sprite(material);
         const posX = x + random_1 + 20; 
-        const posY = x + random_2 - 30;
+        const posY = x + Math.random() * 30 - 30;
         const posZ = z + random_1;
         sprite.position.set(posX, posY, posZ);
         sprite.scale.set(scale, scale, 1);
@@ -488,12 +508,12 @@ function createGround_right(startZ, endZ) {
       }}}
   function createGround_left(startZ, endZ) {
     for (let x = - 20; x < -5 ; x += 2) {
-      for (let z = startZ; z < endZ; z += 2) { // Spaced in depth
+      for (let z = startZ; z < endZ; z += 2) {
         const texture = loader.load(groundTextures4[Math.floor(Math.random() * groundTextures4.length)]);
         const material = new THREE.SpriteMaterial({ map: texture });
         const sprite = new THREE.Sprite(material);
         const posX = x + random_1 - 20;
-        const posY = - x + random_2 - 30;
+        const posY = - x + Math.random() * 30 - 30;
         const posZ = z + random_1;
         sprite.position.set(posX, posY, posZ);
         sprite.scale.set(scale, scale, 1);
@@ -510,12 +530,13 @@ function createGround_right(startZ, endZ) {
                 const material = new THREE.SpriteMaterial({ map: texture });
                 const sprite = new THREE.Sprite(material);
                 const posX = x + random_1 + 5;
-                const posY = random_3 - 15;
+                const posY = Math.random() * 50 - 15;
                 const posZ = z + Math.random() * 2 + 10;
-        
                 sprite.position.set(posX, posY, posZ);
                 sprite.scale.set(scale, scale, 1);
-                sprite.material.rotation = Math.random() * (maxTilt_side - minTilt_side) + minTilt_side;
+                const maxTilt =  Math.PI / 4 + (posY + 40) / 50; 
+                const minTilt =  Math.PI / 8 + (posY + 40) / 200;
+                sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt;
                 if(Math.random()<=0.2)
                     {
                     dustPlants.push(sprite);
@@ -528,12 +549,14 @@ function createGround_right(startZ, endZ) {
                 const material = new THREE.SpriteMaterial({ map: texture });
                 const sprite = new THREE.Sprite(material);
                 const posX = x + random_1 + 5 ;
-                const posY = random_3;
+                const posY = Math.random() * 50 + 0;
                 const posZ = z + Math.random() * 10 - 10;
                 sprite.position.set(posX, posY, posZ);
                 sprite.scale.set(scale, scale, 1);
-                sprite.material.rotation = Math.random() * (maxTilt_side - minTilt_side) + minTilt_side;
-                if(Math.random()<=0.2)
+                const maxTilt =  Math.PI / 4 + (posY + 40) / 50; 
+                const minTilt =  Math.PI / 8 + (posY + 40) / 200;
+                sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt;
+                if(Math.random()<=0.1)
                     {
                     dustPlants2.push(sprite);
                     scene.add(sprite);
@@ -546,18 +569,14 @@ function createGround_right(startZ, endZ) {
         dustPlants2.forEach(sprite => {
             if (scrollSpeed >= 0 )
             sprite.position.y -= scrollSpeed*0.1*Math.random() +0.05; 
-            });
-    }
-
+            });}
     function removeObjectsOutOfRange(objectsList, zMin, zMax) {
         for (let i = objectsList.length - 1; i >= 0; i--) {
             const object = objectsList[i];
             if (object.position.z < zMin || object.position.z > zMax) {
                 scene.remove(object);
                 objectsList.splice(i, 1);
-            }
-        }
-    }
+            }}}
     function removeFlowersOutOfRange(zMin, zMax) {
         const objectLists = [growingFlowers, growingFlowers2,growingFlowers3,growingFlowers4,fallingFlowers, sideFlowers];
         objectLists.forEach(list => removeObjectsOutOfRange(list, zMin, zMax));
@@ -589,12 +608,16 @@ function createGround_right(startZ, endZ) {
         }}
     function growFlowers(flowers, maxScale) {
         flowers.forEach(flower => {
-            const growth = Math.random() * 0.1 + 0.6;
+            const growth = Math.random() * 0.05 + 0.6;
             if (flower.scale.x < maxScale) {
                 flower.scale.set(
                     flower.scale.x + growth,
                     flower.scale.y + growth
                 );}});}
+    function growAllFlowers() {
+        flowerGroups.forEach(group => {
+            growFlowers(group.flowers, group.maxScale);
+        });}
     window.addEventListener('resize', () => {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
@@ -606,32 +629,31 @@ function createGround_right(startZ, endZ) {
         camera.rotation.y = - mouseX * 0.5;
         camera.rotation.x =  mouseY * 0.2;
         });
+    window.addEventListener("touchstart", (event) => {
+        startX = event.touches[0].clientX;
+        startY = event.touches[0].clientY;
+    });
+    window.addEventListener("touchmove", (event) => {
+        const touchX = event.touches[0].clientX;
+        const touchY = event.touches[0].clientY;
+        const deltaX = (touchX - startX) / window.innerWidth;
+        const deltaY = (touchY - startY) / window.innerHeight;
+        camera.rotation.y -= deltaX * 0.5;
+        camera.rotation.x -= deltaY * 0.2;
+        startX = touchX;
+        startY = touchY;
+        scrollSpeed -= event.deltaY * 0.05;
+        scrollSpeed = Math.max(MIN_SCROLL_SPEED, Math.min(MAX_SCROLL_SPEED, scrollSpeed));
+        growAllFlowers();
+    });
     window.addEventListener("wheel", (event) => {
         scrollSpeed -= event.deltaY * 0.05;
         scrollSpeed = Math.max(MIN_SCROLL_SPEED, Math.min(MAX_SCROLL_SPEED, scrollSpeed));
-        if (Math.random() <= 0.2) {
-          growFlowers(growingFlowers, 8);
-          growFlowers(growingFlowers2, 8);
-        }
-        if (Math.random() <= 0.2) {
-          growFlowers(growingFlowers3, 8);
-          growFlowers(growingFlowers4, 8);
-        }
-        if (Math.random() <= 0.2) {
-          growFlowers(sideFlowers, 7);
-          growFlowers(fallingFlowers, 9);
-        }
+        growAllFlowers();
     });
-    window.addEventListener('click', () => {
-        if (clickCount < maxClicks) {
-          clickCount++;
-          growFlowers(growingFlowers, 8);
-          growFlowers(growingFlowers2, 8);
-          growFlowers(growingFlowers3, 8);
-          growFlowers(growingFlowers4, 8);
-          growFlowers(sideFlowers, 7);
-          growFlowers(fallingFlowers, 9);
-        }});
+
+    window.addEventListener('click', () => growAllFlowers());
+
     function animate() {
       requestAnimationFrame(animate);
       const totalSpeed = autoSpeed + scrollSpeed;
@@ -642,17 +664,15 @@ function createGround_right(startZ, endZ) {
       dustupFlowers();
       dustdownFlowers();
       update();
-      if(Math.random()<=0.06){
+      removeFlowersOutOfRange(renderRange.zMin - 1, renderRange.zMax + 1); 
+      if(Math.random()<=0.05){
         createpinkFlowers_right(renderRange.zMin, renderRange.zMax);
         createpinkFlowers_left(renderRange.zMin, renderRange.zMax);
-        createwhiteFlowers_left(renderRange.zMin, renderRange.zMax);
         createwhiteFlowers_right(renderRange.zMin, renderRange.zMax);
-      }
-      if(Math.random()<=0.04){
+        createwhiteFlowers_left(renderRange.zMin, renderRange.zMax);
         creategroundFlowers(renderRange.zMin, renderRange.zMax);
-        createtopFlowers(renderRange.zMin, renderRange.zMax); 
+        createtopFlowers(renderRange.zMin, renderRange.zMax);
       }
-      removeFlowersOutOfRange(renderRange.zMin - 1, renderRange.zMax + 1);
       renderer.render(scene, camera);
     }
     animate();
