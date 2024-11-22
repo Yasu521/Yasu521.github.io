@@ -220,7 +220,21 @@ audio {
             <button class="language-option" data-lang="zh">中文</button>
         </div>
     </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="./script.js"></script>
+
+    <!-- キャッシュバスティングを導入 -->
+    <script>
+        // 現在時刻をタイムスタンプとして取得
+        const timestamp = Date.now();
+
+        // three.js をキャッシュバスティング付きで読み込み
+        const threeScript = document.createElement('script');
+        threeScript.src = `https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js?v=${timestamp}`;
+        document.head.appendChild(threeScript);
+
+        // script.js をキャッシュバスティング付きで読み込み
+        const appScript = document.createElement('script');
+        appScript.src = `./script.js?v=${timestamp}`;
+        document.head.appendChild(appScript);
+    </script>
 </body>
 </html>
