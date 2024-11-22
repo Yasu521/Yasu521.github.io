@@ -525,7 +525,6 @@ if (Math.abs(cameraZ - lastCameraZ) > shiftThreshold) {
     const shiftAmount = cameraZ - lastCameraZ;
     renderRange.zMin += shiftAmount;
     renderRange.zMax += shiftAmount;
-    removeFlowersOutOfRange(renderRange.zMin - 1, renderRange.zMax + 1);
     if (shiftAmount > 0) {
         createtopGround(renderRange.zMax - shiftAmount, renderRange.zMax);
         createGround(renderRange.zMax - shiftAmount, renderRange.zMax);
