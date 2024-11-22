@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{Ciao:Yasu521}</title>
-
   <style>
     body, html {
       margin: 0;
@@ -101,7 +100,6 @@
             background: white;
             transition: width 0.3s ease;
         }
-
         .menu-button:hover::after {
             width: 100%;
         }
@@ -149,7 +147,6 @@
                 position: { top: "60%", left: "20%" }
             }
         ];
-
         const languageMessages = {
             en: "Language changed to English!",
             ja: "言語を日本語に変更しました！",
@@ -186,14 +183,12 @@
         languageOptions.forEach(option => {
             option.addEventListener('click', (e) => {
                 const selectedLang = e.target.getAttribute('data-lang');
-
                 const langIcons = {
                     en: 'https://dl.dropboxusercontent.com/scl/fi/wwqqmcio1p1tsck22czrq/7592.png?rlkey=2kz87faydbpnjmv1m4fi8fjzi',
                     fr: 'https://dl.dropboxusercontent.com/scl/fi/qjaswgxqp6m07af0doc1j/7596.png?rlkey=pjcv2qioez0r034ea4iyndgl3&st=0t6mwxtk&dl=0',
                     ja: 'https://dl.dropboxusercontent.com/scl/fi/qnaqgpxi7sfdoxraomw6n/7591.png?rlkey=s4v0scvff2chpmjc3gc8hvgos',
                     zh: 'https://dl.dropboxusercontent.com/scl/fi/etl7rqlcpn25xe2ti6hl3/7607.png?rlkey=cp5edcvttjbaorwhz44cnpsps'
                 };
-
                 if (langIcons[selectedLang]) {
                     toggleButton.style.backgroundImage = `url(${langIcons[selectedLang]})`;
                     toggleButton.style.backgroundSize = 'cover';
@@ -252,7 +247,6 @@
     "https://dl.dropboxusercontent.com/scl/fi/irm28o48uzjnqylh9rg8u/plant_precise_18.png?rlkey=v67uox08hp73yawb9uecj3i8e",
     "https://dl.dropboxusercontent.com/scl/fi/bqoqotikbdcgmvaah5bbt/plant_precise_32.png?rlkey=kyc73m4t1sopg5a4ftuywyiku",
     "https://dl.dropboxusercontent.com/scl/fi/bok9d2xbvcxvj3g5zkqfe/plant_precise_33.png?rlkey=0yhl2km0e7szdmukh92mfou8b"
-
     ];
     const groundTextures4=[
     "https://dl.dropboxusercontent.com/scl/fi/xgsocs6syv0ws8y4ta9aj/plant_precise_28.png?rlkey=joc3t9hs44bamiy74u8918aho",
@@ -278,7 +272,7 @@
     let growingFlowers4 = [];
     let sideFlowers = [];
     const cubes = [];
-    
+
     let clickCount = 0;
     const maxClicks = 20;
     const clock = new THREE.Clock();
@@ -316,12 +310,6 @@
             textMaterial  
         ];
         cube.material = materials;
-
-        setTimeout(() => {
-                        scene.remove(cube);
-                        dustPlants2 = dustPlants2.filter(f => f !== sprite);
-                        }, 20000);
-
         return cube;
     }
     cubeData.forEach(data => {
@@ -345,9 +333,9 @@
   const shiftThreshold = 2;
   const random_1 = Math.random() * 1.5;
   const random_2 = Math.random() * 30;
+  const random_3 = Math.random() * 50;
   const maxTilt_side = Math.PI / 4 + (posY + 40) / 50;
   const minTilt_side = Math.PI / 8 + (posY + 40) / 200;
-  
   const cameraPositionDisplay = document.getElementById('camera-position');
   function createtopFlowers(startZ, endZ) {
     for (let x = -5; x <= 75; x += Math.random()*10) {
@@ -360,8 +348,7 @@
                     const sprite = new THREE.Sprite(material);
                     const posX = - 35 + x;
                     const posY = 5 + 10 * Math.sin((x / 70) * Math.PI) + Math.random() * 5;
-                    const posZ = z + Math.random() * 50 + 10;
-  
+                    const posZ = z + random_3 + 10;
                     sprite.position.set(posX, posY, posZ);
                     const scales = Math.random() * 2 + 0.5;
                     sprite.scale.set(scales, scales, 1);
@@ -370,15 +357,10 @@
                     sprite.material.rotation = baseRotation + rotationOffset;
                         fallingFlowers.push(sprite);
                         scene.add(sprite);
-                }
-            );
-        }
-    }
-  }
+                });}}}
     function creategroundFlowers(startZ, endZ) {
     for (let x = -40; x < 40; x += 10) {
         for (let z = startZ; z < endZ; z += 20) {
-
             const texture = loader.load(whiteTextures[Math.floor(Math.random() * whiteTextures.length)]);
             const material = new THREE.SpriteMaterial({ map: texture, transparent: true });
             const sprite = new THREE.Sprite(material);
@@ -393,16 +375,13 @@
             sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt;
             fallingFlowers.push(sprite); 
             scene.add(sprite);         
-        }
-    }
-}
+        }}}
     function createwhiteFlowers_right(startZ, endZ) {
         for (let x = 5; x < 18; x += 5) { // Spaced horizontally
         for (let z = startZ; z < endZ; z += 40) {
             const texture = loader.load(blueTextures[Math.floor(Math.random() * blueTextures.length)]);
             const material = new THREE.SpriteMaterial({ map: texture });
             const sprite = new THREE.Sprite(material);
-
             const posX = x + random_1 + 12; 
             const posY = x + random_2 - 25; 
             const posZ = z + random_1;    
@@ -436,7 +415,6 @@
             const posX = x + random_1 - 10 ; 
             const posY = - x + random_2 - 30;
             const posZ = z + random_1;
-    
             sprite.position.set(posX, posY, posZ);
             sprite.scale.set(scale, scale, 1);
             sprite.material.rotation = Math.random() * (- maxTilt_side + minTilt_side) - minTilt_side;
@@ -459,8 +437,8 @@ function createpinkFlowers_left(startZ, endZ) {
         scene.add(sprite);
       }}}
 function createtopGround(startZ, endZ) {
-    for (let x = -12; x < 80; x += Math.random()*5) { 
-      for (let z = startZ; z < endZ; z += Math.random()*5) {
+    for (let x = -12; x < 80; x += 3) { 
+      for (let z = startZ; z < endZ; z += 3) {
         const texture = loader.load(groundTextures[Math.floor(Math.random() * groundTextures.length)]);
         const material = new THREE.SpriteMaterial({ map: texture });
         const sprite = new THREE.Sprite(material);
@@ -500,10 +478,8 @@ function createGround_right(startZ, endZ) {
         const posX = x + random_1 + 20; 
         const posY = x + random_2 - 30;
         const posZ = z + random_1;
-  
         sprite.position.set(posX, posY, posZ);
         sprite.scale.set(scale, scale, 1);
-
         const maxTilt = Math.PI / 4 + (posY + 40) / 100;
         const minTilt = Math.PI / 8 + (posY + 40) / 200;
         sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt; 
@@ -534,23 +510,16 @@ function createGround_right(startZ, endZ) {
                 const material = new THREE.SpriteMaterial({ map: texture });
                 const sprite = new THREE.Sprite(material);
                 const posX = x + random_1 + 5;
-                const posY = Math.random() * 50 - 15;
+                const posY = random_3 - 15;
                 const posZ = z + Math.random() * 2 + 10;
         
                 sprite.position.set(posX, posY, posZ);
                 sprite.scale.set(scale, scale, 1);
-                const maxTilt =  Math.PI / 4 + (posY + 40) / 50; 
-                const minTilt =  Math.PI / 8 + (posY + 40) / 200;
-                sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt;
-                if(Math.random()<=0.1)
+                sprite.material.rotation = Math.random() * (maxTilt_side - minTilt_side) + minTilt_side;
+                if(Math.random()<=0.2)
                     {
                     dustPlants.push(sprite);
                     scene.add(sprite);
-                    // Remove flowers after a while for dynamic changes
-                    setTimeout(() => {
-                        scene.remove(sprite);
-                        dustPlants = dustPlants.filter(f => f !== sprite);
-                        }, Math.random() * 5000 + 8000); // 8-13 seconds lifespan
                 }}}}
     function dustFlowers2(startZ, endZ) {
         for (let x = -20; x < 20; x += 5) {
@@ -559,24 +528,15 @@ function createGround_right(startZ, endZ) {
                 const material = new THREE.SpriteMaterial({ map: texture });
                 const sprite = new THREE.Sprite(material);
                 const posX = x + random_1 + 5 ;
-                const posY = Math.random() * 50 + 0;
+                const posY = random_3;
                 const posZ = z + Math.random() * 10 - 10;
-    
                 sprite.position.set(posX, posY, posZ);
                 sprite.scale.set(scale, scale, 1);
-
-                const maxTilt =  Math.PI / 4 + (posY + 40) / 50; 
-                const minTilt =  Math.PI / 8 + (posY + 40) / 200;
-                sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt;
-                if(Math.random()<=0.3)
+                sprite.material.rotation = Math.random() * (maxTilt_side - minTilt_side) + minTilt_side;
+                if(Math.random()<=0.2)
                     {
                     dustPlants2.push(sprite);
                     scene.add(sprite);
-                    // Remove flowers after a while for dynamic changes
-                    setTimeout(() => {
-                        scene.remove(sprite);
-                        dustPlants2 = dustPlants2.filter(f => f !== sprite);
-                        }, Math.random() * 4000 + 5000); // 3-7 seconds lifespan
                 }}}}
     function dustupFlowers() {
         dustPlants.forEach(sprite => {
@@ -608,7 +568,7 @@ function createGround_right(startZ, endZ) {
             const shiftAmount = cameraZ - lastCameraZ;
             renderRange.zMin += shiftAmount;
             renderRange.zMax += shiftAmount;
-            removeFlowersOutOfRange(renderRange.zMin - 1, renderRange.zMax + 1); // マージンを追加
+            removeFlowersOutOfRange(renderRange.zMin - 1, renderRange.zMax + 1);
             if (shiftAmount > 0) {
                 createtopGround(renderRange.zMax - shiftAmount, renderRange.zMax);
                 createGround(renderRange.zMax - shiftAmount, renderRange.zMax);
@@ -640,16 +600,12 @@ function createGround_right(startZ, endZ) {
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
     });
-
-    // Handle pointer movement to adjust camera perspective
     window.addEventListener("mousemove", (event) => {
-        const mouseX = (event.clientX / window.innerWidth) * 2 - 1; // Normalize to -1 to 1
-        const mouseY = - (event.clientY / window.innerHeight) * 2 + 1; // Normalize to -1 to 1
-    
-        camera.rotation.y = - mouseX * 0.5; // Rotate horizontally
-        camera.rotation.x =  mouseY * 0.2; // Rotate vertically
+        const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+        const mouseY = - (event.clientY / window.innerHeight) * 2 + 1;
+        camera.rotation.y = - mouseX * 0.5;
+        camera.rotation.x =  mouseY * 0.2;
         });
-
     window.addEventListener("wheel", (event) => {
         scrollSpeed -= event.deltaY * 0.05;
         scrollSpeed = Math.max(MIN_SCROLL_SPEED, Math.min(MAX_SCROLL_SPEED, scrollSpeed));
@@ -666,7 +622,6 @@ function createGround_right(startZ, endZ) {
           growFlowers(fallingFlowers, 9);
         }
     });
-
     window.addEventListener('click', () => {
         if (clickCount < maxClicks) {
           clickCount++;
@@ -687,15 +642,17 @@ function createGround_right(startZ, endZ) {
       dustupFlowers();
       dustdownFlowers();
       update();
-      if(Math.random()<=0.06){createpinkFlowers_right(renderRange.zMin, renderRange.zMax);
-                              createpinkFlowers_left(renderRange.zMin, renderRange.zMax);
-                              createwhiteFlowers_left(renderRange.zMin, renderRange.zMax);
-                              createwhiteFlowers_right(renderRange.zMin, renderRange.zMax);
-                             }
-      if(Math.random()<=0.04){creategroundFlowers(renderRange.zMin, renderRange.zMax);
-                              createtopFlowers(renderRange.zMin, renderRange.zMax); 
-                             }
-      removeFlowersOutOfRange(renderRange.zMin - 1, renderRange.zMax + 1); // マージンを追加
+      if(Math.random()<=0.06){
+        createpinkFlowers_right(renderRange.zMin, renderRange.zMax);
+        createpinkFlowers_left(renderRange.zMin, renderRange.zMax);
+        createwhiteFlowers_left(renderRange.zMin, renderRange.zMax);
+        createwhiteFlowers_right(renderRange.zMin, renderRange.zMax);
+      }
+      if(Math.random()<=0.04){
+        creategroundFlowers(renderRange.zMin, renderRange.zMax);
+        createtopFlowers(renderRange.zMin, renderRange.zMax); 
+      }
+      removeFlowersOutOfRange(renderRange.zMin - 1, renderRange.zMax + 1);
       renderer.render(scene, camera);
     }
     animate();
