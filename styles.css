@@ -11,7 +11,11 @@ body, html {
   top: 10px;
   right: 10px;
   display: inline-block;
+  background: rgba(249, 249, 249, 0.8);
   z-index: 500;
+  content: '≡';
+  align-items: center;
+  justify-content: center;
 }
 .language-toggle {
   display: flex;
