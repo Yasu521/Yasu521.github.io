@@ -22,7 +22,6 @@ const buttonsConfig = [
                 </div>
                 <div class="image-section" style="display: flex; justify-content: space-evenly; margin-bottom: 20px;">
                     <img src="https://dl.dropboxusercontent.com/scl/fi/j3c0h2uffnc2r2oyv0678/DALL-E-2024-11-16-07.10.webp?rlkey=l7tiekk9o7qv0okyjzw348khg" alt="Image 1" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
-                    <img src="https://dl.dropboxusercontent.com/scl/fi/aqkmt9g0xqbz87zi68m84/Ciao.webp?rlkey=ybpd8n2gnbycg9uhlscawuqds" alt="Image 2" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
                 </div>
             </div>
 
@@ -49,7 +48,6 @@ const buttonsConfig = [
                 </div>
             </div>
             <div class="image-section" style="display: flex; justify-content: space-evenly; margin-bottom: 20px;">
-                    <img src="https://dl.dropboxusercontent.com/scl/fi/j3c0h2uffnc2r2oyv0678/DALL-E-2024-11-16-07.10.webp?rlkey=l7tiekk9o7qv0okyjzw348khg" alt="Image 1" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
                     <img src="https://dl.dropboxusercontent.com/scl/fi/aqkmt9g0xqbz87zi68m84/Ciao.webp?rlkey=ybpd8n2gnbycg9uhlscawuqds" alt="Image 2" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
             </div>
             <div class="faq-section">
@@ -75,7 +73,6 @@ const buttonsConfig = [
             </div>
         </div>
             <div class="image-section" style="display: flex; justify-content: space-evenly; margin-bottom: 20px;">
-                    <img src="https://dl.dropboxusercontent.com/scl/fi/j3c0h2uffnc2r2oyv0678/DALL-E-2024-11-16-07.10.webp?rlkey=l7tiekk9o7qv0okyjzw348khg" alt="Image 1" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
                     <img src="https://dl.dropboxusercontent.com/scl/fi/aqkmt9g0xqbz87zi68m84/Ciao.webp?rlkey=ybpd8n2gnbycg9uhlscawuqds" alt="Image 2" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
             </div>
         <div class="faq-section">
@@ -101,7 +98,6 @@ const buttonsConfig = [
             </div>
         </div>
             <div class="image-section" style="display: flex; justify-content: space-evenly; margin-bottom: 20px;">
-                    <img src="https://dl.dropboxusercontent.com/scl/fi/j3c0h2uffnc2r2oyv0678/DALL-E-2024-11-16-07.10.webp?rlkey=l7tiekk9o7qv0okyjzw348khg" alt="Image 1" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
                     <img src="https://dl.dropboxusercontent.com/scl/fi/aqkmt9g0xqbz87zi68m84/Ciao.webp?rlkey=ybpd8n2gnbycg9uhlscawuqds" alt="Image 2" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
             </div>        
         <div class="faq-section">
