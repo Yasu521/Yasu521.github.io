@@ -1,51 +1,173 @@
+const language = "en";
+const languageButtons = document.querySelectorAll('.language-option');
+const buttonContainer = document.getElementById("buttonContainer");
+const contentContainer = document.getElementById("contentContainer");
+let currentLanguage = language;
 const buttonsConfig = [
     {
         id: "About Me",
         texts: { en: "About Me", ja: "自己紹介", fr: "Qui suis-je", zh: "关于我" },
-        links: { en: "https://aicurion.com/aboutme-ja", ja: "https://aicurion.com/aboutme-ja", fr: "https://aicurion.com/aboutme-ja", zh: "https://aicurion.com/aboutme-ja" },
-        position: { top: "30%", left: `20%` }
+        position: { top: "30%", left: `20%` },
+        contentPosition:  { left: "0%", right: "0%" },
+        content: {
+            en:`
+            <h2>About Me</h2>
+            <p>Welcome to the About Me section!</p>
+            <img src="https://via.placeholder.com/150" alt="About Me" style="width:150px;">
+            <p><a href="https://aicurion.com/aboutme-ja" target="_blank">Learn more</a></p>
+        `,
+            ja:`
+                <h2>自己紹介</h2>
+                <p>こちらは自己紹介セクションです！</p>
+                <img src="https://via.placeholder.com/150" alt="自己紹介" style="width:150px;">
+                <p><a href="https://aicurion.com/aboutme-ja" target="_blank">もっと知る</a></p>
+        `,
+        }
     },
     {
         id: "Project",
         texts: { en: " Projects", ja: "活動", fr: "Projets", zh: "项目" },
-        links: { en: "https://aicurion.com/project-ja", ja:"https://aicurion.com/project-ja", fr: "https://aicurion.com/project-ja", zh:"https://aicurion.com/project-ja" },
-        position: { top: "40%", left: "20%" }
+        //links: { en: "https://aicurion.com/project-ja", ja:"https://aicurion.com/project-ja", fr: "https://aicurion.com/project-ja", zh:"https://aicurion.com/project-ja" },
+        position: { top: "40%", left: "20%" },
+        contentPosition: { left: "0%", right: "0%" },
+        content: {
+        en:`
+            <h2>Projects</h2>
+            <p>Here are some of my projects:</p>
+            <img src="https://via.placeholder.com/150/0000FF/808080?text=Projects" alt="Projects" style="width:150px;">
+            <p><a href="https://aicurion.com/project-ja" target="_blank">See Projects</a></p>
+        `,
+        ja:`
+         <h2>自己紹介</h2>
+                <p>こちらは自己紹介セクションです！</p>
+                <img src="https://via.placeholder.com/150" alt="自己紹介" style="width:150px;">
+                <p><a href="https://aicurion.com/aboutme-ja" target="_blank">もっと知る</a></p>
+        `,
+        }
     },
     {
         id: "News",
         texts: { en: "News", ja: "お知らせ", fr: "Nouvelles", zh: "消息" },
-        links: { en: "https://example.com/contact-en", ja: "https://example.com/contact-ja", fr: "https://example.com/contact-fr", zh: "https://example.com/contact-zh" },
-        position: { top: "50%", left: "20%" }
+        //リンクがある場合はここで設定する。
+        //links: { en: "https://example.com/contact-en", ja: "https://example.com/contact-ja", fr: "https://example.com/contact-fr", zh: "https://example.com/contact-zh" },
+        position: { top: "50%", left: "20%" },
+        contentPosition: { left: "0%", right: "0%" },
+        content:{
+        en:`
+            <h2>News</h2>
+            <p>Latest news updates:</p>
+            <img src="https://via.placeholder.com/150/FF0000/FFFFFF?text=News" alt="News" style="width:150px;">
+            <p><a href="https://example.com/news-en" target="_blank">Read News</a></p>
+        `,
+        ja:`
+         <h2>自己紹介</h2>
+                <p>こちらは自己紹介セクションです！</p>
+                <img src="https://via.placeholder.com/150" alt="自己紹介" style="width:150px;">
+                <p><a href="https://aicurion.com/aboutme-ja" target="_blank">もっと知る</a></p>
+        `,
+        }
     },
     {
         id: "Contact",
         texts: { en: "Contact", ja: "連絡先", fr: "Contact", zh: "联系我们" },
-        links: { en: "https://example.com/contact-en", ja: "https://example.com/contact-ja", fr: "https://example.com/contact-fr", zh: "https://example.com/contact-zh" },
-        position: { top: "60%", left: "20%" }
+        position: { top: "60%", left: "20%" },
+        contentPosition: { left: "0%" ,right: "0%"},
+        content:{
+        en: `
+            <h2>Contact</h2>
+            <p>Contact us for more information:</p>
+            <img src="https://via.placeholder.com/150/00FF00/000000?text=Contact" alt="Contact" style="width:150px;">
+            <p><a href="https://example.com/contact-en" target="_blank">Get in Touch</a></p>
+        `,
+        ja:`
+         <h2>自己紹介</h2>
+                <p>こちらは自己紹介セクションです！</p>
+                <img src="https://via.placeholder.com/150" alt="自己紹介" style="width:150px;">
+                <p><a href="https://aicurion.com/aboutme-ja" target="_blank">もっと知る</a></p>
+        `
+        }
     }
 ];
-const buttonContainer = document.getElementById("buttonContainer");
+let currentOverlay = null;
+function updateButtonTexts() {
+    buttonsConfig.forEach(config => {
+        const button = document.getElementById(config.id);
+        if (button) {
+            button.textContent = config.texts[currentLanguage] || config.texts.en;
+            if (config.links) {
+                button.href = config.links[currentLanguage] || config.links.en;
+                button.target = "_blank";
+            } else {
+                button.removeAttribute("href"); 
+            }}});}
+
 buttonsConfig.forEach(config => {
     const button = document.createElement("a");
     button.id = config.id;
     button.className = "menu-button";
-    button.href = config.links.en;
-    button.textContent = config.texts.en;
     button.style.top = config.position.top;
     button.style.left = config.position.left;
-    button.style.right = config.position.right;
-    button.style.style = config.position.style;
+    button.style.position = "absolute";
+    button.textContent = config.texts[currentLanguage];
+    if (config.links && config.links[currentLanguage]) {
+        button.href = config.links[currentLanguage];
+        button.target = "_blank";
+    } else {
+        button.addEventListener("click", (event) => {
+            event.preventDefault();
+            showContent(config.content[currentLanguage] || config.content.en, config.contentPosition);
+        });}
     buttonContainer.appendChild(button);
 });
-const languageButtons = document.querySelectorAll('.language-option');
+function showContent(content, contentPosition) {
+    if (currentOverlay) {
+        clearExistingContent(() => {
+            createContent(content, contentPosition);
+        });
+    } else {
+        createContent(content, contentPosition);
+    }
+}
+function createContent(content, contentPosition) {
+    const overlay = document.createElement("div");
+    overlay.className = "content-overlay";
+    overlay.addEventListener("click", clearExistingContent);
+
+    const contentBox = document.createElement("div");
+    contentBox.className = "content-box";
+    contentBox.style.left = contentPosition.left;
+    contentBox.style.right = contentPosition.right;
+    contentBox.innerHTML = content;
+
+    const closeButton = document.createElement("button");
+    closeButton.textContent = "✖";
+    closeButton.className = "close-button";
+    closeButton.addEventListener("click", (event) => {
+        event.stopPropagation();
+        clearExistingContent();
+    });
+
+    contentBox.appendChild(closeButton);
+    overlay.appendChild(contentBox);
+    contentContainer.appendChild(overlay);
+    currentOverlay = overlay;
+    setTimeout(() => {
+        overlay.classList.add("visible");
+    }, 10);
+}
+function clearExistingContent(callback) {
+    if (currentOverlay) {
+        contentContainer.removeChild(currentOverlay);
+        currentOverlay = null;
+    }
+    if (callback) callback();
+}
 languageButtons.forEach(button => {
     button.addEventListener('click', () => {
-        const selectedLanguage = button.getAttribute('data-lang');
-        buttonsConfig.forEach(config => {
-            const btn = document.getElementById(config.id);
-            btn.textContent = config.texts[selectedLanguage];
-            btn.href = config.links[selectedLanguage];
-        });});});
+        currentLanguage = button.getAttribute('data-lang') || "en";
+        updateButtonTexts();
+    });});
+
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('three-canvas') });
@@ -249,7 +371,7 @@ let lastCameraZ = 0;
 let startX = 0;
 let startY = 0;
 let firstcount = 0;
-const renderRange = { zMin: -80, zMax:0};
+const renderRange = { zMin: -80, zMax:30};
 const shiftThreshold = 2;
 const scale = Math.random() * 2;
 const random_1 = Math.random() * 2;
@@ -483,7 +605,7 @@ for (let x = -20; x < 20; x += 5) {
     const sprite = new THREE.Sprite(material);
         const posX = x + random_1 + 5 ;
         const posY = Math.random() * 50 ;
-        const posZ = z + Math.random() * 10 - 10;
+        const posZ = z + Math.random() * 10 ;
         sprite.position.set(posX, posY, posZ);
         sprite.scale.set(scale, scale, 1);
         const maxTilt =  Math.PI / 4 + (posY + 40) / 50; 
@@ -562,7 +684,7 @@ const totalSpeed = autoSpeed + scrollSpeed;
 currentZ -= totalSpeed * 0.3;
 camera.position.z = currentZ;
 scrollSpeed *= 0.8;
-removeFlowersOutOfRange(renderRange.zMin - 20, renderRange.zMax + 20);
+removeFlowersOutOfRange(renderRange.zMin , renderRange.zMax );
 dustupFlowers();
 dustdownFlowers();
 update();
@@ -574,8 +696,10 @@ createwhiteFlowers_left(renderRange.zMin, renderRange.zMax);
 creategroundFlowers(renderRange.zMin, renderRange.zMax);
 createtopFlowers(renderRange.zMin, renderRange.zMax);
 }
+if(Math.random()<=0.01) growAllFlowers();
 renderer.render(scene, camera);
 }
+
 window.addEventListener('resize', () => {
 camera.aspect = window.innerWidth / window.innerHeight;
 camera.updateProjectionMatrix();
