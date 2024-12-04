@@ -20,9 +20,6 @@ const buttonsConfig = [
                         <p style="margin-top: 12px;">My name, Yasu (康), originates from Japanese and symbolizes the process of threshing a plentiful harvest of rice. It conveys meanings of peace, health, and joy. A dedicated individual pursuing activities connected to "Healthcare" and "Happiness" since the age of 13. I engage in projects across diverse fields, including as a Data Scientist, DevOps Engineer, and Graphic Designer. I aim to be the first discoverer of possibilities by focusing on the diversity between people and things. My hobbies are playing tennis and reading books, especially novels and self-help.</p>
                     </div>
                 </div>
-                <div class="image-section" style="display: flex; justify-content: space-evenly; margin-bottom: 20px;">
-                    <img src="https://dl.dropboxusercontent.com/scl/fi/j3c0h2uffnc2r2oyv0678/DALL-E-2024-11-16-07.10.webp?rlkey=l7tiekk9o7qv0okyjzw348khg" alt="Image 1" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
-                </div>
             </div>
 
             <div class="faq-section">
@@ -47,9 +44,6 @@ const buttonsConfig = [
                     <p style="margin-top: 12px;">13歳から「健」や幸せに繋がる活動を続けてきた鹿。データサイエンティスト・DevOpsエンジニアの他、グラフィックデザイナーとして幅広い分野でプロジェクトに携わる。ヒトやモノの間にある多様性に注目し、それぞれの可能性を見つけ出す第一発見者でありたいと考えている。趣味は、テニスと読書。</p>
                 </div>
             </div>
-            <div class="image-section" style="display: flex; justify-content: space-evenly; margin-bottom: 20px;">
-                    <img src="https://dl.dropboxusercontent.com/scl/fi/aqkmt9g0xqbz87zi68m84/Ciao.webp?rlkey=ybpd8n2gnbycg9uhlscawuqds" alt="Image 2" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
-            </div>
             <div class="faq-section">
                 <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">よくあるご質問</h2>
                 <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
@@ -72,9 +66,6 @@ const buttonsConfig = [
                 <p style="margin-top: 12px;">Mon prénom, Yasu (康), provient du japonais et symbolise le processus de battage d'une récolte abondante de riz. Il évoque la paix, la santé et la joie. Engagé dans des activités liées à la "santé" et au bonheur depuis l'âge de 13 ans. Je participe à des projets dans divers domaines, notamment en tant que Data Scientist, ingénieur DevOps et designer graphique. Mon objectif est d’être le premier à découvrir les possibilités en me concentrant sur la diversité entre les personnes et les choses. Mes passe-temps incluent le tennis et la lecture.</p>
             </div>
         </div>
-            <div class="image-section" style="display: flex; justify-content: space-evenly; margin-bottom: 20px;">
-                    <img src="https://dl.dropboxusercontent.com/scl/fi/aqkmt9g0xqbz87zi68m84/Ciao.webp?rlkey=ybpd8n2gnbycg9uhlscawuqds" alt="Image 2" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
-            </div>
         <div class="faq-section">
             <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">Questions fréquemment posées</h2>
             <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
@@ -96,10 +87,7 @@ const buttonsConfig = [
                 <p class="roles" style="font-size: 14px; color: #ffffff; margin-top: 8px;">角色 = [数据科学家，健康专业人士，教育科技专家，平面设计师]</p>
                 <p style="margin-top: 12px;">我的名字Yasu（康）源自日语，象征着脱谷丰收的稻米。这名字代表了平安、健康和喜悦的意义。 从13岁起，我就致力于与“健康”和幸福相关的活动。我参与了多个领域的项目，包括作为数据科学家、DevOps工程师和平面设计师。我希望通过关注人和事物之间的多样性，成为发现潜力的第一人。我的爱好包括网球和阅读。</p>
             </div>
-        </div>
-            <div class="image-section" style="display: flex; justify-content: space-evenly; margin-bottom: 20px;">
-                    <img src="https://dl.dropboxusercontent.com/scl/fi/aqkmt9g0xqbz87zi68m84/Ciao.webp?rlkey=ybpd8n2gnbycg9uhlscawuqds" alt="Image 2" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
-            </div>        
+        </div>   
         <div class="faq-section">
             <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">常见问题</h2>
             <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
@@ -288,7 +276,6 @@ orangeTextures : [
 "https://dl.dropboxusercontent.com/scl/fi/6w3ci1a2zk1g8wx5on7i5/11.webp?rlkey=trtg5ecdp560c1w25rjb9mo4j",
 ],
 fallingTextures2 : [
-"https://dl.dropboxusercontent.com/scl/fi/vvhgnwtgflcchbvqncerj/2.webp?rlkey=m7qgsq0wi4kqbxic0o53vbs8r",
 "https://dl.dropboxusercontent.com/scl/fi/168wjes7vzcgapok7kqir/5.webp?rlkey=f9a90kba1a0bizcnnv2fbkatt",
 "https://dl.dropboxusercontent.com/scl/fi/4i0wgq9t9k9kjdbfvdlw7/plant_precise_373.webp?rlkey=q5ynphx03fl1lkcjrs50ljle9",
 ],
@@ -653,7 +640,7 @@ scene.add(sprite);
 
 function createDustSprites(textureArray, startZ, endZ, dustList) {
     for (let x = -20; x < 20; x += 5) {
-        for (let z = startZ; z < endZ; z += 5) {
+        for (let z = startZ; z < endZ; z += 10) {
             const textureUrl = textureArray[Math.floor(Math.random() * textureArray.length)];
             const cachedTexture = textureCache.get(textureUrl);
             if (cachedTexture) {
