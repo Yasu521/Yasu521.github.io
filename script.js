@@ -12,24 +12,132 @@ const buttonsConfig = [
         contentPosition:  {left: "0%", right: "0%" },
         content: {
             en:`
-            <h2>About Me</h2>
-            <p>Welcome to the About Me section!</p>
-            <img src="https://via.placeholder.com/150" alt="About Me" style="width:150px;">
-            <p><a href="https://aicurion.com/aboutme-ja" target="_blank">Learn more</a></p>
+            <div class="container" style="font-family: Arial, sans-serif; line-height: 1.6; color: #ffffff; margin: 0 auto; max-width: 800px; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+            <div class="about-section" style="display: flex; align-items: center; margin-bottom: 40px;">
+                <div class="profile-image" style="flex: 1; text-align: center;">
+                    <img id="profile-image" src="https://dl.dropboxusercontent.com/scl/fi/j3c0h2uffnc2r2oyv0678/DALL-E-2024-11-16-07.10.webp?rlkey=l7tiekk9o7qv0okyjzw348khg" alt="Profile Image" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
+                </div>
+                <div class="about-text" style="flex: 2; padding-left: 20px;">
+                    <h1 style="font-size: 24px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">About Me</h1>
+                    <p class="roles" style="font-size: 14px; color: #ffffff; margin-top: 8px;">Role = [Data Scientist, Health Professional, EdTech Specialist, Graphic Designer]</p>
+                    <p style="margin-top: 12px;">My name, Yasu (康), originates from Japanese and symbolizes the process of threshing a plentiful harvest of rice. It conveys meanings of peace, health, and joy. A dedicated individual pursuing activities connected to "Healthcare" and "Happiness" since the age of 13. I engage in projects across diverse fields, including as a Data Scientist, DevOps Engineer, and Graphic Designer. I aim to be the first discoverer of possibilities by focusing on the diversity between people and things. My hobbies are playing tennis and reading books, especially novels and self-help.</p>
+                </div>
+            </div>
+            <div class="faq-section">
+                <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">Frequently Asked Questions（FAQs）</h2>
+                <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+                    <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">Q: Was your name an inspiration?</h3>
+                    <p style="font-size: 14px; color: #ffffff;">The inspiration came during the global outbreak of COVID-19 when I was 20 years old. My 10 years of volunteer work until university graduation also played a role. I believe the saying "A name reflects one's essence" fits perfectly.</p>
+                </div>
+                <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+                    <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">Q: What does health mean to you?</h3>
+                    <p style="font-size: 14px; color: #ffffff;">Health is the ability to envision how to live life and engage with things. While the WHO's definition of "A state of complete physical, mental, and social well-being" is abstract, I believe it remains relevant across all times as it represents what we truly desire.</p>
+                </div>
+            </div>
+        </div>
         `,
             ja:`
-                <h2>自己紹介</h2>
+            <div class="container" style="font-family: Arial, sans-serif; line-height: 1.6; color: #ffffff; margin: 0 auto; max-width: 800px; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+            <div class="about-section" style="display: flex; align-items: center; margin-bottom: 40px;">
+                <div class="profile-image" style="flex: 1; text-align: center;">
+                    <img id="profile-image" src="https://dl.dropboxusercontent.com/scl/fi/j3c0h2uffnc2r2oyv0678/DALL-E-2024-11-16-07.10.webp?rlkey=l7tiekk9o7qv0okyjzw348khg" alt="Profile Image" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
+                </div>
+                <div class="about-text" style="flex: 2; padding-left: 20px;">
+                    <h1 style="font-size: 24px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">自己紹介</h1>
+                    <p class="roles" style="font-size: 14px; color: #ffffff; margin-top: 8px;">データサイエンティスト, 医療・公共事業戦略, 遠隔教育 技術開発, グラフィックデザイナー</p>
+                    <p style="margin-top: 12px;">13歳から「健」や幸せに繋がる活動を続けてきた鹿。データサイエンティスト・DevOpsエンジニアの他、グラフィックデザイナーとして幅広い分野でプロジェクトに携わる。ヒトやモノの間にある多様性に注目し、それぞれの可能性を見つけ出す第一発見者でありたいと考えている。趣味は、テニスと読書。</p>
+                </div>
+            </div>
+            <div class="faq-section">
+                <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">よくあるご質問</h2>
+                <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+                    <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">Q: きっかけは、名前が由来か</h3>
+                    <p style="font-size: 14px; color: #ffffff;">20歳の時に経験した、新型コロナウイルスの世界的大流行がきっかけです。また大学卒業までの10年間ボランティア活動に取り組んできたことも影響ある。「名は体を表す」という言葉がぴったりだと考えた。</p>
+                </div>
+                <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+                    <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">Q: あなたにとって、健康とは</h3>
+                    <p style="font-size: 14px; color: #ffffff;">人生をどう生き、物事にどう関わるか思い描けること。肉体的・精神的・社会的に、「よい状態」というWHO憲章の定義は抽象的だが、どんな時代にあっても、私たちが望んでいることに変わりはないと思う。</p>
+                </div>
+            </div>
+        </div>
+        `,
+        fr:`
+        <div class="container" style="font-family: Arial, sans-serif; line-height: 1.6; color: #ffffff; margin: 0 auto; max-width: 800px; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        <div class="about-section" style="display: flex; align-items: center; margin-bottom: 40px;">
+            <div class="profile-image" style="flex: 1; text-align: center;">
+                <img id="profile-image" src="https://dl.dropboxusercontent.com/scl/fi/j3c0h2uffnc2r2oyv0678/DALL-E-2024-11-16-07.10.webp?rlkey=l7tiekk9o7qv0okyjzw348khg" alt="Image de profil" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
+            </div>
+            <div class="about-text" style="flex: 2; padding-left: 20px;">
+                <h1 style="font-size: 24px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">À propos de moi</h1>
+                <p class="roles" style="font-size: 14px; color: #ffffff; margin-top: 8px;">Rôle = [Data Scientist, Professionnel de la santé, Spécialiste EdTech, Designer graphique]</p>
+                <p style="margin-top: 12px;">Mon prénom, Yasu (康), provient du japonais et symbolise le processus de battage d'une récolte abondante de riz. Il évoque la paix, la santé et la joie. Engagé dans des activités liées à la "santé" et au bonheur depuis l'âge de 13 ans. Je participe à des projets dans divers domaines, notamment en tant que Data Scientist, ingénieur DevOps et designer graphique. Mon objectif est d’être le premier à découvrir les possibilités en me concentrant sur la diversité entre les personnes et les choses. Mes passe-temps incluent le tennis et la lecture.</p>
+            </div>
+        </div>
+        <div class="faq-section">
+            <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">Questions fréquemment posées</h2>
+            <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+                <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">Q : Votre nom a-t-il été une source d'inspiration ?</h3>
+                <p style="font-size: 14px; color: #ffffff;">L'inspiration est venue lors de la pandémie mondiale de COVID-19, alors que j'avais 20 ans. Mes 10 années de travail bénévole avant la fin de mes études universitaires ont également joué un rôle. Je pense que le dicton "le nom reflète l'essence d'une personne" convient parfaitement.</p>
+            </div>
+            <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+                <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">Q : Que signifie la santé pour vous ?</h3>
+                <p style="font-size: 14px; color: #ffffff;">La santé, c'est la capacité d'imaginer comment vivre sa vie et s'engager dans les choses. Bien que la définition de l'OMS, "un état de bien-être complet physique, mental et social", soit abstraite, je pense qu'elle reste pertinente à toutes les époques, car elle représente ce que nous désirons vraiment.</p>
+            </div>
+        </div>
+        </div>
+        `,
+        zh:`
+        <div class="container" style="font-family: Arial, sans-serif; line-height: 1.6; color: #ffffff; margin: 0 auto; max-width: 800px; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        <div class="about-section" style="display: flex; align-items: center; margin-bottom: 40px;">
+            <div class="profile-image" style="flex: 1; text-align: center;">
+                <img id="profile-image" src="https://dl.dropboxusercontent.com/scl/fi/j3c0h2uffnc2r2oyv0678/DALL-E-2024-11-16-07.10.webp?rlkey=l7tiekk9o7qv0okyjzw348khg" alt="个人头像" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
+            </div>
+            <div class="about-text" style="flex: 2; padding-left: 20px;">
+                <h1 style="font-size: 24px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">关于我</h1>
+                <p class="roles" style="font-size: 14px; color: #ffffff; margin-top: 8px;">角色 = [数据科学家，健康专业人士，教育科技专家，平面设计师]</p>
+                <p style="margin-top: 12px;">我的名字Yasu（康）源自日语，象征着脱谷丰收的稻米。这名字代表了平安、健康和喜悦的意义。 从13岁起，我就致力于与“健康”和幸福相关的活动。我参与了多个领域的项目，包括作为数据科学家、DevOps工程师和平面设计师。我希望通过关注人和事物之间的多样性，成为发现潜力的第一人。我的爱好包括网球和阅读。</p>
+            </div>
+        </div>
+        <div class="faq-section">
+            <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">常见问题</h2>
+            <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+                <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">问：您的名字是灵感的来源吗？</h3>
+                <p style="font-size: 14px; color: #ffffff;">灵感来源于我20岁时经历的新冠病毒全球大流行。此外，我在大学毕业之前的10年间一直参与志愿者活动。我认为“名副其实”这个说法非常贴切。</p>
+            </div>
+            <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+                <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">问：健康对您来说意味着什么？</h3>
+                <p style="font-size: 14px; color: #ffffff;">健康是能够想象如何生活以及如何参与事物的能力。虽然世界卫生组织对“身体、心理和社会的完全健康状态”的定义较为抽象，但我认为这一愿望在任何时代都没有改变，因为它代表了我们真正的追求。</p>
+            </div>
+        </div>
+        </div>
+        `,
+        }
+    },
+    {
+        id: "Contact",
+        texts: { en: "Contact", ja: "連絡先", fr: "Contact", zh: "联系我们" },
+        position: { top: "50%", left: "20%" },
+        contentPosition: { left: "0%" ,right: "0%"},
+        content:{
+        en: `
+            <h2>Contact</h2>
+            <p>Contact us for more information:</p>
+            <img src="https://via.placeholder.com/150/00FF00/000000?text=Contact" alt="Contact" style="width:150px;">
+            <p><a href="https://example.com/contact-en" target="_blank">Get in Touch</a></p>
+        `,
+        ja:`
+         <h2>自己紹介</h2>
                 <p>こちらは自己紹介セクションです！</p>
                 <img src="https://via.placeholder.com/150" alt="自己紹介" style="width:150px;">
                 <p><a href="https://aicurion.com/aboutme-ja" target="_blank">もっと知る</a></p>
-        `,
+        `
         }
     },
     {
         id: "Project",
         texts: { en: " Projects", ja: "活動", fr: "Projets", zh: "项目" },
         //links: { en: "https://aicurion.com/project-ja", ja:"https://aicurion.com/project-ja", fr: "https://aicurion.com/project-ja", zh:"https://aicurion.com/project-ja" },
-        position: { top: "50%", left: "20%" },
+        position: { top: "60%", left: "20%" },
         contentPosition: { left: "0%", right: "0%" },
         content: {
         en:`
@@ -50,7 +158,7 @@ const buttonsConfig = [
         id: "News",
         texts: { en: "News", ja: "お知らせ", fr: "Nouvelles", zh: "消息" },
         //links: { en: "https://example.com/contact-en", ja: "https://example.com/contact-ja", fr: "https://example.com/contact-fr", zh: "https://example.com/contact-zh" },
-        position: { top: "60%", left: "20%" },
+        position: { top: "70%", left: "20%" },
         contentPosition: { left: "0%", right: "0%" },
         content:{
         en:`
@@ -67,26 +175,6 @@ const buttonsConfig = [
         `,
         }
     },
-    {
-        id: "Contact",
-        texts: { en: "Contact", ja: "連絡先", fr: "Contact", zh: "联系我们" },
-        position: { top: "70%", left: "20%" },
-        contentPosition: { left: "0%" ,right: "0%"},
-        content:{
-        en: `
-            <h2>Contact</h2>
-            <p>Contact us for more information:</p>
-            <img src="https://via.placeholder.com/150/00FF00/000000?text=Contact" alt="Contact" style="width:150px;">
-            <p><a href="https://example.com/contact-en" target="_blank">Get in Touch</a></p>
-        `,
-        ja:`
-         <h2>自己紹介</h2>
-                <p>こちらは自己紹介セクションです！</p>
-                <img src="https://via.placeholder.com/150" alt="自己紹介" style="width:150px;">
-                <p><a href="https://aicurion.com/aboutme-ja" target="_blank">もっと知る</a></p>
-        `
-        }
-    }
 ];
 const flagImages = {
     en: 'https://dl.dropboxusercontent.com/scl/fi/9i7g9xabwget3depyoadq/7592_1.webp?rlkey=vsy5814ksvittsbxr39m1andb',
@@ -189,7 +277,7 @@ light.position.set(0, 0, 10).normalize();
 scene.add(light);
 const textures = {
 dustTextures: [
-"https://dl.dropboxusercontent.com/scl/fi/culssvagxdbqya55b24yx/dust.webp?rlkey=3s81457rlvc7axoc7jmwojjk0"
+"https://dl.dropboxusercontent.com/scl/fi/culssvagxdbqya55b24yx/dust.webp?rlkey=3s81457rlvc7axoc7jmwojjk0",
 ],
 orangeTextures : [
 "https://dl.dropboxusercontent.com/scl/fi/hcrobbzai3pgmwydewxes/1.webp?rlkey=k22tkv0edx6hx9gksqimtal7h",
@@ -230,7 +318,7 @@ groundTextures3:[
 ],
 groundTextures4:[
 "https://dl.dropboxusercontent.com/scl/fi/ds9ph00nn0mhabm6omn8i/plant_precise_31.webp?rlkey=2xp24a6rrm1tsf8wobwrcxu6n",
-]
+],
 }
 const textureCache = new Map();
 const manager = new THREE.LoadingManager();
