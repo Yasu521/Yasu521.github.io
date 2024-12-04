@@ -13,16 +13,19 @@ const buttonsConfig = [
         content: {
             en:`
             <div class="container" style="font-family: Arial, sans-serif; line-height: 1.6; color: #ffffff; margin: 0 auto; max-width: 800px; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-            <div class="about-section" style="display: flex; align-items: center; margin-bottom: 40px;">
-                <div class="profile-image" style="flex: 1; text-align: center;">
-                    <img id="profile-image" src="https://dl.dropboxusercontent.com/scl/fi/j3c0h2uffnc2r2oyv0678/DALL-E-2024-11-16-07.10.webp?rlkey=l7tiekk9o7qv0okyjzw348khg" alt="Profile Image" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
+                <div class="about-section" style="display: flex; align-items: center; margin-bottom: 40px;">
+                    <div class="about-text" style="flex: 2; padding-left: 20px;">
+                        <h1 style="font-size: 24px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">YASUHIRO (CIAO)</h1>
+                        <p class="roles" style="font-size: 14px; color: #ffffff; margin-top: 8px;">Role = [Data Scientist, Health Professional, EdTech Specialist, Graphic Designer]</p>
+                        <p style="margin-top: 12px;">My name, Yasu (康), originates from Japanese and symbolizes the process of threshing a plentiful harvest of rice. It conveys meanings of peace, health, and joy. A dedicated individual pursuing activities connected to "Healthcare" and "Happiness" since the age of 13. I engage in projects across diverse fields, including as a Data Scientist, DevOps Engineer, and Graphic Designer. I aim to be the first discoverer of possibilities by focusing on the diversity between people and things. My hobbies are playing tennis and reading books, especially novels and self-help.</p>
+                    </div>
                 </div>
-                <div class="about-text" style="flex: 2; padding-left: 20px;">
-                    <h1 style="font-size: 24px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">About Me</h1>
-                    <p class="roles" style="font-size: 14px; color: #ffffff; margin-top: 8px;">Role = [Data Scientist, Health Professional, EdTech Specialist, Graphic Designer]</p>
-                    <p style="margin-top: 12px;">My name, Yasu (康), originates from Japanese and symbolizes the process of threshing a plentiful harvest of rice. It conveys meanings of peace, health, and joy. A dedicated individual pursuing activities connected to "Healthcare" and "Happiness" since the age of 13. I engage in projects across diverse fields, including as a Data Scientist, DevOps Engineer, and Graphic Designer. I aim to be the first discoverer of possibilities by focusing on the diversity between people and things. My hobbies are playing tennis and reading books, especially novels and self-help.</p>
+                <div class="image-section" style="display: flex; justify-content: space-evenly; margin-bottom: 20px;">
+                    <img src="https://dl.dropboxusercontent.com/scl/fi/j3c0h2uffnc2r2oyv0678/DALL-E-2024-11-16-07.10.webp?rlkey=l7tiekk9o7qv0okyjzw348khg" alt="Image 1" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
+                    <img src="https://dl.dropboxusercontent.com/scl/fi/aqkmt9g0xqbz87zi68m84/Ciao.webp?rlkey=ybpd8n2gnbycg9uhlscawuqds" alt="Image 2" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
                 </div>
             </div>
+
             <div class="faq-section">
                 <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">Frequently Asked Questions（FAQs）</h2>
                 <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
@@ -39,14 +42,15 @@ const buttonsConfig = [
             ja:`
             <div class="container" style="font-family: Arial, sans-serif; line-height: 1.6; color: #ffffff; margin: 0 auto; max-width: 800px; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
             <div class="about-section" style="display: flex; align-items: center; margin-bottom: 40px;">
-                <div class="profile-image" style="flex: 1; text-align: center;">
-                    <img id="profile-image" src="https://dl.dropboxusercontent.com/scl/fi/j3c0h2uffnc2r2oyv0678/DALL-E-2024-11-16-07.10.webp?rlkey=l7tiekk9o7qv0okyjzw348khg" alt="Profile Image" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
-                </div>
                 <div class="about-text" style="flex: 2; padding-left: 20px;">
-                    <h1 style="font-size: 24px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">自己紹介</h1>
+                    <h1 style="font-size: 24px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">ヤスヒロ (チャオ)</h1>
                     <p class="roles" style="font-size: 14px; color: #ffffff; margin-top: 8px;">データサイエンティスト, 医療・公共事業戦略, 遠隔教育 技術開発, グラフィックデザイナー</p>
                     <p style="margin-top: 12px;">13歳から「健」や幸せに繋がる活動を続けてきた鹿。データサイエンティスト・DevOpsエンジニアの他、グラフィックデザイナーとして幅広い分野でプロジェクトに携わる。ヒトやモノの間にある多様性に注目し、それぞれの可能性を見つけ出す第一発見者でありたいと考えている。趣味は、テニスと読書。</p>
                 </div>
+            </div>
+            <div class="image-section" style="display: flex; justify-content: space-evenly; margin-bottom: 20px;">
+                    <img src="https://dl.dropboxusercontent.com/scl/fi/j3c0h2uffnc2r2oyv0678/DALL-E-2024-11-16-07.10.webp?rlkey=l7tiekk9o7qv0okyjzw348khg" alt="Image 1" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
+                    <img src="https://dl.dropboxusercontent.com/scl/fi/aqkmt9g0xqbz87zi68m84/Ciao.webp?rlkey=ybpd8n2gnbycg9uhlscawuqds" alt="Image 2" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
             </div>
             <div class="faq-section">
                 <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">よくあるご質問</h2>
@@ -64,15 +68,16 @@ const buttonsConfig = [
         fr:`
         <div class="container" style="font-family: Arial, sans-serif; line-height: 1.6; color: #ffffff; margin: 0 auto; max-width: 800px; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
         <div class="about-section" style="display: flex; align-items: center; margin-bottom: 40px;">
-            <div class="profile-image" style="flex: 1; text-align: center;">
-                <img id="profile-image" src="https://dl.dropboxusercontent.com/scl/fi/j3c0h2uffnc2r2oyv0678/DALL-E-2024-11-16-07.10.webp?rlkey=l7tiekk9o7qv0okyjzw348khg" alt="Image de profil" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
-            </div>
             <div class="about-text" style="flex: 2; padding-left: 20px;">
-                <h1 style="font-size: 24px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">À propos de moi</h1>
-                <p class="roles" style="font-size: 14px; color: #ffffff; margin-top: 8px;">Rôle = [Data Scientist, Professionnel de la santé, Spécialiste EdTech, Designer graphique]</p>
+                <h1 style="font-size: 24px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">YASU (CIAO)</h1>
+                <p class="roles" style="font-size: 14px; color: #ffffff; margin-top: 8px;">Rôle = [Data Scientist, Professionnel de la santé, Spécialiste ETech, Designer graphique]</p>
                 <p style="margin-top: 12px;">Mon prénom, Yasu (康), provient du japonais et symbolise le processus de battage d'une récolte abondante de riz. Il évoque la paix, la santé et la joie. Engagé dans des activités liées à la "santé" et au bonheur depuis l'âge de 13 ans. Je participe à des projets dans divers domaines, notamment en tant que Data Scientist, ingénieur DevOps et designer graphique. Mon objectif est d’être le premier à découvrir les possibilités en me concentrant sur la diversité entre les personnes et les choses. Mes passe-temps incluent le tennis et la lecture.</p>
             </div>
         </div>
+            <div class="image-section" style="display: flex; justify-content: space-evenly; margin-bottom: 20px;">
+                    <img src="https://dl.dropboxusercontent.com/scl/fi/j3c0h2uffnc2r2oyv0678/DALL-E-2024-11-16-07.10.webp?rlkey=l7tiekk9o7qv0okyjzw348khg" alt="Image 1" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
+                    <img src="https://dl.dropboxusercontent.com/scl/fi/aqkmt9g0xqbz87zi68m84/Ciao.webp?rlkey=ybpd8n2gnbycg9uhlscawuqds" alt="Image 2" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
+            </div>
         <div class="faq-section">
             <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">Questions fréquemment posées</h2>
             <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
@@ -89,15 +94,16 @@ const buttonsConfig = [
         zh:`
         <div class="container" style="font-family: Arial, sans-serif; line-height: 1.6; color: #ffffff; margin: 0 auto; max-width: 800px; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
         <div class="about-section" style="display: flex; align-items: center; margin-bottom: 40px;">
-            <div class="profile-image" style="flex: 1; text-align: center;">
-                <img id="profile-image" src="https://dl.dropboxusercontent.com/scl/fi/j3c0h2uffnc2r2oyv0678/DALL-E-2024-11-16-07.10.webp?rlkey=l7tiekk9o7qv0okyjzw348khg" alt="个人头像" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
-            </div>
             <div class="about-text" style="flex: 2; padding-left: 20px;">
-                <h1 style="font-size: 24px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">关于我</h1>
+                <h1 style="font-size: 24px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">>康 (YASU)</h1>
                 <p class="roles" style="font-size: 14px; color: #ffffff; margin-top: 8px;">角色 = [数据科学家，健康专业人士，教育科技专家，平面设计师]</p>
                 <p style="margin-top: 12px;">我的名字Yasu（康）源自日语，象征着脱谷丰收的稻米。这名字代表了平安、健康和喜悦的意义。 从13岁起，我就致力于与“健康”和幸福相关的活动。我参与了多个领域的项目，包括作为数据科学家、DevOps工程师和平面设计师。我希望通过关注人和事物之间的多样性，成为发现潜力的第一人。我的爱好包括网球和阅读。</p>
             </div>
         </div>
+            <div class="image-section" style="display: flex; justify-content: space-evenly; margin-bottom: 20px;">
+                    <img src="https://dl.dropboxusercontent.com/scl/fi/j3c0h2uffnc2r2oyv0678/DALL-E-2024-11-16-07.10.webp?rlkey=l7tiekk9o7qv0okyjzw348khg" alt="Image 1" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
+                    <img src="https://dl.dropboxusercontent.com/scl/fi/aqkmt9g0xqbz87zi68m84/Ciao.webp?rlkey=ybpd8n2gnbycg9uhlscawuqds" alt="Image 2" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
+            </div>        
         <div class="faq-section">
             <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">常见问题</h2>
             <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
