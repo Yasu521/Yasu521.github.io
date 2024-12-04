@@ -2,13 +2,14 @@ const language = "en";
 const languageButtons = document.querySelectorAll('.language-option');
 const buttonContainer = document.getElementById("buttonContainer");
 const contentContainer = document.getElementById("contentContainer");
+const currentLanguageIcon = document.getElementById('current-language-icon');
 let currentLanguage = language;
 const buttonsConfig = [
     {
         id: "About Me",
         texts: { en: "About Me", ja: "自己紹介", fr: "Qui suis-je", zh: "关于我" },
-        position: { top: "30%", left: `20%` },
-        contentPosition:  { left: "0%", right: "0%" },
+        position: { top: "40%", left: `20%` },
+        contentPosition:  {left: "0%", right: "0%" },
         content: {
             en:`
             <h2>About Me</h2>
@@ -28,7 +29,7 @@ const buttonsConfig = [
         id: "Project",
         texts: { en: " Projects", ja: "活動", fr: "Projets", zh: "项目" },
         //links: { en: "https://aicurion.com/project-ja", ja:"https://aicurion.com/project-ja", fr: "https://aicurion.com/project-ja", zh:"https://aicurion.com/project-ja" },
-        position: { top: "40%", left: "20%" },
+        position: { top: "50%", left: "20%" },
         contentPosition: { left: "0%", right: "0%" },
         content: {
         en:`
@@ -48,9 +49,8 @@ const buttonsConfig = [
     {
         id: "News",
         texts: { en: "News", ja: "お知らせ", fr: "Nouvelles", zh: "消息" },
-        //リンクがある場合はここで設定する。
         //links: { en: "https://example.com/contact-en", ja: "https://example.com/contact-ja", fr: "https://example.com/contact-fr", zh: "https://example.com/contact-zh" },
-        position: { top: "50%", left: "20%" },
+        position: { top: "60%", left: "20%" },
         contentPosition: { left: "0%", right: "0%" },
         content:{
         en:`
@@ -70,7 +70,7 @@ const buttonsConfig = [
     {
         id: "Contact",
         texts: { en: "Contact", ja: "連絡先", fr: "Contact", zh: "联系我们" },
-        position: { top: "60%", left: "20%" },
+        position: { top: "70%", left: "20%" },
         contentPosition: { left: "0%" ,right: "0%"},
         content:{
         en: `
@@ -88,6 +88,13 @@ const buttonsConfig = [
         }
     }
 ];
+const flagImages = {
+    en: 'https://dl.dropboxusercontent.com/scl/fi/9i7g9xabwget3depyoadq/7592_1.webp?rlkey=vsy5814ksvittsbxr39m1andb',
+    ja: 'https://dl.dropboxusercontent.com/scl/fi/u3z30zgi34wxgzkkimoym/7591.webp?rlkey=z70tw8kok5suf1lyhabg0zlrz',
+    fr: 'https://dl.dropboxusercontent.com/scl/fi/z7grapyl59fwwc1199crj/7596.webp?rlkey=1shxcz2ohldi4n5brs6fyljll',
+    zh: 'https://dl.dropboxusercontent.com/scl/fi/5p1nrzhecjhfy2yowkgil/7607.webp?rlkey=fjcvwnl81dcoxex3cowzgffsg'
+}
+  
 let currentOverlay = null;
 function updateButtonTexts() {
     buttonsConfig.forEach(config => {
@@ -162,11 +169,16 @@ function clearExistingContent(callback) {
     }
     if (callback) callback();
 }
+function updateLanguageIcon(language) {
+    currentLanguageIcon.style.backgroundImage = `url(${flagImages[language]})`;
+  }
 languageButtons.forEach(button => {
     button.addEventListener('click', () => {
         currentLanguage = button.getAttribute('data-lang') || "en";
         updateButtonTexts();
+        updateLanguageIcon(currentLanguage);
     });});
+updateLanguageIcon(currentLanguage);
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -177,67 +189,47 @@ light.position.set(0, 0, 10).normalize();
 scene.add(light);
 const textures = {
 dustTextures: [
-"https://dl.dropboxusercontent.com/scl/fi/sva9qrbssn69ay5ykc28o/dust.png?rlkey=8n0kkpdn0puu5ekdxsfdtnhtz"
+"https://dl.dropboxusercontent.com/scl/fi/culssvagxdbqya55b24yx/dust.webp?rlkey=3s81457rlvc7axoc7jmwojjk0"
 ],
 orangeTextures : [
-"https://dl.dropboxusercontent.com/scl/fi/zyivghngvnfc71ikcafps/1.png?rlkey=3c4vsl45wo80qx7exeyzcuq4e",
-"https://dl.dropboxusercontent.com/scl/fi/yqmbt074l4qkg9xbo4iar/7.png?rlkey=fxe6tbwfgzdl4zysflmz7czal",
-"https://dl.dropboxusercontent.com/scl/fi/3n4vleq7xk60oz34ribb5/9.png?rlkey=5o9a13i8xysy681j0k76zv1ut",
-"https://dl.dropboxusercontent.com/scl/fi/vrta53tp1viw1fu16h2td/11.png?rlkey=jq7d7dyz8ek7wpercxvme44bj",
+"https://dl.dropboxusercontent.com/scl/fi/hcrobbzai3pgmwydewxes/1.webp?rlkey=k22tkv0edx6hx9gksqimtal7h",
+"https://dl.dropboxusercontent.com/scl/fi/7sbawp6uvx31tirf5ua5g/7.webp?rlkey=3rs7bnltwoj354gjn2086pr2u",
+"https://dl.dropboxusercontent.com/scl/fi/rtxegajc94zgrb0upfttm/9.webp?rlkey=sfspx0kh0p5pcjtn9nih7akth",
+"https://dl.dropboxusercontent.com/scl/fi/6w3ci1a2zk1g8wx5on7i5/11.webp?rlkey=trtg5ecdp560c1w25rjb9mo4j",
 ],
 fallingTextures2 : [
-"https://dl.dropboxusercontent.com/scl/fi/0wa6yxelpdercgik0u0j6/2.png?rlkey=k7e1754lx18hqd5j521ao4y87",
-"https://dl.dropboxusercontent.com/scl/fi/pcdzb2aqaqmm8ws974x1i/5.png?rlkey=fx3joybf5cr3i83nwogrvzv4o",
-"https://dl.dropboxusercontent.com/scl/fi/jv6ny1dh36v5fffqq08aw/plant_precise_123.png?rlkey=vp9xfp5bqoxhc1gwuk081n6wc",
-"https://dl.dropboxusercontent.com/scl/fi/lzg5fecuc6zkmpos8wsj9/plant_precise_213.png?rlkey=ire3jdvzuxpqqhsuggtoxnh89",
+"https://dl.dropboxusercontent.com/scl/fi/vvhgnwtgflcchbvqncerj/2.webp?rlkey=m7qgsq0wi4kqbxic0o53vbs8r",
+"https://dl.dropboxusercontent.com/scl/fi/168wjes7vzcgapok7kqir/5.webp?rlkey=f9a90kba1a0bizcnnv2fbkatt",
+"https://dl.dropboxusercontent.com/scl/fi/4i0wgq9t9k9kjdbfvdlw7/plant_precise_373.webp?rlkey=q5ynphx03fl1lkcjrs50ljle9",
 ],
 whiteTextures : [
-"https://dl.dropboxusercontent.com/scl/fi/zfnd4l56tfxkbtj9kdc9e/3.png?rlkey=prfaxcyukhmvmq0hwfe7ft27r",
-"https://dl.dropboxusercontent.com/scl/fi/0poeyuv7ixzkjwc1p480r/4.png?rlkey=2gymu5lpgega57bitk08k1ozv",
-"https://dl.dropboxusercontent.com/scl/fi/dl19zzqdjum88t3ixtpgk/6.png?rlkey=qp9ceajs61pk25ij86vq89pfd",
+"https://dl.dropboxusercontent.com/scl/fi/crv51az5fqw5g0zsbikfr/3.webp?rlkey=m4mfh20wbeaoqqa3174j2q1i9",
+"https://dl.dropboxusercontent.com/scl/fi/l3aof5fv809mzc8zw58oo/4.webp?rlkey=632dkudvm4dvn93b1w720rgl2",
+"https://dl.dropboxusercontent.com/scl/fi/yf0g7243zrnjouxed4q40/6.webp?rlkey=jw5xtyon8fpwdzrrxnusyqctp",
 ],
 blueTextures : [
-"https://dl.dropboxusercontent.com/scl/fi/5scqus7wsfmzc7zmzpywl/plant_precise_128.png?rlkey=api5p4joynhvrlc7j5a1iuc7v",
-"https://dl.dropboxusercontent.com/scl/fi/o0z3jedp00h0m2ammrg7w/plant_precise_129.png?rlkey=c4321d422isk61n5oie909g0s",
-"https://dl.dropboxusercontent.com/scl/fi/qr8kqeoxkz3dm2rhn6jcr/plant_precise_130.png?rlkey=yfrun5y4qsifs8scqrkyr39f3",
-"https://dl.dropboxusercontent.com/scl/fi/2scrur6tzb5j43rk1fvwl/plant_precise_214.png?rlkey=dfziafr6i3jwckl80mmrei6q3",
-"https://dl.dropboxusercontent.com/scl/fi/qzoadtbtro8iwdky9meyj/plant_precise_216.png?rlkey=s9h9cj33eaefbnta0oidzvlut",
-      "https://dl.dropboxusercontent.com/scl/fi/l87xs77jt4da78uxt37ae/plant_precise_220.png?rlkey=68v8uogkr0ft0qtq3xphdzhr0",
-      "https://dl.dropboxusercontent.com/scl/fi/inrp4743y26jpo6o2mdkx/plant_precise_373.png?rlkey=gkdpre7lv42eq57quolrqlbes",
-      "https://dl.dropboxusercontent.com/scl/fi/ecjhoxexulhxd4amxa2ij/plant_precise_391.png?rlkey=wvg56jmehave4i4lrvt8g27rk",
-      "https://dl.dropboxusercontent.com/scl/fi/uh84eo8btp8l3xe151gwa/plant_precise_403.png?rlkey=ia4xvok8288vnu2an9p554n26",
+"https://dl.dropboxusercontent.com/scl/fi/ce86jbgb3vqrxa51gfvgc/plant_precise_128.webp?rlkey=k9ium3e2xkrzslqsba4p23f60",
+"https://dl.dropboxusercontent.com/scl/fi/5xaziuy55562qr6estl48/plant_precise_124.webp?rlkey=j5ixogfh9pcvm82stwd8oeinu",
+"https://dl.dropboxusercontent.com/scl/fi/3xrdiqdiukdt61wyzu94u/plant_precise_214.webp?rlkey=qh7r9zu0lm7ikkcmkco9zzfll",
+"https://dl.dropboxusercontent.com/scl/fi/bkhgu2bhxw8p02jb2oxx4/plant_precise_220.webp?rlkey=t5z4yeghbvjr9oa8flk973tjp",
    ],
 pinkTextures : [
-"https://dl.dropboxusercontent.com/scl/fi/yizqmfomoc0xuag4y32bm/plant_precise_258.png?rlkey=zhrhsbr2gx9m8idfb189ffqco",
-"https://dl.dropboxusercontent.com/scl/fi/qyi72q9i0sg6mpdrfpyp7/plant_precise_260.png?rlkey=nzyc222lc7b9mf4chvapp08uv",
-"https://dl.dropboxusercontent.com/scl/fi/j53zthropm0dtemo19az4/plant_precise_261.png?rlkey=2m7t71tjvze2k7eo5zmo4tdxc",
-"https://dl.dropboxusercontent.com/scl/fi/qk96rs4954mmvsye7e1j6/plant_precise_262.png?rlkey=v7b37b82xu2n65bhtv5w4x2h7",
-      "https://dl.dropboxusercontent.com/scl/fi/ua37hsw2t97odcs7lbxcb/plant_precise_263.png?rlkey=xoquijqovku7geavfblkj83ff",
-      "https://dl.dropboxusercontent.com/scl/fi/m2n649a21wx8fiuh4lxjl/plant_precise_264.png?rlkey=q6xhndzo10auw8i3cb7mf7jke",
-      "https://dl.dropboxusercontent.com/scl/fi/lqol7xy7htboet7ak7pdg/plant_precise_265.png?rlkey=83h4zgr2gzlral7m59oqyujdv",
-      "https://dl.dropboxusercontent.com/scl/fi/m7hgvvp5h4wqkihl7ei5j/plant_precise_266.png?rlkey=x1fafwuka16f4vl4wij2p5jy9",
+"https://dl.dropboxusercontent.com/scl/fi/lwf95owio93ahgi144nmi/plant_precise_258.webp?rlkey=9d2njke0pmcq0jjxmnuph4vms",
+"https://dl.dropboxusercontent.com/scl/fi/5jb6gab456rg8kyb60siv/plant_precise_261.webp?rlkey=qy9i3w3mvgeond1h3kslxhkxy",
+"https://dl.dropboxusercontent.com/scl/fi/tyl4qwn50dvntwiheewv7/plant_precise_263.webp?rlkey=zhtn1a0ir95dtax6v9kx6s3t7",
+"https://dl.dropboxusercontent.com/scl/fi/0hfd2ow2kuz8zhqlj5by2/plant_precise_266.webp?rlkey=r0rbgtq41xdkmeyr913b6uzgb",
      ],
 groundTextures : [
-"https://dl.dropboxusercontent.com/scl/fi/5pnr4rzo8w9ielzwxc1se/plant_precise_11.png?rlkey=ih3lrxpt5auq30sdy20um5six",
-"https://dl.dropboxusercontent.com/scl/fi/cjh8oqk0i4vg150v653gu/plant_precise_12.png?rlkey=opv8k1mry2nrn6vwt6nzdbns0",
-"https://dl.dropboxusercontent.com/scl/fi/bl84non5etenxjayxp9rz/plant_precise_15.png?rlkey=ppnnmaxm3c5uwt00n8c9qcf8k"
+"https://dl.dropboxusercontent.com/scl/fi/ib5flgw9nvxcwxr6gpoau/plant_precise_15.webp?rlkey=qmt4aarxpy3cqpz2ryc1kj08s",
 ],
 groundTextures2:[
-"https://dl.dropboxusercontent.com/scl/fi/t32pdiftkw0an9uirw9eh/plant_precise_13.png?rlkey=vgnnljjhubr2a92hidkut5x0f",
-"https://dl.dropboxusercontent.com/scl/fi/xl0lmtynbac3c59eqhq7f/plant_precise_14.png?rlkey=t8nnu9d53205gulwzegil9sp3",
-"https://dl.dropboxusercontent.com/scl/fi/boz2mgryuihopknixfide/plant_precise_16.png?rlkey=izk2qbsi2qrdqat9qk20hqqbv",
-"https://dl.dropboxusercontent.com/scl/fi/m1gl6618wcw1fbgsidqhx/plant_precise_17.png?rlkey=7w5j1vs7bfkbv04lq50oc364c",
+"https://dl.dropboxusercontent.com/scl/fi/u4olg887jb0r3o8ee3kmi/plant_precise_17.webp?rlkey=e8fpbq9xjtgecml5864grf69c",
 ],
 groundTextures3:[
-"https://dl.dropboxusercontent.com/scl/fi/irm28o48uzjnqylh9rg8u/plant_precise_18.png?rlkey=v67uox08hp73yawb9uecj3i8e",
-"https://dl.dropboxusercontent.com/scl/fi/bqoqotikbdcgmvaah5bbt/plant_precise_32.png?rlkey=kyc73m4t1sopg5a4ftuywyiku",
-"https://dl.dropboxusercontent.com/scl/fi/bok9d2xbvcxvj3g5zkqfe/plant_precise_33.png?rlkey=0yhl2km0e7szdmukh92mfou8b"
+"https://dl.dropboxusercontent.com/scl/fi/sbt9ct9cdngyxbgnpsu7k/plant_precise_18.webp?rlkey=vto0hmazuqrt8tkvonchn6f2n",
 ],
 groundTextures4:[
-"https://dl.dropboxusercontent.com/scl/fi/xgsocs6syv0ws8y4ta9aj/plant_precise_28.png?rlkey=joc3t9hs44bamiy74u8918aho",
-"https://dl.dropboxusercontent.com/scl/fi/s0ptb2twg2wy1iwgi9oul/plant_precise_29.png?rlkey=gwk3w1ip3uljxbgrhl0vo67ui",
-"https://dl.dropboxusercontent.com/scl/fi/nr5xo1cg8fzxqdxmkytmv/plant_precise_30.png?rlkey=a5hgt4mt26fmu5omvdqpmcotd",
-"https://dl.dropboxusercontent.com/scl/fi/q8ouojde26fuyrl1w315n/plant_precise_31.png?rlkey=6pnctvehddyvgweqjsn1avr3z",
+"https://dl.dropboxusercontent.com/scl/fi/ds9ph00nn0mhabm6omn8i/plant_precise_31.webp?rlkey=2xp24a6rrm1tsf8wobwrcxu6n",
 ]
 }
 const textureCache = new Map();
@@ -568,59 +560,41 @@ sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt + 25 ;
 growingFlowers4.push(sprite);
 scene.add(sprite);
 }}}}
-function dustFlowers(startZ, endZ) {
-for (let x = -20; x < 20; x += 5) {
-    for (let z = startZ; z < endZ; z += 5) { 
-        const textureUrl = textures.dustTextures[Math.floor(Math.random() * textures.dustTextures.length)];
-        const cachedTexture = textureCache.get(textureUrl);
-        if (cachedTexture) {
-        const material = new THREE.SpriteMaterial({ map: cachedTexture });
-        const sprite = new THREE.Sprite(material);
-        const posX = x + random_1 + 5;
-        const posY = Math.random() * 50 - 15;
-        const posZ = z + Math.random() * 2 + 10;
-        sprite.position.set(posX, posY, posZ);
-        sprite.scale.set(scale, scale, 1);
-        const maxTilt =  Math.PI / 4 + (posY + 40) / 50; 
-        const minTilt =  Math.PI / 8 + (posY + 40) / 200;
-        sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt;
-        if(Math.random()<=0.2)
-            {
-            dustPlants.push(sprite);
-            scene.add(sprite);
-                      setTimeout(() => {
-                      scene.remove(sprite);
-                      dustPlants = dustPlants.filter(f => f !== sprite);
-                      }, Math.random() * 5000 + 10000);
-              }
-        }}}}
-function dustFlowers2(startZ, endZ) {
-for (let x = -20; x < 20; x += 5) {
-    for (let z = startZ; z < endZ; z += 5) {
 
-    const textureUrl = textures.fallingTextures2[Math.floor(Math.random() * textures.fallingTextures2.length)];
-    const cachedTexture = textureCache.get(textureUrl);
-    if (cachedTexture) {
-    const material = new THREE.SpriteMaterial({ map: cachedTexture });
-    const sprite = new THREE.Sprite(material);
-        const posX = x + random_1 + 5 ;
-        const posY = Math.random() * 50 ;
-        const posZ = z + Math.random() * 10 ;
-        sprite.position.set(posX, posY, posZ);
-        sprite.scale.set(scale, scale, 1);
-        const maxTilt =  Math.PI / 4 + (posY + 40) / 50; 
-        const minTilt =  Math.PI / 8 + (posY + 40) / 200;
-        sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt;
-        if(Math.random()<=0.2)
-            {
-            dustPlants2.push(sprite);
-            scene.add(sprite);
-                      setTimeout(() => {
-                      scene.remove(sprite);
-                      dustPlants = dustPlants.filter(f => f !== sprite);
-                      }, Math.random() * 5000 + 10000);
-              }
-        }}}}
+function createDustSprites(textureArray, startZ, endZ, dustList) {
+    for (let x = -20; x < 20; x += 5) {
+        for (let z = startZ; z < endZ; z += 5) {
+            const textureUrl = textureArray[Math.floor(Math.random() * textureArray.length)];
+            const cachedTexture = textureCache.get(textureUrl);
+            if (cachedTexture) {
+                const material = new THREE.SpriteMaterial({ map: cachedTexture });
+                const sprite = new THREE.Sprite(material);
+                const posX = x + random_1 + 5;
+                const posY = Math.random() * 50 - (textureArray === textures.fallingTextures2 ? 0 : 15);
+                const posZ = z + Math.random() * (textureArray === textures.fallingTextures2 ? 10 : 2);
+                
+                sprite.position.set(posX, posY, posZ);
+                sprite.scale.set(scale, scale, 1);
+
+                const maxTilt = Math.PI / 4 + (posY + 40) / 50;
+                const minTilt = Math.PI / 8 + (posY + 40) / 200;
+                sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt;
+
+                if (Math.random() <= 0.2) {
+                    dustList.push(sprite);
+                    scene.add(sprite);
+
+                    setTimeout(() => {
+                        scene.remove(sprite);
+                        dustList = dustList.filter(f => f !== sprite);
+                    }, Math.random() * 5000 + 10000);
+}}}}}
+function dustFlowers(startZ, endZ) {
+    createDustSprites(textures.dustTextures, startZ, endZ, dustPlants);
+}
+function dustFlowers2(startZ, endZ) {
+    createDustSprites(textures.fallingTextures2, startZ, endZ, dustPlants2);
+}
 function dustupFlowers() {
 dustPlants.forEach(sprite => {
     if (scrollSpeed >= 0)sprite.position.y += scrollSpeed*0.1*Math.random() + 0.01;});
@@ -696,7 +670,7 @@ createwhiteFlowers_left(renderRange.zMin, renderRange.zMax);
 creategroundFlowers(renderRange.zMin, renderRange.zMax);
 createtopFlowers(renderRange.zMin, renderRange.zMax);
 }
-if(Math.random()<=0.01) growAllFlowers();
+if(Math.random()<=0.02) growAllFlowers();
 renderer.render(scene, camera);
 }
 
