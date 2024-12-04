@@ -243,13 +243,13 @@ let lastMouseY = 0;
 const topflower = 0 ;
 camera.position.x = 0
 camera.position.y = 0
-camera.position.z = -30;
+camera.position.z = 0;
 let cameraZ = 0;
 let lastCameraZ = 0;
 let startX = 0;
 let startY = 0;
 let firstcount = 0;
-const renderRange = { zMin: -100, zMax:0};
+const renderRange = { zMin: -80, zMax:0};
 const shiftThreshold = 2;
 const scale = Math.random() * 2;
 const random_1 = Math.random() * 2;
@@ -576,7 +576,6 @@ createtopFlowers(renderRange.zMin, renderRange.zMax);
 }
 renderer.render(scene, camera);
 }
-
 window.addEventListener('resize', () => {
 camera.aspect = window.innerWidth / window.innerHeight;
 camera.updateProjectionMatrix();
@@ -621,4 +620,3 @@ function onTouchEnd() {
 document.addEventListener("touchmove", onTouchMove, { passive: false });
 document.addEventListener("touchend", onTouchEnd);
 document.addEventListener("touchcancel", onTouchEnd);
-animate();
