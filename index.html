@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yasu521:Ciao|Yasuhiro Iwai - Portfolio </title>
+  <title>Yasuhiro Iwai|Ciao - Portfolio </title>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y2FVBDQYBP"></script>
   <script>
   window.dataLayer = window.dataLayer || [];
@@ -11,65 +11,7 @@
   gtag('js', new Date());
   gtag('config', 'G-Y2FVBDQYBP');
   </script>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="./shortcut.ico" type="image/x-icon">
-  <link rel="preload" href="./flag/USA.webp" as="image">
-  <link rel="preload" href="./flag/Japan.webp" as="image">
-</head>
-<body>
-    <div id="loading-screen">
-        <div id="progress-bar-container">
-            <div id="progress-bar"></div>
-        </div>
-        <p id="loading-text">Loading<span id="loading-dots">...</span></p>
-        <p id="remaining-time"></p>
-    </div>
-    <div id="main-content">
-        <canvas id="three-canvas"></canvas>
-    </div>
-    <div id="buttonContainer"></div>
-    <div id="contentContainer"></div>
-    <div class="blur-overlay"></div>
-    <div class="language-menu">
-        <button class="language-toggle"id="current-language-icon"aria-label="Language"></button>
-        <div class="language-list">
-            <button class="language-option" data-lang="en">English</button>
-            <button class="language-option" data-lang="fr">Français</button>
-            <button class="language-option" data-lang="ja">日本語</button>
-            <button class="language-option" data-lang="zh">中文</button>
-        </div>
-  </div>
-  <div id="low-priority-preloads">
-    <link rel="preload" href="./sns/Duolingo.webp" as="image">
-    <link rel="preload" href="./sns/Figma.webp" as="image">
-    <link rel="preload" href="./sns/Instagram.webp" as="image">
-    <link rel="preload" href="./sns/Kaggle.webp" as="image">
-    <link rel="preload" href="./sns/LinkedIn.webp" as="image">
-    <link rel="preload" href="./sns/note.webp" as="image">
-    <link rel="preload" href="./sns/Medium.webp" as="image">
-    <link rel="preload" href="./sns/github.webp" as="image">
-    <link rel="preload" href="./sns/note.webp" as="image">
-  </div>
-<script>
-    function loadScript(src) {
-        return new Promise((resolve, reject) => {
-            const script = document.createElement('script');
-            script.src = src;
-            script.async = true; // 非同期ロード
-            script.onload = () => resolve();
-            script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
-            document.head.appendChild(script);
-        });}
-    (async () => {
-        try {
-            await loadScript('https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js');
-            await loadScript('https://cdn.jsdelivr.net/gh/Yasu521/Yasu521.github.io/script.js');
-        } catch (error) {
-            console.error(error);
-        }})();
-</script>
-<script type="application/ld+json">
-{
+  <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Yasuhiro Iwai - Portfolio",
@@ -102,22 +44,6 @@
         "fr": "À propos de moi: Yasuhiro Iwai",
         "zh": "关于我: 康"
       },
-      "faq": [
-        {
-          "@type": "Question",
-          "name": "Was your name an inspiration?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The inspiration came during the global outbreak of COVID-19 and 10 years of volunteer work."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What does health mean to you?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Health is the ability to envision how to live and engage with things, aligning with WHO's definition."
-          }}]
     },
     {
       "@type": "ContactPage",
@@ -126,16 +52,71 @@
         "@type": "ContactPoint",
         "email": "iwaiyasuhiro0521@gmail.com",
         "availableLanguage": ["English", "Japanese", "French", "Chinese"]
-      }
-    },
+      }},
     {
       "@type": "CreativeWork",
       "name": "Projects",
       "description": "A showcase of Yasuhiro Iwai's diverse projects.",
       "url": "https://aicurion.com/project-ja"
     },
-  ]
-}
+    ]}
+</script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="./shortcut.ico" type="image/x-icon">
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const imagesToPreload = [
+      './flag/USA.webp','./flag/Japan.webp','./sns/Duolingo.webp','./sns/Figma.webp','./sns/Instagram.webp','./sns/Kaggle.webp','./sns/LinkedIn.webp','./sns/note.webp','./sns/Medium.webp','./sns/github.webp'
+    ];
+    imagesToPreload.forEach(src => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = src;
+      document.head.appendChild(link);
+    });});
+</script>
+</head>
+<body>
+    <div id="loading-screen">
+        <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+        </div>
+        <p id="loading-text">Loading<span id="loading-dots">...</span></p>
+        <p id="remaining-time"></p>
+    </div>
+    <div id="main-content">
+        <canvas id="three-canvas"></canvas>
+    </div>
+    <div id="buttonContainer"></div>
+    <div id="contentContainer"></div>
+    <div class="blur-overlay"></div>
+    <div class="language-menu">
+        <button class="language-toggle"id="current-language-icon"aria-label="Language"></button>
+        <div class="language-list">
+            <button class="language-option" data-lang="en">English</button>
+            <button class="language-option" data-lang="fr">Français</button>
+            <button class="language-option" data-lang="ja">日本語</button>
+            <button class="language-option" data-lang="zh">中文</button>
+        </div>
+  </div>
+<script>
+    function loadScript(src) {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = src;
+            script.async = true; // 非同期ロード
+            script.onload = () => resolve();
+            script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
+            document.head.appendChild(script);
+        });}
+    (async () => {
+        try {
+            await loadScript('https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js');
+            await loadScript('https://cdn.jsdelivr.net/gh/Yasu521/Yasu521.github.io/script.js');
+        } catch (error) {
+            console.error(error);
+        }})();
 </script>
 </body>
 </html>
