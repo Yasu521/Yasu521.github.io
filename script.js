@@ -139,7 +139,9 @@ const buttonsConfig = [
                     </div>
                 </div>
             </div>
-
+            <div class="image-section" style="display: flex; justify-content: space-evenly; margin-bottom: 20px;">
+                <img src="./Ciao.webp" alt="Profile photo" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
+            </div>
             <div class="faq-section">
                 <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">Frequently Asked Questions（FAQs）</h2>
                 <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ff7f50; border-radius: 8px;">
