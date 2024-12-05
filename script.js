@@ -1,20 +1,20 @@
 const language = "en";
 let currentLanguage = language;
 const flagImages = {
-    en: 'https://cdn.jsdelivr.net/gh/Yasu521/Yasu521.github.io/flag/USA.webp',
-    ja: 'https://cdn.jsdelivr.net/gh/Yasu521/Yasu521.github.io/flag/Japan.webp',
-    fr: 'https://cdn.jsdelivr.net/gh/Yasu521/Yasu521.github.io/flag/France.webp',
-    zh: 'https://cdn.jsdelivr.net/gh/Yasu521/Yasu521.github.io/flag/China.webp'
+    en: './flag/USA.webp',
+    ja: './flag/Japan.webp',
+    fr: './flag/France.webp',
+    zh: './flag/China.webp'
 }
 const textures = {
     dustTextures: [
-    "https://cdn.jsdelivr.net/gh/Yasu521/Yasu521.github.io/flower/dust.webp",
+    "./flower/dust.webp",
     ],
     orangeTextures : [
-    "https://cdn.jsdelivr.net/gh/Yasu521/Yasu521.github.io/flower/1.webp",
-    "https://cdn.jsdelivr.net/gh/Yasu521/Yasu521.github.io/flower/7.webp",
-    "https://cdn.jsdelivr.net/gh/Yasu521/Yasu521.github.io/flower/9.webp",
-    "https://cdn.jsdelivr.net/gh/Yasu521/Yasu521.github.io/flower/11.webp",
+    "./flower/1.webp",
+    "./flower/7.webp",
+    "./flower/9.webp",
+    "./flower/11.webp",
     ],
     fallingTextures2 : [
     "./flower/2.webp",
@@ -125,310 +125,17 @@ const languageButtons = document.querySelectorAll('.language-option');
 const buttonContainer = document.getElementById("buttonContainer");
 const contentContainer = document.getElementById("contentContainer");
 const currentLanguageIcon = document.getElementById('current-language-icon');
-const buttonsConfig = [
-    {
-        id: "About Me",
-        texts: { en: "About Me", ja: "自己紹介", fr: "Qui suis-je", zh: "关于我" },
-        position: { top: "40%", left: `20%` },
-        contentPosition:  {left: "0%", right: "0%" },
-        content: {
-            en:`
-            <div class="container" style="font-family: Arial, sans-serif; line-height: 1.6; color: #ffffff; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-                <div class="about-section" style="display: flex; margin-bottom: 40px;">
-                    <div class="about-text" style="flex: 2; padding-left: 10px;">
-                        <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">YASU(CIAO)</h2>
-                        <p class="roles" style="font-family: 'Cambria', 'Baskerville', serif; color: #ffffff; margin-top: 8px;">Role = [Data Scientist, Health Professional, EdTech Specialist, Graphic Designer]</p>
-                        <p style="margin-top: 12px;">My name, Yasu (康), originates from Japanese and symbolizes the process of threshing a plentiful harvest of rice. It conveys meanings of peace, health, and joy. A dedicated individual pursuing activities connected to "Healthcare" and "Happiness" since the age of 13. I engage in projects across diverse fields, including as a Data Scientist, DevOps Engineer, and Graphic Designer. I aim to be the first discoverer of possibilities by focusing on the diversity between people and things. My hobbies are playing tennis and reading books, especially novels and self-help.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="image-section" style="display: flex; justify-content: space-evenly; margin-bottom: 20px;">
-                <img src="./Ciao.webp" alt="Profile photo" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
-            </div>
-            <div class="faq-section">
-                <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">Frequently Asked Questions（FAQs）</h2>
-                <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ff7f50; border-radius: 8px;">
-                    <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">Q: Was your name an inspiration?</h3>
-                    <p style="font-size: 14px; color: #ffffff;">The inspiration came during the global outbreak of COVID-19 when I was 20 years old. My 10 years of volunteer work until university graduation also played a role. I believe the saying "A name reflects one's essence" fits perfectly.</p>
-                </div>
-                <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ff7f50; border-radius: 8px;">
-                    <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">Q: What does health mean to you?</h3>
-                    <p style="font-size: 14px; color: #ffffff;">Health is the ability to envision how to live life and engage with things. While the WHO's definition of "A state of complete physical, mental, and social well-being" is abstract, I believe it remains relevant across all times as it represents what we truly desire.</p>
-                </div>
-            </div>
-        </div>
-        `,
-            ja:`
-            <div class="container" style="font-family: Arial, sans-serif; line-height: 1.6; color: #ffffff; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-            <div class="about-section" style="display: flex; align-items: center; margin-bottom: 40px;">
-                <div class="about-text" style="flex: 2; padding-left: 10px;">
-                    <h1 style="font-size: 24px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">ヤスヒロ<br>(チャオ)</h1>
-                    <p class="roles" style="font-size: 14px; font-family: 'Cambria', 'Baskerville', serif; color: #ffffff; margin-top: 8px;">データサイエンティスト, 医療・公共事業戦略, 遠隔教育, グラフィックデザイナー</p>
-                    <p style="margin-top: 12px;">13歳から「健」や幸せに繋がる活動を続けてきた鹿。データサイエンティスト・DevOpsエンジニアの他、グラフィックデザイナーとして幅広い分野でプロジェクトに携わる。ヒトやモノの間にある多様性に注目し、それぞれの可能性を見つけ出す第一発見者でありたいと考えている。趣味は、テニスと読書。</p>
-                </div>
-            </div>
-            <div class="image-section" style="display: flex; justify-content: space-evenly; margin-bottom: 20px;">
-                <img src="./Ciao.webp" alt="Profile photo" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
-            </div>
-            <div class="faq-section">
-                <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">よくあるご質問</h2>
-                <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid  #ff7f50; border-radius: 8px;">
-                    <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">Q: きっかけは、名前が由来か</h3>
-                    <p style="font-size: 14px; color: #ffffff;">20歳の時に経験した、新型コロナウイルスの世界的大流行がきっかけです。また大学卒業までの10年間ボランティア活動に取り組んできたことも影響ある。「名は体を表す」という言葉がぴったりだと考えた。</p>
-                </div>
-                <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid  #ff7f50; border-radius: 8px;">
-                    <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">Q: あなたにとって、健康とは</h3>
-                    <p style="font-size: 14px; color: #ffffff;">人生をどう生き、物事にどう関わるか思い描けること。肉体的・精神的・社会的に、「よい状態」というWHO憲章の定義は抽象的だが、どんな時代にあっても、私たちが望んでいることに変わりはないと思う。</p>
-                </div>
-            </div>
-        </div>
-        `,
-        fr:`
-        <div class="container" style="font-family: Arial, sans-serif; line-height: 1.6; color: #ffffff; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-        <div class="about-section" style="display: flex; align-items: center; margin-bottom: 40px;">
-            <div class="about-text" style="flex: 2; padding-left: 10px;">
-                <h1 style="font-size: 24px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">YASU(CIAO)</h1>
-                <p class="roles" style="font-size: 14px; font-family: 'Cambria', 'Baskerville', serif; color: #ffffff; margin-top: 8px;">Rôle = [Data Scientist, Professionnel de la santé, Spécialiste ETech, Designer graphique]</p>
-                <p style="margin-top: 12px;">Mon prénom, Yasu (康), provient du japonais et symbolise le processus de battage d'une récolte abondante de riz. Il évoque la paix, la santé et la joie. Engagé dans des activités liées à la "santé" et au bonheur depuis l'âge de 13 ans. Je participe à des projets dans divers domaines, notamment en tant que Data Scientist, ingénieur DevOps et designer graphique. Mon objectif est d’être le premier à découvrir les possibilités en me concentrant sur la diversité entre les personnes et les choses. Mes passe-temps incluent le tennis et la lecture.</p>
-            </div>
-        </div>
-        <div class="image-section" style="display: flex; justify-content: space-evenly; margin-bottom: 20px;">
-            <img src="./Ciao.webp" alt="Profile photo" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
-        </div>
-        <div class="faq-section">
-            <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">Questions fréquemment posées</h2>
-            <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid  #ff7f50; border-radius: 8px;">
-                <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">Q : Votre nom a-t-il été une source d'inspiration ?</h3>
-                <p style="font-size: 14px; color: #ffffff;">L'inspiration est venue lors de la pandémie mondiale de COVID-19, alors que j'avais 20 ans. Mes 10 années de travail bénévole avant la fin de mes études universitaires ont également joué un rôle. Je pense que le dicton "le nom reflète l'essence d'une personne" convient parfaitement.</p>
-            </div>
-            <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid  #ff7f50; border-radius: 8px;">
-                <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">Q : Que signifie la santé pour vous ?</h3>
-                <p style="font-size: 14px; color: #ffffff;">La santé, c'est la capacité d'imaginer comment vivre sa vie et s'engager dans les choses. Bien que la définition de l'OMS, "un état de bien-être complet physique, mental et social", soit abstraite, je pense qu'elle reste pertinente à toutes les époques, car elle représente ce que nous désirons vraiment.</p>
-            </div>
-        </div>
-        </div>
-        `,
-        zh:`
-        <div class="container" style="font-family: Arial, sans-serif; line-height: 1.6; color: #ffffff; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-        <div class="about-section" style="display: flex; align-items: center; margin-bottom: 40px;">
-            <div class="about-text" style="flex: 2; padding-left: 10px;">
-                <h1 style="font-size: 24px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">>康(YASU)</h1>
-                <p class="roles" style="font-size: 14px; font-family: 'Cambria', 'Baskerville', serif; color: #ffffff; margin-top: 8px;">角色 = [数据科学家，健康专业人士，教育科技专家，平面设计师]</p>
-                <p style="margin-top: 12px;">我的名字Yasu（康）源自日语，象征着脱谷丰收的稻米。这名字代表了平安、健康和喜悦的意义。 从13岁起，我就致力于与“健康”和幸福相关的活动。我参与了多个领域的项目，包括作为数据科学家、DevOps工程师和平面设计师。我希望通过关注人和事物之间的多样性，成为发现潜力的第一人。我的爱好包括网球和阅读。</p>
-            </div>
-        </div>
-        <div class="image-section" style="display: flex; justify-content: space-evenly; margin-bottom: 20px;">
-            <img src="./Ciao.webp" alt="Profile photo" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
-        </div>
-        <div class="faq-section">
-            <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">常见问题</h2>
-            <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid  #ff7f50; border-radius: 8px;">
-                <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">问：您的名字是灵感的来源吗？</h3>
-                <p style="font-size: 14px; color: #ffffff;">灵感来源于我20岁时经历的新冠病毒全球大流行。此外，我在大学毕业之前的10年间一直参与志愿者活动。我认为“名副其实”这个说法非常贴切。</p>
-            </div>
-            <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid  #ff7f50; border-radius: 8px;">
-                <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">问：健康对您来说意味着什么？</h3>
-                <p style="font-size: 14px; color: #ffffff;">健康是能够想象如何生活以及如何参与事物的能力。虽然世界卫生组织对“身体、心理和社会的完全健康状态”的定义较为抽象，但我认为这一愿望在任何时代都没有改变，因为它代表了我们真正的追求。</p>
-            </div>
-        </div>
-        </div>
-        `,
-        }
-    },
-    {
-        id: "Contact",
-        texts: { en: "Contact", ja: "連絡先", fr: "Contact", zh: "联系我们" },
-        position: { top: "50%", left: "20%" },
-        contentPosition: { left: "0%" ,right: "0%"},
-        content:{
-        en: `
-            <body style="font-family: Arial, serif; text-align: center;">
-                <h3 style="margin-top: 20px;">A Closer Look at Yasu ≫</h3>
-            <div style="position: relative; background-color: #405de6;  padding: 20px; overflow-x: auto; white-space: nowrap; scrollbar-gutter: stable;">
-
-        <div style="display: flex; justify-content: left; align-items: left; gap: 30px; padding: 10px; box-sizing: border-box;">
-            <a href="https://www.figma.com/@ciao521" aria-label="Figma Profile" rel="noopener noreferrer" target="_blank">
-                <img src="./sns/Figma.webp" alt="Visit Yasu's Figma" style="width: 50px; height: 50px;">
-            </a>
-            <a href="https://github.com/Yasu521" aria-label="GitHub Profile" rel="noopener noreferrer" target="_blank">
-                <img src="./sns/github.webp" alt="GitHub Profile" style="width: 50px; height: 50px;">
-            </a>
-            <a href="https://www.kaggle.com/" aria-label="Kaggle" rel="noopener noreferrer" target="_blank">
-                <img src="./sns/Kaggle.webp" alt="Visit Yasu's Kaggle" style="width: 50px; height: 50px;">
-            </a>
-            <a href="https://medium.com/@ciao_521" aria-label="Medium" rel="noopener noreferrer" target="_blank">
-                <img src="./sns/Medium.webp" alt="Visit Yasu's Medium" style="width: 50px; height: 50px;">
-            </a>
-            <a href="https://www.linkedin.com/in/yasuhiroiwai521/" aria-label="LinkedIn Profile" rel="noopener noreferrer" target="_blank">
-                <img src="./sns/LinkedIn.webp" alt="LinkedIn Profile" style="width: 50px; height: 50px;">
-            </a>
-                </div>
-            </div>
-                <div style="margin-top: 30px;">
-                    <h3>⥥ Request Information</h3>
-                    <p>
-                        <a href="mailto:iwaiyasuhiro0521@gmail.com" style="text-decoration: none; color: inherit;">
-                            [Mail]<br>iwaiyasuhiro0521@gmail.com
-                        </a>
-                    </p>
-                     <p style="font-size: 10px; text-decoration: underline; text-decoration-color: #f0e68c; text-underline-offset: 4px; font-family: 'Cambria', 'Baskerville', serif;">Do Not Sell My Personal Information</p>
-                </div>
-
-            </body>
-
-        `,
-        ja:`
-            <body style="font-family: Arial, serif; text-align: center; margin: 0;">
-
-            <h3 style="margin-top: 20px; text-align: left; color: white;">ながめる ≫ つながる</h3>
-            <div style="position: relative; background-color: #405de6;  padding: 20px; overflow-x: auto; white-space: nowrap; scrollbar-gutter: stable;">
-        <div style="display: flex; justify-content: left; align-items: left; gap: 30px; padding: 10px; box-sizing: border-box;">
-            <a href="https://www.figma.com/@ciao521" aria-label="Figma Profile" rel="noopener noreferrer" target="_blank">
-                <img src="./sns/Figma.webp" alt="Visit Yasu's Figma" style="width: 50px; height: 50px;">
-            </a>
-            <a href="https://github.com/Yasu521" aria-label="GitHub Profile" rel="noopener noreferrer" target="_blank">
-                <img src="./sns/github.webp" alt="GitHub Profile" style="width: 50px; height: 50px;">
-            </a>
-            <a href="https://www.duolingo.com/profile/ciao_521" aria-label="Dolingo" rel="noopener noreferrer" target="_blank">
-                <img src="./sns/Duolingo.webp" alt="Dolingo Jarney" style="width: 50px; height: 50px;">
-            </a>
-            <a href="https://note.com/ciao521/" aria-label="Note Blog" rel="noopener noreferrer" target="_blank">
-                <img src="./sns/note.webp" alt="Note Blog" style="width: 50px; height: 50px;">
-            </a>
-            <a href="https://www.instagram.com/ciao_521/" aria-label="Instagram Profile" rel="noopener noreferrer" target="_blank">
-                <img src="./sns/Instagram.webp" alt="Instagram Profile" style="width: 50px; height: 50px;">
-            </a>
-            <a href="https://www.linkedin.com/in/yasuhiroiwai521/" aria-label="LinkedIn Profile" rel="noopener noreferrer" target="_blank">
-                <img src="./sns/LinkedIn.webp" alt="LinkedIn Profile" style="width: 50px; height: 50px;">
-            </a>
-        </div>
-    </div>
-                <div style="margin-top: 30px;">
-                    <h3>⥥ お問い合わせ</h3>
-                    <p>
-                        <a href="mailto:iwaiyasuhiro0521@gmail.com" style="text-decoration: none; color: inherit;">
-                            [メール]<br>iwaiyasuhiro0521@gmail.com
-                        </a>
-                    </p>
-                    <p style="font-size: 10px; text-decoration: underline; text-decoration-color: #f0e68c; text-underline-offset: 4px; font-family: 'Cambria', 'Baskerville', serif;">私の個人データを販売しないでください</p>
-                </div>
-
-            </body>
-        `,
-        fr:`
-        <body style="font-family: Arial, serif; text-align: center;">
-            <h3 style="margin-top: 20px;">Un Regard Approfondi sur Yasu ≫</h3>
-            <div style="position: relative; background-color: #405de6;  padding: 20px; overflow-x: auto; white-space: nowrap; scrollbar-gutter: stable;">
-        <div style="display: flex; justify-content: left; align-items: left; gap: 30px; padding: 10px; box-sizing: border-box;">
-            <a href="https://www.figma.com/@ciao521" aria-label="Figma Profile" rel="noopener noreferrer" target="_blank">
-                <img src="./sns/Figma.webp" alt="Visit Yasu's Figma" style="width: 50px; height: 50px;">
-            </a>
-            <a href="https://github.com/Yasu521" aria-label="GitHub Profile" rel="noopener noreferrer" target="_blank">
-                <img src="./sns/github.webp" alt="GitHub Profile" style="width: 50px; height: 50px;">
-            </a>
-            <a href="https://www.kaggle.com/" aria-label="Kaggle" rel="noopener noreferrer" target="_blank">
-                <img src="./sns/Kaggle.webp" alt="Visit Yasu's Kaggle" style="width: 50px; height: 50px;">
-            </a>
-            <a href="https://www.duolingo.com/profile/ciao_521" aria-label="Dolingo" rel="noopener noreferrer" target="_blank">
-                <img src="./sns/Duolingo.webp" alt="Dolingo Jarney" style="width: 50px; height: 50px;">
-            </a>
-            <a href="https://www.linkedin.com/in/yasuhiroiwai521/" aria-label="LinkedIn Profile" rel="noopener noreferrer" target="_blank">
-                <img src="./sns/LinkedIn.webp" alt="LinkedIn Profile" style="width: 50px; height: 50px;">
-            </a>
-                </div>
-            </div>
-                <div style="margin-top: 30px;">
-                    <h3>⥥ Demande d'informations </h3>
-                    <p>
-                        <a href="mailto:iwaiyasuhiro0521@gmail.com" style="text-decoration: none; color: inherit;">
-                            [Message]<br>iwaiyasuhiro0521@gmail.com
-                        </a>
-                    </p>
-                    <p style="font-size: 10px; text-decoration: underline; text-decoration-color: #f0e68c; text-underline-offset: 4px; font-family: 'Cambria', 'Baskerville', serif;">Veuillez ne pas vendre mes données personnelles</p>
-
-                </div>
-
-            </body>
-        `,
-        zh:`
-                <body style="font-family: Arial, serif; text-align: center;">
-            <h3 style="margin-top: 20px;">深入了解 "康" ≫</h3>
-            <div style="position: relative; background-color: #405de6;  padding: 20px; overflow-x: auto; white-space: nowrap; scrollbar-gutter: stable;">
-        <div style="display: flex; justify-content: left; align-items: left; gap: 30px; padding: 10px; box-sizing: border-box;">
-            <a href="https://www.figma.com/@ciao521" aria-label="Figma Profile" rel="noopener noreferrer" target="_blank">
-                <img src="./sns/Figma.webp" alt="Visit Yasu's Figma" style="width: 50px; height: 50px;">
-            </a>
-            <a href="https://github.com/Yasu521" aria-label="GitHub Profile" rel="noopener noreferrer" target="_blank">
-                <img src="./sns/github.webp" alt="GitHub Profile" style="width: 50px; height: 50px;">
-            </a>
-            <a href="https://www.kaggle.com/" aria-label="Kaggle" rel="noopener noreferrer" target="_blank">
-                <img src="./sns/Kaggle.webp" alt="Visit Yasu's Kaggle" style="width: 50px; height: 50px;">
-            </a>
-            <a href="https://www.instagram.com/ciao_521/" aria-label="Instagram Profile" rel="noopener noreferrer" target="_blank">
-                <img src="./sns/Instagram.webp" alt="Instagram Profile" style="width: 50px; height: 50px;">
-            </a>
-            <a href="https://www.linkedin.com/in/yasuhiroiwai521/" aria-label="LinkedIn Profile" rel="noopener noreferrer" target="_blank">
-                <img src="./sns/LinkedIn.webp" alt="LinkedIn Profile" style="width: 50px; height: 50px;">
-            </a>
-                </div>
-            </div>
-                <div style="margin-top: 30px;">
-                    <h3>⥥ 咨询请求 </h3>
-                    <p>
-                        <a href="mailto:iwaiyasuhiro0521@gmail.com" style="text-decoration: none; color: inherit;">
-                            [邮箱]<br>iwaiyasuhiro0521@gmail.com
-                        </a>
-                    </p>
-                    <p style="font-size: 10px; text-decoration: underline; text-decoration-color: #f0e68c; text-underline-offset: 4px; font-family: 'Cambria', 'Baskerville', serif;">请勿出售我的个人信息</p>
-                </div>
-            </body>
-        `
-        ,}},
-    {
-        id: "Project",
-        texts: { en: " Projects", ja: "活動", fr: "Projets", zh: "项目" },
-        //links: { en: "https://aicurion.com/project-ja", ja:"https://aicurion.com/project-ja", fr: "https://aicurion.com/project-ja", zh:"https://aicurion.com/project-ja" },
-        position: { top: "60%", left: "20%" },
-        contentPosition: { left: "0%", right: "0%" },
-        content: {
-        en:`
-            <h2>Projects</h2>
-            <p>Here are some of my projects:</p>
-            <img src="https://via.placeholder.com/150/0000FF/808080?text=Projects" alt="Projects" style="width:150px;">
-            <p><a href="https://aicurion.com/project-ja" target="_blank">See Projects</a></p>
-        `,
-        ja:`
-         <h2>自己紹介</h2>
-                <p>こちらは自己紹介セクションです！</p>
-                <img src="https://via.placeholder.com/150" alt="自己紹介" style="width:150px;">
-                <p><a href="https://aicurion.com/aboutme-ja" target="_blank">もっと知る</a></p>
-        `,
-        }
-    },
-    {
-        id: "News",
-        texts: { en: "News", ja: "お知らせ", fr: "Nouvelles", zh: "消息" },
-        //links: { en: "https://example.com/contact-en", ja: "https://example.com/contact-ja", fr: "https://example.com/contact-fr", zh: "https://example.com/contact-zh" },
-        position: { top: "70%", left: "20%" },
-        contentPosition: { left: "0%", right: "0%" },
-        content:{
-        en:`
-            <h2>News</h2>
-            <p>Latest news updates:</p>
-            <img src="https://via.placeholder.com/150/FF0000/FFFFFF?text=News" alt="News" style="width:150px;">
-            <p><a href="https://example.com/news-en" target="_blank">Read News</a></p>
-        `,
-        ja:`
-         <h2>自己紹介</h2>
-                <p>こちらは自己紹介セクションです！</p>
-                <img src="https://via.placeholder.com/150" alt="自己紹介" style="width:150px;">
-                <p><a href="https://aicurion.com/aboutme-ja" target="_blank">もっと知る</a></p>
-        `,
-        }
-    },
-];
 
 let currentOverlay = null;
+
+fetch('./content/buttonsConfig.json')
+  .then((response) => response.json())
+  .then((configs) => {
+    window.buttonsConfig = configs; // Make it globally accessible
+    configs.forEach((config) => {
+      createButton(config);
+    });
+  });
 function updateButtonTexts() {
     buttonsConfig.forEach(config => {
         const button = document.getElementById(config.id);
@@ -439,56 +146,65 @@ function updateButtonTexts() {
                 button.target = "_blank";
             } else {
                 button.removeAttribute("href"); 
-            }}});}
-
-buttonsConfig.forEach(config => {
+}}});}
+function createButton(config) {
     const button = document.createElement("a");
     button.id = config.id;
     button.className = "menu-button";
     button.style.top = config.position.top;
     button.style.left = config.position.left;
     button.style.position = "absolute";
-    button.textContent = config.texts[currentLanguage];
-    if (config.links && config.links[currentLanguage]) {
-        button.href = config.links[currentLanguage];
-        button.target = "_blank";
+    button.textContent = config.texts[currentLanguage] || config.texts.en;
+    if (config.links) {
+      button.href = config.links[currentLanguage] || config.links.en;
+      button.target = "_blank";
     } else {
-        button.addEventListener("click", (event) => {
-            event.preventDefault();
-            showContent(config.content[currentLanguage] || config.content.en, config.contentPosition);
-        });}
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        const contentFile = config.contentFile[currentLanguage] || config.contentFile.en;
+        showContent(contentFile, config.contentPosition);
+      });
+    }
     buttonContainer.appendChild(button);
-});
-function showContent(content, contentPosition) {
-    if (currentOverlay) {
-        clearExistingContent(() => {
-            createContent(content, contentPosition);
-        });
-    } else {
-        createContent(content, contentPosition);
-    }}
-function createContent(content, contentPosition) {
+  }              
+function showContent(contentFile, contentPosition) {
+if (currentOverlay) {
+  clearExistingContent(() => {
+    loadContent(contentFile, contentPosition);
+  });
+} else {
+  loadContent(contentFile, contentPosition);
+}}
+
+function loadContent(contentFile, contentPosition) {
+fetch(contentFile)
+  .then((response) => response.text())
+  .then((htmlContent) => {
     const overlay = document.createElement("div");
     overlay.className = "content-overlay";
     overlay.addEventListener("click", clearExistingContent);
+
     const contentBox = document.createElement("div");
     contentBox.className = "content-box";
     contentBox.style.left = contentPosition.left;
-    contentBox.innerHTML = content;
+    contentBox.innerHTML = htmlContent;
+
     const closeButton = document.createElement("button");
     closeButton.textContent = "✖";
     closeButton.className = "close-button";
     closeButton.addEventListener("click", (event) => {
-        clearExistingContent();
+      clearExistingContent();
     });
 
     contentBox.appendChild(closeButton);
     overlay.appendChild(contentBox);
     contentContainer.appendChild(overlay);
+
     currentOverlay = overlay;
     setTimeout(() => {
-        overlay.classList.add("visible");
+      overlay.classList.add("visible");
     }, 10);
+  });
 }
 function clearExistingContent(callback) {
     if (currentOverlay) {
@@ -507,7 +223,6 @@ languageButtons.forEach(button => {
         updateLanguageIcon(currentLanguage);
     });});
 updateLanguageIcon(currentLanguage);
-
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
