@@ -5,10 +5,10 @@
       "position": { "top": "40%", "left": "20%" },
       "contentPosition": { "left": "0%", "right": "0%" },
       "contentFile":{
-        "en": "about-me-en.html",
-        "fr": "./about-me/about-me-fr.html",
-        "ja": "./about-me/about-me-ja.html",
-        "zh": "./about-me/about-me-zh.html"
+        "en": "./content/about-me/about-me-en.html",
+        "fr": "./content/about-me/about-me-fr.html",
+        "ja": "./content/about-me/about-me-ja.html",
+        "zh": "./content/about-me/about-me-zh.html"
         }
     },
     {
@@ -17,10 +17,10 @@
         "position": { "top": "50%", "left": "20%" },
         "contentPosition": { "left": "0%" ,"right": "0%"},
         "contentFile":{
-            "en": "./contact/contact-en.html",
-            "fr": "./contact/contact-fr.html",
-            "ja": "./contact/contact-ja.html",
-            "zh": "./contact/contact-zh.html"
+            "en": "./content/contact/contact-en.html",
+            "fr": "./content/contact/contact-fr.html",
+            "ja": "./content/contact/contact-ja.html",
+            "zh": "./content/contact/contact-zh.html"
         }
     },
     {
@@ -30,10 +30,10 @@
         "//links//": { "en": "https://aicurion.com/project-ja", "ja":"https://aicurion.com/project-ja", "fr": "https://aicurion.com/project-ja", "zh":"https://aicurion.com/project-ja"},
         "contentPosition": { "left": "0%", "right": "0%" },
         "contentFile": {
-            "en": "./project/project-en.html",
-            "fr": "./project/project-fr.html",
-            "ja": "./project/project-ja.html",
-            "zh": "./project/project-zh.html"
+            "en": "./content/project/project-en.html",
+            "fr": "./content/project/project-fr.html",
+            "ja": "./content/project/project-ja.html",
+            "zh": "./content/project/project-zh.html"
         }
     },
     {
@@ -43,10 +43,10 @@
         "//links//": { "en": "https://aicurion.com/project-ja", "ja":"https://aicurion.com/project-ja", "fr": "https://aicurion.com/project-ja", "zh":"https://aicurion.com/project-ja"},
         "contentPosition": { "left": "0%", "right": "0%" },
         "contentFile": {
-            "en": "./news/news-en.html",
-            "fr": "./news/news-fr.html",
-            "ja": "./news/news-ja.html",
-            "zh": "./news/news-zh.html"
+            "en": "./content/news/news-en.html",
+            "fr": "./content/news/news-fr.html",
+            "ja": "./content/news/news-ja.html",
+            "zh": "./content/news/news-zh.html"
         }
     }
   ]
