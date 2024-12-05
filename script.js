@@ -1,10 +1,10 @@
 const language = "en";
 let currentLanguage = language;
 const flagImages = {
-    en: 'https://dl.dropboxusercontent.com/scl/fi/2rf6u1lgz1umr90t27xm9/USA.webp?rlkey=p39hiwneu59po4xtef89w4ght',
-    ja: 'https://dl.dropboxusercontent.com/scl/fi/7zk7wqolaisz2nnpur5zx/Japan.webp?rlkey=9hsskjb8ur5hm4xtl1zv5t5om',
-    fr: 'https://dl.dropboxusercontent.com/scl/fi/oo1el6eivigb5u48pr92x/France.webp?rlkey=6qk365xupen62f7ls6e6zkfck',
-    zh: 'https://dl.dropboxusercontent.com/scl/fi/imqh7w6yxypiuy7cl60la/China.webp?rlkey=arg6wmpkz6pdg5pjn8bdtziz9'
+    en: './flag/USA.webp',
+    ja: './flag/Japan.webp',
+    fr: './flag/France.webp',
+    zh: './flag/China.webp'
 }
 const textures = {
     dustTextures: [
