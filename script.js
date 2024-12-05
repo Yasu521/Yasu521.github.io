@@ -31,7 +31,6 @@ const textures = {
     "./flower/127.webp",
     "./flower/128.webp",
     "./flower/202.webp",
-    "./flower/214.webp",
     "./flower/220.webp",
        ],
     pinkTextures : [
