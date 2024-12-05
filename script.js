@@ -1,20 +1,20 @@
 const language = "en";
 let currentLanguage = language;
 const flagImages = {
-    en: './flag/USA.webp',
-    ja: './flag/Japan.webp',
-    fr: './flag/France.webp',
-    zh: './flag/China.webp'
+    en: 'https://cdn.jsdelivr.net/gh/Yasu521/Yasu521.github.io/flag/USA.webp',
+    ja: 'https://cdn.jsdelivr.net/gh/Yasu521/Yasu521.github.io/flag/Japan.webp',
+    fr: 'https://cdn.jsdelivr.net/gh/Yasu521/Yasu521.github.io/flag/France.webp',
+    zh: 'https://cdn.jsdelivr.net/gh/Yasu521/Yasu521.github.io/flag/China.webp'
 }
 const textures = {
     dustTextures: [
-    "./flower/dust.webp",
+    "https://cdn.jsdelivr.net/gh/Yasu521/Yasu521.github.io/flower/dust.webp",
     ],
     orangeTextures : [
-    "./flower/1.webp",
-    "./flower/7.webp",
-    "./flower/9.webp",
-    "./flower/11.webp",
+    "https://cdn.jsdelivr.net/gh/Yasu521/Yasu521.github.io/flower/1.webp",
+    "https://cdn.jsdelivr.net/gh/Yasu521/Yasu521.github.io/flower/7.webp",
+    "https://cdn.jsdelivr.net/gh/Yasu521/Yasu521.github.io/flower/9.webp",
+    "https://cdn.jsdelivr.net/gh/Yasu521/Yasu521.github.io/flower/11.webp",
     ],
     fallingTextures2 : [
     "./flower/2.webp",
