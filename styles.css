@@ -6,30 +6,6 @@
   background: black;
   color: rgb(14, 14, 14);
 }
-
-#audioControlButton {
-  position: fixed;     
-  background-color: #ffffff; 
-  top: 13px;
-  right: 60px;
-  width: 30px; 
-  border-radius: 50%;
-  cursor: pointer;
-  height: 30px;
-  cursor: pointer; 
-  z-index: 100; 
-}
-
-#audioControlButton img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; 
-}
-
-audio {
-  display: none;
-}
-
 .language-menu {
   position: absolute;
   top: 10px;
@@ -75,12 +51,7 @@ audio {
   cursor: pointer;
   transition: background 0.3s;
 }
-.language-option:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-.language-option.selected {
-  font-style: italic;
-}
+
 .language-menu:hover .language-list {
   display: block;
 }
@@ -189,13 +160,6 @@ audio {
 .menu-button:hover::after {
   width: 100%;
 }
-.fade-in {
-            opacity: 0;
-            transition: opacity 5s;
-        }
-        .visible {
-            opacity: 1;
-        }
         .content-overlay {
             position: fixed;
             top: 0;
@@ -242,12 +206,7 @@ audio {
 .close-button:hover {
     background-color: #acacac;
 }
-.icons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
-}
+
 .icon {
     width: 50px;
     height: 50px;
