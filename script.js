@@ -8,22 +8,22 @@ const flagImages = {
 }
 const textures = {
     dustTextures: [
-    "https://dl.dropboxusercontent.com/scl/fi/culssvagxdbqya55b24yx/dust.webp?rlkey=3s81457rlvc7axoc7jmwojjk0",
+    "./flower/dust.webp",
     ],
     orangeTextures : [
-    "https://dl.dropboxusercontent.com/scl/fi/hcrobbzai3pgmwydewxes/1.webp?rlkey=k22tkv0edx6hx9gksqimtal7h",
-    "https://dl.dropboxusercontent.com/scl/fi/7sbawp6uvx31tirf5ua5g/7.webp?rlkey=3rs7bnltwoj354gjn2086pr2u",
-    "https://dl.dropboxusercontent.com/scl/fi/rtxegajc94zgrb0upfttm/9.webp?rlkey=sfspx0kh0p5pcjtn9nih7akth",
-    "https://dl.dropboxusercontent.com/scl/fi/6w3ci1a2zk1g8wx5on7i5/11.webp?rlkey=trtg5ecdp560c1w25rjb9mo4j",
+    "./flower/1.webp",
+    "./flower/7.webp",
+    "./flower/9.webp",
+    "./flower/11.webp",
     ],
     fallingTextures2 : [
-    "https://dl.dropboxusercontent.com/scl/fi/168wjes7vzcgapok7kqir/5.webp?rlkey=f9a90kba1a0bizcnnv2fbkatt",
-    "https://dl.dropboxusercontent.com/scl/fi/4i0wgq9t9k9kjdbfvdlw7/plant_precise_373.webp?rlkey=q5ynphx03fl1lkcjrs50ljle9",
+    "./flower/5.webp",
+    "./flower/373.webp",
     ],
     whiteTextures : [
-    "https://dl.dropboxusercontent.com/scl/fi/crv51az5fqw5g0zsbikfr/3.webp?rlkey=m4mfh20wbeaoqqa3174j2q1i9",
-    "https://dl.dropboxusercontent.com/scl/fi/l3aof5fv809mzc8zw58oo/4.webp?rlkey=632dkudvm4dvn93b1w720rgl2",
-    "https://dl.dropboxusercontent.com/scl/fi/yf0g7243zrnjouxed4q40/6.webp?rlkey=jw5xtyon8fpwdzrrxnusyqctp",
+    "./flower/3.webp",
+    "./flower/4.webp2",
+    "./flower/6.webp",
     ],
     blueTextures : [
     "https://dl.dropboxusercontent.com/scl/fi/ce86jbgb3vqrxa51gfvgc/plant_precise_128.webp?rlkey=k9ium3e2xkrzslqsba4p23f60",
@@ -38,16 +38,16 @@ const textures = {
     "https://dl.dropboxusercontent.com/scl/fi/0hfd2ow2kuz8zhqlj5by2/plant_precise_266.webp?rlkey=r0rbgtq41xdkmeyr913b6uzgb",
          ],
     groundTextures : [
-    "https://dl.dropboxusercontent.com/scl/fi/ib5flgw9nvxcwxr6gpoau/plant_precise_15.webp?rlkey=qmt4aarxpy3cqpz2ryc1kj08s",
+    "./flower/15.webp",
     ],
     groundTextures2:[
-    "https://dl.dropboxusercontent.com/scl/fi/u4olg887jb0r3o8ee3kmi/plant_precise_17.webp?rlkey=e8fpbq9xjtgecml5864grf69c",
+    "./flower/17.webp",
     ],
     groundTextures3:[
-    "https://dl.dropboxusercontent.com/scl/fi/sbt9ct9cdngyxbgnpsu7k/plant_precise_18.webp?rlkey=vto0hmazuqrt8tkvonchn6f2n",
+    "./flower/18.webp",
     ],
     groundTextures4:[
-    "https://dl.dropboxusercontent.com/scl/fi/ds9ph00nn0mhabm6omn8i/plant_precise_31.webp?rlkey=2xp24a6rrm1tsf8wobwrcxu6n",
+    "./flower/31.webp",
     ],
     };
     const textureCache = new Map();
