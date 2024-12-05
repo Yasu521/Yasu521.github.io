@@ -22,7 +22,7 @@ const textures = {
     ],
     whiteTextures : [
     "./flower/3.webp",
-    "./flower/4.webp2",
+    "./flower/4.webp",
     "./flower/6.webp",
     ],
     blueTextures : [
