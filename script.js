@@ -164,6 +164,9 @@ const buttonsConfig = [
                     <p style="margin-top: 12px;">13歳から「健」や幸せに繋がる活動を続けてきた鹿。データサイエンティスト・DevOpsエンジニアの他、グラフィックデザイナーとして幅広い分野でプロジェクトに携わる。ヒトやモノの間にある多様性に注目し、それぞれの可能性を見つけ出す第一発見者でありたいと考えている。趣味は、テニスと読書。</p>
                 </div>
             </div>
+            <div class="image-section" style="display: flex; justify-content: space-evenly; margin-bottom: 20px;">
+                <img src="./Ciao.webp" alt="Profile photo" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
+            </div>
             <div class="faq-section">
                 <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">よくあるご質問</h2>
                 <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid  #ff7f50; border-radius: 8px;">
@@ -186,6 +189,9 @@ const buttonsConfig = [
                 <p style="margin-top: 12px;">Mon prénom, Yasu (康), provient du japonais et symbolise le processus de battage d'une récolte abondante de riz. Il évoque la paix, la santé et la joie. Engagé dans des activités liées à la "santé" et au bonheur depuis l'âge de 13 ans. Je participe à des projets dans divers domaines, notamment en tant que Data Scientist, ingénieur DevOps et designer graphique. Mon objectif est d’être le premier à découvrir les possibilités en me concentrant sur la diversité entre les personnes et les choses. Mes passe-temps incluent le tennis et la lecture.</p>
             </div>
         </div>
+        <div class="image-section" style="display: flex; justify-content: space-evenly; margin-bottom: 20px;">
+            <img src="./Ciao.webp" alt="Profile photo" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
+        </div>
         <div class="faq-section">
             <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">Questions fréquemment posées</h2>
             <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid  #ff7f50; border-radius: 8px;">
@@ -207,7 +213,10 @@ const buttonsConfig = [
                 <p class="roles" style="font-size: 14px; font-family: 'Cambria', 'Baskerville', serif; color: #ffffff; margin-top: 8px;">角色 = [数据科学家，健康专业人士，教育科技专家，平面设计师]</p>
                 <p style="margin-top: 12px;">我的名字Yasu（康）源自日语，象征着脱谷丰收的稻米。这名字代表了平安、健康和喜悦的意义。 从13岁起，我就致力于与“健康”和幸福相关的活动。我参与了多个领域的项目，包括作为数据科学家、DevOps工程师和平面设计师。我希望通过关注人和事物之间的多样性，成为发现潜力的第一人。我的爱好包括网球和阅读。</p>
             </div>
-        </div>   
+        </div>
+        <div class="image-section" style="display: flex; justify-content: space-evenly; margin-bottom: 20px;">
+            <img src="./Ciao.webp" alt="Profile photo" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd;">
+        </div>
         <div class="faq-section">
             <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">常见问题</h2>
             <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid  #ff7f50; border-radius: 8px;">
