@@ -66,7 +66,12 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const imagesToPreload = [
-      './flag/USA.webp','./flag/Japan.webp','./sns/Duolingo.webp','./sns/Figma.webp','./sns/Instagram.webp','./sns/Kaggle.webp','./sns/LinkedIn.webp','./sns/note.webp','./sns/Medium.webp','./sns/github.webp'
+      'https://cdn.jsdelivr.net/gh/Yasu521/Yasu521.github.io/flag/USA.webp',
+      'https://cdn.jsdelivr.net/gh/Yasu521/Yasu521.github.io/flag/Japan.webp',
+      './sns/Duolingo.webp','./sns/Figma.webp',
+      './sns/Instagram.webp','./sns/Kaggle.webp',
+      './sns/LinkedIn.webp','./sns/note.webp',
+      './sns/Medium.webp','./sns/github.webp'
     ];
     imagesToPreload.forEach(src => {
       const link = document.createElement('link');
