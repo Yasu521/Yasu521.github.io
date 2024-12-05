@@ -35,6 +35,7 @@ const textures = {
        ],
     pinkTextures : [
     "./flower/258.webp",
+    "./flower/260.webp",
     "./flower/261.webp",
     "./flower/263.webp",
     "./flower/266.webp",
