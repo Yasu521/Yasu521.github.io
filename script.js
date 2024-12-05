@@ -28,6 +28,7 @@ const textures = {
     ],
     blueTextures : [
     "./flower/124.webp",
+    "./flower/127.webp",
     "./flower/128.webp",
     "./flower/202.webp",
     "./flower/214.webp",
