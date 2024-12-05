@@ -17,6 +17,7 @@ const textures = {
     "./flower/11.webp",
     ],
     fallingTextures2 : [
+    "./flower/2.webp",
     "./flower/5.webp",
     "./flower/373.webp",
     ],
@@ -28,6 +29,7 @@ const textures = {
     blueTextures : [
     "./flower/124.webp",
     "./flower/128.webp",
+    "./flower/202.webp",
     "./flower/214.webp",
     "./flower/220.webp",
        ],
