@@ -1,10 +1,10 @@
 const language = "en";
 let currentLanguage = language;
 const flagImages = {
-    en: 'https://dl.dropboxusercontent.com/scl/fi/9i7g9xabwget3depyoadq/7592_1.webp?rlkey=vsy5814ksvittsbxr39m1andb',
-    ja: 'https://dl.dropboxusercontent.com/scl/fi/u3z30zgi34wxgzkkimoym/7591.webp?rlkey=z70tw8kok5suf1lyhabg0zlrz',
-    fr: 'https://dl.dropboxusercontent.com/scl/fi/z7grapyl59fwwc1199crj/7596.webp?rlkey=1shxcz2ohldi4n5brs6fyljll',
-    zh: 'https://dl.dropboxusercontent.com/scl/fi/5p1nrzhecjhfy2yowkgil/7607.webp?rlkey=fjcvwnl81dcoxex3cowzgffsg'
+    en: 'https://dl.dropboxusercontent.com/scl/fi/2rf6u1lgz1umr90t27xm9/USA.webp?rlkey=p39hiwneu59po4xtef89w4ght',
+    ja: 'https://dl.dropboxusercontent.com/scl/fi/7zk7wqolaisz2nnpur5zx/Japan.webp?rlkey=9hsskjb8ur5hm4xtl1zv5t5om',
+    fr: 'https://dl.dropboxusercontent.com/scl/fi/oo1el6eivigb5u48pr92x/France.webp?rlkey=6qk365xupen62f7ls6e6zkfck',
+    zh: 'https://dl.dropboxusercontent.com/scl/fi/imqh7w6yxypiuy7cl60la/China.webp?rlkey=arg6wmpkz6pdg5pjn8bdtziz9'
 }
 const textures = {
     dustTextures: [
