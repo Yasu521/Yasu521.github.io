@@ -234,19 +234,19 @@ const buttonsConfig = [
 
         <div style="display: flex; justify-content: left; align-items: left; gap: 30px; padding: 10px; box-sizing: border-box;">
             <a href="https://www.figma.com/@ciao521" aria-label="Figma Profile" rel="noopener noreferrer" target="_blank">
-                <img src="https://dl.dropboxusercontent.com/scl/fi/r085i6x4pkraz8dnukf3p/Figma.webp?rlkey=313yse3x6ognrg3ut9qgkuaem" alt="Visit Yasu's Figma" style="width: 50px; height: 50px;">
+                <img src="./sns/Figma.webp" alt="Visit Yasu's Figma" style="width: 50px; height: 50px;">
             </a>
             <a href="https://github.com/Yasu521" aria-label="GitHub Profile" rel="noopener noreferrer" target="_blank">
-                <img src="https://dl.dropboxusercontent.com/scl/fi/11jrys18bm49mge5pkcy3/Github.webp?rlkey=9pcoyqek9n2zsr98ectosk7jc" alt="GitHub Profile" style="width: 50px; height: 50px;">
+                <img src="./sns/github.webp" alt="GitHub Profile" style="width: 50px; height: 50px;">
             </a>
             <a href="https://www.kaggle.com/" aria-label="Kaggle" rel="noopener noreferrer" target="_blank">
-                <img src="https://dl.dropboxusercontent.com/scl/fi/ttdo09ckn1cszgli1g5es/Kaggle.webp?rlkey=tva2h0s9yiqnxe1vorw4wmnx9" alt="Visit Yasu's Kaggle" style="width: 50px; height: 50px;">
+                <img src="./sns/Kaggle.webp" alt="Visit Yasu's Kaggle" style="width: 50px; height: 50px;">
             </a>
             <a href="https://medium.com/@ciao_521" aria-label="Medium" rel="noopener noreferrer" target="_blank">
-                <img src="https://dl.dropboxusercontent.com/scl/fi/77tm4lhu2vgqy42xy255d/Medium.webp?rlkey=t77dihhhhu0dlb6nmg637w82c" alt="Visit Yasu's Medium" style="width: 50px; height: 50px;">
+                <img src="./sns/Medium.webp" alt="Visit Yasu's Medium" style="width: 50px; height: 50px;">
             </a>
             <a href="https://www.linkedin.com/in/yasuhiroiwai521/" aria-label="LinkedIn Profile" rel="noopener noreferrer" target="_blank">
-                <img src="https://dl.dropboxusercontent.com/scl/fi/urt7axjmmxmei7fugqwt3/LinkedIn.webp?rlkey=idp6ohgj82yxdfny7uxvru08g" alt="LinkedIn Profile" style="width: 50px; height: 50px;">
+                <img src="./sns/LinkedIn.webp" alt="LinkedIn Profile" style="width: 50px; height: 50px;">
             </a>
                 </div>
             </div>
@@ -268,28 +268,24 @@ const buttonsConfig = [
 
             <h3 style="margin-top: 20px; text-align: left; color: white;">ながめる ≫ つながる</h3>
             <div style="position: relative; background-color: #405de6;  padding: 20px; overflow-x: auto; white-space: nowrap; scrollbar-gutter: stable;">
-
         <div style="display: flex; justify-content: left; align-items: left; gap: 30px; padding: 10px; box-sizing: border-box;">
             <a href="https://www.figma.com/@ciao521" aria-label="Figma Profile" rel="noopener noreferrer" target="_blank">
-                <img src="https://dl.dropboxusercontent.com/scl/fi/r085i6x4pkraz8dnukf3p/Figma.webp?rlkey=313yse3x6ognrg3ut9qgkuaem" alt="Visit Yasu's Figma" style="width: 50px; height: 50px;">
+                <img src="./sns/Figma.webp" alt="Visit Yasu's Figma" style="width: 50px; height: 50px;">
             </a>
             <a href="https://github.com/Yasu521" aria-label="GitHub Profile" rel="noopener noreferrer" target="_blank">
-                <img src="https://dl.dropboxusercontent.com/scl/fi/11jrys18bm49mge5pkcy3/Github.webp?rlkey=9pcoyqek9n2zsr98ectosk7jc" alt="GitHub Profile" style="width: 50px; height: 50px;">
-            </a>
-            <a href="https://www.kaggle.com/" aria-label="Kaggle" rel="noopener noreferrer" target="_blank">
-                <img src="https://dl.dropboxusercontent.com/scl/fi/ttdo09ckn1cszgli1g5es/Kaggle.webp?rlkey=tva2h0s9yiqnxe1vorw4wmnx9" alt="Visit Yasu's Kaggle" style="width: 50px; height: 50px;">
+                <img src="./sns/github.webp" alt="GitHub Profile" style="width: 50px; height: 50px;">
             </a>
             <a href="https://www.duolingo.com/profile/ciao_521" aria-label="Dolingo" rel="noopener noreferrer" target="_blank">
-                <img src="https://dl.dropboxusercontent.com/scl/fi/78u816hupd416k3q6jtdb/Duolingo.webp?rlkey=a4qltbkpbjn1fvsvvdy9efg3m" alt="Dolingo Jarney" style="width: 50px; height: 50px;">
+                <img src="./sns/Duolingo.webp" alt="Dolingo Jarney" style="width: 50px; height: 50px;">
             </a>
             <a href="https://note.com/ciao521/" aria-label="Note Blog" rel="noopener noreferrer" target="_blank">
-                <img src="https://dl.dropboxusercontent.com/scl/fi/zxiepe4j5kt23ifwzpkcn/note.webp?rlkey=q24wmh7vmp5svevg03wyspqky" alt="Note Blog" style="width: 50px; height: 50px;">
+                <img src="./sns/note.webp" alt="Note Blog" style="width: 50px; height: 50px;">
             </a>
             <a href="https://www.instagram.com/ciao_521/" aria-label="Instagram Profile" rel="noopener noreferrer" target="_blank">
-                <img src="https://dl.dropboxusercontent.com/scl/fi/8n0gzmjcxnrem48o7lv7m/Insta.webp?rlkey=n1x7qdmt5zx6ubyzu5lhzaw0o" alt="Instagram Profile" style="width: 50px; height: 50px;">
+                <img src="./sns/Instagram.webp" alt="Instagram Profile" style="width: 50px; height: 50px;">
             </a>
             <a href="https://www.linkedin.com/in/yasuhiroiwai521/" aria-label="LinkedIn Profile" rel="noopener noreferrer" target="_blank">
-                <img src="https://dl.dropboxusercontent.com/scl/fi/urt7axjmmxmei7fugqwt3/LinkedIn.webp?rlkey=idp6ohgj82yxdfny7uxvru08g" alt="LinkedIn Profile" style="width: 50px; height: 50px;">
+                <img src="./sns/LinkedIn.webp" alt="LinkedIn Profile" style="width: 50px; height: 50px;">
             </a>
         </div>
     </div>
@@ -309,22 +305,21 @@ const buttonsConfig = [
         <body style="font-family: Arial, serif; text-align: center;">
             <h3 style="margin-top: 20px;">Un Regard Approfondi sur Yasu ≫</h3>
             <div style="position: relative; background-color: #405de6;  padding: 20px; overflow-x: auto; white-space: nowrap; scrollbar-gutter: stable;">
-
         <div style="display: flex; justify-content: left; align-items: left; gap: 30px; padding: 10px; box-sizing: border-box;">
             <a href="https://www.figma.com/@ciao521" aria-label="Figma Profile" rel="noopener noreferrer" target="_blank">
-                <img src="https://dl.dropboxusercontent.com/scl/fi/r085i6x4pkraz8dnukf3p/Figma.webp?rlkey=313yse3x6ognrg3ut9qgkuaem" alt="Visit Yasu's Figma" style="width: 50px; height: 50px;">
+                <img src="./sns/Figma.webp" alt="Visit Yasu's Figma" style="width: 50px; height: 50px;">
             </a>
             <a href="https://github.com/Yasu521" aria-label="GitHub Profile" rel="noopener noreferrer" target="_blank">
-                <img src="https://dl.dropboxusercontent.com/scl/fi/11jrys18bm49mge5pkcy3/Github.webp?rlkey=9pcoyqek9n2zsr98ectosk7jc" alt="GitHub Profile" style="width: 50px; height: 50px;">
+                <img src="./sns/github.webp" alt="GitHub Profile" style="width: 50px; height: 50px;">
             </a>
             <a href="https://www.kaggle.com/" aria-label="Kaggle" rel="noopener noreferrer" target="_blank">
-                <img src="https://dl.dropboxusercontent.com/scl/fi/ttdo09ckn1cszgli1g5es/Kaggle.webp?rlkey=tva2h0s9yiqnxe1vorw4wmnx9" alt="Visit Yasu's Kaggle" style="width: 50px; height: 50px;">
+                <img src="./sns/Kaggle.webp" alt="Visit Yasu's Kaggle" style="width: 50px; height: 50px;">
             </a>
             <a href="https://www.duolingo.com/profile/ciao_521" aria-label="Dolingo" rel="noopener noreferrer" target="_blank">
-                <img src="https://dl.dropboxusercontent.com/scl/fi/78u816hupd416k3q6jtdb/Duolingo.webp?rlkey=a4qltbkpbjn1fvsvvdy9efg3m" alt="Dolingo Jarney" style="width: 50px; height: 50px;">
+                <img src="./sns/Duolingo.webp" alt="Dolingo Jarney" style="width: 50px; height: 50px;">
             </a>
             <a href="https://www.linkedin.com/in/yasuhiroiwai521/" aria-label="LinkedIn Profile" rel="noopener noreferrer" target="_blank">
-                <img src="https://dl.dropboxusercontent.com/scl/fi/urt7axjmmxmei7fugqwt3/LinkedIn.webp?rlkey=idp6ohgj82yxdfny7uxvru08g" alt="LinkedIn Profile" style="width: 50px; height: 50px;">
+                <img src="./sns/LinkedIn.webp" alt="LinkedIn Profile" style="width: 50px; height: 50px;">
             </a>
                 </div>
             </div>
@@ -345,19 +340,21 @@ const buttonsConfig = [
                 <body style="font-family: Arial, serif; text-align: center;">
             <h3 style="margin-top: 20px;">深入了解 "康" ≫</h3>
             <div style="position: relative; background-color: #405de6;  padding: 20px; overflow-x: auto; white-space: nowrap; scrollbar-gutter: stable;">
-
         <div style="display: flex; justify-content: left; align-items: left; gap: 30px; padding: 10px; box-sizing: border-box;">
             <a href="https://www.figma.com/@ciao521" aria-label="Figma Profile" rel="noopener noreferrer" target="_blank">
-                <img src="https://dl.dropboxusercontent.com/scl/fi/r085i6x4pkraz8dnukf3p/Figma.webp?rlkey=313yse3x6ognrg3ut9qgkuaem" alt="Visit Yasu's Figma" style="width: 50px; height: 50px;">
+                <img src="./sns/Figma.webp" alt="Visit Yasu's Figma" style="width: 50px; height: 50px;">
             </a>
             <a href="https://github.com/Yasu521" aria-label="GitHub Profile" rel="noopener noreferrer" target="_blank">
-                <img src="https://dl.dropboxusercontent.com/scl/fi/11jrys18bm49mge5pkcy3/Github.webp?rlkey=9pcoyqek9n2zsr98ectosk7jc" alt="GitHub Profile" style="width: 50px; height: 50px;">
+                <img src="./sns/github.webp" alt="GitHub Profile" style="width: 50px; height: 50px;">
             </a>
             <a href="https://www.kaggle.com/" aria-label="Kaggle" rel="noopener noreferrer" target="_blank">
-                <img src="https://dl.dropboxusercontent.com/scl/fi/ttdo09ckn1cszgli1g5es/Kaggle.webp?rlkey=tva2h0s9yiqnxe1vorw4wmnx9" alt="Visit Yasu's Kaggle" style="width: 50px; height: 50px;">
+                <img src="./sns/Kaggle.webp" alt="Visit Yasu's Kaggle" style="width: 50px; height: 50px;">
+            </a>
+            <a href="https://www.instagram.com/ciao_521/" aria-label="Instagram Profile" rel="noopener noreferrer" target="_blank">
+                <img src="./sns/Instagram.webp" alt="Instagram Profile" style="width: 50px; height: 50px;">
             </a>
             <a href="https://www.linkedin.com/in/yasuhiroiwai521/" aria-label="LinkedIn Profile" rel="noopener noreferrer" target="_blank">
-                <img src="https://dl.dropboxusercontent.com/scl/fi/urt7axjmmxmei7fugqwt3/LinkedIn.webp?rlkey=idp6ohgj82yxdfny7uxvru08g" alt="LinkedIn Profile" style="width: 50px; height: 50px;">
+                <img src="./sns/LinkedIn.webp" alt="LinkedIn Profile" style="width: 50px; height: 50px;">
             </a>
                 </div>
             </div>
