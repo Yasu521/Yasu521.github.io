@@ -1,9 +1,127 @@
 const language = "en";
+let currentLanguage = language;
+const flagImages = {
+    en: 'https://dl.dropboxusercontent.com/scl/fi/9i7g9xabwget3depyoadq/7592_1.webp?rlkey=vsy5814ksvittsbxr39m1andb',
+    ja: 'https://dl.dropboxusercontent.com/scl/fi/u3z30zgi34wxgzkkimoym/7591.webp?rlkey=z70tw8kok5suf1lyhabg0zlrz',
+    fr: 'https://dl.dropboxusercontent.com/scl/fi/z7grapyl59fwwc1199crj/7596.webp?rlkey=1shxcz2ohldi4n5brs6fyljll',
+    zh: 'https://dl.dropboxusercontent.com/scl/fi/5p1nrzhecjhfy2yowkgil/7607.webp?rlkey=fjcvwnl81dcoxex3cowzgffsg'
+}
+const textures = {
+    dustTextures: [
+    "https://dl.dropboxusercontent.com/scl/fi/culssvagxdbqya55b24yx/dust.webp?rlkey=3s81457rlvc7axoc7jmwojjk0",
+    ],
+    orangeTextures : [
+    "https://dl.dropboxusercontent.com/scl/fi/hcrobbzai3pgmwydewxes/1.webp?rlkey=k22tkv0edx6hx9gksqimtal7h",
+    "https://dl.dropboxusercontent.com/scl/fi/7sbawp6uvx31tirf5ua5g/7.webp?rlkey=3rs7bnltwoj354gjn2086pr2u",
+    "https://dl.dropboxusercontent.com/scl/fi/rtxegajc94zgrb0upfttm/9.webp?rlkey=sfspx0kh0p5pcjtn9nih7akth",
+    "https://dl.dropboxusercontent.com/scl/fi/6w3ci1a2zk1g8wx5on7i5/11.webp?rlkey=trtg5ecdp560c1w25rjb9mo4j",
+    ],
+    fallingTextures2 : [
+    "https://dl.dropboxusercontent.com/scl/fi/168wjes7vzcgapok7kqir/5.webp?rlkey=f9a90kba1a0bizcnnv2fbkatt",
+    "https://dl.dropboxusercontent.com/scl/fi/4i0wgq9t9k9kjdbfvdlw7/plant_precise_373.webp?rlkey=q5ynphx03fl1lkcjrs50ljle9",
+    ],
+    whiteTextures : [
+    "https://dl.dropboxusercontent.com/scl/fi/crv51az5fqw5g0zsbikfr/3.webp?rlkey=m4mfh20wbeaoqqa3174j2q1i9",
+    "https://dl.dropboxusercontent.com/scl/fi/l3aof5fv809mzc8zw58oo/4.webp?rlkey=632dkudvm4dvn93b1w720rgl2",
+    "https://dl.dropboxusercontent.com/scl/fi/yf0g7243zrnjouxed4q40/6.webp?rlkey=jw5xtyon8fpwdzrrxnusyqctp",
+    ],
+    blueTextures : [
+    "https://dl.dropboxusercontent.com/scl/fi/ce86jbgb3vqrxa51gfvgc/plant_precise_128.webp?rlkey=k9ium3e2xkrzslqsba4p23f60",
+    "https://dl.dropboxusercontent.com/scl/fi/5xaziuy55562qr6estl48/plant_precise_124.webp?rlkey=j5ixogfh9pcvm82stwd8oeinu",
+    "https://dl.dropboxusercontent.com/scl/fi/3xrdiqdiukdt61wyzu94u/plant_precise_214.webp?rlkey=qh7r9zu0lm7ikkcmkco9zzfll",
+    "https://dl.dropboxusercontent.com/scl/fi/bkhgu2bhxw8p02jb2oxx4/plant_precise_220.webp?rlkey=t5z4yeghbvjr9oa8flk973tjp",
+       ],
+    pinkTextures : [
+    "https://dl.dropboxusercontent.com/scl/fi/lwf95owio93ahgi144nmi/plant_precise_258.webp?rlkey=9d2njke0pmcq0jjxmnuph4vms",
+    "https://dl.dropboxusercontent.com/scl/fi/5jb6gab456rg8kyb60siv/plant_precise_261.webp?rlkey=qy9i3w3mvgeond1h3kslxhkxy",
+    "https://dl.dropboxusercontent.com/scl/fi/tyl4qwn50dvntwiheewv7/plant_precise_263.webp?rlkey=zhtn1a0ir95dtax6v9kx6s3t7",
+    "https://dl.dropboxusercontent.com/scl/fi/0hfd2ow2kuz8zhqlj5by2/plant_precise_266.webp?rlkey=r0rbgtq41xdkmeyr913b6uzgb",
+         ],
+    groundTextures : [
+    "https://dl.dropboxusercontent.com/scl/fi/ib5flgw9nvxcwxr6gpoau/plant_precise_15.webp?rlkey=qmt4aarxpy3cqpz2ryc1kj08s",
+    ],
+    groundTextures2:[
+    "https://dl.dropboxusercontent.com/scl/fi/u4olg887jb0r3o8ee3kmi/plant_precise_17.webp?rlkey=e8fpbq9xjtgecml5864grf69c",
+    ],
+    groundTextures3:[
+    "https://dl.dropboxusercontent.com/scl/fi/sbt9ct9cdngyxbgnpsu7k/plant_precise_18.webp?rlkey=vto0hmazuqrt8tkvonchn6f2n",
+    ],
+    groundTextures4:[
+    "https://dl.dropboxusercontent.com/scl/fi/ds9ph00nn0mhabm6omn8i/plant_precise_31.webp?rlkey=2xp24a6rrm1tsf8wobwrcxu6n",
+    ],
+    };
+    const textureCache = new Map();
+    const manager = new THREE.LoadingManager();
+    const loader = new THREE.TextureLoader(manager);
+    const startTime = Date.now();
+
+    manager.onProgress = (url, itemsLoaded, itemsTotal) => {
+        const progress = (itemsLoaded / itemsTotal) * 100;
+        document.getElementById("progress-bar").style.width = `${progress}%`;
+        const elapsedTime = (Date.now() - startTime) / 1000;
+        const estimatedTotalTime = (elapsedTime / itemsLoaded) * itemsTotal;
+        const remainingTime = Math.max(0, estimatedTotalTime - elapsedTime);
+        document.getElementById("progress-bar").style.width = `${progress}%`;
+        document.getElementById("remaining-time").textContent = 
+        `(${progress.toFixed(2)}%, ${remainingTime.toFixed(2)}s left)`;
+        };
+    manager.onLoad = () => {
+        checkAnimationStability();
+    };
+
+function loadTexture(url) {
+    return new Promise((resolve, reject) => {
+        loader.load(
+            url,
+            (texture) => {
+                textureCache.set(url, texture);
+                resolve(texture);
+            },
+            undefined,
+            (err) => {
+                reject(err);
+            });});}
+(async () => {
+    const allUrls = Object.values(textures).flat();
+    await Promise.all(allUrls.map(loadTexture));
+    manager.onLoad();
+})();
+const loadingDots = document.getElementById("loading-dots");
+let dotCount = 0;
+function updateLoadingDots() {
+    dotCount = (dotCount + 1) % 4;
+    loadingDots.textContent = ".".repeat(dotCount);
+    requestAnimationFrame(updateLoadingDots);
+}
+updateLoadingDots();
+
+let isAnimationStable = false;
+function checkAnimationStability() {
+    let stabilityCheckCount = 0;
+    const stabilityThreshold = 10;
+function stabilityChecker() {
+        if (isAnimationStable) return;
+        const fps = Math.random() * 10 + 30;
+        if (fps >= 30) { 
+            stabilityCheckCount++;
+            if (stabilityCheckCount >= stabilityThreshold) {
+                isAnimationStable = true;
+                endLoadingScreen();
+            }
+        } else stabilityCheckCount = 0;
+        requestAnimationFrame(stabilityChecker);
+    }
+    stabilityChecker();
+}
+function endLoadingScreen() {
+    document.getElementById("loading-screen").style.display = "none";
+    document.getElementById("main-content").style.display = "block";
+    animate();
+}
 const languageButtons = document.querySelectorAll('.language-option');
 const buttonContainer = document.getElementById("buttonContainer");
 const contentContainer = document.getElementById("contentContainer");
 const currentLanguageIcon = document.getElementById('current-language-icon');
-let currentLanguage = language;
 const buttonsConfig = [
     {
         id: "About Me",
@@ -12,11 +130,11 @@ const buttonsConfig = [
         contentPosition:  {left: "0%", right: "0%" },
         content: {
             en:`
-            <div class="container" style="font-family: Arial, sans-serif; line-height: 1.6; color: #ffffff; margin: 0 auto; max-width: 800px; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-                <div class="about-section" style="display: flex; align-items: center; margin-bottom: 40px;">
-                    <div class="about-text" style="flex: 2; padding-left: 20px;">
-                        <h1 style="font-size: 24px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">YASUHIRO (CIAO)</h1>
-                        <p class="roles" style="font-size: 14px; color: #ffffff; margin-top: 8px;">Role = [Data Scientist, Health Professional, EdTech Specialist, Graphic Designer]</p>
+            <div class="container" style="font-family: Arial, sans-serif; line-height: 1.6; color: #ffffff; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                <div class="about-section" style="display: flex; margin-bottom: 40px;">
+                    <div class="about-text" style="flex: 2; padding-left: 10px;">
+                        <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">YASU(CIAO)</h2>
+                        <p class="roles" style="font-family: 'Cambria', 'Baskerville', serif; color: #ffffff; margin-top: 8px;">Role = [Data Scientist, Health Professional, EdTech Specialist, Graphic Designer]</p>
                         <p style="margin-top: 12px;">My name, Yasu (康), originates from Japanese and symbolizes the process of threshing a plentiful harvest of rice. It conveys meanings of peace, health, and joy. A dedicated individual pursuing activities connected to "Healthcare" and "Happiness" since the age of 13. I engage in projects across diverse fields, including as a Data Scientist, DevOps Engineer, and Graphic Designer. I aim to be the first discoverer of possibilities by focusing on the diversity between people and things. My hobbies are playing tennis and reading books, especially novels and self-help.</p>
                     </div>
                 </div>
@@ -24,11 +142,11 @@ const buttonsConfig = [
 
             <div class="faq-section">
                 <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">Frequently Asked Questions（FAQs）</h2>
-                <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+                <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ff7f50; border-radius: 8px;">
                     <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">Q: Was your name an inspiration?</h3>
                     <p style="font-size: 14px; color: #ffffff;">The inspiration came during the global outbreak of COVID-19 when I was 20 years old. My 10 years of volunteer work until university graduation also played a role. I believe the saying "A name reflects one's essence" fits perfectly.</p>
                 </div>
-                <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+                <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ff7f50; border-radius: 8px;">
                     <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">Q: What does health mean to you?</h3>
                     <p style="font-size: 14px; color: #ffffff;">Health is the ability to envision how to live life and engage with things. While the WHO's definition of "A state of complete physical, mental, and social well-being" is abstract, I believe it remains relevant across all times as it represents what we truly desire.</p>
                 </div>
@@ -36,21 +154,21 @@ const buttonsConfig = [
         </div>
         `,
             ja:`
-            <div class="container" style="font-family: Arial, sans-serif; line-height: 1.6; color: #ffffff; margin: 0 auto; max-width: 800px; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+            <div class="container" style="font-family: Arial, sans-serif; line-height: 1.6; color: #ffffff; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
             <div class="about-section" style="display: flex; align-items: center; margin-bottom: 40px;">
-                <div class="about-text" style="flex: 2; padding-left: 20px;">
-                    <h1 style="font-size: 24px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">ヤスヒロ (チャオ)</h1>
-                    <p class="roles" style="font-size: 14px; color: #ffffff; margin-top: 8px;">データサイエンティスト, 医療・公共事業戦略, 遠隔教育 技術開発, グラフィックデザイナー</p>
+                <div class="about-text" style="flex: 2; padding-left: 10px;">
+                    <h1 style="font-size: 24px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">ヤスヒロ<br>(チャオ)</h1>
+                    <p class="roles" style="font-size: 14px; font-family: 'Cambria', 'Baskerville', serif; color: #ffffff; margin-top: 8px;">データサイエンティスト, 医療・公共事業戦略, 遠隔教育, グラフィックデザイナー</p>
                     <p style="margin-top: 12px;">13歳から「健」や幸せに繋がる活動を続けてきた鹿。データサイエンティスト・DevOpsエンジニアの他、グラフィックデザイナーとして幅広い分野でプロジェクトに携わる。ヒトやモノの間にある多様性に注目し、それぞれの可能性を見つけ出す第一発見者でありたいと考えている。趣味は、テニスと読書。</p>
                 </div>
             </div>
             <div class="faq-section">
                 <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">よくあるご質問</h2>
-                <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+                <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid  #ff7f50; border-radius: 8px;">
                     <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">Q: きっかけは、名前が由来か</h3>
                     <p style="font-size: 14px; color: #ffffff;">20歳の時に経験した、新型コロナウイルスの世界的大流行がきっかけです。また大学卒業までの10年間ボランティア活動に取り組んできたことも影響ある。「名は体を表す」という言葉がぴったりだと考えた。</p>
                 </div>
-                <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+                <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid  #ff7f50; border-radius: 8px;">
                     <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">Q: あなたにとって、健康とは</h3>
                     <p style="font-size: 14px; color: #ffffff;">人生をどう生き、物事にどう関わるか思い描けること。肉体的・精神的・社会的に、「よい状態」というWHO憲章の定義は抽象的だが、どんな時代にあっても、私たちが望んでいることに変わりはないと思う。</p>
                 </div>
@@ -58,21 +176,21 @@ const buttonsConfig = [
         </div>
         `,
         fr:`
-        <div class="container" style="font-family: Arial, sans-serif; line-height: 1.6; color: #ffffff; margin: 0 auto; max-width: 800px; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        <div class="container" style="font-family: Arial, sans-serif; line-height: 1.6; color: #ffffff; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
         <div class="about-section" style="display: flex; align-items: center; margin-bottom: 40px;">
-            <div class="about-text" style="flex: 2; padding-left: 20px;">
-                <h1 style="font-size: 24px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">YASU (CIAO)</h1>
-                <p class="roles" style="font-size: 14px; color: #ffffff; margin-top: 8px;">Rôle = [Data Scientist, Professionnel de la santé, Spécialiste ETech, Designer graphique]</p>
+            <div class="about-text" style="flex: 2; padding-left: 10px;">
+                <h1 style="font-size: 24px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">YASU(CIAO)</h1>
+                <p class="roles" style="font-size: 14px; font-family: 'Cambria', 'Baskerville', serif; color: #ffffff; margin-top: 8px;">Rôle = [Data Scientist, Professionnel de la santé, Spécialiste ETech, Designer graphique]</p>
                 <p style="margin-top: 12px;">Mon prénom, Yasu (康), provient du japonais et symbolise le processus de battage d'une récolte abondante de riz. Il évoque la paix, la santé et la joie. Engagé dans des activités liées à la "santé" et au bonheur depuis l'âge de 13 ans. Je participe à des projets dans divers domaines, notamment en tant que Data Scientist, ingénieur DevOps et designer graphique. Mon objectif est d’être le premier à découvrir les possibilités en me concentrant sur la diversité entre les personnes et les choses. Mes passe-temps incluent le tennis et la lecture.</p>
             </div>
         </div>
         <div class="faq-section">
             <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">Questions fréquemment posées</h2>
-            <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+            <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid  #ff7f50; border-radius: 8px;">
                 <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">Q : Votre nom a-t-il été une source d'inspiration ?</h3>
                 <p style="font-size: 14px; color: #ffffff;">L'inspiration est venue lors de la pandémie mondiale de COVID-19, alors que j'avais 20 ans. Mes 10 années de travail bénévole avant la fin de mes études universitaires ont également joué un rôle. Je pense que le dicton "le nom reflète l'essence d'une personne" convient parfaitement.</p>
             </div>
-            <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+            <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid  #ff7f50; border-radius: 8px;">
                 <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">Q : Que signifie la santé pour vous ?</h3>
                 <p style="font-size: 14px; color: #ffffff;">La santé, c'est la capacité d'imaginer comment vivre sa vie et s'engager dans les choses. Bien que la définition de l'OMS, "un état de bien-être complet physique, mental et social", soit abstraite, je pense qu'elle reste pertinente à toutes les époques, car elle représente ce que nous désirons vraiment.</p>
             </div>
@@ -80,21 +198,21 @@ const buttonsConfig = [
         </div>
         `,
         zh:`
-        <div class="container" style="font-family: Arial, sans-serif; line-height: 1.6; color: #ffffff; margin: 0 auto; max-width: 800px; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        <div class="container" style="font-family: Arial, sans-serif; line-height: 1.6; color: #ffffff; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
         <div class="about-section" style="display: flex; align-items: center; margin-bottom: 40px;">
-            <div class="about-text" style="flex: 2; padding-left: 20px;">
-                <h1 style="font-size: 24px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">>康 (YASU)</h1>
-                <p class="roles" style="font-size: 14px; color: #ffffff; margin-top: 8px;">角色 = [数据科学家，健康专业人士，教育科技专家，平面设计师]</p>
+            <div class="about-text" style="flex: 2; padding-left: 10px;">
+                <h1 style="font-size: 24px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">>康(YASU)</h1>
+                <p class="roles" style="font-size: 14px; font-family: 'Cambria', 'Baskerville', serif; color: #ffffff; margin-top: 8px;">角色 = [数据科学家，健康专业人士，教育科技专家，平面设计师]</p>
                 <p style="margin-top: 12px;">我的名字Yasu（康）源自日语，象征着脱谷丰收的稻米。这名字代表了平安、健康和喜悦的意义。 从13岁起，我就致力于与“健康”和幸福相关的活动。我参与了多个领域的项目，包括作为数据科学家、DevOps工程师和平面设计师。我希望通过关注人和事物之间的多样性，成为发现潜力的第一人。我的爱好包括网球和阅读。</p>
             </div>
         </div>   
         <div class="faq-section">
             <h2 style="font-size: 20px; color: #ffffff; border-bottom: 2px solid #ff7f50; display: inline-block; padding-bottom: 4px;">常见问题</h2>
-            <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+            <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid  #ff7f50; border-radius: 8px;">
                 <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">问：您的名字是灵感的来源吗？</h3>
                 <p style="font-size: 14px; color: #ffffff;">灵感来源于我20岁时经历的新冠病毒全球大流行。此外，我在大学毕业之前的10年间一直参与志愿者活动。我认为“名副其实”这个说法非常贴切。</p>
             </div>
-            <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+            <div class="faq-item" style="margin-top: 16px; padding: 10px; border: 1px solid  #ff7f50; border-radius: 8px;">
                 <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">问：健康对您来说意味着什么？</h3>
                 <p style="font-size: 14px; color: #ffffff;">健康是能够想象如何生活以及如何参与事物的能力。虽然世界卫生组织对“身体、心理和社会的完全健康状态”的定义较为抽象，但我认为这一愿望在任何时代都没有改变，因为它代表了我们真正的追求。</p>
             </div>
@@ -110,19 +228,151 @@ const buttonsConfig = [
         contentPosition: { left: "0%" ,right: "0%"},
         content:{
         en: `
-            <h2>Contact</h2>
-            <p>Contact us for more information:</p>
-            <img src="https://via.placeholder.com/150/00FF00/000000?text=Contact" alt="Contact" style="width:150px;">
-            <p><a href="https://example.com/contact-en" target="_blank">Get in Touch</a></p>
+            <body style="font-family: Arial, serif; text-align: center;">
+                <h3 style="margin-top: 20px;">A Closer Look at Yasu ≫</h3>
+            <div style="position: relative; background-color: #405de6;  padding: 20px; overflow-x: auto; white-space: nowrap; scrollbar-gutter: stable;">
+
+        <div style="display: flex; justify-content: left; align-items: left; gap: 30px; padding: 10px; box-sizing: border-box;">
+            <a href="https://www.figma.com/@ciao521" aria-label="Figma Profile" rel="noopener noreferrer" target="_blank">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/r085i6x4pkraz8dnukf3p/Figma.webp?rlkey=313yse3x6ognrg3ut9qgkuaem" alt="Visit Yasu's Figma" style="width: 50px; height: 50px;">
+            </a>
+            <a href="https://github.com/Yasu521" aria-label="GitHub Profile" rel="noopener noreferrer" target="_blank">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/11jrys18bm49mge5pkcy3/Github.webp?rlkey=9pcoyqek9n2zsr98ectosk7jc" alt="GitHub Profile" style="width: 50px; height: 50px;">
+            </a>
+            <a href="https://www.kaggle.com/" aria-label="Kaggle" rel="noopener noreferrer" target="_blank">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/ttdo09ckn1cszgli1g5es/Kaggle.webp?rlkey=tva2h0s9yiqnxe1vorw4wmnx9" alt="Visit Yasu's Kaggle" style="width: 50px; height: 50px;">
+            </a>
+            <a href="https://medium.com/@ciao_521" aria-label="Medium" rel="noopener noreferrer" target="_blank">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/77tm4lhu2vgqy42xy255d/Medium.webp?rlkey=t77dihhhhu0dlb6nmg637w82c" alt="Visit Yasu's Medium" style="width: 50px; height: 50px;">
+            </a>
+            <a href="https://www.linkedin.com/in/yasuhiroiwai521/" aria-label="LinkedIn Profile" rel="noopener noreferrer" target="_blank">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/urt7axjmmxmei7fugqwt3/LinkedIn.webp?rlkey=idp6ohgj82yxdfny7uxvru08g" alt="LinkedIn Profile" style="width: 50px; height: 50px;">
+            </a>
+                </div>
+            </div>
+                <div style="margin-top: 30px;">
+                    <h3>⥥ Request Information</h3>
+                    <p>
+                        <a href="mailto:iwaiyasuhiro0521@gmail.com" style="text-decoration: none; color: inherit;">
+                            [Mail]<br>iwaiyasuhiro0521@gmail.com
+                        </a>
+                    </p>
+                     <p style="font-size: 10px; text-decoration: underline; text-decoration-color: #f0e68c; text-underline-offset: 4px; font-family: 'Cambria', 'Baskerville', serif;">Do Not Sell My Personal Information</p>
+                </div>
+
+            </body>
+
         `,
         ja:`
-         <h2>自己紹介</h2>
-                <p>こちらは自己紹介セクションです！</p>
-                <img src="https://via.placeholder.com/150" alt="自己紹介" style="width:150px;">
-                <p><a href="https://aicurion.com/aboutme-ja" target="_blank">もっと知る</a></p>
+            <body style="font-family: Arial, serif; text-align: center; margin: 0;">
+
+            <h3 style="margin-top: 20px; text-align: left; color: white;">ながめる ≫ つながる</h3>
+            <div style="position: relative; background-color: #405de6;  padding: 20px; overflow-x: auto; white-space: nowrap; scrollbar-gutter: stable;">
+
+        <div style="display: flex; justify-content: left; align-items: left; gap: 30px; padding: 10px; box-sizing: border-box;">
+            <a href="https://www.figma.com/@ciao521" aria-label="Figma Profile" rel="noopener noreferrer" target="_blank">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/r085i6x4pkraz8dnukf3p/Figma.webp?rlkey=313yse3x6ognrg3ut9qgkuaem" alt="Visit Yasu's Figma" style="width: 50px; height: 50px;">
+            </a>
+            <a href="https://github.com/Yasu521" aria-label="GitHub Profile" rel="noopener noreferrer" target="_blank">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/11jrys18bm49mge5pkcy3/Github.webp?rlkey=9pcoyqek9n2zsr98ectosk7jc" alt="GitHub Profile" style="width: 50px; height: 50px;">
+            </a>
+            <a href="https://www.kaggle.com/" aria-label="Kaggle" rel="noopener noreferrer" target="_blank">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/ttdo09ckn1cszgli1g5es/Kaggle.webp?rlkey=tva2h0s9yiqnxe1vorw4wmnx9" alt="Visit Yasu's Kaggle" style="width: 50px; height: 50px;">
+            </a>
+            <a href="https://www.duolingo.com/profile/ciao_521" aria-label="Dolingo" rel="noopener noreferrer" target="_blank">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/78u816hupd416k3q6jtdb/Duolingo.webp?rlkey=a4qltbkpbjn1fvsvvdy9efg3m" alt="Dolingo Jarney" style="width: 50px; height: 50px;">
+            </a>
+            <a href="https://note.com/ciao521/" aria-label="Note Blog" rel="noopener noreferrer" target="_blank">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/zxiepe4j5kt23ifwzpkcn/note.webp?rlkey=q24wmh7vmp5svevg03wyspqky" alt="Note Blog" style="width: 50px; height: 50px;">
+            </a>
+            <a href="https://www.instagram.com/ciao_521/" aria-label="Instagram Profile" rel="noopener noreferrer" target="_blank">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/8n0gzmjcxnrem48o7lv7m/Insta.webp?rlkey=n1x7qdmt5zx6ubyzu5lhzaw0o" alt="Instagram Profile" style="width: 50px; height: 50px;">
+            </a>
+            <a href="https://www.linkedin.com/in/yasuhiroiwai521/" aria-label="LinkedIn Profile" rel="noopener noreferrer" target="_blank">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/urt7axjmmxmei7fugqwt3/LinkedIn.webp?rlkey=idp6ohgj82yxdfny7uxvru08g" alt="LinkedIn Profile" style="width: 50px; height: 50px;">
+            </a>
+        </div>
+    </div>
+                <div style="margin-top: 30px;">
+                    <h3>⥥ お問い合わせ</h3>
+                    <p>
+                        <a href="mailto:iwaiyasuhiro0521@gmail.com" style="text-decoration: none; color: inherit;">
+                            [メール]<br>iwaiyasuhiro0521@gmail.com
+                        </a>
+                    </p>
+                    <p style="font-size: 10px; text-decoration: underline; text-decoration-color: #f0e68c; text-underline-offset: 4px; font-family: 'Cambria', 'Baskerville', serif;">私の個人データを販売しないでください</p>
+                </div>
+
+            </body>
+        `,
+        fr:`
+        <body style="font-family: Arial, serif; text-align: center;">
+            <h3 style="margin-top: 20px;">Un Regard Approfondi sur Yasu ≫</h3>
+            <div style="position: relative; background-color: #405de6;  padding: 20px; overflow-x: auto; white-space: nowrap; scrollbar-gutter: stable;">
+
+        <div style="display: flex; justify-content: left; align-items: left; gap: 30px; padding: 10px; box-sizing: border-box;">
+            <a href="https://www.figma.com/@ciao521" aria-label="Figma Profile" rel="noopener noreferrer" target="_blank">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/r085i6x4pkraz8dnukf3p/Figma.webp?rlkey=313yse3x6ognrg3ut9qgkuaem" alt="Visit Yasu's Figma" style="width: 50px; height: 50px;">
+            </a>
+            <a href="https://github.com/Yasu521" aria-label="GitHub Profile" rel="noopener noreferrer" target="_blank">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/11jrys18bm49mge5pkcy3/Github.webp?rlkey=9pcoyqek9n2zsr98ectosk7jc" alt="GitHub Profile" style="width: 50px; height: 50px;">
+            </a>
+            <a href="https://www.kaggle.com/" aria-label="Kaggle" rel="noopener noreferrer" target="_blank">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/ttdo09ckn1cszgli1g5es/Kaggle.webp?rlkey=tva2h0s9yiqnxe1vorw4wmnx9" alt="Visit Yasu's Kaggle" style="width: 50px; height: 50px;">
+            </a>
+            <a href="https://www.duolingo.com/profile/ciao_521" aria-label="Dolingo" rel="noopener noreferrer" target="_blank">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/78u816hupd416k3q6jtdb/Duolingo.webp?rlkey=a4qltbkpbjn1fvsvvdy9efg3m" alt="Dolingo Jarney" style="width: 50px; height: 50px;">
+            </a>
+            <a href="https://www.linkedin.com/in/yasuhiroiwai521/" aria-label="LinkedIn Profile" rel="noopener noreferrer" target="_blank">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/urt7axjmmxmei7fugqwt3/LinkedIn.webp?rlkey=idp6ohgj82yxdfny7uxvru08g" alt="LinkedIn Profile" style="width: 50px; height: 50px;">
+            </a>
+                </div>
+            </div>
+                <div style="margin-top: 30px;">
+                    <h3>⥥ Demande d'informations </h3>
+                    <p>
+                        <a href="mailto:iwaiyasuhiro0521@gmail.com" style="text-decoration: none; color: inherit;">
+                            [Message]<br>iwaiyasuhiro0521@gmail.com
+                        </a>
+                    </p>
+                    <p style="font-size: 10px; text-decoration: underline; text-decoration-color: #f0e68c; text-underline-offset: 4px; font-family: 'Cambria', 'Baskerville', serif;">Veuillez ne pas vendre mes données personnelles</p>
+
+                </div>
+
+            </body>
+        `,
+        zh:`
+                <body style="font-family: Arial, serif; text-align: center;">
+            <h3 style="margin-top: 20px;">深入了解 "康" ≫</h3>
+            <div style="position: relative; background-color: #405de6;  padding: 20px; overflow-x: auto; white-space: nowrap; scrollbar-gutter: stable;">
+
+        <div style="display: flex; justify-content: left; align-items: left; gap: 30px; padding: 10px; box-sizing: border-box;">
+            <a href="https://www.figma.com/@ciao521" aria-label="Figma Profile" rel="noopener noreferrer" target="_blank">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/r085i6x4pkraz8dnukf3p/Figma.webp?rlkey=313yse3x6ognrg3ut9qgkuaem" alt="Visit Yasu's Figma" style="width: 50px; height: 50px;">
+            </a>
+            <a href="https://github.com/Yasu521" aria-label="GitHub Profile" rel="noopener noreferrer" target="_blank">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/11jrys18bm49mge5pkcy3/Github.webp?rlkey=9pcoyqek9n2zsr98ectosk7jc" alt="GitHub Profile" style="width: 50px; height: 50px;">
+            </a>
+            <a href="https://www.kaggle.com/" aria-label="Kaggle" rel="noopener noreferrer" target="_blank">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/ttdo09ckn1cszgli1g5es/Kaggle.webp?rlkey=tva2h0s9yiqnxe1vorw4wmnx9" alt="Visit Yasu's Kaggle" style="width: 50px; height: 50px;">
+            </a>
+            <a href="https://www.linkedin.com/in/yasuhiroiwai521/" aria-label="LinkedIn Profile" rel="noopener noreferrer" target="_blank">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/urt7axjmmxmei7fugqwt3/LinkedIn.webp?rlkey=idp6ohgj82yxdfny7uxvru08g" alt="LinkedIn Profile" style="width: 50px; height: 50px;">
+            </a>
+                </div>
+            </div>
+                <div style="margin-top: 30px;">
+                    <h3>⥥ 咨询请求 </h3>
+                    <p>
+                        <a href="mailto:iwaiyasuhiro0521@gmail.com" style="text-decoration: none; color: inherit;">
+                            [邮箱]<br>iwaiyasuhiro0521@gmail.com
+                        </a>
+                    </p>
+                    <p style="font-size: 10px; text-decoration: underline; text-decoration-color: #f0e68c; text-underline-offset: 4px; font-family: 'Cambria', 'Baskerville', serif;">请勿出售我的个人信息</p>
+                </div>
+            </body>
         `
-        }
-    },
+        ,}},
     {
         id: "Project",
         texts: { en: " Projects", ja: "活動", fr: "Projets", zh: "项目" },
@@ -166,13 +416,7 @@ const buttonsConfig = [
         }
     },
 ];
-const flagImages = {
-    en: 'https://dl.dropboxusercontent.com/scl/fi/9i7g9xabwget3depyoadq/7592_1.webp?rlkey=vsy5814ksvittsbxr39m1andb',
-    ja: 'https://dl.dropboxusercontent.com/scl/fi/u3z30zgi34wxgzkkimoym/7591.webp?rlkey=z70tw8kok5suf1lyhabg0zlrz',
-    fr: 'https://dl.dropboxusercontent.com/scl/fi/z7grapyl59fwwc1199crj/7596.webp?rlkey=1shxcz2ohldi4n5brs6fyljll',
-    zh: 'https://dl.dropboxusercontent.com/scl/fi/5p1nrzhecjhfy2yowkgil/7607.webp?rlkey=fjcvwnl81dcoxex3cowzgffsg'
-}
-  
+
 let currentOverlay = null;
 function updateButtonTexts() {
     buttonsConfig.forEach(config => {
@@ -211,24 +455,19 @@ function showContent(content, contentPosition) {
         });
     } else {
         createContent(content, contentPosition);
-    }
-}
+    }}
 function createContent(content, contentPosition) {
     const overlay = document.createElement("div");
     overlay.className = "content-overlay";
     overlay.addEventListener("click", clearExistingContent);
-
     const contentBox = document.createElement("div");
     contentBox.className = "content-box";
     contentBox.style.left = contentPosition.left;
-    contentBox.style.right = contentPosition.right;
     contentBox.innerHTML = content;
-
     const closeButton = document.createElement("button");
     closeButton.textContent = "✖";
     closeButton.className = "close-button";
     closeButton.addEventListener("click", (event) => {
-        event.stopPropagation();
         clearExistingContent();
     });
 
@@ -258,6 +497,7 @@ languageButtons.forEach(button => {
     });});
 updateLanguageIcon(currentLanguage);
 
+
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('three-canvas') });
@@ -265,96 +505,6 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 const light = new THREE.DirectionalLight(0xffffff, 10);
 light.position.set(0, 0, 10).normalize();
 scene.add(light);
-const textures = {
-dustTextures: [
-"https://dl.dropboxusercontent.com/scl/fi/culssvagxdbqya55b24yx/dust.webp?rlkey=3s81457rlvc7axoc7jmwojjk0",
-],
-orangeTextures : [
-"https://dl.dropboxusercontent.com/scl/fi/hcrobbzai3pgmwydewxes/1.webp?rlkey=k22tkv0edx6hx9gksqimtal7h",
-"https://dl.dropboxusercontent.com/scl/fi/7sbawp6uvx31tirf5ua5g/7.webp?rlkey=3rs7bnltwoj354gjn2086pr2u",
-"https://dl.dropboxusercontent.com/scl/fi/rtxegajc94zgrb0upfttm/9.webp?rlkey=sfspx0kh0p5pcjtn9nih7akth",
-"https://dl.dropboxusercontent.com/scl/fi/6w3ci1a2zk1g8wx5on7i5/11.webp?rlkey=trtg5ecdp560c1w25rjb9mo4j",
-],
-fallingTextures2 : [
-"https://dl.dropboxusercontent.com/scl/fi/168wjes7vzcgapok7kqir/5.webp?rlkey=f9a90kba1a0bizcnnv2fbkatt",
-"https://dl.dropboxusercontent.com/scl/fi/4i0wgq9t9k9kjdbfvdlw7/plant_precise_373.webp?rlkey=q5ynphx03fl1lkcjrs50ljle9",
-],
-whiteTextures : [
-"https://dl.dropboxusercontent.com/scl/fi/crv51az5fqw5g0zsbikfr/3.webp?rlkey=m4mfh20wbeaoqqa3174j2q1i9",
-"https://dl.dropboxusercontent.com/scl/fi/l3aof5fv809mzc8zw58oo/4.webp?rlkey=632dkudvm4dvn93b1w720rgl2",
-"https://dl.dropboxusercontent.com/scl/fi/yf0g7243zrnjouxed4q40/6.webp?rlkey=jw5xtyon8fpwdzrrxnusyqctp",
-],
-blueTextures : [
-"https://dl.dropboxusercontent.com/scl/fi/ce86jbgb3vqrxa51gfvgc/plant_precise_128.webp?rlkey=k9ium3e2xkrzslqsba4p23f60",
-"https://dl.dropboxusercontent.com/scl/fi/5xaziuy55562qr6estl48/plant_precise_124.webp?rlkey=j5ixogfh9pcvm82stwd8oeinu",
-"https://dl.dropboxusercontent.com/scl/fi/3xrdiqdiukdt61wyzu94u/plant_precise_214.webp?rlkey=qh7r9zu0lm7ikkcmkco9zzfll",
-"https://dl.dropboxusercontent.com/scl/fi/bkhgu2bhxw8p02jb2oxx4/plant_precise_220.webp?rlkey=t5z4yeghbvjr9oa8flk973tjp",
-   ],
-pinkTextures : [
-"https://dl.dropboxusercontent.com/scl/fi/lwf95owio93ahgi144nmi/plant_precise_258.webp?rlkey=9d2njke0pmcq0jjxmnuph4vms",
-"https://dl.dropboxusercontent.com/scl/fi/5jb6gab456rg8kyb60siv/plant_precise_261.webp?rlkey=qy9i3w3mvgeond1h3kslxhkxy",
-"https://dl.dropboxusercontent.com/scl/fi/tyl4qwn50dvntwiheewv7/plant_precise_263.webp?rlkey=zhtn1a0ir95dtax6v9kx6s3t7",
-"https://dl.dropboxusercontent.com/scl/fi/0hfd2ow2kuz8zhqlj5by2/plant_precise_266.webp?rlkey=r0rbgtq41xdkmeyr913b6uzgb",
-     ],
-groundTextures : [
-"https://dl.dropboxusercontent.com/scl/fi/ib5flgw9nvxcwxr6gpoau/plant_precise_15.webp?rlkey=qmt4aarxpy3cqpz2ryc1kj08s",
-],
-groundTextures2:[
-"https://dl.dropboxusercontent.com/scl/fi/u4olg887jb0r3o8ee3kmi/plant_precise_17.webp?rlkey=e8fpbq9xjtgecml5864grf69c",
-],
-groundTextures3:[
-"https://dl.dropboxusercontent.com/scl/fi/sbt9ct9cdngyxbgnpsu7k/plant_precise_18.webp?rlkey=vto0hmazuqrt8tkvonchn6f2n",
-],
-groundTextures4:[
-"https://dl.dropboxusercontent.com/scl/fi/ds9ph00nn0mhabm6omn8i/plant_precise_31.webp?rlkey=2xp24a6rrm1tsf8wobwrcxu6n",
-],
-}
-const textureCache = new Map();
-const manager = new THREE.LoadingManager();
-const loader = new THREE.TextureLoader(manager);
-const startTime = Date.now();
-
-manager.onProgress = (url, itemsLoaded, itemsTotal) => {
-const progress = (itemsLoaded / itemsTotal) * 100;
-document.getElementById("progress-bar").style.width = `${progress}%`;
-const elapsedTime = (Date.now() - startTime) / 1000;
-const estimatedTotalTime = (elapsedTime / itemsLoaded) * itemsTotal;
-const remainingTime = Math.max(0, estimatedTotalTime - elapsedTime);
-document.getElementById("remaining-time").textContent = `Estimated time left: ${remainingTime.toFixed(2)}s`;
-};
-manager.onLoad = () => {
-console.log("All textures loaded");
-document.getElementById("loading-screen").style.display = "none";
-document.getElementById("main-content").style.display = "block";
-animate();
-};
-Object.keys(textures).forEach((category) => {
-textures[category].forEach((url) => {
-    loader.load(url, (texture) => {
-        textureCache.set(url, texture);
-    });
-});
-});
-Object.values(textures).flat().forEach((url) => {
-const isAudio = url.endsWith(".mp3");
-if (isAudio) {
-    const audio = new Audio(url);
-    textureCache.set(url, audio);
-} else {
-    const img = new Image();
-    img.src = url;
-    img.onload = () => console.log(`Image loaded: ${url}`);
-    img.onerror = (err) => console.error(`Failed to load image: ${url}`, err);
-    textureCache.set(url, img);
-}
-});
-const loadingDots = document.getElementById("loading-dots");
-let dotCount = 0;
-setInterval(() => {
-dotCount = (dotCount + 1) % 4;
-loadingDots.textContent = ".".repeat(dotCount);
-}, 500);
-
 let dustPlants = [];
 let dustPlants2 = [];
 let fallingFlowers = [];
@@ -363,15 +513,7 @@ let growingFlowers2 = [];
 let growingFlowers3 = [];
 let growingFlowers4 = [];
 let sideFlowers = [];
-const cubes = [];
 
-const cubeData = [
-{ position: { x: 3, y: 3, z: -50 }, size: { x: 3, y: 3, z: 3 }, label: '欢迎' },
-{ position: { x: 3, y: -3, z: -50 }, size: { x: 3, y: 3, z: 3 }, label: 'Bonjour' },
-{ position: { x: -3, y: 3, z: -50 }, size: { x: 3, y: 3, z: 3 }, label:  "こんにちは"},
-{ position: { x: -3, y: -3, z: -50 }, size: { x: 3, y: 3, z: 3 }, label: 'Wellcome' },
-{ position: { x: 0, y: 0, z: -50 }, size: { x: 0.5, y: 0.5, z: 0.5 }, label: ' "Touch" ' },
-];
 const flowerGroups = [
 { flowers: growingFlowers, maxScale: 8 },
 { flowers: growingFlowers2, maxScale: 8 },
@@ -381,48 +523,6 @@ const flowerGroups = [
 { flowers: fallingFlowers, maxScale: 9 },
 ];
 
-const clock = new THREE.Clock();
-let appear = true;
-function createLabeledCube(position, size, labelText) {
-const geometry = new THREE.BoxGeometry(size.x, size.y, size.z);
-const material = new THREE.MeshBasicMaterial({ 
-    color: 0x00ff00
-});
-const cube = new THREE.Mesh(geometry, material);
-cube.position.set(position.x, position.y, position.z);
-const canvas = document.createElement('canvas');
-canvas.width = 256;
-canvas.height = 256;
-const context = canvas.getContext('2d');
-context.fillStyle = 'black';
-context.fillRect(0, 0, canvas.width, canvas.height);
-context.fillStyle = 'white';
-context.font = '48px Arial';
-context.textAlign = 'center';
-context.textBaseline = 'middle';
-context.fillText(labelText, canvas.width / 2, canvas.height / 2);
-const texture = new THREE.CanvasTexture(canvas);
-const textMaterial = new THREE.MeshBasicMaterial({ 
-    map: texture,
-    transparent: true,
-    opacity: 1
-    });
-const materials = [
-    textMaterial,
-    textMaterial,
-    textMaterial, 
-    textMaterial, 
-    textMaterial,
-    textMaterial  
-];
-cube.material = materials;
-return cube;
-}
-cubeData.forEach(data => {
-const cube = createLabeledCube(data.position, data.size, data.label);
-scene.add(cube);
-cubes.push(cube);
-});
 const MAX_SCROLL_SPEED = 3;
 const MIN_SCROLL_SPEED = -3;
 let lastTouchY = 0;
@@ -739,7 +839,7 @@ removeFlowersOutOfRange(renderRange.zMin , renderRange.zMax );
 dustupFlowers();
 dustdownFlowers();
 update();
-if(Math.random()<=0.03){
+if(Math.random()<=0.05){
 createpinkFlowers_right(renderRange.zMin, renderRange.zMax);
 createpinkFlowers_left(renderRange.zMin, renderRange.zMax);
 createwhiteFlowers_right(renderRange.zMin, renderRange.zMax);
@@ -786,8 +886,7 @@ function onTouchMove(event) {
       }
       lastTouchX = touch.clientX;
       lastTouchY = touch.clientY;
-  }
-}
+}}
 function onTouchEnd() {
   lastTouchX = null;
   lastTouchY = null;
