@@ -1,10 +1,17 @@
-    body, html {
+body, html {
   margin: 0;
   padding: 0;
   height: 100%;
   overflow: hidden;
   background: black;
   color: rgb(14, 14, 14);
+}
+.yasu521 {
+    position: absolute;
+    font-size: 5vw;
+    top: 20vh; /* 画面の上から20%の位置 */
+    left: 10vw; /* 画面の左から10%の位置 */
+    color: #333;
 }
 .language-menu {
   position: absolute;
@@ -160,20 +167,20 @@
 .menu-button:hover::after {
   width: 100%;
 }
-        .content-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
-
-        .content-box {
+.content-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+    
+.content-box {
     color: white;
     background-color:rgba(0, 0, 0, 1) ;
     width: 60%;
