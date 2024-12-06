@@ -39,7 +39,7 @@
     content: "Scroll ≫";
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     font-size: 14px;
     color: #aa0000;
     white-space: nowrap;
