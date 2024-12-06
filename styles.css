@@ -13,6 +13,7 @@ body, html {
     left: 10px;
     font-family: "Playfair Display", serif;
     color: #ffffff;
+    z-index: 100;
 }
 .language-menu {
   position: absolute;
@@ -137,6 +138,7 @@ body, html {
   position: absolute;
   display: inline-block;
   text-decoration: none;
+  font-family: "Playfair Display", serif;
   color: white;
   padding: 15px 30px;
   border-radius: 10px;
