@@ -207,7 +207,7 @@ body, html {
 @media screen and (max-width: 768px) {
     .content-box {
         width: 80%; 
-        max-height: calc(50vh - 40px);
+        max-height: calc(60vh - 40px);
         margin-bottom: 20px;
     }
     body {
