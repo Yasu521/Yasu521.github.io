@@ -13,7 +13,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: -1; /* 背景として配置 */
+    z-index: 10; /* 背景として配置 */
     pointer-events: none; /* 背景のアニメーションが操作を妨げないように */
   }
   
@@ -334,7 +334,7 @@ body {
     overflow-y: auto;  /* 縦スクロール可能 */
     padding: 100px 20px; /* コンテンツの余白 */
     position: relative;
-    z-index: 1;  /* メインコンテンツを背景より前面に表示 */
+    z-index: 50;  /* メインコンテンツを背景より前面に表示 */
   }
   
   h1 {
