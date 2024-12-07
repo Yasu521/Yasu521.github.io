@@ -6,6 +6,12 @@ body, html {
   background: black;
   color: rgb(14, 14, 14);
 }
+link[rel="icon"] {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+}
 .yasu521 {
     position: absolute;
     font-size: 25px;
