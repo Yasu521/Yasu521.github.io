@@ -40,7 +40,12 @@
         "id": "News",
         "texts": {  "en": "News", "ja": "お知らせ", "fr": "Nouvelles", "zh": "消息" },
         "position": { "top": "70%", "left": "20%" },
-        "//links//": { "en": "https://yasu521.github.io/News/", "ja":"https://yasu521.github.io/News/", "fr": "https://yasu521.github.io/News/", "zh":"https://yasu521.github.io/News/"},
+        "links": { "en": "https://yasu521.github.io/News/", "ja":"https://yasu521.github.io/News/", "fr": "https://yasu521.github.io/News/", "zh":"https://yasu521.github.io/News/"},
         "contentPosition": { "left": "0%", "right": "0%" },
+        "contentFile": {
+            "en": "",
+            "fr": "",
+            "ja": "",
+            "zh": ""
     }
   ]
