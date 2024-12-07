@@ -14,7 +14,7 @@ body {
     transform: translate(-50%, -50%);
     z-index: 10; /* 背景として配置 */
     pointer-events: none; /* 背景のアニメーションが操作を妨げないように */
-    animation: fadeOut 10s forwards;
+    animation: fadeOut 30s forwards;
   }
   
   /* 円のスタイル */
