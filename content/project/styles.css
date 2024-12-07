@@ -1,0 +1,191 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: black;
+  color: rgb(14, 14, 14);
+}
+
+#audioControlButton {
+  position: fixed;     
+  background-color: #ffffff; 
+  top: 13px;
+  right: 60px;
+  width: 30px; 
+  border-radius: 50%;
+  cursor: pointer;
+  height: 30px;
+  cursor: pointer; 
+  z-index: 100; 
+}
+
+#audioControlButton img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+}
+
+audio {
+  display: none;
+}
+
+.language-menu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-block;
+  background: rgba(107, 0, 0, 0.8);
+  border-radius: 50%; 
+  color: rgb(249, 249, 249);
+  z-index: 500;
+  align-items: center;
+  justify-content: center;
+}
+.language-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('./flag/language.webp');
+  width: 35px;
+  height: 35px;
+  border-radius: 50%; 
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  z-index: 500;
+}
+.language-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 500;
+}
+.language-option {
+  background: none;
+  border: none;
+  color: #ffffff;
+  padding: 1px 1px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.language-option:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.language-menu:hover .language-list {
+  display: block;
+}
+
+.blur-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.7) 50%, rgb(0, 0, 0) 100%);
+  backdrop-filter: blur(0.5px);
+  z-index: 10;
+  }
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  z-index: 1000;
+}
+
+#progress-bar-container {
+  width: 70%;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1000;
+}
+
+#progress-bar {
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(90deg, #f0e68c, #ff6347, #ffa07a);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+#progress-bar-fill {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #ff7f50, #f0e68c);
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+#loading-text {
+  font-size: 20px;
+  margin: 10px 0;
+  color: rgb(255, 255, 255);
+}
+
+#remaining-time {
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+}
+
+#main-content {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+
+.menu-button {
+  position: absolute;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.7,0);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  text-align: center;
+  z-index: 100;
+}
+
+.menu-button:hover {
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.menu-button::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+.menu-button:hover::after {
+  width: 100%;
+}
