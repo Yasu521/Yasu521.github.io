@@ -10,7 +10,7 @@ body {
     width: 500px;
     height: 250px;
     position: fixed; /* 背景を固定 */
-    top: 20%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10; /* 背景として配置 */
@@ -30,7 +30,7 @@ body {
   .holder .circle:nth-child(1) {
     width: 25px;
     height: 12.5px;
-    background: #d9a333;
+    background: #d9a33399;
     border-bottom: none;
     border-radius: 25px 25px 0 0;
     z-index: 16;
@@ -40,7 +40,7 @@ body {
   .holder .circle:nth-child(2) {
     width: 62px;
     height: 31px;
-    border: 13px solid #d9a333;
+    border: 13px solid #d9a33399;
     border-bottom: none;
     border-radius: 62px 62px 0 0;
     z-index: 15;
@@ -50,7 +50,7 @@ body {
   .holder .circle:nth-child(3) {
     width: 93px;
     height: 46.5px;
-    border: 13px solid #d9a333;
+    border: 13px solid #d9a33399;
     border-bottom: none;
     border-radius: 93px 93px 0 0;
     z-index: 14;
@@ -59,7 +59,7 @@ body {
   .holder .circle:nth-child(4) {
     width: 124px;
     height: 62px;
-    border: 13px solid #d9a333;
+    border: 13px solid #d9a33399;
     border-bottom: none;
     border-radius: 124px 124px 0 0;
     z-index: 13;
@@ -69,7 +69,7 @@ body {
   .holder .circle:nth-child(5) {
     width: 155px;
     height: 77.5px;
-    border: 13px solid #9c3a3a;
+    border: 13px solid #d9a33399;
     border-bottom: none;
     border-radius: 155px 155px 0 0;
     z-index: 12;
@@ -79,7 +79,7 @@ body {
   .holder .circle:nth-child(6) {
     width: 186px;
     height: 93px;
-    border: 13px solid #d9a333;
+    border: 13px solid #d9a33399;
     border-bottom: none;
     border-radius: 186px 186px 0 0;
     z-index: 11;
@@ -89,7 +89,7 @@ body {
   .holder .circle:nth-child(7) {
     width: 217px;
     height: 108.5px;
-    border: 13px solid #d9a333;
+    border: 13px solid #d9a33399;
     border-bottom: none;
     border-radius: 217px 217px 0 0;
     z-index: 10;
@@ -99,7 +99,7 @@ body {
   .holder .circle:nth-child(8) {
     width: 248px;
     height: 124px;
-    border: 13px solid #d9a333;
+    border: 13px solid #d9a33399;
     border-bottom: none;
     border-radius: 248px 248px 0 0;
     z-index: 9;
@@ -109,7 +109,7 @@ body {
   .holder .circle:nth-child(9) {
     width: 279px;
     height: 139.5px;
-    border: 13px solid #d9a333;
+    border: 13px solid #d9a33399;
     border-bottom: none;
     border-radius: 279px 279px 0 0;
     z-index: 8;
@@ -119,7 +119,7 @@ body {
   .holder .circle:nth-child(10) {
     width: 310px;
     height: 155px;
-    border: 13px solid #d9a333;
+    border: 13px solid #d9a33399;
     border-bottom: none;
     border-radius: 310px 310px 0 0;
     z-index: 7;
@@ -129,7 +129,7 @@ body {
   .holder .circle:nth-child(11) {
     width: 341px;
     height: 170.5px;
-    border: 13px solid #d9a333;
+    border: 13px solid #d9a33399;
     border-bottom: none;
     border-radius: 341px 341px 0 0;
     z-index: 6;
@@ -139,7 +139,7 @@ body {
   .holder .circle:nth-child(12) {
     width: 372px;
     height: 186px;
-    border: 13px solid #d9a333;
+    border: 13px solid #d9a33399;
     border-bottom: none;
     border-radius: 372px 372px 0 0;
     z-index: 5;
@@ -149,7 +149,7 @@ body {
   .holder .circle:nth-child(13) {
     width: 403px;
     height: 201.5px;
-    border: 13px solid #d9a333;
+    border: 13px solid #d9a33399;
     border-bottom: none;
     border-radius: 403px 403px 0 0;
     z-index: 4;
@@ -159,7 +159,7 @@ body {
   .holder .circle:nth-child(14) {
     width: 434px;
     height: 217px;
-    border: 13px solid #d9a333;
+    border: 13px solid #d9a33399;
     border-bottom: none;
     border-radius: 434px 434px 0 0;
     z-index: 3;
@@ -169,7 +169,7 @@ body {
   .holder .circle:nth-child(15) {
     width: 465px;
     height: 232.5px;
-    border: 13px solid #d9a333;
+    border: 13px solid #d9a33399;
     border-bottom: none;
     border-radius: 465px 465px 0 0;
     z-index: 2;
@@ -179,7 +179,7 @@ body {
   .holder .circle:nth-child(16) {
     width: 496px;
     height: 248px;
-    border: 13px solid #d9a333;
+    border: 13px solid #d9a33399;
     border-bottom: none;
     border-radius: 496px 496px 0 0;
     z-index: 1;
