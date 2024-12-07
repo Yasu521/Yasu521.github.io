@@ -1,20 +1,20 @@
 body {
     margin: 0;
-    height: 100%;  /* 全体の高さを100%に設定 */
+    height: 100%;
     overflow: hidden;  /* 横スクロールを無効にする */
-    background-color: #f0f0f0;  /* 背景色 */
+    background-color: #f0f0f0;
   }
-  
-  /* 背景アニメーションを固定 */
+
   .holder {
     width: 500px;
     height: 250px;
-    position: fixed; /* 背景を固定 */
+    position: fixed;
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10; /* 背景として配置 */
     pointer-events: none; /* 背景のアニメーションが操作を妨げないように */
+    animation: fadeOut 5s forwards;
   }
   
   /* 円のスタイル */
@@ -330,11 +330,11 @@ body {
   }
 /* スクロール可能なコンテンツ */
 .main-content {
-    height: 100vh;  /* ビューポートの高さに合わせて */
+    height: 100vh;
     overflow-y: auto;  /* 縦スクロール可能 */
     padding: 100px 0px; /* コンテンツの余白 */
     position: relative;
-    z-index: 50;  /* メインコンテンツを背景より前面に表示 */
+    z-index: 20;
   }
   
   h1 {
