@@ -40,13 +40,7 @@
         "id": "News",
         "texts": {  "en": "News", "ja": "お知らせ", "fr": "Nouvelles", "zh": "消息" },
         "position": { "top": "70%", "left": "20%" },
-        "//links//": { "en": "https://aicurion.com/project-ja", "ja":"https://aicurion.com/project-ja", "fr": "https://aicurion.com/project-ja", "zh":"https://aicurion.com/project-ja"},
+        "//links//": { "en": "https://yasu521.github.io/News/", "ja":"https://yasu521.github.io/News/", "fr": "https://yasu521.github.io/News/", "zh":"https://yasu521.github.io/News/"},
         "contentPosition": { "left": "0%", "right": "0%" },
-        "contentFile": {
-            "en": "./content/news/news-en.html",
-            "fr": "./content/news/news-fr.html",
-            "ja": "./content/news/news-ja.html",
-            "zh": "./content/news/news-zh.html"
-        }
     }
   ]
