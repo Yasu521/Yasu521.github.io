@@ -226,7 +226,7 @@ link[rel="icon"] {
     top: 10px; 
     right: 10px;
     background-color: #ff5f5f00;
-    color: white;
+    color: #aa0000;
     border: none;
     border-radius: 50%;
     width: 30px;
@@ -237,6 +237,7 @@ link[rel="icon"] {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 60;
 }
 
 .close-button:hover {
