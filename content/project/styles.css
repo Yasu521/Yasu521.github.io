@@ -332,7 +332,7 @@ body {
 .main-content {
     height: 100vh;  /* ビューポートの高さに合わせて */
     overflow-y: auto;  /* 縦スクロール可能 */
-    padding: 100px 10px; /* コンテンツの余白 */
+    padding: 100px 0px; /* コンテンツの余白 */
     position: relative;
     z-index: 50;  /* メインコンテンツを背景より前面に表示 */
   }
