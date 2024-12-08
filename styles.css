@@ -99,8 +99,8 @@ link[rel="icon"] {
 
 #progress-bar-container {
   width: 70%;
-  background: white;
-  padding: 10px;
+  background: rgba(35, 35, 35, 0.4);
+  padding: 3px;
   border-radius: 10px;
   text-align: center;
   z-index: 1000;
@@ -108,22 +108,23 @@ link[rel="icon"] {
 
 #progress-bar {
   width: 100%;
-  height: 20px;
-  background: linear-gradient(90deg, #ffffff, #5555, #000000);
+  height: 5px;
+  background: linear-gradient(90deg, #000000, #ffffffc8, #000000);
   border-radius: 10px;
   overflow: hidden;
   position: relative;
 }
 
+
 #loading-text {
   font-size: 20px;
   margin: 10px 0;
-  color: rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 #remaining-time {
   font-size: 14px;
-  color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255,0.7);
 }
 
 #main-content {
