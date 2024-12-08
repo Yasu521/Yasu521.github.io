@@ -278,29 +278,7 @@ body {
     border: none;
 }
 
-/* モバイル表示のためのメディアクエリ */
-@media (max-width: 768px) {
-    .image-gallery {
-        flex-direction: column; /* 画像を縦に並べる */
-        gap: 10px; /* 画像間の間隔を狭くする */
-    }
-
-    .custom-image {
-        max-width: 90%; /* モバイルでの画像の最大幅 */
-    }
-
-    .custom-video {
-        max-width: 100%; /* モバイルでの動画の最大幅 */
-    }
-    .holder {
-    top: 50%;
-  }
-    .macbook {
-        top:65%;
-  }
-}
 /* Macbook */
-
 .macbook {
     width: 150px;
     height: 96px;
@@ -677,3 +655,24 @@ body {
       box-shadow: 0 0 60px 40px rgba(0,0,0,0.3);
     }
   }
+/* モバイル表示のためのメディアクエリ */
+@media (max-width: 768px) {
+    .image-gallery {
+        flex-direction: column; /* 画像を縦に並べる */
+        gap: 10px; /* 画像間の間隔を狭くする */
+    }
+
+    .custom-image {
+        max-width: 90%; /* モバイルでの画像の最大幅 */
+    }
+
+    .custom-video {
+        max-width: 100%; /* モバイルでの動画の最大幅 */
+    }
+    .holder {
+    top: 50%;
+  }
+    .macbook {
+        top:70%;
+  }
+}
