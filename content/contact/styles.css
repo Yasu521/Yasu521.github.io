@@ -12,6 +12,7 @@ body {
   text-align: center; /* 中央揃え */
   color: #555; /* 文字色の変更（任意） */
   z-index:10;
+  margin-top: 200px;
 }
 .container {
   display: flex;
@@ -21,9 +22,8 @@ body {
   height: 100vh; /* ページ全体を縦方向に中央揃え */
   text-align: center; /* 中央揃え */
   position: relative; /* UI要素の位置調整 */
-  margin-bottom: -100px; /* 下部の間隔 */
+  margin-bottom: -5px; /* 下部の間隔 */
 }
-
 
 #ui {
   transform: rotateZ(-4deg);
