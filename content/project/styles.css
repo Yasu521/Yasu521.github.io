@@ -6,15 +6,14 @@ body {
   }
 
   .holder {
-    width: 500px;
-    height: 250px;
+    width: auto;
+    height: auto;
     position: fixed;
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10; /* 背景として配置 */
     pointer-events: none; /* 背景のアニメーションが操作を妨げないように */
-    animation: fadeOut 30s forwards;
   }
   
   /* 円のスタイル */
@@ -223,32 +222,14 @@ body {
       font-size: 1em;
     }
 
-    #toggle1{
-      display: none;
-    }
-    .toggle-inner{
-      display: none;
-    }
-    #toggle1:checked ~ .toggle-inner{
-      display: block;
-    }
-    
-    #toggle2{
-      display: none;
-    }
-    #toggle2:checked ~ .toggle-inner{
-      display: block;
-    }
-
 /* Macbook */
 
 .macbook {
     width: 150px;
     height: 96px;
     right:10%;
-    top:90%;
+    top:50%;
     position: absolute;
-    margin: -75px 0 0 -48px;
     perspective: 500px;
   }
   .shadow {
