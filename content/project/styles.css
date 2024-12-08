@@ -222,7 +222,7 @@ body {
     
     .portfolio-item h2 {
       margin: 0 0 10px;
-      color: #444;
+      color: #d9a333;
       font-size: 1.4em;
     }
     
@@ -292,6 +292,9 @@ body {
     .custom-video {
         max-width: 100%; /* モバイルでの動画の最大幅 */
     }
+    .holder {
+    top: 50%;
+  }
 }
 /* Macbook */
 
