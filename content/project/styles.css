@@ -208,6 +208,38 @@ body {
     text-align: center;
   }
 
+    .portfolio-item {
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .portfolio-item h2 {
+      margin: 0 0 10px;
+      color: #444;
+      font-size: 1.4em;
+    }
+    
+    .portfolio-item p {
+      margin: 5px 0;
+      font-size: 1em;
+    }
+
+    #toggle1{
+      display: none;
+    }
+    .toggle-inner{
+      display: none;
+    }
+    #toggle1:checked ~ .toggle-inner{
+      display: block;
+    }
+    
+    #toggle2{
+      display: none;
+    }
+    #toggle2:checked ~ .toggle-inner{
+      display: block;
+    }
+
 /* Macbook */
 
 .macbook {
