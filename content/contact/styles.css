@@ -1,0 +1,1143 @@
+body {
+  background: rgb(0, 0, 0);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.footer-text {
+  font-size: 18px;
+  text-align: center; /* 中央揃え */
+  color: #555; /* 文字色の変更（任意） */
+  z-index:10;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* ページ全体を縦方向に中央揃え */
+  text-align: center; /* 中央揃え */
+  position: relative; /* UI要素の位置調整 */
+  margin-bottom: -100px; /* 下部の間隔 */
+}
+
+
+#ui {
+  transform: rotateZ(-4deg);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1; /* UI要素を画像の上に表示 */
+}
+
+#ui .text {
+  position: absolute;
+  font-size: 8rem; /* Adjusted to SCSS variable value */
+  color: #fff;
+  line-height: 8rem; /* Adjusted to SCSS variable value */
+  font-family: 'Anton', sans-serif;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+  letter-spacing: 1rem;
+  overflow: hidden;
+}
+
+#ui .text:nth-child(1) {
+  color: rgb(255, 112, 112);
+  clip-path: polygon(0% 0%, 5% 0%, 5% 50%, 0% 50%);
+  filter: blur(3px);
+}
+
+#ui .text:nth-child(2) {
+  color: rgb(255, 95, 95);
+  clip-path: polygon(5% 0%, 10% 0%, 10% 50%, 5% 50%);
+  filter: blur(4px);
+}
+
+#ui .text:nth-child(3) {
+  color: rgb(247, 58, 58);
+  clip-path: polygon(10% 0%, 15% 0%, 15% 50%, 10% 50%);
+  filter: blur(6px);
+}
+
+#ui .text:nth-child(4) {
+  color: rgb(255, 0, 0);
+  clip-path: polygon(15% 0%, 20% 0%, 20% 50%, 15% 50%);
+  filter: blur(5px);
+}
+
+#ui .text:nth-child(5) {
+  color: rgb(255, 191, 0);
+  clip-path: polygon(20% 0%, 25% 0%, 25% 50%, 20% 50%);
+  filter: blur(5px);
+}
+
+#ui .text:nth-child(6) {
+  color: rgb(255, 170, 110);
+  clip-path: polygon(25% 0%, 30% 0%, 30% 50%, 25% 50%);
+  filter: blur(4px);
+}
+
+#ui .text:nth-child(7) {
+  color: rgb(255, 197, 125);
+  clip-path: polygon(30% 0%, 35% 0%, 35% 50%, 30% 50%);
+  filter: blur(5px);
+}
+
+#ui .text:nth-child(8) {
+  color: rgb(255, 189, 127);
+  clip-path: polygon(35% 0%, 40% 0%, 40% 50%, 35% 50%);
+  filter: blur(6px);
+}
+
+#ui .text:nth-child(9) {
+  color: rgb(255, 219, 111);
+  clip-path: polygon(40% 0%, 45% 0%, 45% 50%, 40% 50%);
+  filter: blur(5px);
+}
+
+#ui .text:nth-child(10) {
+  color: rgb(255, 166, 50);
+  clip-path: polygon(45% 0%, 50% 0%, 50% 50%, 45% 50%);
+  filter: blur(2px);
+}
+
+#ui .text:nth-child(11) {
+  color: rgb(116, 255, 98);
+  clip-path: polygon(50% 0%, 55% 0%, 55% 50%, 50% 50%);
+  filter: blur(9px);
+}
+
+#ui .text:nth-child(12) {
+  color: rgb(92, 200, 80);
+  clip-path: polygon(55% 0%, 60% 0%, 60% 50%, 55% 50%);
+  filter: blur(5px);
+}
+
+#ui .text:nth-child(13) {
+  color: rgb(105, 255, 92);
+  clip-path: polygon(60% 0%, 65% 0%, 65% 50%, 60% 50%);
+  filter: blur(8px);
+}
+
+#ui .text:nth-child(14) {
+  color: rgb(98, 166, 218);
+  clip-path: polygon(65% 0%, 70% 0%, 70% 50%, 65% 50%);
+  filter: blur(7px);
+}
+
+#ui .text:nth-child(15) {
+  color: rgb(98, 231, 255);
+  clip-path: polygon(70% 0%, 75% 0%, 75% 50%, 70% 50%);
+  filter: blur(5px);
+}
+
+#ui .text:nth-child(16) {
+  color: rgb(170, 90, 90);
+  clip-path: polygon(75% 0%, 80% 0%, 80% 50%, 75% 50%);
+  filter: blur(9px);
+}
+
+#ui .text:nth-child(17) {
+  color: rgb(86, 60, 233);
+  clip-path: polygon(80% 0%, 85% 0%, 85% 50%, 80% 50%);
+  filter: blur(3px);
+}
+
+#ui .text:nth-child(18) {
+  color: rgb(50, 109, 228);
+  clip-path: polygon(85% 0%, 90% 0%, 90% 50%, 85% 50%);
+  filter: blur(6px);
+}
+
+#ui .text:nth-child(19) {
+  color: rgb(126, 240, 255);
+  clip-path: polygon(90% 0%, 95% 0%, 95% 50%, 90% 50%);
+  filter: blur(4px);
+}
+
+#ui .text:nth-child(20) {
+  color: rgb(36, 233, 255);
+  clip-path: polygon(95% 0%, 100% 0%, 100% 50%, 95% 50%);
+  filter: blur(3px);
+}
+
+#ui .text:nth-child(21) {
+  color: rgb(50, 74, 251);
+  clip-path: polygon(0% 50%, 5% 50%, 5% 100%, 0% 100%);
+  filter: blur(9px);
+}
+
+#ui .text:nth-child(22) {
+  color: rgb(13, 104, 149);
+  clip-path: polygon(5% 50%, 10% 50%, 10% 100%, 5% 100%);
+  filter: blur(3px);
+}
+
+#ui .text:nth-child(23) {
+  color: #4285F4;
+  clip-path: polygon(10% 50%, 15% 50%, 15% 100%, 10% 100%);
+  filter: blur(3px);
+}
+
+#ui .text:nth-child(24) {
+  color: #1a05fb;
+  clip-path: polygon(15% 50%, 20% 50%, 20% 100%, 15% 100%);
+  filter: blur(6px);
+}
+
+#ui .text:nth-child(25) {
+  color: #FBBC05;
+  clip-path: polygon(20% 50%, 25% 50%, 25% 100%, 20% 100%);
+  filter: blur(6px);
+}
+
+#ui .text:nth-child(26) {
+  color: #ffdb6f;
+  clip-path: polygon(25% 50%, 30% 50%, 30% 100%, 25% 100%);
+  filter: blur(3px);
+}
+
+#ui .text:nth-child(27) {
+  color: rgb(255, 219, 111);
+  clip-path: polygon(30% 50%, 35% 50%, 35% 100%, 30% 100%);
+  filter: blur(8px);
+}
+
+#ui .text:nth-child(28) {
+  color: rgb(180, 161, 50);
+  clip-path: polygon(35% 50%, 40% 50%, 40% 100%, 35% 100%);
+  filter: blur(10px);
+}
+
+#ui .text:nth-child(29) {
+  color:  #FBBC05;
+  clip-path: polygon(40% 50%, 45% 50%, 45% 100%, 40% 100%);
+  filter: blur(6px);
+}
+
+#ui .text:nth-child(30) {
+  color: rgb(180, 143, 40);
+  clip-path: polygon(45% 50%, 50% 50%, 50% 100%, 45% 100%);
+  filter: blur(3px);
+}
+
+#ui .text:nth-child(31) {
+  color: rgb(90, 150, 91);
+  clip-path: polygon(50% 50%, 55% 50%, 55% 100%, 50% 100%);
+  filter: blur(6px);
+}
+
+#ui .text:nth-child(32) {
+  color:#34A853;
+  clip-path: polygon(55% 50%, 60% 50%, 60% 100%, 55% 100%);
+  filter: blur(9px);
+}
+
+#ui .text:nth-child(33) {
+  color: #47a834;
+  clip-path: polygon(60% 50%, 65% 50%, 65% 100%, 60% 100%);
+  filter: blur(8px);
+}
+
+#ui .text:nth-child(34) {
+  color: rgb(50, 140, 84);
+  clip-path: polygon(65% 50%, 70% 50%, 70% 100%, 65% 100%);
+  filter: blur(5px);
+}
+
+#ui .text:nth-child(35) {
+  color: rgb(97, 150, 90);
+  clip-path: polygon(70% 50%, 75% 50%, 75% 100%, 70% 100%);
+  filter: blur(4px);
+}
+
+#ui .text:nth-child(36) {
+  color: rgb(150, 70, 70);
+  clip-path: polygon(75% 50%, 80% 50%, 80% 100%, 75% 100%);
+  filter: blur(3px);
+}
+
+#ui .text:nth-child(37) {
+  color: rgb(255, 41, 41);
+  clip-path: polygon(80% 50%, 85% 50%, 85% 100%, 80% 100%);
+  filter: blur(3px);
+}
+
+#ui .text:nth-child(38) {
+  color: #EA4335;
+  clip-path: polygon(85% 50%, 90% 50%, 90% 100%, 85% 100%);
+  filter: blur(5px);
+}
+
+#ui .text:nth-child(39) {
+  color: #ff5040;
+  clip-path: polygon(90% 50%, 95% 50%, 95% 100%, 90% 100%);
+  filter: blur(5px);
+}
+
+#ui .text:nth-child(40) {
+  color: rgb(255, 64, 0);
+  clip-path: polygon(95% 50%, 100% 50%, 100% 100%, 95% 100%);
+  filter: blur(2px);
+}
+@keyframes horizontal {
+  0% {
+    transform: translateX(6px);
+  }
+  100% {
+    transform: translateX(-6px);
+  }
+}
+
+@keyframes vertical {
+  0% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(-3px);
+  }
+}
+.text:nth-child(1) .text_inner1 {
+  animation: vertical 1700ms 0ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(1) .text_inner2 {
+  animation: horizontal 1700ms 0ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(2) .text_inner1 {
+  animation: vertical 1750ms 100ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(2) .text_inner2 {
+  animation: horizontal 1600ms 50ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(3) .text_inner1 {
+  animation: vertical 1800ms 200ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(3) .text_inner2 {
+  animation: horizontal 1650ms 150ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(4) .text_inner1 {
+  animation: vertical 1900ms 300ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(4) .text_inner2 {
+  animation: horizontal 1700ms 250ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(5) .text_inner1 {
+  animation: vertical 1850ms 400ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(5) .text_inner2 {
+  animation: horizontal 1750ms 350ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(6) .text_inner1 {
+  animation: vertical 1800ms 500ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(6) .text_inner2 {
+  animation: horizontal 1600ms 450ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(7) .text_inner1 {
+  animation: vertical 1700ms 600ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(7) .text_inner2 {
+  animation: horizontal 1550ms 550ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(8) .text_inner1 {
+  animation: vertical 1750ms 700ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(8) .text_inner2 {
+  animation: horizontal 1500ms 650ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(9) .text_inner1 {
+  animation: vertical 1900ms 800ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(9) .text_inner2 {
+  animation: horizontal 1650ms 750ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(10) .text_inner1 {
+  animation: vertical 1800ms 900ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(10) .text_inner2 {
+  animation: horizontal 1700ms 850ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(11) .text_inner1 {
+  animation: vertical 1700ms 1000ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(11) .text_inner2 {
+  animation: horizontal 1600ms 950ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(12) .text_inner1 {
+  animation: vertical 1850ms 1100ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(12) .text_inner2 {
+  animation: horizontal 1750ms 1050ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(13) .text_inner1 {
+  animation: vertical 1900ms 1200ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(13) .text_inner2 {
+  animation: horizontal 1800ms 1150ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(14) .text_inner1 {
+  animation: vertical 1750ms 1300ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(14) .text_inner2 {
+  animation: horizontal 1650ms 1250ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(15) .text_inner1 {
+  animation: vertical 1800ms 1400ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(15) .text_inner2 {
+  animation: horizontal 1700ms 1350ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(16) .text_inner1 {
+  animation: vertical 1700ms 1500ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(16) .text_inner2 {
+  animation: horizontal 1550ms 1450ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(17) .text_inner1 {
+  animation: vertical 1850ms 1600ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(17) .text_inner2 {
+  animation: horizontal 1600ms 1550ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(18) .text_inner1 {
+  animation: vertical 1900ms 1700ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(18) .text_inner2 {
+  animation: horizontal 1700ms 1650ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(19) .text_inner1 {
+  animation: vertical 1800ms 1800ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(19) .text_inner2 {
+  animation: horizontal 1750ms 1750ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(20) .text_inner1 {
+  animation: vertical 1700ms 1900ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(20) .text_inner2 {
+  animation: horizontal 1600ms 1850ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(21) .text_inner1 {
+  animation: vertical 1750ms 2000ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(21) .text_inner2 {
+  animation: horizontal 1550ms 1950ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(22) .text_inner1 {
+  animation: vertical 1800ms 2100ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(22) .text_inner2 {
+  animation: horizontal 1700ms 2050ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(23) .text_inner1 {
+  animation: vertical 1850ms 2200ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(23) .text_inner2 {
+  animation: horizontal 1600ms 2150ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(24) .text_inner1 {
+  animation: vertical 1900ms 2300ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(24) .text_inner2 {
+  animation: horizontal 1700ms 2250ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(25) .text_inner1 {
+  animation: vertical 1700ms 2400ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(25) .text_inner2 {
+  animation: horizontal 1550ms 2350ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(26) .text_inner1 {
+  animation: vertical 1750ms 2500ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(26) .text_inner2 {
+  animation: horizontal 1600ms 2450ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(27) .text_inner1 {
+  animation: vertical 1800ms 2600ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(27) .text_inner2 {
+  animation: horizontal 1700ms 2550ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(28) .text_inner1 {
+  animation: vertical 1850ms 2700ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(28) .text_inner2 {
+  animation: horizontal 1550ms 2650ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(29) .text_inner1 {
+  animation: vertical 1900ms 2800ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(29) .text_inner2 {
+  animation: horizontal 1600ms 2750ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(30) .text_inner1 {
+  animation: vertical 1700ms 2900ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(30) .text_inner2 {
+  animation: horizontal 1550ms 2850ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(31) .text_inner1 {
+  animation: vertical 1750ms 3000ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(31) .text_inner2 {
+  animation: horizontal 1700ms 2950ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(32) .text_inner1 {
+  animation: vertical 1800ms 3100ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(32) .text_inner2 {
+  animation: horizontal 1600ms 3050ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(33) .text_inner1 {
+  animation: vertical 1850ms 3200ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(33) .text_inner2 {
+  animation: horizontal 1750ms 3150ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(34) .text_inner1 {
+  animation: vertical 1900ms 3300ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(34) .text_inner2 {
+  animation: horizontal 1650ms 3250ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(35) .text_inner1 {
+  animation: vertical 1700ms 3400ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(35) .text_inner2 {
+  animation: horizontal 1600ms 3350ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(36) .text_inner1 {
+  animation: vertical 1750ms 3500ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(36) .text_inner2 {
+  animation: horizontal 1700ms 3450ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(37) .text_inner1 {
+  animation: vertical 1800ms 3600ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(37) .text_inner2 {
+  animation: horizontal 1750ms 3550ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(38) .text_inner1 {
+  animation: vertical 1850ms 3700ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(38) .text_inner2 {
+  animation: horizontal 1600ms 3650ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(39) .text_inner1 {
+  animation: vertical 1900ms 3800ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(39) .text_inner2 {
+  animation: horizontal 1700ms 3750ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(40) .text_inner1 {
+  animation: vertical 1700ms 3900ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(40) .text_inner2 {
+  animation: horizontal 1600ms 3850ms ease-in-out infinite alternate;
+}
+
+.text:nth-child(1):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(1):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(2):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(2):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(3):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(3):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(4):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(4):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(5):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(5):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(6):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(6):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(7):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(7):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(8):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(8):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(9):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(9):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(10):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(10):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(11):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(11):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(12):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(12):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(13):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(13):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(14):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(14):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(15):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(15):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(16):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(16):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(17):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(17):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(18):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(18):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(19):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(19):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(20):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(20):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(21):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(21):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(22):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(22):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(23):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(23):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(24):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(24):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(25):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(25):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(26):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(26):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(27):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(27):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(28):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(28):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(29):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(29):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(30):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(30):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(31):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(31):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(32):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(32):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(33):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(33):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(34):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(34):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(35):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(35):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(36):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(36):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(37):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(37):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(38):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(38):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(39):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(39):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+
+.text:nth-child(40):hover .text_inner1 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
+.text:nth-child(40):hover .text_inner2 {
+  animation: none;
+  filter: blur(0);
+  transform: none;
+  opacity: 1;
+}
