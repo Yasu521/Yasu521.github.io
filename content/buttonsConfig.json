@@ -27,7 +27,7 @@
         "id": "Project",
         "texts": { "en": " Projects", "ja": "活動", "fr": "Projets", "zh": "项目" },
         "position": { "top": "60%", "left": "20%" },
-        "links": {"en":"",ja":"https://aicurion.com/project-ja"},
+        "links": {"en":"","ja":"https://aicurion.com/project-ja"},
         "contentPosition": { "left": "0%", "right": "0%" },
         "contentFile": {
             "en": "./content/project/project-en.html",
