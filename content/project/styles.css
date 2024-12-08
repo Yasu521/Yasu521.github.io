@@ -1,7 +1,7 @@
 body {
     margin: 0;
     height: 100%;
-    overflow: hidden;  /* 横スクロールを無効にする */
+    overflow-y: auto;
     background-color: #f0f0f0;
   }
 
@@ -199,7 +199,6 @@ body {
 /* スクロールコンテンツ */
 .main-content {
     height: 100vh;
-    overflow-y: auto;  /* 縦スクロール可能 */
     padding: 100px 0px; /* コンテンツの余白 */
     position: relative;
     z-index: 20;
