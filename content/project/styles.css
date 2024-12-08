@@ -221,7 +221,69 @@ body {
       margin: 5px 0;
       font-size: 1em;
     }
+/* MEDIA */
+/* コンテナのスタイリング */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 
+/* コンテンツを中央に配置 */
+.content {
+    text-align: center;
+    width: 100%;
+    max-width: 1200px; /* コンテンツの最大幅 */
+    padding: 20px;
+}
+
+/* 画像ギャラリーのスタイリング */
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* 画像間の間隔 */
+    flex-wrap: wrap; /* 画面が小さくなった時に折り返し */
+    margin-bottom: 20px;
+}
+
+.custom-image {
+    width: 100%;
+    max-width: 300px; /* 画像の最大幅 */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* YouTube動画ギャラリーのスタイリング */
+.video-gallery {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.custom-video {
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    border: none;
+}
+
+/* モバイル表示のためのメディアクエリ */
+@media (max-width: 768px) {
+    .image-gallery {
+        flex-direction: column; /* 画像を縦に並べる */
+        gap: 10px; /* 画像間の間隔を狭くする */
+    }
+
+    .custom-image {
+        max-width: 90%; /* モバイルでの画像の最大幅 */
+    }
+
+    .custom-video {
+        max-width: 100%; /* モバイルでの動画の最大幅 */
+    }
+}
 /* Macbook */
 
 .macbook {
