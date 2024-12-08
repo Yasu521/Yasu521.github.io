@@ -15,6 +15,15 @@ body {
     z-index: 10; /* 背景として配置 */
     pointer-events: none; /* 背景のアニメーションが操作を妨げないように */
   }
+    hr.custom-hr {
+      height: 0.5px;              /* 線の太さ */
+      border: none;             /* デフォルトのボーダーを削除 */
+      background-color: #949494;   /* 線の色を指定 */
+      margin-top: 30px;         /* 上の余白 */
+      margin-bottom: 30px;      /* 下の余白 */
+      margin-left: auto;        /* 左の余白を自動調整 */
+      margin-right: auto;       /* 右の余白を自動調整 */
+    }
   
   /* 円のスタイル */
   .holder .circle {
