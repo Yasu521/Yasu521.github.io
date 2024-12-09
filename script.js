@@ -153,6 +153,7 @@ function createButton(config) {
     button.className = "menu-button";
     button.style.top = config.position.top;
     button.style.left = config.position.left;
+    button.style.right = config.position.right;
     button.style.position = "absolute";
     button.textContent = config.texts[currentLanguage] || config.texts.en;
     if (config.links) {
