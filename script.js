@@ -158,7 +158,6 @@ function createButton(config) {
     button.textContent = config.texts[currentLanguage] || config.texts.en;
     if (config.links) {
       button.href = config.links[currentLanguage] || config.links.en;
-      button.target = "_blank";
     } else {
       button.addEventListener("click", (event) => {
         event.preventDefault();
