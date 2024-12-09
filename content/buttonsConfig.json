@@ -1,8 +1,8 @@
 [
     {
       "id": "About Me",
-      "texts": { "en": "About Me", "ja": "自己紹介", "fr": "Qui suis-je", "zh": "关于我" },
-      "position": { "top": "40%", "left": "20%" },
+      "texts": { "en": "About", "ja": "自己紹介", "fr": "À propos", "zh": "关于我" },
+      "position": { "top": "15px", "right": "40px" },
       "contentPosition": { "left": "0%", "right": "0%" },
       "contentFile":{
         "en": "./content/about-me/about-me-en.html",
@@ -13,8 +13,8 @@
     },
     {
         "id": "Contact",
-        "texts": { "en": "Contact", "ja": "連絡先", "fr": "Contact", "zh": "联系我们" },
-        "position": { "top": "70%", "left": "20%" },
+        "texts": { "en": "Contact", "ja": "連絡", "fr": "Contact", "zh": "联系我们" },
+        "position": { "top": "60%", "left": "20%" },
         "contentPosition": { "left": "0%" ,"right": "0%"},
         "contentFile":{
             "en": "./content/contact/contact-en.html",
@@ -25,9 +25,8 @@
     },
     {
         "id": "Project",
-        "texts": { "en": " Projects", "ja": "活動", "fr": "Projets", "zh": "项目" },
-        "position": { "top": "50%", "left": "20%" },
-        "//links//": {"en":"","ja":"https://aicurion.com/project-ja"},
+        "texts": { "en": " Learn", "ja": "学ぶ", "fr": "Étudier", "zh": "学习" },
+        "position": { "top": "40%", "left": "20%" },
         "contentPosition": { "left": "0%", "right": "0%" },
         "contentFile": {
             "en": "./content/project/project-en.html",
@@ -38,8 +37,8 @@
     },
     {
         "id": "News",
-        "texts": {  "en": "News", "ja": "お知らせ", "fr": "Nouvelles", "zh": "消息" },
-        "position": { "top": "60%", "left": "20%" },
+        "texts": {  "en": "Read", "ja": "読む, "fr": "Lire", "zh": "阅读" },
+        "position": { "top": "50%", "left": "20%" },
         "links": { "en": "https://yasu521.github.io/News/", "ja":"https://yasu521.github.io/News/", "fr": "https://yasu521.github.io/News/", "zh":"https://yasu521.github.io/News/"},
         "contentPosition": { "left": "0%", "right": "0%" },
         "contentFile": {
