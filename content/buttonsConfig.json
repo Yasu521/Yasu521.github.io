@@ -2,7 +2,7 @@
     {
       "id": "About Me",
       "texts": { "en": "About", "ja": "自己紹介", "fr": "À propos", "zh": "关于我" },
-      "position": { "top": "15px", "right": "40px" },
+      "position": { "top": "50%", "right": "20%" },
       "contentPosition": { "left": "0%", "right": "0%" },
       "contentFile":{
         "en": "./content/about-me/about-me-en.html",
@@ -33,19 +33,6 @@
             "fr": "./content/project/project-fr.html",
             "ja": "./content/project/project-ja.html",
             "zh": "./content/project/project-zh.html"
-        }
-    },
-    {
-        "id": "News",
-        "texts": {  "en": "Read", "ja": "読む", "fr": "Lire", "zh": "阅读" },
-        "position": { "top": "50%", "left": "20%" },
-        "links": { "en": "https://yasu521.github.io/News/", "ja":"https://yasu521.github.io/News/", "fr": "https://yasu521.github.io/News/", "zh":"https://yasu521.github.io/News/"},
-        "contentPosition": { "left": "0%", "right": "0%" },
-        "contentFile": {
-            "en": "",
-            "fr": "",
-            "ja": "",
-            "zh": ""
         }
     }
   ]
