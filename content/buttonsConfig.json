@@ -2,7 +2,7 @@
     {
       "id": "About Me",
       "texts": { "en": "About", "ja": "自己紹介", "fr": "À propos", "zh": "关于我" },
-      "position": { "top": "50%", "right": "20%" },
+      "position": { "top": "40%", "right": "20%" },
       "contentPosition": { "left": "0%", "right": "0%" },
       "contentFile":{
         "en": "./content/about-me/about-me-en.html",
@@ -26,7 +26,7 @@
     {
         "id": "Project",
         "texts": { "en": " Learn", "ja": "学ぶ", "fr": "Étudier", "zh": "学习" },
-        "position": { "top": "40%", "left": "20%" },
+        "position": { "top": "50%", "left": "20%" },
         "contentPosition": { "left": "0%", "right": "0%" },
         "contentFile": {
             "en": "./content/project/project-en.html",
