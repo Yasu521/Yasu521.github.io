@@ -14,10 +14,8 @@ const textures = {
     "./flower/1.webp",
     "./flower/7.webp",
     "./flower/9.webp",
-    "./flower/10.webp",
     "./flower/11.webp",
     "./flower/12.webp",
-    "./flower/13.webp",
     ],
     fallingTextures2 : [
     "./flower/2.webp",
