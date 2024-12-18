@@ -14,12 +14,16 @@ const textures = {
     "./flower/1.webp",
     "./flower/7.webp",
     "./flower/9.webp",
+    "./flower/10.webp",
     "./flower/11.webp",
+    "./flower/12.webp",
+    "./flower/13.webp",
     ],
     fallingTextures2 : [
     "./flower/2.webp",
     "./flower/5.webp",
     "./flower/373.webp",
+    "./flower/378.webp",
     ],
     whiteTextures : [
     "./flower/3.webp",
@@ -28,9 +32,8 @@ const textures = {
     ],
     blueTextures : [
     "./flower/124.webp",
+    "./flower/125.webp",
     "./flower/127.webp",
-    "./flower/128.webp",
-    "./flower/202.webp",
     "./flower/220.webp",
        ],
     pinkTextures : [
@@ -570,7 +573,7 @@ createwhiteFlowers_left(renderRange.zMin, renderRange.zMax);
 creategroundFlowers(renderRange.zMin, renderRange.zMax);
 createtopFlowers(renderRange.zMin, renderRange.zMax);
 }
-if(Math.random()<=0.02) growAllFlowers();
+if(Math.random()<=0.005) growAllFlowers();
 renderer.render(scene, camera);
 }
 
