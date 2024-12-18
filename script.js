@@ -527,16 +527,12 @@ if (Math.abs(cameraZ - lastCameraZ) > shiftThreshold) {
         createGround(renderRange.zMax - shiftAmount, renderRange.zMax);
         createGround_right(renderRange.zMax - shiftAmount, renderRange.zMax);
         createGround_left(renderRange.zMax - shiftAmount, renderRange.zMax);
-        dustFlowers(renderRange.zMax - shiftAmount, renderRange.zMax);
-        dustFlowers2(renderRange.zMax - shiftAmount, renderRange.zMax);
     }
     else{
         createtopGround(renderRange.zMin, renderRange.zMin - shiftAmount);
         createGround(renderRange.zMin, renderRange.zMin - shiftAmount);
         createGround_left(renderRange.zMin, renderRange.zMin - shiftAmount);
         createGround_right(renderRange.zMin, renderRange.zMin - shiftAmount);
-        dustFlowers(renderRange.zMin, renderRange.zMin - shiftAmount);
-        dustFlowers2(renderRange.zMin, renderRange.zMin - shiftAmount);
     }
     lastCameraZ = cameraZ;
 }}
@@ -570,8 +566,10 @@ createwhiteFlowers_right(renderRange.zMin, renderRange.zMax);
 createwhiteFlowers_left(renderRange.zMin, renderRange.zMax);
 creategroundFlowers(renderRange.zMin, renderRange.zMax);
 createtopFlowers(renderRange.zMin, renderRange.zMax);
+dustFlowers(renderRange.zMin, renderRange.zMax);
+dustFlowers2(renderRange.zMin, renderRange.zMax);
 }
-if(Math.random()<=0.005) growAllFlowers();
+if(Math.random()<=0.001) growAllFlowers();
 renderer.render(scene, camera);
 }
 
