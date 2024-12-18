@@ -566,7 +566,7 @@ createwhiteFlowers_right(renderRange.zMin, renderRange.zMax);
 createwhiteFlowers_left(renderRange.zMin, renderRange.zMax);
 creategroundFlowers(renderRange.zMin, renderRange.zMax);
 createtopFlowers(renderRange.zMin, renderRange.zMax);
-if(Math.random()<=0.6){
+if(Math.random()<=0.4){
 dustFlowers(renderRange.zMin, renderRange.zMax);
     if(Math.random()<=0.3){
 dustFlowers2(renderRange.zMin, renderRange.zMax);
