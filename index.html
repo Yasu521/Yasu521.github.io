@@ -20,6 +20,18 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="./shortcut.ico" type="image/x-icon">
   <meta name="description" id="meta-description" content="">
+  <meta name="robots" content="index, follow" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Yasuhiro Iwai Portfolio",
+    "url": "https://yasu521.github.io/",
+    "description": "A portfolio highlighting contributions to society through activities that promote health and happiness. Discover growth, diversity, and fostering environments for well-being.",
+    "alternateName": "岩井康洋のホームページ",
+    "inLanguage": "en"
+  }
+  </script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
         const userLang = navigator.language || navigator.userLanguage; // Get browser language
@@ -32,6 +44,13 @@
         };
         const defaultLang = descriptions[langCode] ? langCode : 'en';
         document.getElementById('meta-description').setAttribute('content', descriptions[defaultLang]);
+        
+        // Update structured data language dynamically
+        const structuredData = document.querySelector('script[type="application/ld+json"]');
+        const jsonData = JSON.parse(structuredData.textContent);
+        jsonData.inLanguage = defaultLang;
+        jsonData.description = descriptions[defaultLang];
+        structuredData.textContent = JSON.stringify(jsonData, null, 2);
     });
   </script>
   <script>
