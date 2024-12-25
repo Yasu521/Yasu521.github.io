@@ -196,15 +196,15 @@ link[rel="icon"] {
     background-image: 
         repeating-linear-gradient(
             0deg, 
-            rgba(176, 0, 0, 0.1), 
-            rgba(176, 0, 0, 0.1) 1px, 
+            rgba(230, 216, 179, 0.1), 
+            rgba(230, 216, 179, 0.1) 1.5px, 
             transparent 1px, 
             transparent 20px
         ),
         repeating-linear-gradient(
             90deg,
-            rgba(176, 0, 0, 0.1), 
-            rgba(176, 0, 0, 0.1) 1px, 
+            rgba(230, 216, 179, 0.1), 
+            rgba(230, 216, 179, 0.1) 1.5px, 
             transparent 1px, 
             transparent 20px
         );
