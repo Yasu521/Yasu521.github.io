@@ -1,5 +1,7 @@
-const language = "en";
-let currentLanguage = language;
+const supportedLanguages = ["en", "fr", "zh", "ja"];
+const browserLanguage = navigator.language.substring(0, 2);
+const defaultLanguage = supportedLanguages.includes(browserLanguage) ? browserLanguage : "en";
+let currentLanguage = defaultLanguage;
 const flagImages = {
     en: './flag/USA.webp',
     ja: './flag/Japan.webp',
