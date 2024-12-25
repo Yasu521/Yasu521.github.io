@@ -134,7 +134,7 @@ let currentOverlay = null;
 fetch('./content/buttonsConfig.json')
   .then((response) => response.json())
   .then((configs) => {
-    window.buttonsConfig = configs; // Make it globally accessible
+    window.buttonsConfig = configs;
     configs.forEach((config) => {
       createButton(config);
     });
