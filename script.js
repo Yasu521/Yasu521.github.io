@@ -137,12 +137,6 @@ fetch('./content/buttonsConfig.json')
       createButton(config);
     });
   });
-
-const supportedLanguages = ["en", "fr", "zh", "ja"];
-const browserLanguage = navigator.language.substring(0, 2);
-const defaultLanguage = supportedLanguages.includes(browserLanguage) ? browserLanguage : "en";
-let currentLanguage = defaultLanguage; // 初期設定をブラウザの言語に
-
 function updateButtonTexts() {
     buttonsConfig.forEach(config => {
         const button = document.getElementById(config.id);
@@ -152,11 +146,7 @@ function updateButtonTexts() {
                 button.href = config.links[currentLanguage] || config.links.en;
             } else {
                 button.removeAttribute("href"); 
-            }
-        }
-    });
-}
-
+}}});}
 function createButton(config) {
     const button = document.createElement("a");
     button.id = config.id;
@@ -167,58 +157,55 @@ function createButton(config) {
     button.style.position = "absolute";
     button.textContent = config.texts[currentLanguage] || config.texts.en;
     if (config.links) {
-        button.href = config.links[currentLanguage] || config.links.en;
+      button.href = config.links[currentLanguage] || config.links.en;
     } else {
-        button.addEventListener("click", (event) => {
-            event.preventDefault();
-            const contentFile = config.contentFile[currentLanguage] || config.contentFile.en;
-            showContent(contentFile, config.contentPosition);
-        });
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        const contentFile = config.contentFile[currentLanguage] || config.contentFile.en;
+        showContent(contentFile, config.contentPosition);
+      });
     }
     buttonContainer.appendChild(button);
-}
-
+  }              
 function showContent(contentFile, contentPosition) {
-    if (currentOverlay) {
-        clearExistingContent(() => {
-            loadContent(contentFile, contentPosition);
-        });
-    } else {
-        loadContent(contentFile, contentPosition);
-    }
-}
+if (currentOverlay) {
+  clearExistingContent(() => {
+    loadContent(contentFile, contentPosition);
+  });
+} else {
+  loadContent(contentFile, contentPosition);
+}}
 
 function loadContent(contentFile, contentPosition) {
-    fetch(contentFile)
-        .then((response) => response.text())
-        .then((htmlContent) => {
-            const overlay = document.createElement("div");
-            overlay.className = "content-overlay";
-            overlay.addEventListener("click", clearExistingContent);
+fetch(contentFile)
+  .then((response) => response.text())
+  .then((htmlContent) => {
+    const overlay = document.createElement("div");
+    overlay.className = "content-overlay";
+    overlay.addEventListener("click", clearExistingContent);
 
-            const contentBox = document.createElement("div");
-            contentBox.className = "content-box";
-            contentBox.style.left = contentPosition.left;
-            contentBox.innerHTML = htmlContent;
+    const contentBox = document.createElement("div");
+    contentBox.className = "content-box";
+    contentBox.style.left = contentPosition.left;
+    contentBox.innerHTML = htmlContent;
 
-            const closeButton = document.createElement("button");
-            closeButton.textContent = "✖";
-            closeButton.className = "close-button";
-            closeButton.addEventListener("click", (event) => {
-                clearExistingContent();
-            });
+    const closeButton = document.createElement("button");
+    closeButton.textContent = "✖";
+    closeButton.className = "close-button";
+    closeButton.addEventListener("click", (event) => {
+      clearExistingContent();
+    });
 
-            contentBox.appendChild(closeButton);
-            overlay.appendChild(contentBox);
-            contentContainer.appendChild(overlay);
+    contentBox.appendChild(closeButton);
+    overlay.appendChild(contentBox);
+    contentContainer.appendChild(overlay);
 
-            currentOverlay = overlay;
-            setTimeout(() => {
-                overlay.classList.add("visible");
-            }, 10);
-        });
+    currentOverlay = overlay;
+    setTimeout(() => {
+      overlay.classList.add("visible");
+    }, 10);
+  });
 }
-
 function clearExistingContent(callback) {
     if (currentOverlay) {
         contentContainer.removeChild(currentOverlay);
@@ -226,24 +213,15 @@ function clearExistingContent(callback) {
     }
     if (callback) callback();
 }
-
 function updateLanguageIcon(language) {
     currentLanguageIcon.style.backgroundImage = `url(${flagImages[language]})`;
-}
-
+  }
 languageButtons.forEach(button => {
     button.addEventListener('click', () => {
-        currentLanguage = button.getAttribute('data-lang') || defaultLanguage;
+        currentLanguage = button.getAttribute('data-lang') || "en";
         updateButtonTexts();
         updateLanguageIcon(currentLanguage);
-    });
-});
-
-// ページ読み込み時に初期言語を設定
-document.addEventListener('DOMContentLoaded', () => {
-    updateButtonTexts();
-    updateLanguageIcon(currentLanguage);
-});
+    });});
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('three-canvas') });
