@@ -22,13 +22,13 @@ header h1 {
 
 .plane-container {
     position: fixed;
-    top: 220px;
-    left: 48%;
+    top: 20%;
+    left: 50%;
     z-index: 100;
 }
 
 .plane-container img {
-    width: 60px;
+    width: 200px;
 }
 
 .timeline {
@@ -49,17 +49,11 @@ header h1 {
 .timeline-line2 {
     position: absolute;
     top: 0;
-    left: 50%;
+    left: 1%;
     transform: translateX(-50%);
-    width: 2px;
+    width: 5px;
     height: 100%;
-    background: repeating-linear-gradient(
-        to bottom,
-        #5a3a33,
-        #5a3a33 10px,
-        transparent 10px,
-        transparent 20px
-    );
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="40" viewBox="0 0 10 40"><path d="M5 0 C7 10 3 5 5 40" stroke="white" fill="none" stroke-width="2"/></svg>') repeat-y;
     z-index: 1;
 }
 
@@ -103,7 +97,7 @@ header h1 {
     align-items: center;
     justify-content: space-between;
     margin: 100px 0;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     scroll-snap-align: center;
 }
@@ -112,26 +106,31 @@ header h1 {
 .timeline-section:nth-child(4n+1) {
     border-radius: 16px;
     background-color: #34A85399;
-    color: #fff;
+    color: #000000;
 }
 .timeline-section:nth-child(4n+2) {
     border-radius: 16px;
     background-color: #4285F499;
-    color: #fff;
+    color: #000000;
 }
 .timeline-section:nth-child(4n+3) {
     border-radius: 16px;
     background-color: #EA433599;
-    color: #fff;
+    color: #000000;
 }
 .timeline-section:nth-child(4n) {
   border-radius: 16px;
     background-color: #FBBC0599;
-    color: #fff;
+    color: #000000;
+}
+.timeline-section .images-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .timeline-section img {
-    max-width: 40%;
+    max-width: 48%;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -142,19 +141,21 @@ header h1 {
 
 .timeline-section h2 {
     font-size: 2em;
+    padding: 5px;
 }
 
 .timeline-section p {
     font-size: 1.2em;
-    color: #ddd;
+    color: #5a5a5a;
+    padding: 5px;
 }
 
 .project-details {
     margin-top: 20px;
     font-size: 1em;
     background: rgba(255, 255, 255, 0.1);
-    padding: 15px;
     border-radius: 8px;
+    margin-right:    10px;
 }
 
 .projector {
@@ -163,7 +164,7 @@ header h1 {
 }
 
 .projector img {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
     border: 2px solid #ccc;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -178,7 +179,6 @@ footer {
 }
 
 footer p {
-    margin: 0;
     font-size: 0.9em;
 }
 
