@@ -24,12 +24,12 @@ header h1 {
 .plane-container {
     position: fixed;
     top: 20%;
-    left: 50%;
+    left: 19%;
     z-index: 100;
 }
 
 .plane-container img {
-    width: 200px;
+    width: 80px;
 }
 
 .timeline {
@@ -166,7 +166,6 @@ header h1 {
     color: rgb(100, 100, 0);
 }
 
-
 .timeline-section:nth-child(4n+1) p {
     font-size:  1em;
     color: rgb(0,100,0);
@@ -247,7 +246,7 @@ footer p {
         height: 40px;
     }
     .plane-container {
-    left: 8%;
+    left: 7%;
     top:40%;
 }
 .timeline-line2 {
@@ -272,7 +271,7 @@ footer p {
         font-size: 1em;
     }
     .plane-container {
-    left: 3%;
-    top:40%;
-}
+        left: 2.5%;
+        top:40%;
+    }
 }
