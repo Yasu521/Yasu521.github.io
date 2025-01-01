@@ -34,6 +34,7 @@
     overflow-x: scroll;
     white-space: nowrap;
     position: relative;
+    border-radius: 8px;
 }
 .sns-container::after {
     display: inline;
