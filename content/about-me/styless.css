@@ -38,7 +38,7 @@
 }
 .sns-container::after {
     display: inline;
-    content: "Scroll ≫";
+    content: "Follow me ≫";
     position: absolute;
     top: 0;
     left: 0;
