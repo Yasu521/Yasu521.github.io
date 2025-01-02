@@ -10,7 +10,7 @@ body {
 header {
     background: linear-gradient(90deg, #4285F499, #EA433599, #FBBC0599, #34A85399);
     color: linear-gradient(#4285F499, #EA433599, #FBBC0599, #34A85399);
-    font-family: "Squada One", serif;
+    font-family: "Oswald", serif;
     padding: 20px;
     text-align: center;
     border-radius: 8px;
@@ -144,30 +144,30 @@ header h1 {
 }
 
 .timeline-section:nth-child(4n+1) h2 {
-    font-size: 3em;
+    font-size: 2em;
     padding: 5px;
     color: rgb(0, 100, 0);
     font-family: "Squada One", serif;
 }
 .timeline-section:nth-child(4n+2) h2 {
-    font-size: 3em;
+    font-size: 2em;
     padding: 5px;
     color: rgb(0, 0, 100);
     font-family: "Squada One", serif;
 }
 .timeline-section:nth-child(4n+3) h2 {
-    font-size: 3em;
+    font-size: 2em;
     padding: 5px;
     color: rgb(100, 0, 0);
 }
 .timeline-section:nth-child(4n) h2 {
-    font-size: 3em;
+    font-size: 2em;
     padding: 5px;
     color: rgb(100, 100, 0);
 }
 
 .timeline-section:nth-child(4n+1) p {
-    font-size:  1em;
+    font-size:  2em;
     color: rgb(0,100,0);
     padding: 5px;
 }
