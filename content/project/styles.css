@@ -4,7 +4,16 @@ body {
     overflow-y: auto;
     background-color: #f0f0f0;
   }
+figure {
+  margin: 0;
+  text-align: center;
+}
 
+figcaption {
+  margin-top: 5px;
+  font-size: 10px;
+  color: #555;
+}
 .link-container {
   display: flex;
   gap: 15px;
