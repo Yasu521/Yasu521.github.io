@@ -307,6 +307,9 @@ figcaption {
 }
 
 @media (max-width: 768px) {
+    .link-container a {
+          font-size: 10px;
+    }
     .image-gallery {
         flex-direction: column; /* 画像を縦に並べる */
         gap: 10px; /* 画像間の間隔を狭くする */
