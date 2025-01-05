@@ -1,12 +1,11 @@
-const supportedLanguages = ["en", "fr", "zh", "ja"];
+const supportedLanguages = ["en", "fr", "ja"];
 const browserLanguage = navigator.language.substring(0, 2);
 const defaultLanguage = supportedLanguages.includes(browserLanguage) ? browserLanguage : "en";
 let currentLanguage = defaultLanguage;
 const flagImages = {
     en: './flag/USA.webp',
     ja: './flag/Japan.webp',
-    fr: './flag/France.webp',
-    zh: './flag/China.webp'
+    fr: './flag/France.webp'
 }
 const textures = {
     dustTextures: [
@@ -134,7 +133,7 @@ let currentOverlay = null;
 fetch('./content/buttonsConfig.json')
   .then((response) => response.json())
   .then((configs) => {
-    window.buttonsConfig = configs; // Make it globally accessible
+    window.buttonsConfig = configs;
     configs.forEach((config) => {
       createButton(config);
     });

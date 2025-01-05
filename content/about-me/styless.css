@@ -34,10 +34,11 @@
     overflow-x: scroll;
     white-space: nowrap;
     position: relative;
+    border-radius: 8px;
 }
 .sns-container::after {
     display: inline;
-    content: "Scroll ≫";
+    content: "Follow me ≫";
     position: absolute;
     top: 0;
     left: 0;
