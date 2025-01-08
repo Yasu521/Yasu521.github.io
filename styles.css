@@ -58,7 +58,7 @@ link[rel="icon"] {
 .language-option {
   background: none;
   border: none;
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 1px 1px;
   width: 100%;
   text-align: center;
@@ -70,7 +70,9 @@ link[rel="icon"] {
 .language-menu:hover .language-list {
   display: block;
 }
-
+.language-option:hover{
+  color:#c9a333;
+}
 .blur-overlay {
   position: fixed;
   top: 0;
@@ -150,7 +152,7 @@ link[rel="icon"] {
 }
 
 .menu-button:hover {
-  color: white;
+  color: #c9a333;
   background: rgba(0, 0, 0, 0);
 }
 
@@ -161,7 +163,7 @@ link[rel="icon"] {
   bottom: 0;
   width: 0;
   height: 3px;
-  background: white;
+  background: #c9a333;
   transition: width 0.3s ease;
 }
 
@@ -196,15 +198,15 @@ link[rel="icon"] {
     background-image: 
         repeating-linear-gradient(
             0deg, 
-            rgba(230, 0, 0, 0.1), 
-            rgba(230, 0, 0, 0.1) 1.5px, 
+            rgba(0, 76, 130, 0.1), 
+            rgba(0, 76, 130, 0.1) 1.5px, 
             transparent 1px, 
             transparent 20px
         ),
         repeating-linear-gradient(
             90deg,
-            rgba(230, 0, 0, 0.1), 
-            rgba(230, 0, 0, 0.1) 1.5px, 
+            rgba(0, 76, 160, 0.1), 
+            rgba(0, 76, 160, 0.1) 1.5px, 
             transparent 1px, 
             transparent 20px
         );

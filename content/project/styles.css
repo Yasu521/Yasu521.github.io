@@ -19,10 +19,23 @@ figcaption {
   gap: 15px;
 }
 
+.highlight {
+  display: inline-block;
+  background: #d0b46099; /* 背景色を金色に設定 */
+  color: #008CF7; /* 文字色を青に設定 */
+  padding: 5px 10px; /* パディングで内側のスペースを調整 */
+  transform: skew(-20deg); /* 平行四辺形の作成 */
+}
+
+.highlight span {
+  display: inline-block;
+  transform: skew(20deg);
+}
+
 .link-container a {
   font-size: 15px;
   text-decoration: none;
-  color: blue;
+  color: #008CF7;
   padding: 5px 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -30,7 +43,8 @@ figcaption {
 }
 
 .link-container a:hover {
-  background-color: #f0f0f0;
+  background-color: #008CF7;
+  color:#ffffff;
 }
 
   .holder {
@@ -65,7 +79,7 @@ figcaption {
   .holder .circle:nth-child(1) {
     width: 25px;
     height: 12.5px;
-    background: #d9a33399;
+    background: #008CF799;
     border-bottom: none;
     border-radius: 25px 25px 0 0;
     z-index: 16;
@@ -75,7 +89,7 @@ figcaption {
   .holder .circle:nth-child(2) {
     width: 62px;
     height: 31px;
-    border: 13px solid #d9a33399;
+    border: 13px solid #008CF799;
     border-bottom: none;
     border-radius: 62px 62px 0 0;
     z-index: 15;
@@ -85,7 +99,7 @@ figcaption {
   .holder .circle:nth-child(3) {
     width: 93px;
     height: 46.5px;
-    border: 13px solid #d9a33399;
+    border: 13px solid #008CF799;
     border-bottom: none;
     border-radius: 93px 93px 0 0;
     z-index: 14;
@@ -94,7 +108,7 @@ figcaption {
   .holder .circle:nth-child(4) {
     width: 124px;
     height: 62px;
-    border: 13px solid #d9a33399;
+    border: 13px solid #008CF799;
     border-bottom: none;
     border-radius: 124px 124px 0 0;
     z-index: 13;
@@ -104,7 +118,7 @@ figcaption {
   .holder .circle:nth-child(5) {
     width: 155px;
     height: 77.5px;
-    border: 13px solid #d9a33399;
+    border: 13px solid #008CF799;
     border-bottom: none;
     border-radius: 155px 155px 0 0;
     z-index: 12;
@@ -114,7 +128,7 @@ figcaption {
   .holder .circle:nth-child(6) {
     width: 186px;
     height: 93px;
-    border: 13px solid #d9a33399;
+    border: 13px solid #008CF799;
     border-bottom: none;
     border-radius: 186px 186px 0 0;
     z-index: 11;
@@ -124,7 +138,7 @@ figcaption {
   .holder .circle:nth-child(7) {
     width: 217px;
     height: 108.5px;
-    border: 13px solid #d9a33399;
+    border: 13px solid #008CF799;
     border-bottom: none;
     border-radius: 217px 217px 0 0;
     z-index: 10;
@@ -134,7 +148,7 @@ figcaption {
   .holder .circle:nth-child(8) {
     width: 248px;
     height: 124px;
-    border: 13px solid #d9a33399;
+    border: 13px solid #008CF799;
     border-bottom: none;
     border-radius: 248px 248px 0 0;
     z-index: 9;
@@ -144,7 +158,7 @@ figcaption {
   .holder .circle:nth-child(9) {
     width: 279px;
     height: 139.5px;
-    border: 13px solid #d9a33399;
+    border: 13px solid #008CF799;
     border-bottom: none;
     border-radius: 279px 279px 0 0;
     z-index: 8;
@@ -241,7 +255,7 @@ figcaption {
   
   h1 {
     text-align: center;
-      color: #000000;
+      color: #004CA0;
   }
 
     .portfolio-item {
@@ -250,13 +264,15 @@ figcaption {
     
     .portfolio-item h2 {
       margin: 0 0 10px;
-      color: #d9a333;
+      color: #004CA0;
+      border-bottom: 2px solid #d9a333;
+      display: inline-block;
       font-size: 1.4em;
     }
     
     .portfolio-item p {
         margin: 5px 0; 
-        color: #000000;
+        color: #4c4c4c;
         font-size: 1em;
     }
 /* MEDIA */

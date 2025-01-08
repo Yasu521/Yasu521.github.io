@@ -1,6 +1,6 @@
 .about-text h1 {
     font-size: 30px;
-    color: #000000;
+    color: #004CA0;
     border-bottom: 2px solid #d9a333;
     display: inline-block;
     padding-bottom: 4px;
@@ -8,7 +8,7 @@
 .roles {
     font-family: 'Cambria', 'Baskerville', serif;
     margin-top: 8px;
-    color: #000000;
+    color: #008CF7;
 }
 .image-section {
     display: flex;
@@ -18,7 +18,7 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 4px solid #ddd;
+    border: 4px solid #DBDBDB;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);   
 }
 .section-title {
@@ -26,7 +26,7 @@
     border-bottom: 2px solid #d9a333;
     display: inline-block;
     padding-bottom: 4px;
-    color: #000000;
+    color: #004CA0;
 }
 .sns-container {
     background-color: #e6d8b3a8;
@@ -87,7 +87,7 @@
 }
 .faq-section h2 {
     font-size: 20px;
-    color: #000000;
+    color: #004CA0;
     border-bottom: 2px solid #d9a333;
     display: inline-block;
     padding-bottom: 4px;
@@ -95,17 +95,17 @@
 .faq-item {
     margin-top: 16px;
     padding: 10px;
-    border: 1px solid #000000;
+    border: 1px solid #004CA0;
     border-radius: 8px;
-    color: #000000;
+    color: #4c4c4c;
 }
 
 .faq-item h3 {
     font-size: 18px;
     margin-bottom: 8px;
-    color: #000000;
+    color:#008CF7;
 }
 .faq-item p {
     font-size: 14px;
-    color: #000000;
+    color: #4C4C4C;
 }
