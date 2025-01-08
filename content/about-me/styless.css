@@ -97,7 +97,7 @@
     padding: 10px;
     border: 1px solid #004CA0;
     border-radius: 8px;
-    color: #4c4c4c;
+    color: #404040;
 }
 
 .faq-item h3 {
@@ -107,5 +107,5 @@
 }
 .faq-item p {
     font-size: 14px;
-    color: #4C4C4C;
+    color: #404040;
 }
