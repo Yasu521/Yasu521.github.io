@@ -68,7 +68,7 @@ const textures = {
         const remainingTime = Math.max(0, estimatedTotalTime - elapsedTime);
         document.getElementById("progress-bar").style.width = `${progress}%`;
         document.getElementById("remaining-time").textContent = 
-        `(${url},${progress.toFixed(2)}%, ${remainingTime.toFixed(2)}s left)`;
+        `(${progress.toFixed(2)}%, ${remainingTime.toFixed(2)}s left)`;
         };
     manager.onLoad = () => {
         checkAnimationStability();
