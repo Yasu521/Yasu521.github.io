@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yasuhiro | 康洋 - Portfolio</title>
+  <title>Yasuhiro(Ciao) - Portfolio</title>
   <link rel="alternate" hreflang="en" href="https://yasu521.github.io/" />
   <link rel="alternate" hreflang="fr" href="https://yasu521.github.io/" />
   <link rel="alternate" hreflang="ja" href="https://yasu521.github.io/" />
@@ -20,15 +20,29 @@
   <link rel="icon" href="./shortcut.ico" type="image/x-icon">
   <meta name="description" id="meta-description" content="">
   <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Yasuhiro(Ciao) Portfolio">
+  <meta property="og:description" content="A portfolio highlighting contributions to society through activities that promote health and happiness.">
+  <meta property="og:image" content="https://yasu521.github.io/Ciao.webp">
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="600">
+  <meta property="og:url" content="https://yasu521.github.io/">
+  <meta property="og:type" content="website">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Yasuhiro Iwai Portfolio",
+    "name": "Yasuhiro(Ciao) Portfolio",
     "url": "https://yasu521.github.io/",
     "description": "A portfolio highlighting contributions to society through activities that promote health and happiness. Discover growth, diversity, and fostering environments for well-being.",
-    "alternateName": "岩井康洋のホームページ",
-    "inLanguage": "en"
+    "alternateName": "康洋のホームページ",
+    "inLanguage": "en",
+    "thumbnailUrl": "./Ciao.webp",
+    "image": {
+      "@type": "ImageObject",
+      "url": "./Ciao.webp",
+      "width": 300,
+      "height": 300
+    }
   }
   </script>
   <script>
@@ -36,9 +50,9 @@
         const userLang = navigator.language || navigator.userLanguage; // Get browser language
         const langCode = userLang.substring(0, 2); // Extract first two letters
         const descriptions = {
-            en: "Hello, I'm Yasuhiro Iwai. Since middle school, I have been contributing to society through activities that promote health and happiness. I value growth with people from diverse backgrounds, fostering environments where health and happiness thrive.",
-            fr: "Bonjour, je suis Yasuhiro Iwai. Depuis le collège, je contribue à la société par des activités favorisant la santé et le bonheur. Je valorise la croissance avec des personnes aux horizons divers et des environnements propices à la santé et au bonheur.",
-            ja: "岩井康洋と申します。私は名前のとおり、中学1年生の頃から健康や幸せにつながる活動を通じて、社会に貢献してまいりました。様々なバックグラウンドを持つ人と共に成長し、健康や幸せを感じられる環境を大切にしています。"
+            en: "Hello, I'm Yasuhiro. Since middle school, I have been contributing to society through activities that promote health and happiness. I value growth with people from diverse backgrounds, fostering environments where health and happiness thrive.",
+            fr: "Bonjour, je suis Yasuhiro. Depuis le collège, je contribue à la société par des activités favorisant la santé et le bonheur. Je valorise la croissance avec des personnes aux horizons divers et des environnements propices à la santé et au bonheur.",
+            ja: "康洋と申します。私は名前のとおり、中学1年生の頃から健康や幸せにつながる活動を通じて、社会に貢献してまいりました。様々なバックグラウンドを持つ人と共に成長し、健康や幸せを感じられる環境を大切にしています。"
         };
         const defaultLang = descriptions[langCode] ? langCode : 'en';
         document.getElementById('meta-description').setAttribute('content', descriptions[defaultLang]);
