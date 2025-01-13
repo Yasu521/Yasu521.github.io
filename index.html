@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yasuhiro(Ciao) - Portfolio</title>
+  <title>Ciao | Yasuhiro（康洋）</title>
   <link rel="alternate" hreflang="en" href="https://yasu521.github.io/" />
   <link rel="alternate" hreflang="fr" href="https://yasu521.github.io/" />
   <link rel="alternate" hreflang="ja" href="https://yasu521.github.io/" />
@@ -18,9 +18,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="./shortcut.ico" type="image/x-icon">
-  <meta name="description" id="meta-description" content="">
-  <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Yasuhiro(Ciao) Portfolio">
+  <meta name="description" content="A portfolio highlighting contributions to society through activities that promote health and happiness.">
+  <meta name="keywords" content="康洋, Yasuhiro, Yasu, Ciao, Portfolio, DS, Data Science, AI, Consulting, Career, Projects, Japan, Technology">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Ciao | Yasuhiro（康洋）">
   <meta property="og:description" content="A portfolio highlighting contributions to society through activities that promote health and happiness.">
   <meta property="og:image" content="https://yasu521.github.io/Ciao.webp">
   <meta property="og:image:width" content="600">
@@ -31,10 +32,10 @@
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Yasuhiro(Ciao) Portfolio",
+    "name": "Ciao | Yasuhiro（康洋）",
     "url": "https://yasu521.github.io/",
     "description": "A portfolio highlighting contributions to society through activities that promote health and happiness. Discover growth, diversity, and fostering environments for well-being.",
-    "alternateName": "康洋のホームページ",
+    "alternateName": "Ciao | Yasuhiro portfolio",
     "inLanguage": "en",
     "thumbnailUrl": "./Ciao.webp",
     "image": {
@@ -47,8 +48,8 @@
   </script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const userLang = navigator.language || navigator.userLanguage; // Get browser language
-        const langCode = userLang.substring(0, 2); // Extract first two letters
+        const userLang = navigator.language || navigator.userLanguage;
+        const langCode = userLang.substring(0, 2);
         const descriptions = {
             en: "Hello, I'm Yasuhiro. Since middle school, I have been contributing to society through activities that promote health and happiness. I value growth with people from diverse backgrounds, fostering environments where health and happiness thrive.",
             fr: "Bonjour, je suis Yasuhiro. Depuis le collège, je contribue à la société par des activités favorisant la santé et le bonheur. Je valorise la croissance avec des personnes aux horizons divers et des environnements propices à la santé et au bonheur.",
@@ -56,8 +57,6 @@
         };
         const defaultLang = descriptions[langCode] ? langCode : 'en';
         document.getElementById('meta-description').setAttribute('content', descriptions[defaultLang]);
-        
-        // Update structured data language dynamically
         const structuredData = document.querySelector('script[type="application/ld+json"]');
         const jsonData = JSON.parse(structuredData.textContent);
         jsonData.inLanguage = defaultLang;

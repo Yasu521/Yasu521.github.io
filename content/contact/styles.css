@@ -32,9 +32,9 @@ body {
 
 #ui .text {
   position: absolute;
-  font-size: 8rem; /* Adjusted to SCSS variable value */
+  font-size: 8rem;
   color: #fff;
-  line-height: 8rem; /* Adjusted to SCSS variable value */
+  line-height: 8rem;
   font-family: 'Anton', sans-serif;
   transform: translate(-50%, -50%);
   mix-blend-mode: screen;
