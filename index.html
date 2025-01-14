@@ -21,12 +21,13 @@
   <link rel="apple-touch-icon" href="https://yasu521.github.io/Ciao.webp">
   <link rel="icon" href="./shortcut.ico" type="image/x-icon">
   
-  <meta name="description" content="A portfolio highlighting contributions to society through activities that promote health and happiness.">
+  <meta id="meta-description" name="description" content="A portfolio highlighting contributions to society through activities that promote health and happiness.">
   <meta name="keywords" content="YasuhiroIwai, 康洋, Yasuhiro, Yasu, Ciao, Portfolio, DS, Data Science, AI, Consulting, Career, Projects, Japan, Technology">
   <meta name="robots" content="index, follow">
   
-  <meta property="og:title" content="Ciao | Yasuhiro：康洋">
-  <meta property="og:description" content="A portfolio highlighting contributions to society through activities that promote health and happiness.">
+  <meta id="og-title" property="og:title" content="Ciao | Yasuhiro：康洋">
+  <meta id="og-description" property="og:description" content="A portfolio highlighting contributions to society through activities that promote health and happiness.">
+  <meta id="og-language" property="og:locale" content="en">
   <meta property="og:image" content="https://yasu521.github.io/Ciao.webp">
   <meta property="og:image:width" content="600">
   <meta property="og:image:height" content="600">
@@ -34,8 +35,8 @@
   <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ciao | Yasuhiro：康洋">
-  <meta name="twitter:description" content="A portfolio highlighting contributions to society through activities that promote health and happiness.">
+  <meta id="twitter-title" name="twitter:title" content="Ciao | Yasuhiro：康洋">
+  <meta id="twitter-description" name="twitter:description" content="A portfolio highlighting contributions to society through activities that promote health and happiness.">
   <meta name="twitter:image" content="https://yasu521.github.io/Ciao.webp">
   <meta name="twitter:url" content="https://yasuhiroiwai.jp/">
   <script type="application/ld+json">
@@ -44,7 +45,7 @@
     "@type": "WebSite",
     "name": "Ciao | Yasuhiro：康洋",
     "url": "https://yasuhiroiwai.jp/",
-    "description": "A portfolio highlighting contributions to society through activities that promote health and happiness. Discover growth, diversity, and fostering environments for well-being.",
+    "description": "Yasuhro IWAI：岩井 康洋 | A portfolio highlighting contributions to society through activities that promote health and happiness. Discover growth, diversity, and fostering environments for well-being.",
     "alternateName": "Ciao | Yasuhiro portfolio",
     "inLanguage": "en",
     "thumbnailUrl": "https://yasu521.github.io/Ciao.webp",
@@ -57,22 +58,38 @@
   }
   </script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const userLang = navigator.language || navigator.userLanguage;
-        const langCode = userLang.substring(0, 2);
-        const descriptions = {
-            en: "Hello, I'm Yasuhiro. Since middle school, I have been contributing to society through activities that promote health and happiness. I value growth with people from diverse backgrounds, fostering environments where health and happiness thrive.",
-            fr: "Bonjour, je suis Yasuhiro. Depuis le collège, je contribue à la société par des activités favorisant la santé et le bonheur. Je valorise la croissance avec des personnes aux horizons divers et des environnements propices à la santé et au bonheur.",
-            ja: "康洋と申します。私は名前のとおり、中学1年生の頃から健康や幸せにつながる活動を通じて、社会に貢献してまいりました。様々なバックグラウンドを持つ人と共に成長し、健康や幸せを感じられる環境を大切にしています。"
-        };
-        const defaultLang = descriptions[langCode] ? langCode : 'en';
-        document.getElementById('meta-description').setAttribute('content', descriptions[defaultLang]);
-        const structuredData = document.querySelector('script[type="application/ld+json"]');
-        const jsonData = JSON.parse(structuredData.textContent);
-        jsonData.inLanguage = defaultLang;
-        jsonData.description = descriptions[defaultLang];
-        structuredData.textContent = JSON.stringify(jsonData, null, 2);
-    });
+        document.addEventListener('DOMContentLoaded', () => {
+            const userLang = navigator.language || navigator.userLanguage;
+            const langCode = userLang.substring(0, 2);
+            const descriptions = {
+                en: "Hello, I'm Yasuhiro. Since middle school, I have been contributing to society through activities that promote health and happiness. I value growth with people from diverse backgrounds, fostering environments where health and happiness thrive.",
+                fr: "Bonjour, je suis Yasuhiro. Depuis le collège, je contribue à la société par des activités favorisant la santé et le bonheur. Je valorise la croissance avec des personnes aux horizons divers et des environnements propices à la santé et au bonheur.",
+                ja: "康洋と申します。私は名前のとおり、中学1年生の頃から健康や幸せにつながる活動を通じて、社会に貢献してまいりました。様々なバックグラウンドを持つ人と共に成長し、健康や幸せを感じられる環境を大切にしています。"
+            };
+            const titles = {
+                en: "Welcome to Yasuhiro's Portfolio",
+                fr: "Bienvenue sur le portfolio de Yasuhiro",
+                ja: "康洋のポートフォリオへようこそ"
+            };
+            const locales = {
+                en: "en",
+                fr: "fr",
+                ja: "ja"
+            };
+            const defaultLang = descriptions[langCode] ? langCode : 'en';
+
+            document.getElementById('meta-description').setAttribute('content', descriptions[defaultLang]);
+            document.getElementById('og-title').setAttribute('content', titles[defaultLang]);
+            document.getElementById('og-description').setAttribute('content', descriptions[defaultLang]);
+            document.getElementById('og-language').setAttribute('content', locales[defaultLang]);
+            document.getElementById('twitter-title').setAttribute('content', titles[defaultLang]);
+            document.getElementById('twitter-description').setAttribute('content', descriptions[defaultLang]);
+            const structuredData = document.querySelector('script[type="application/ld+json"]');
+            const jsonData = JSON.parse(structuredData.textContent);
+            jsonData.inLanguage = defaultLang;
+            jsonData.description = descriptions[defaultLang];
+            structuredData.textContent = JSON.stringify(jsonData, null, 2);
+        });
   </script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {

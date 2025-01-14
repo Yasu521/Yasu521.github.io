@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>記事の配置変更</title>
+  <link rel="stylesheet" href="script1-mobile.css">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="header-logo">
+      <h1>サイト名</h1>
+    </div>
+    <nav class="header-nav">
+      <ul>
+        <li><a href="#">ホーム</a></li>
+        <li><a href="#">記事</a></li>
+        <li><a href="#">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="wrapper">
+    <div class="sidebar-left">
+      <div class="sidebar-item">サイドバー1</div>
+      <div class="sidebar-item">サイドバー2</div>
+    </div>
+
+    <div class="content">
+      <article class="post">
+        <div class="post-thumbnail">
+          <img src="article-image.jpg" alt="記事画像">
+        </div>
+        <div class="post-info">
+          <h2 class="post-title">記事タイトル</h2>
+          <p class="post-meta">
+            <span class="post-category">カテゴリ: テクノロジー</span> | 
+            <span class="post-date">投稿日: 2024年12月9日</span>
+          </p>
+          <p class="post-excerpt">記事の概要がここに入ります。</p>
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="post-thumbnail">
+          <img src="article-image.jpg" alt="記事画像">
+        </div>
+        <div class="post-info">
+          <h2 class="post-title">記事タイトル2</h2>
+          <p class="post-meta">
+            <span class="post-category">カテゴリ: 健康</span> | 
+            <span class="post-date">投稿日: 2024年12月8日</span>
+          </p>
+          <p class="post-excerpt">記事の概要がここに入ります。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sidebar-right">
+      <div class="sidebar-item">サイドバー3</div>
+      <div class="sidebar-item">サイドバー4</div>
+    </div>
+  </div>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <p>&copy; 2024 サイト名. All rights reserved.</p>
+  </footer>
+
+  <script src="script1.js"></script>
+</body>
+</html>

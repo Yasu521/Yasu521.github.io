@@ -1,0 +1,109 @@
+/* 基本設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    overflow-x: hidden; /* 横スクロールを防止 */
+    width: 400px; /* 横幅を400pxに設定 */
+    margin: 0; /* 自動的に左右中央配置を無効にする */
+    text-align: left; /* 全ての要素を左揃え */
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+  }
+  
+  .header-logo h1 {
+    font-size: 1.5rem;
+  }
+  
+  .header-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .header-nav ul li {
+    margin-left: 20px;
+  }
+  
+  .header-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .post {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post-thumbnail img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .post-info {
+    margin-top: 15px;
+  }
+  
+  .post-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .post-meta {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .post-excerpt {
+    margin-top: 10px;
+    color: #333;
+  }
+  
+  .sidebar-left,
+  .sidebar-right {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar-item {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  

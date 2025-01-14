@@ -1,0 +1,260 @@
+/* 全体スタイル */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* ヘッダー */
+  .header {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end; /* ヘッダー全体を右寄せ */
+    align-items: center;
+  }
+  
+  .header-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /* サイト名がナビゲーションより前に表示されるようにする */
+  }
+  
+  .header-logo h1 {
+    margin: 0;
+    text-align: center;
+  }
+  
+  .header-nav {
+    margin-left: 20px; /* ナビゲーションをサイト名の右に配置 */
+  }
+  
+  .header-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .header-nav ul li {
+    margin-left: 20px;
+  }
+  
+  .header-nav ul li:first-child {
+    margin-left: 0;
+  }
+  
+  .header-nav a {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  
+  /* メインコンテンツ */
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .sidebar-left, .sidebar-right {
+    width: 20%;
+  }
+  
+  .sidebar-item {
+    background-color: #f4f4f4;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .content {
+    width: 60%;
+  }
+  
+  .post {
+    display: flex;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 20px;
+  }
+  
+  .post-thumbnail {
+    width: 40%;
+  }
+  
+  .post-thumbnail img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .post-info {
+    width: 60%;
+    padding-left: 20px;
+  }
+  
+  .post-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .post-meta {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  .post-meta .post-category,
+  .post-meta .post-date {
+    margin-right: 10px;
+  }
+  
+  .post-excerpt {
+    font-size: 16px;
+  }
+  
+  /* フッター */
+  .footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+  }
+/* アニメーション: 記事タイトルのフェードイン */
+.post-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* アニメーション: 記事の概要 */
+.post-excerpt {
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* ナビゲーションのホバー効果 */
+.header-nav a:hover {
+  color: #f39c12;
+  transition: color 0.3s ease-in-out;
+}
+
+/* サイドバーアイテムのホバー効果 */
+.sidebar-item:hover {
+  background-color: #f1c40f;
+  transition: background-color 0.3s ease-in-out;
+}
+  
+@media (max-width: 768px) {
+  /* 全体スタイル */
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* 横スクロールを無効化 */
+  }
+
+  /* ヘッダー */
+  .header {
+    padding: 10px;
+    display: block; /* 横並びを解除 */
+    text-align: center; /* ヘッダー内のコンテンツを中央揃え */
+  }
+
+  .header-logo h1 {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .header-nav {
+    margin-top: 10px;
+  }
+
+  .header-nav ul {
+    display: block; /* 横並びを解除 */
+    padding: 0;
+    margin: 0;
+  }
+
+  .header-nav ul li {
+    margin: 5px 0;
+  }
+
+  .header-nav a {
+    font-size: 14px;
+    display: block;
+  }
+
+  /* メインコンテンツ */
+  .wrapper {
+    display: block; /* 横並び解除して縦並びに */
+    padding: 15px;
+  }
+
+  .sidebar-left, .sidebar-right {
+    width: 100%; /* サイドバーを100%に */
+    margin-bottom: 20px;
+  }
+
+  .content {
+    width: 100%; /* メインコンテンツも100% */
+  }
+
+  .post {
+    display: block; /* 横並び解除 */
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+  }
+
+  .post-thumbnail {
+    width: 100%; /* サムネイルの幅を100%に */
+  }
+
+  .post-thumbnail img {
+    width: 100%; /* 画像が画面サイズに合わせて調整される */
+    height: auto;
+  }
+
+  .post-info {
+    width: 100%; /* インフォ部分も100% */
+    padding-left: 0;
+  }
+
+  .post-title {
+    font-size: 20px;
+  }
+
+  .post-meta {
+    font-size: 12px;
+    color: #555;
+  }
+
+  .post-excerpt {
+    font-size: 14px;
+  }
+
+  /* フッター */
+  .footer {
+    padding: 15px;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+  

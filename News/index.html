@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News - Ciao | Yasuhiro：康洋</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y2FVBDQYBP"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Y2FVBDQYBP');
+  </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const imagesToPreload = [
+      './content/image1.webp','./content/image2.webp',
+      './content/image3.webp','./content/image4.webp'
+    ];
+    imagesToPreload.forEach(src => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = src;
+      document.head.appendChild(link);
+    });});
+  </script>
+  <link rel="icon" href="shortcut.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header>
+    <div class="date" id="current-date"></div>
+    <h1><a href="https://yasu521.github.io/News/">NEWS</a></h1>
+    <hr>
+  </header>
+  <main class="main-container">
+    <div class="container">
+    </div>
+    <button id="next-article">NEXT⇨</button>
+    <button id="previous-article">⇦PREVIOUS</button>
+  </main>
+  <footer>
+    <p>&copy; 2025 News Platform. All Rights Reserved.</p>
+  </footer>
+  <script>
+    const articlesData = [
+      {
+        "title": "Jan 2025",
+        "description": "As January drew to a close, my ambitious projects and community-driven initiatives took center stage.<br> Now that I have tangible results from my past efforts, I aim to make this year a truly fresh start.",
+        "image": "./content/image1.webp",
+        "content": "./script1/script1-mobile.html",//mobile content
+        "content2": "./script1/script1-desktop.html",//desktop content
+
+        "//js": "",//change js mobile
+        "//cssfile":"",//change css mobile
+        
+        "//js2": "",//change js desktop
+        "//cssfile2":"",//change css desktop
+      },
+      {
+        "title": "Article 2",
+        "description": "This is a short description for Article 2.",
+        "image": "./content/image2.webp",
+
+        "content": "./script2/script1-mobile.html",//mobile content
+        "content2": "./script2/script1-desktop.html",//desktop content
+
+        "//js": "",//change js mobile
+        "//cssfile":"",//change css mobile
+        
+        "//js2": "",//change js desktop
+        "//cssfile2":"",//change css desktop
+      },
+    ];
+  </script>
+  <script src="./script.js" defer></script>
+</body>
+</html>
