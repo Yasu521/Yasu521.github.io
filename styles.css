@@ -224,7 +224,7 @@ link[rel="icon"] {
 }
 
 .close-button {
-    position: absolute;
+    position: fixed;
     top: 10px; 
     right: 10px;
     background-color: #ff5f5f00;
