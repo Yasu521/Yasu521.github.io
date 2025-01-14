@@ -10,6 +10,12 @@
   <link rel="alternate" hreflang="zh" href="https://yasuhiroiwai.jp/" />
   <link rel="alternate" hreflang="x-default" href="https://yasuhiroiwai.jp/"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y2FVBDQYBP"></script>
+  <?php
+  function add_meta_to_head() {
+      echo '<meta name="thumbnail" content="' . wp_get_attachment_url(get_post_thumbnail_id()) . '" />';
+  }
+  add_meta_to_head();
+  ?>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
@@ -25,7 +31,8 @@
   <meta id="meta-description" name="description" content="A portfolio highlighting contributions to society through activities that promote health and happiness.">
   <meta name="keywords" content="YasuhiroIwai, 康洋, Yasuhiro, Yasu, Ciao, Portfolio, DS, Data Science, AI, Consulting, Career, Projects, Japan, Technology">
   <meta name="robots" content="index, follow">
-  
+  <meta name="thumbnail" content="https://yasu521.github.io/Ciao.webp" />
+
   <meta id="og-title" property="og:title" content="Ciao | Yasuhiro：康洋">
   <meta id="og-description" property="og:description" content="A portfolio highlighting contributions to society through activities that promote health and happiness.">
   <meta id="og-language" property="og:locale" content="en">
