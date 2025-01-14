@@ -1,11 +1,12 @@
-const supportedLanguages = ["en", "fr", "ja"];
+const supportedLanguages = ["en", "fr", "ja","zh"];
 const browserLanguage = navigator.language.substring(0, 2);
 const defaultLanguage = supportedLanguages.includes(browserLanguage) ? browserLanguage : "en";
 let currentLanguage = defaultLanguage;
 const flagImages = {
     en: './flag/USA.webp',
     ja: './flag/Japan.webp',
-    fr: './flag/France.webp'
+    fr: './flag/France.webp',
+    zh: './flag/China.webp'
 }
 const textures = {
     dustTextures: [
