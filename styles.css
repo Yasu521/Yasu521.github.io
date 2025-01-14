@@ -221,6 +221,11 @@ link[rel="icon"] {
     body {
         padding-bottom: 20px;
     }
+  .close-button {
+    position: fixed;
+    top: 20%; 
+    right: 5%;
+  }
 }
 
 .close-button {
