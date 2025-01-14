@@ -1,8 +1,8 @@
 plugins:
   - jekyll-sitemap
-title: "Ciao | Yasuhiro（康洋）"
+title: "Ciao｜Yasuhiro IWAI：岩井 康洋"
 description: "Portfolio"
-url: "https://yasu521.github.io/"
+url: "https://yasuhiroiwai.jp"
 baseurl: ""
 author: "Yasuhiro IWAI"
 image: "https://yasu521.github.io/Ciao.webp"
