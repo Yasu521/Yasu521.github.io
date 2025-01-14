@@ -211,23 +211,6 @@ link[rel="icon"] {
             transparent 20px
         );
 }
-
-@media screen and (max-width: 768px) {
-    .content-box {
-        width: 80%; 
-        max-height: calc(60vh - 40px);
-        margin-bottom: 20px;
-    }
-    body {
-        padding-bottom: 20px;
-    }
-  .close-button {
-    position: fixed;
-    top: 20%; 
-    right: 5%;
-  }
-}
-
 .close-button {
     position: fixed;
     top: 11%; 
@@ -249,4 +232,19 @@ link[rel="icon"] {
 
 .close-button:hover {
     background-color: #acacac;
+}
+
+@media screen and (max-width: 768px) {
+    .content-box {
+        width: 80%; 
+        max-height: calc(60vh - 40px);
+        margin-bottom: 20px;
+    }
+    body {
+        padding-bottom: 20px;
+    }
+  .close-button {
+    top: 30%; 
+    right: 3%;
+  }
 }
