@@ -19,8 +19,8 @@ header .date {
   color: gray;
 }
 a {
-  color: inherit; /* 親要素の色を引き継ぐ */
-  text-decoration: none; /* 下線を削除 */
+  color: inherit;
+  text-decoration: none;
 }
 .main-container {
   display: flex;
@@ -166,16 +166,16 @@ hr {
 }
 
 .news-title {
-  position: absolute; /* absoluteでタイトルを配置 */
-  top: 10px; /* 各コンテナの上から10pxに固定 */
-  left: 5px; /* 左側に配置 */
-  font-size: 16px; /* フォントサイズ調整 */
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  font-size: 16px;
   font-weight: bold;
   color: #000000;
   z-index: 10;
 }
 
 .news-item {
-  position: relative; /* 親コンテナにrelativeを指定 */
+  position: relative;
 }
 }
