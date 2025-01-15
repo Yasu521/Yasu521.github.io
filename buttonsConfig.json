@@ -5,10 +5,10 @@
       "position": { "top": "40%", "left": "20%" },
       "contentPosition": { "left": "0%", "right": "0%" },
       "contentFile":{
-        "en": "./content/about-me/about-me-en.html",
-        "fr": "./content/about-me/about-me-fr.html",
-        "ja": "./content/about-me/about-me-ja.html",
-        "zh": "./content/about-me/about-me-zh.html"
+        "en": "./about-me/about-me-en.html",
+        "fr": "./about-me/about-me-fr.html",
+        "ja": "./about-me/about-me-ja.html",
+        "zh": "./about-me/about-me-zh.html"
         }
     },
     {
@@ -17,10 +17,10 @@
         "position": { "top": "70%", "left": "20%" },
         "contentPosition": { "left": "0%" ,"right": "0%"},
         "contentFile":{
-            "en": "./content/contact/contact-en.html",
-            "fr": "./content/contact/contact-fr.html",
-            "ja": "./content/contact/contact-ja.html",
-            "zh": "./content/contact/contact-zh.html"
+            "en": "./contact/contact-en.html",
+            "fr": "./contact/contact-fr.html",
+            "ja": "./contact/contact-ja.html",
+            "zh": "./contact/contact-zh.html"
         }
     },
     {
@@ -29,10 +29,10 @@
         "position": { "top": "50%", "left": "20%" },
         "contentPosition": { "left": "0%", "right": "0%" },
         "contentFile": {
-            "en": "./content/project/project-en.html",
-            "fr": "./content/project/project-fr.html",
-            "ja": "./content/project/project-ja.html",
-            "zh": "./content/project/project-zh.html"
+            "en": "./project/project-en.html",
+            "fr": "./project/project-fr.html",
+            "ja": "./project/project-ja.html",
+            "zh": "./project/project-zh.html"
         }
     },
     {
@@ -41,10 +41,10 @@
         "position": { "top": "60%", "left": "20%" },
         "contentPosition": { "left": "0%", "right": "0%" },
         "contentFile": {
-            "en": "./content/work/work-en.html",
-            "fr": "./content/work/work-fr.html",
-            "ja": "./content/work/work-ja.html",
-            "zh": "./content/work/work-zh.html"
+            "en": "./work/work-en.html",
+            "fr": "./work/work-fr.html",
+            "ja": "./work/work-ja.html",
+            "zh": "./work/work-zh.html"
         }
     },
     {

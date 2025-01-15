@@ -131,7 +131,7 @@ const currentLanguageIcon = document.getElementById('current-language-icon');
 
 let currentOverlay = null;
 
-fetch('./content/buttonsConfig.json')
+fetch('./buttonsConfig.json')
   .then((response) => response.json())
   .then((configs) => {
     window.buttonsConfig = configs;
