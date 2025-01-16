@@ -268,7 +268,7 @@ audio {
     top:  5px; 
     left: 5px;
     background-color: #ff6161;
-    color: #00000000;
+    color: #0000009c;
     border: none;
     border-radius: 50%;
     width: 20px;
@@ -284,7 +284,7 @@ audio {
 .close-button:hover {
   -webkit-transform: translate(0, 3px);
   transform: translate(0, 3px);
-  background-color: #ff4141;
+  background-color: #ff0000;
   color: #000000;
 }
 
