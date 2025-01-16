@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
 <!--  created with free sitemap generation system www.sitemapxml.jp  --> 
 <url>
   <loc>https://yasuhiroiwai.jp/</loc>
+  <priority>1.0</priority>
+  <lastmod>2025-01-15T01:28:02+09:00</lastmod>
+</url>
+
+<url>
+  <loc>https://yasuhiroiwai.jp/AiCURION.png</loc>
+  <priority>1.0</priority>
+  <lastmod>2025-01-15T01:28:02+09:00</lastmod>
+</url>
+
+<url>
+  <loc>https://yasuhiroiwai.jp/project/5.webp</loc>
+  <priority>1.0</priority>
+  <lastmod>2025-01-15T01:28:02+09:00</lastmod>
+</url>
+
+<url>
+  <loc>https://yasuhiroiwai.jp/project/6.webp</loc>
+  <priority>1.0</priority>
+  <lastmod>2025-01-15T01:28:02+09:00</lastmod>
+</url>
+
+<url>
+  <loc>https://yasuhiroiwai.jp/Ciao.webp</loc>
   <priority>1.0</priority>
   <lastmod>2025-01-15T01:28:02+09:00</lastmod>
 </url>

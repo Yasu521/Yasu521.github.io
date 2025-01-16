@@ -23,13 +23,14 @@ header h1 {
 
 .plane-container {
     position: fixed;
-    top: 20%;
-    left: 19%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 100;
 }
 
 .plane-container img {
-    width: 0px;
+    width:100px;
 }
 
 .timeline {
@@ -167,7 +168,7 @@ header h1 {
 }
 
 .timeline-section:nth-child(4n+1) p {
-    font-size:  2em;
+    font-size:  1em;
     color: rgb(0,100,0);
     padding: 5px;
 }
@@ -245,17 +246,10 @@ footer p {
         width: 40px;
         height: 40px;
     }
-    .plane-container {
-    left: 7%;
-    top:40%;
-}
-.timeline-line2 {
-  left: 2%;
-}
-.timeline-line img:nth-child(1) {
-    top: 15px;
-    left: -292px;
-}
+
+    .timeline-line2 {
+    left: 2%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -269,9 +263,5 @@ footer p {
 
     .timeline-section p {
         font-size: 1em;
-    }
-    .plane-container {
-        left: 2.5%;
-        top:40%;
     }
 }
