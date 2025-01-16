@@ -184,22 +184,73 @@ fetch(contentFile)
   .then((htmlContent) => {
     const overlay = document.createElement("div");
     overlay.className = "content-overlay";
-    overlay.addEventListener("click", clearExistingContent);
-
+    overlay.style.pointerEvents = "auto";
     const contentBox = document.createElement("div");
     contentBox.className = "content-box";
     contentBox.style.left = contentPosition.left;
     contentBox.innerHTML = htmlContent;
 
+    contentBox.addEventListener("click", (event) => {
+        event.stopPropagation();
+    })
+
     const closeButton = document.createElement("button");
-    closeButton.textContent = "✖";
+    closeButton.textContent = "×";
+    closeButton.style.fontSize = "20px";
     closeButton.className = "close-button";
     closeButton.addEventListener("click", (event) => {
       clearExistingContent();
     });
 
+    const backToTopButton = document.createElement("button");
+    backToTopButton.className = "content-back-to-top";
+    backToTopButton.style.display = "none";
+    backToTopButton.style.pointerEvents = "auto";
+    backToTopButton.style.border = "none";
+    backToTopButton.style.background = "transparent";
+    backToTopButton.style.cursor = "pointer";
+    backToTopButton.style.display = "flex"; // フレックスボックスを有効化
+    backToTopButton.style.flexDirection = "column"; // 縦方向に並べる
+    backToTopButton.style.alignItems = "center"; // 水平方向に中央揃え
+    backToTopButton.style.justifyContent = "center"; // 垂直方向も中央揃え
+    backToTopButton.style.textAlign = "center";
+
+// 三角形部分
+const triangle = document.createElement("span");
+triangle.textContent = "▲";
+triangle.style.fontSize = "25px"; // 三角形のフォントサイズ
+triangle.style.lineHeight = "1";
+triangle.style.textAlign = "center";
+triangle.style.marginBottom = "5px"; // 三角形と文字の間にスペースを追加
+
+// テキスト部分
+const text = document.createElement("span");
+text.textContent = "Scroll to Top";
+text.style.fontSize = "15px"; // テキストのフォントサイズ
+text.style.textAlign = "center";
+
+// ボタンに追加
+backToTopButton.appendChild(triangle);
+backToTopButton.appendChild(text);
+    backToTopButton.style.pointerEvents = "auto";
+    backToTopButton.addEventListener("click", () => {
+    contentBox.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+    });
+
+    contentBox.addEventListener("scroll", () => {
+    if (contentBox.scrollTop > 200) {
+        backToTopButton.style.display = "flex";
+    } else {
+        backToTopButton.style.display = "none";
+    }
+    });
+
     contentBox.appendChild(closeButton);
     overlay.appendChild(contentBox);
+    overlay.appendChild(backToTopButton);
     contentContainer.appendChild(overlay);
 
     currentOverlay = overlay;
