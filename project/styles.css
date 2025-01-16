@@ -164,6 +164,13 @@ figcaption {
     z-index: 8;
     animation: circle-9 10s infinite ease-in-out;
   }
+
+  footer {
+    background-color:#d9a23300;
+    color: rgba(0, 0, 0);
+    text-align: center;
+    padding: 20px 0;
+  }
   
   @keyframes circle-1 {
     0% {

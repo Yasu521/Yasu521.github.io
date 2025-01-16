@@ -47,6 +47,14 @@
     white-space: nowrap;
     animation: fadeInOut 1.3s infinite;
 }
+
+footer {
+    background-color:#d9a23300;
+    color: rgba(0, 0, 0);
+    text-align: center;
+    padding: 20px 0;
+}
+
 @media (min-width: 1200px) {
     .sns-container::after {
         display: none;
