@@ -85,6 +85,29 @@ link[rel="icon"] {
 .language-option:hover{
   color:#c9a333;
 }
+
+#audioControlButton {
+  position: fixed;
+  background-color: #ffffff;
+  top: 13px;
+  right: 60px;
+  width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 30px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#audioControlButton img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+audio {
+  display: none;
+}
 .blur-overlay {
   position: fixed;
   top: 0;

@@ -209,29 +209,23 @@ fetch(contentFile)
     backToTopButton.style.border = "none";
     backToTopButton.style.background = "transparent";
     backToTopButton.style.cursor = "pointer";
-    backToTopButton.style.display = "flex"; // フレックスボックスを有効化
-    backToTopButton.style.flexDirection = "column"; // 縦方向に並べる
-    backToTopButton.style.alignItems = "center"; // 水平方向に中央揃え
-    backToTopButton.style.justifyContent = "center"; // 垂直方向も中央揃え
+    backToTopButton.style.display = "flex";
+    backToTopButton.style.flexDirection = "column";
+    backToTopButton.style.alignItems = "center";
+    backToTopButton.style.justifyContent = "center";
     backToTopButton.style.textAlign = "center";
-
-// 三角形部分
-const triangle = document.createElement("span");
-triangle.textContent = "▲";
-triangle.style.fontSize = "25px"; // 三角形のフォントサイズ
-triangle.style.lineHeight = "1";
-triangle.style.textAlign = "center";
-triangle.style.marginBottom = "5px"; // 三角形と文字の間にスペースを追加
-
-// テキスト部分
-const text = document.createElement("span");
-text.textContent = "Scroll to Top";
-text.style.fontSize = "15px"; // テキストのフォントサイズ
-text.style.textAlign = "center";
-
-// ボタンに追加
-backToTopButton.appendChild(triangle);
-backToTopButton.appendChild(text);
+    const triangle = document.createElement("span");
+    triangle.textContent = "▲";
+    triangle.style.fontSize = "25px";
+    triangle.style.lineHeight = "1";
+    triangle.style.textAlign = "center";
+    triangle.style.marginBottom = "5px";
+    const text = document.createElement("span");
+    text.textContent = "Scroll to Top";
+    text.style.fontSize = "15px";
+    text.style.textAlign = "center";
+    backToTopButton.appendChild(triangle);
+    backToTopButton.appendChild(text);
     backToTopButton.style.pointerEvents = "auto";
     backToTopButton.addEventListener("click", () => {
     contentBox.scrollTo({
@@ -239,7 +233,6 @@ backToTopButton.appendChild(text);
         behavior: "smooth",
     });
     });
-
     contentBox.addEventListener("scroll", () => {
     if (contentBox.scrollTop > 200) {
         backToTopButton.style.display = "flex";
@@ -252,7 +245,6 @@ backToTopButton.appendChild(text);
     overlay.appendChild(contentBox);
     overlay.appendChild(backToTopButton);
     contentContainer.appendChild(overlay);
-
     currentOverlay = overlay;
     setTimeout(() => {
       overlay.classList.add("visible");
@@ -290,7 +282,6 @@ let growingFlowers2 = [];
 let growingFlowers3 = [];
 let growingFlowers4 = [];
 let sideFlowers = [];
-
 const flowerGroups = [
 { flowers: growingFlowers, maxScale: 8 },
 { flowers: growingFlowers2, maxScale: 8 },
@@ -672,10 +663,19 @@ document.addEventListener("touchmove", onTouchMove, { passive: false });
 document.addEventListener("touchend", onTouchEnd);
 document.addEventListener("touchcancel", onTouchEnd);
 
+const audioElement = document.getElementById("backgroundAudio");
+const button = document.getElementById("audioControlButton");
+const icon = document.getElementById("audioIcon");
+icon.src = "https://dl.dropboxusercontent.com/scl/fi/n3igqec4a5gspy8k8l6oq/soundoff.png?rlkey=6lh9mtawqbw2ymo5538bee0te";
 
-const currentPath = window.location.pathname;
-if (currentPath === '/' || currentPath === '/index.html') {
-} else if (currentPath === '/news/' || currentPath === '/news/index.html') {
-} else {
-    window.location.href = '/404.html';
-}
+button.addEventListener("click", () => {
+  if (audioElement.muted) {
+    audioElement.muted = false;
+    icon.src = "https://dl.dropboxusercontent.com/scl/fi/kjakxmywwrmzstaluoe6g/soundon.png?rlkey=i0qm0ee92nc9aw5xszz5u3kjt";
+  } else {
+    audioElement.muted = true;
+    audioElement.pause();
+    icon.src = "https://dl.dropboxusercontent.com/scl/fi/n3igqec4a5gspy8k8l6oq/soundoff.png?rlkey=6lh9mtawqbw2ymo5538bee0te";
+  }
+  audioElement.play();
+});
