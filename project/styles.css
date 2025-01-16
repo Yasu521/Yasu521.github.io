@@ -21,10 +21,10 @@ figcaption {
 
 .highlight {
   display: inline-block;
-  background: #d0b46099; /* 背景色を金色に設定 */
-  color: #008CF7; /* 文字色を青に設定 */
-  padding: 5px 10px; /* パディングで内側のスペースを調整 */
-  transform: skew(-20deg); /* 平行四辺形の作成 */
+  background: #d0b46099;
+  color: #008CF7;
+  padding: 5px 10px;
+  transform: skew(-20deg);
 }
 
 .highlight span {
@@ -33,9 +33,10 @@ figcaption {
 }
 
 .link-container a {
-  font-size: 15px;
+  font-size: 20px;
   text-decoration: none;
-  color: #008CF7;
+  background-color: #008cf7;
+  color:#ffffff;
   padding: 5px 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -43,8 +44,8 @@ figcaption {
 }
 
 .link-container a:hover {
-  background-color: #008CF7;
-  color:#ffffff;
+  background-color: #004CA0;
+  color: #ffffff;
 }
 
   .holder {
@@ -79,7 +80,7 @@ figcaption {
   .holder .circle:nth-child(1) {
     width: 25px;
     height: 12.5px;
-    background: #008CF799;
+    background: #008CF720;
     border-bottom: none;
     border-radius: 25px 25px 0 0;
     z-index: 16;
@@ -89,7 +90,7 @@ figcaption {
   .holder .circle:nth-child(2) {
     width: 62px;
     height: 31px;
-    border: 13px solid #008CF799;
+    border: 13px solid #008CF720;
     border-bottom: none;
     border-radius: 62px 62px 0 0;
     z-index: 15;
@@ -99,7 +100,7 @@ figcaption {
   .holder .circle:nth-child(3) {
     width: 93px;
     height: 46.5px;
-    border: 13px solid #008CF799;
+    border: 13px solid #008CF720;
     border-bottom: none;
     border-radius: 93px 93px 0 0;
     z-index: 14;
@@ -108,7 +109,7 @@ figcaption {
   .holder .circle:nth-child(4) {
     width: 124px;
     height: 62px;
-    border: 13px solid #008CF799;
+    border: 13px solid #008CF720;
     border-bottom: none;
     border-radius: 124px 124px 0 0;
     z-index: 13;
@@ -118,7 +119,7 @@ figcaption {
   .holder .circle:nth-child(5) {
     width: 155px;
     height: 77.5px;
-    border: 13px solid #008CF799;
+    border: 13px solid #008CF720;
     border-bottom: none;
     border-radius: 155px 155px 0 0;
     z-index: 12;
@@ -128,7 +129,7 @@ figcaption {
   .holder .circle:nth-child(6) {
     width: 186px;
     height: 93px;
-    border: 13px solid #008CF799;
+    border: 13px solid #008CF720;
     border-bottom: none;
     border-radius: 186px 186px 0 0;
     z-index: 11;
@@ -138,7 +139,7 @@ figcaption {
   .holder .circle:nth-child(7) {
     width: 217px;
     height: 108.5px;
-    border: 13px solid #008CF799;
+    border: 13px solid #008CF720;
     border-bottom: none;
     border-radius: 217px 217px 0 0;
     z-index: 10;
@@ -148,7 +149,7 @@ figcaption {
   .holder .circle:nth-child(8) {
     width: 248px;
     height: 124px;
-    border: 13px solid #008CF799;
+    border: 13px solid #008CF720;
     border-bottom: none;
     border-radius: 248px 248px 0 0;
     z-index: 9;
@@ -158,7 +159,7 @@ figcaption {
   .holder .circle:nth-child(9) {
     width: 279px;
     height: 139.5px;
-    border: 13px solid #008CF799;
+    border: 13px solid #008cf71b;
     border-bottom: none;
     border-radius: 279px 279px 0 0;
     z-index: 8;

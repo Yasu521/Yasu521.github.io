@@ -189,7 +189,7 @@ fetch(contentFile)
     contentBox.className = "content-box";
     contentBox.style.left = contentPosition.left;
     contentBox.innerHTML = htmlContent;
-
+    
     contentBox.addEventListener("click", (event) => {
         event.stopPropagation();
     })
@@ -209,7 +209,7 @@ fetch(contentFile)
     backToTopButton.style.border = "none";
     backToTopButton.style.background = "transparent";
     backToTopButton.style.cursor = "pointer";
-    backToTopButton.style.display = "flex";
+    
     backToTopButton.style.flexDirection = "column";
     backToTopButton.style.alignItems = "center";
     backToTopButton.style.justifyContent = "center";
@@ -240,10 +240,13 @@ fetch(contentFile)
         backToTopButton.style.display = "none";
     }
     });
-
+    overlay.addEventListener("click", () => {
+        clearExistingContent();
+    });
     contentBox.appendChild(closeButton);
+    contentBox.appendChild(backToTopButton);
     overlay.appendChild(contentBox);
-    overlay.appendChild(backToTopButton);
+    
     contentContainer.appendChild(overlay);
     currentOverlay = overlay;
     setTimeout(() => {
@@ -664,11 +667,11 @@ document.addEventListener("touchend", onTouchEnd);
 document.addEventListener("touchcancel", onTouchEnd);
 
 const audioElement = document.getElementById("backgroundAudio");
-const button = document.getElementById("audioControlButton");
+const audiobutton = document.getElementById("audioControlButton");
 const icon = document.getElementById("audioIcon");
 icon.src = "https://dl.dropboxusercontent.com/scl/fi/n3igqec4a5gspy8k8l6oq/soundoff.png?rlkey=6lh9mtawqbw2ymo5538bee0te";
-
-button.addEventListener("click", () => {
+audiobutton.style.pointerEvents = "auto";
+audiobutton.addEventListener("click", () => {
   if (audioElement.muted) {
     audioElement.muted = false;
     icon.src = "https://dl.dropboxusercontent.com/scl/fi/kjakxmywwrmzstaluoe6g/soundon.png?rlkey=i0qm0ee92nc9aw5xszz5u3kjt";

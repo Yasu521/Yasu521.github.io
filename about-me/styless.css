@@ -55,10 +55,6 @@ footer {
     padding: 20px 0;
 }
 
-@media (min-width: 1200px) {
-    .sns-container::after {
-        display: none;
-    }}
 .sns-links {
     display: flex;
     justify-content: left;
