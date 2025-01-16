@@ -620,3 +620,11 @@ function onTouchEnd() {
 document.addEventListener("touchmove", onTouchMove, { passive: false });
 document.addEventListener("touchend", onTouchEnd);
 document.addEventListener("touchcancel", onTouchEnd);
+
+
+const currentPath = window.location.pathname;
+if (currentPath === '/' || currentPath === '/index.html') {
+} else if (currentPath === '/news/' || currentPath === '/news/index.html') {
+} else {
+    window.location.href = '/404.html';
+}
