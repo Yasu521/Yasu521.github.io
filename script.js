@@ -662,6 +662,10 @@ function onTouchEnd() {
   lastTouchX = null;
   lastTouchY = null;
 }
+document.addEventListener("touchmove", onTouchMove, { passive: false });
+document.addEventListener("touchend", onTouchEnd);
+document.addEventListener("touchcancel", onTouchEnd);
+
 const audioElement = document.getElementById("backgroundAudio");
 const audiobutton = document.getElementById("audioControlButton");
 const icon = document.getElementById("audioIcon");
