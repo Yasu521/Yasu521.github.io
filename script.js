@@ -669,16 +669,16 @@ document.addEventListener("touchcancel", onTouchEnd);
 const audioElement = document.getElementById("backgroundAudio");
 const audiobutton = document.getElementById("audioControlButton");
 const icon = document.getElementById("audioIcon");
-icon.src = "https://dl.dropboxusercontent.com/scl/fi/n3igqec4a5gspy8k8l6oq/soundoff.png?rlkey=6lh9mtawqbw2ymo5538bee0te";
+icon.src = "./flag/soundoff.webp";
 audiobutton.style.pointerEvents = "auto";
 audiobutton.addEventListener("click", () => {
   if (audioElement.muted) {
     audioElement.muted = false;
-    icon.src = "https://dl.dropboxusercontent.com/scl/fi/kjakxmywwrmzstaluoe6g/soundon.png?rlkey=i0qm0ee92nc9aw5xszz5u3kjt";
+    icon.src = "./flag/soundon.webp";
   } else {
     audioElement.muted = true;
     audioElement.pause();
-    icon.src = "https://dl.dropboxusercontent.com/scl/fi/n3igqec4a5gspy8k8l6oq/soundoff.png?rlkey=6lh9mtawqbw2ymo5538bee0te";
+    icon.src = "./flag/soundoff.webp";
   }
   audioElement.play();
 });

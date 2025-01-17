@@ -268,11 +268,9 @@ audio {
     top:  5px; 
     left: 5px;
     background-color: #ff6161;
-    color: #0000009c;
+    color: #00000000;
     border: none;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
     cursor: pointer;
     display: flex;
     align-items: center;
