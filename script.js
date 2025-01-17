@@ -662,23 +662,28 @@ function onTouchEnd() {
   lastTouchX = null;
   lastTouchY = null;
 }
-document.addEventListener("touchmove", onTouchMove, { passive: false });
-document.addEventListener("touchend", onTouchEnd);
-document.addEventListener("touchcancel", onTouchEnd);
-
 const audioElement = document.getElementById("backgroundAudio");
 const audiobutton = document.getElementById("audioControlButton");
 const icon = document.getElementById("audioIcon");
-icon.src = "./flag/soundoff.webp";
+
+// 初期設定
+audioElement.muted = false; // ミュート解除
+audioElement.play().catch((error) => {
+  console.log("自動再生がブロックされました:", error);
+});
+
+icon.src = "./flag/soundon.webp";
 audiobutton.style.pointerEvents = "auto";
+
 audiobutton.addEventListener("click", () => {
   if (audioElement.muted) {
     audioElement.muted = false;
     icon.src = "./flag/soundon.webp";
+    audioElement.play().catch((error) => {
+      console.log("再生エラー:", error);
+    });
   } else {
     audioElement.muted = true;
-    audioElement.pause();
     icon.src = "./flag/soundoff.webp";
   }
-  audioElement.play();
 });

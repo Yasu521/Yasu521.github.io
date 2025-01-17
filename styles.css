@@ -26,7 +26,7 @@ link[rel="icon"] {
   justify-content: center;
   text-align: center;
   font-size: 10px;
-  bottom: 5%;
+  bottom: 50px;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: "monospace", serif;
@@ -36,7 +36,7 @@ link[rel="icon"] {
 .language-menu {
   position: absolute;
   top: 4%;
-  right: 2%;
+  right: 20px;
   display: inline-block;
   border-radius: 50%; 
   z-index: 500;
@@ -92,8 +92,8 @@ link[rel="icon"] {
 #audioControlButton {
   position: fixed;
   background-color: #ffffff61;
-  top: 4.5%;
-  right: 5%;
+  bottom: 60px;
+  right: 23px;
   width: 30px;
   border-radius: 50%;
   cursor: pointer;
