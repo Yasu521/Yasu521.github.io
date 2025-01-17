@@ -249,7 +249,7 @@ audio {
 
 .content-back-to-top {
   position: fixed;
-  bottom: 15%;
+  top:75%;
   right: 5%;
   width: 100px;
   color: #008cf750;
@@ -295,4 +295,7 @@ audio {
     body {
         padding-bottom: 20px;
     }
+    .content-back-to-top{
+    top: 75%;
+  }
 }
