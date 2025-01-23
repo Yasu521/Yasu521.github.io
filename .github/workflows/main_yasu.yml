@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Note: Will automatically move to ubuntu-24.04 when available
 
     steps:
       - uses: actions/checkout@v4
@@ -32,13 +32,13 @@ jobs:
         run: zip release.zip ./* -r
 
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v4 # Updated to v4
+        uses: actions/upload-artifact@v4  # Updated to v4
         with:
           name: php-app
           path: release.zip
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Note: Will automatically move to ubuntu-24.04 when available
     needs: build
     environment:
       name: 'Production'
@@ -46,7 +46,7 @@ jobs:
 
     steps:
       - name: Download artifact from build job
-        uses: actions/download-artifact@v4 # Updated to v4
+        uses: actions/download-artifact@v4  # Updated to v4
         with:
           name: php-app
 
@@ -61,3 +61,6 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C666A9F32E234DFBA210401129235CFA }}
           package: .
+
+      - name: Save Web App URL as output
+        run: echo "webapp-url=https://${{ secrets.AZURE_WEBAPP_NAME }}.azurewebsites.net" >> $GITHUB_ENV  # Environment Files
