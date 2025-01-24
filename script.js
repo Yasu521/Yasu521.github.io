@@ -8,6 +8,12 @@ const flagImages = {
     fr: './flag/France.webp',
     zh: './flag/China.webp'
 }
+const cubeData = [
+    { position: { x: 3, y: 3, z: -40 }, size: { x: 3, y: 3, z: 3 }, label: '欢迎' },
+    { position: { x: 3, y: -3, z: -40 }, size: { x: 3, y: 3, z: 3 }, label: 'Bonjour' },
+    { position: { x: -3, y: 3, z: -40 }, size: { x: 3, y: 3, z: 3 }, label:  "こんにちは"},
+    { position: { x: -3, y: -3, z: -40 }, size: { x: 3, y: 3, z: 3 }, label: 'Wellcome' }
+    ];
 const textures = {
     dustTextures: [
     "./flower/dust.webp",
@@ -60,7 +66,6 @@ const textures = {
     const manager = new THREE.LoadingManager();
     const loader = new THREE.TextureLoader(manager);
     const startTime = Date.now();
-
     manager.onProgress = (url, itemsLoaded, itemsTotal) => {
         const progress = (itemsLoaded / itemsTotal) * 100;
         document.getElementById("progress-bar").style.width = `${progress}%`;
@@ -128,9 +133,7 @@ const languageButtons = document.querySelectorAll('.language-option');
 const buttonContainer = document.getElementById("buttonContainer");
 const contentContainer = document.getElementById("contentContainer");
 const currentLanguageIcon = document.getElementById('current-language-icon');
-
 let currentOverlay = null;
-
 fetch('./buttonsConfig.json')
   .then((response) => response.json())
   .then((configs) => {
@@ -193,10 +196,9 @@ fetch(contentFile)
     contentBox.addEventListener("click", (event) => {
         event.stopPropagation();
     })
-
     const closeButton = document.createElement("button");
     closeButton.textContent = "×";
-    closeButton.style.fontSize = "20px";
+    closeButton.style.fontSize = "15px";
     closeButton.className = "close-button";
     closeButton.addEventListener("click", (event) => {
       clearExistingContent();
@@ -209,7 +211,6 @@ fetch(contentFile)
     backToTopButton.style.border = "none";
     backToTopButton.style.background = "transparent";
     backToTopButton.style.cursor = "pointer";
-    
     backToTopButton.style.flexDirection = "column";
     backToTopButton.style.alignItems = "center";
     backToTopButton.style.justifyContent = "center";
@@ -285,6 +286,7 @@ let growingFlowers2 = [];
 let growingFlowers3 = [];
 let growingFlowers4 = [];
 let sideFlowers = [];
+const cubes = [];
 const flowerGroups = [
 { flowers: growingFlowers, maxScale: 8 },
 { flowers: growingFlowers2, maxScale: 8 },
@@ -293,7 +295,46 @@ const flowerGroups = [
 { flowers: sideFlowers, maxScale: 7 },
 { flowers: fallingFlowers, maxScale: 9 },
 ];
+function createLabeledCube(position, size, labelText) {
+    const geometry = new THREE.BoxGeometry(size.x, size.y, size.z);
+    const material = new THREE.MeshBasicMaterial({ 
+        color: 0x00ff00
+    });
+    const cube = new THREE.Mesh(geometry, material);
+    cube.position.set(position.x, position.y, position.z);
+    const canvas = document.createElement('canvas');
+    canvas.width = 256;
+    canvas.height = 256;
+    const context = canvas.getContext('2d');
 
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.fillStyle = 'white';
+    context.font = '48px Arial';
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.fillText(labelText, canvas.width / 2, canvas.height / 2);
+    const texture = new THREE.CanvasTexture(canvas);
+    const textMaterial = new THREE.MeshBasicMaterial({ 
+        map: texture,
+        transparent: true,
+        opacity: 0.7
+        });
+    const materials = [
+        textMaterial,
+        textMaterial,
+        textMaterial,
+        textMaterial, 
+        textMaterial,
+        textMaterial  
+    ];
+    cube.material = materials;
+    return cube;
+}
+cubeData.forEach(data => {
+    const cube = createLabeledCube(data.position, data.size, data.label);
+    scene.add(cube);
+    cubes.push(cube);
+});
 const MAX_SCROLL_SPEED = 3;
 const MIN_SCROLL_SPEED = -3;
 let lastTouchY = 0;
@@ -335,7 +376,6 @@ for (let z = startZ; z <= endZ; z += 10) {
         fallingFlowers.push(sprite);
         scene.add(sprite);
     }}}}
-
 function creategroundFlowers(startZ, endZ) {
 for (let x = -40; x < 40; x += 10) {
 for (let z = startZ; z < endZ; z += 20) {

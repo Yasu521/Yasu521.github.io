@@ -3,7 +3,7 @@ body, html {
   padding: 0;
   height: 100%;
   overflow: hidden;
-  background: black;
+  background: rgb(0, 0, 0);
   color: rgb(14, 14, 14);
 }
 link[rel="icon"] {
@@ -90,7 +90,7 @@ link[rel="icon"] {
 #audioControlButton {
   position: fixed;
   background-color: #ffffff61;
-  bottom: 80px;
+  bottom: 100px;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 30px;
@@ -316,5 +316,9 @@ audio {
     }
     .content-back-to-top{
     top: 75%;
+  }
+  .close-button{
+    width: 10px;
+    height: 10px;
   }
 }
