@@ -90,7 +90,7 @@ link[rel="icon"] {
 #audioControlButton {
   position: fixed;
   background-color: #ffffff61;
-  bottom: 100px;
+  bottom: 90px;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 30px;
