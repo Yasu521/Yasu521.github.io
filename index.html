@@ -17,7 +17,7 @@
     gtag('config', 'G-Y2FVBDQYBP');
   </script>
   <script>
-    const allowedPaths = [
+    const Paths = [
       "index.html",
       "./about-me",
       "./contact",
@@ -27,7 +27,7 @@
     ];
 
     const currentPath = window.location.pathname;
-    if (!allowedPaths.includes(currentPath)) {
+    if (allowedPaths.includes(currentPath)) {
       window.location.href = "/404.html";
     }
   </script>
