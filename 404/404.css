@@ -24,13 +24,11 @@ html {
   --petals-small-radius: 82em;
   filter: var(--scene-drop-shadow);
 }
-
 :root {
   --unit: 1vmin;
   --available-screen-min: 665;
   --px: calc(var(--zoom) * (var(--unit) / var(--available-screen-min)));
 }
-
 html,
 body,
 head {
@@ -41,7 +39,6 @@ head {
   font-size: calc(1 * var(--px));
   background-color: transparent;
 }
-
 head {
   width: 100%;
   position: absolute;
@@ -49,7 +46,6 @@ head {
   top: 0;
   display: block;
 }
-
 head::before,
 head::after,
 body::before,
@@ -61,7 +57,6 @@ html::after {
   background-repeat: no-repeat;
   filter: blur(0);
 }
-
 head::before,
 head::after,
 html::before {
@@ -70,7 +65,6 @@ html::before {
   background-color: var(--color-leaf);
   box-shadow: inset 0 0 12em 10em var(--color-leaf);
 }
-
 head::before {
   left: calc(50% - 65em);
   top: calc(50% + 109em);
@@ -81,7 +75,6 @@ head::before {
   background-image: linear-gradient(2deg, #fff0 0, #fff0 calc(50% - 3em), var(--color-leaf-root) 50%, #fff0 calc(50% + 1em), #fff0 100%), linear-gradient(2deg, #fff0 0, #fff0 calc(50% - 3em), var(--color-leaf-root) 50%, #fff0 calc(50% + 1em), #fff0 100%), linear-gradient(2deg, #fff0 0, #fff0 calc(50% - 3em), var(--color-leaf-root) 50%, #fff0 calc(50% + 1em), #fff0 100%), linear-gradient(92deg, #fff0 0, #fff0 calc(50% - 3em), var(--color-leaf-root) 50%, #fff0 calc(50% + 1em), #fff0 100%), linear-gradient(92deg, #fff0 0, #fff0 calc(50% - 3em), var(--color-leaf-root) 50%, #fff0 calc(50% + 1em), #fff0 100%), linear-gradient(92deg, #fff0 0, #fff0 calc(50% - 3em), var(--color-leaf-root) 50%, #fff0 calc(50% + 1em), #fff0 100%), linear-gradient(130deg, #fff0 0, #fff0 calc(50% - 3em), var(--color-leaf-root) 50%, #fff0 calc(50% + 1em), #fff0 100%);
   background-position: -56em 30em, -34em 3em, -14em -22em, -16em 96em, 6em 68em, 27em 43em, 0 15em;
 }
-
 head::after {
   left: calc(50% - 94em);
   top: calc(50% + 98em);
@@ -92,7 +85,6 @@ head::after {
   background-image: linear-gradient(-93deg, #fff0 0, #fff0 calc(50% - 3em), var(--color-leaf-root) 50%, #fff0 calc(50% + 1em), #fff0 100%), linear-gradient(-93deg, #fff0 0, #fff0 calc(50% - 3em), var(--color-leaf-root) 50%, #fff0 calc(50% + 1em), #fff0 100%), linear-gradient(-93deg, #fff0 0, #fff0 calc(50% - 3em), var(--color-leaf-root) 50%, #fff0 calc(50% + 1em), #fff0 100%), linear-gradient(-1deg, #fff0 0, #fff0 calc(50% - 3em), var(--color-leaf-root) 50%, #fff0 calc(50% + 1em), #fff0 100%), linear-gradient(-1deg, #fff0 0, #fff0 calc(50% - 3em), var(--color-leaf-root) 50%, #fff0 calc(50% + 1em), #fff0 100%), linear-gradient(-1deg, #fff0 0, #fff0 calc(50% - 3em), var(--color-leaf-root) 50%, #fff0 calc(50% + 1em), #fff0 100%), linear-gradient(130deg, #fff0 0, #fff0 calc(50% - 3em), var(--color-leaf-root) 50%, #fff0 calc(50% + 1em), #fff0 100%);
   background-position: -12em 64em, 7em 41em, 28em 16em, -56em 16em, -36em -8em, -15em -32em, 0 0;
 }
-
 html::before {
   left: calc(50% - 120em);
   top: calc(50% + 123em);
@@ -103,7 +95,6 @@ html::before {
   background-image: linear-gradient(-90deg, #fff0 0, #fff0 calc(50% - 3em), var(--color-leaf-root) 50%, #fff0 calc(50% + 1em), #fff0 100%), linear-gradient(-90deg, #fff0 0, #fff0 calc(50% - 3em), var(--color-leaf-root) 50%, #fff0 calc(50% + 1em), #fff0 100%), linear-gradient(-90deg, #fff0 0, #fff0 calc(50% - 3em), var(--color-leaf-root) 50%, #fff0 calc(50% + 1em), #fff0 100%), linear-gradient(2deg, #fff0 0, #fff0 calc(50% - 3em), var(--color-leaf-root) 50%, #fff0 calc(50% + 1em), #fff0 100%), linear-gradient(1deg, #fff0 0, #fff0 calc(50% - 3em), var(--color-leaf-root) 50%, #fff0 calc(50% + 1em), #fff0 100%), linear-gradient(0deg, #fff0 0, #fff0 calc(50% - 3em), var(--color-leaf-root) 50%, #fff0 calc(50% + 1em), #fff0 100%), linear-gradient(133deg, #fff0 0, #fff0 calc(50% - 3em), var(--color-leaf-root) 50%, #fff0 calc(50% + 1em), #fff0 100%);
   background-position: -19em 79em, 9em 50.4em, 35em 21.4em, -21em -41.6em, -49em -11em, -74em 18em, 0 0;
 }
-
 body::before,
 body::after,
 html::after {
@@ -111,7 +102,6 @@ html::after {
   left: calc(50% + var(--petals-offset));
   top: calc(50% - var(--petals-offset));
 }
-
 body::before {
   padding: var(--petals-large-radius);
   --pointer-size: 73em;
