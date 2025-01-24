@@ -16,6 +16,21 @@
     gtag('js', new Date());
     gtag('config', 'G-Y2FVBDQYBP');
   </script>
+  <script>
+    const allowedPaths = [
+      "index.html",
+      "./about-me",
+      "./contact",
+      "./project",
+      "./policy",
+      "./work"
+    ];
+
+    const currentPath = window.location.pathname;
+    if (!allowedPaths.includes(currentPath)) {
+      window.location.href = "/404.html";
+    }
+  </script>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="https://yasuhiroiwai.jp/shortcut.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="https://yasuhiroiwai.jp/Ciao.webp">
