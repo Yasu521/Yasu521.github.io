@@ -9,21 +9,28 @@ const flagImages = {
     zh: './flag/China.webp'
 }
 const cubeData = [
-    { position: { x: 0, y: 0, z: 10 }, size: { x: 50, y: 50, z: 0}, label: '' },
+    { position: { x: 0, y: 0, z: 0 }, size: { x: 50, y: 50, z: 30}, label: '' },
 
-    { position: { x: 0, y: 6, z: -20 }, size: { x: 10, y: 4, z: 40}, label: '' },
-    { position: { x: 0, y: -6, z: -20 }, size: { x: 10, y: 4, z: 40}, label: '' },
-    { position: { x: -30, y: 30, z: -20 }, size: { x: 50, y: 100, z: 40 }, label: '' },
-    { position: { x: 30, y: 30, z: -20 }, size: { x: 50, y: 100, z: 40 }, label: '' },
-    { position: { x: 3, y: 3, z: -25 }, size: { x: 3, y: 3, z: 3 }, label: '欢迎' },
-    { position: { x: 3, y: -3, z: -25 }, size: { x: 3, y: 3, z: 3 }, label: 'Bonjour' },
-    { position: { x: -3, y: 3, z: -25 }, size: { x: 3, y: 3, z: 3 }, label:  "こんにちは"},
-    { position: { x: -3, y: -3, z: -25 }, size: { x: 3, y: 3, z: 3 }, label: 'Wellcome' },
-    { position: { x: 0, y: 0, z: -38 }, size: { x: 1, y: 1, z: 1 }, label: 'Explore' },
-    { position: { x: 0, y: 3, z: -35 }, size: { x: 5, y: 5, z: 8 }, label: '↑' },
-    { position: { x: 0, y: -3, z: -35 }, size: { x: 5, y: 5, z: 8 }, label: '↓' },
-    { position: { x: 3, y: 0, z: -35}, size: { x: 5, y: 5, z: 8 }, label: '→' },
-    { position: { x: -3, y: 0, z: -35}, size: { x: 5, y: 5, z: 8 }, label: '←' },
+    { position: { x: 0, y: 6, z: -30 }, size: { x: 10, y: 4, z: 70}, label: '' },
+    { position: { x: 0, y: -6, z: -30 }, size: { x: 10, y: 4, z: 70}, label: '' },
+
+    { position: { x: -30, y: 30, z: -30 }, size: { x: 50, y: 100, z: 70 }, label: '' },
+    { position: { x: 30, y: 30, z: -30 }, size: { x: 50, y: 100, z: 70 }, label: '' },
+
+    { position: { x: 2, y: 2, z: -40 }, size: { x: 3, y: 3, z: 3 }, label: '欢迎' },
+    { position: { x: 2, y: -2, z: -40 }, size: { x: 3, y: 3, z: 3 }, label: 'Bonjour' },
+    { position: { x: -2, y: 2, z: -40 }, size: { x: 3, y: 3, z: 3 }, label:  "こんにちは"},
+    { position: { x: -2, y: -2, z: -40 }, size: { x: 3, y: 3, z: 3 }, label: 'Wellcome' },
+
+    { position: { x: 0, y: 6, z: -45 }, size: { x: 5, y: 5, z: 5 }, label: '↓' },
+    { position: { x: 0, y: -6, z: -45 }, size: { x: 5, y: 5, z: 5 }, label: '↑' },
+    { position: { x: 6, y: 0, z: -45}, size: { x: 5, y: 5, z: 5 }, label: '←' },
+    { position: { x: -6, y: 0, z: -45}, size: { x: 5, y: 5, z: 5 }, label: '→' },
+
+    { position: { x: 0, y: 6, z: -55 }, size: { x: 5, y: 5, z: 5 }, label: '↓' },
+    { position: { x: 0, y: -6, z: -55 }, size: { x: 5, y: 5, z: 5 }, label: '↑' },
+    { position: { x: 6, y: 0, z: -55}, size: { x: 5, y: 5, z: 5 }, label: '←' },
+    { position: { x: -6, y: 0, z: -55}, size: { x: 5, y: 5, z: 5 }, label: '→' },
     ];
 const textures = {
     dustTextures: [
@@ -346,11 +353,11 @@ cubeData.forEach(data => {
     scene.add(cube);
     cubes.push(cube);
 });
-const MAX_SCROLL_SPEED = 3;
-const MIN_SCROLL_SPEED = -3;
+const MAX_SCROLL_SPEED = 4;
+const MIN_SCROLL_SPEED = -4;
 let lastTouchY = 0;
 let lastTouchX = 0;
-let autoSpeed = 0.5;
+let autoSpeed = 1.3;
 let scrollSpeed = 0 ;
 let currentZ = 0;
 let lastMouseY = 0;
@@ -363,7 +370,7 @@ let lastCameraZ = 0;
 let startX = 0;
 let startY = 0;
 let firstcount = 0;
-const renderRange = { zMin: -50, zMax:30};
+const renderRange = { zMin: -80, zMax:30};
 const shiftThreshold = 2;
 const scale = Math.random() * 2;
 const random_1 = Math.random() * 2;
@@ -485,7 +492,7 @@ sideFlowers.push(sprite);
 scene.add(sprite);
 }}}}
 function createtopGround(startZ, endZ) {
-for (let x = -12; x < 50; x += Math.random()*5) { 
+for (let x = -12; x < 80; x += Math.random()*5) { 
 for (let z = startZ; z < endZ; z += Math.random()*5) {
 const textureUrl = textures.groundTextures[Math.floor(Math.random() * textures.groundTextures.length)];
 const cachedTexture = textureCache.get(textureUrl);
@@ -534,7 +541,7 @@ const posY = x + Math.random() * 30 - 30;
 const posZ = z + random_1;
 sprite.position.set(posX, posY, posZ);
 sprite.scale.set(scale, scale, 1);
-const maxTilt = Math.PI / 4 + (posY + 40) / 50;
+const maxTilt = Math.PI / 3 + (posY + 40) / 80;
 const minTilt = Math.PI / 8 + (posY + 40) / 200;
 sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt; 
 growingFlowers3.push(sprite);
@@ -581,7 +588,7 @@ function createDustSprites(textureArray, startZ, endZ, dustList) {
                 sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt;
 
                 if (Math.random() <= 0.2) {
-                    if(posZ>50 || posZ<-50){
+                    if(posZ>70 || posZ<-70){
                             dustList.push(sprite);
                             scene.add(sprite);
                 }
@@ -672,7 +679,7 @@ dustFlowers(renderRange.zMin, renderRange.zMax);
     if(Math.random()<=0.3){
 dustFlowers2(renderRange.zMin, renderRange.zMax);
 }}}
-if(Math.random()<=0.1) growAllFlowers();
+if(Math.random()<=0.2) growAllFlowers();
 renderer.render(scene, camera);
 }
 
@@ -711,6 +718,26 @@ function onTouchMove(event) {
       }
       lastTouchX = touch.clientX;
       lastTouchY = touch.clientY;
+      if (event.touches.length === 2){
+            const touch1 = event.touches[0];
+            const touch2 = event.touches[1];
+            const touchX = (touch1.clientX + touch2.clientX) / 2;
+            const touchY = (touch1.clientY + touch2.clientY) / 2;
+            const distance = Math.sqrt(
+                (touch1.clientX - touch2.clientX) ** 2 +
+                (touch1.clientY - touch2.clientY) ** 2
+            );
+            let lastDistance = distance;
+            if (lastDistance !== null) {
+                const deltaDistance = distance - lastDistance;
+                scrollSpeed += deltaDistance * 0.05;
+                scrollSpeed = Math.max(MIN_SCROLL_SPEED, Math.min(MAX_SCROLL_SPEED, scrollSpeed));
+                growAllFlowers();
+            }
+            lastDistance = distance;
+            lastTouchX = touchX;
+            lastTouchY = touchY;
+      }
 }}
 function onTouchEnd() {
   lastTouchX = null;
