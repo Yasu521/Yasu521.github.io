@@ -1,228 +1,54 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Three.js Flowing Lines Demo</title>
-  <style>
-    body { margin: 0; overflow: hidden; background: #000; }
-    canvas { display: block; }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three.js with EffectComposer</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+  <script type="module">
+    // モジュールをインポート（unpkgから取得）
+    import { EffectComposer } from "./node_modules/three/examples/jsm/postprocessing/EffectComposer.js";
+    import { RenderPass } from "./node_modules/three/examples/jsm/postprocessing/RenderPass.js";
+    import { GlitchPass } from "./node_modules/three/examples/jsm/postprocessing/GlitchPass.js";
+    import { OutputPass } from '/water/node_modules/three/examples/jsm/postprocessing/OutputPass.js';
+    // 基本的なThree.jsのセットアップ
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // 箱を作成
+    const geometry = new THREE.BoxGeometry();
+    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    const cube = new THREE.Mesh(geometry, material);
+    scene.add(cube);
+
+    camera.position.z = 5;
+
+    // PostProcessingの設定
+    const composer = new EffectComposer(renderer);
+    const renderPass = new RenderPass(scene, camera);
+    const glitchPass = new GlitchPass();
+
+    composer.addPass(renderPass); // 通常のレンダリングを追加
+    composer.addPass(glitchPass); // グリッチ効果を追加
+
+    // アニメーションループ
+    function animate() {
+      requestAnimationFrame(animate);
+
+      // 回転
+      cube.rotation.x += 0.01;
+      cube.rotation.y += 0.01;
+
+      // composerを使って描画
+      composer.render();
+    }
+
+    animate();
+  </script>
 </head>
 <body>
-<script type="module">
-import * as THREE from './node_modules/three/build/three.module.js';
-import { EffectComposer } from './node_modules/three/examples/jsm/postprocessing/EffectComposer.js';
-import { RenderPass } from './node_modules/three/examples/jsm/postprocessing/RenderPass.js';
-import { UnrealBloomPass } from './node_modules/three/examples/jsm/postprocessing/UnrealBloomPass.js';
-
-const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x000000);
-
-// カメラを少し上空＆手前に置いて、原点を見下ろす
-const camera = new THREE.PerspectiveCamera(
-  60,
-  window.innerWidth / window.innerHeight,
-  0.1,
-  1000
-);
-camera.position.set(0, 6, 12);
-camera.lookAt(0, 0, 0);
-
-// デバッグ用オブジェクト
-// ----------------------------
-const axesHelper = new THREE.AxesHelper(5);
-scene.add(axesHelper);
-
-const debugBox = new THREE.Mesh(
-  new THREE.BoxGeometry(1,1,1),
-  new THREE.MeshBasicMaterial({ color: 0xff0000 })
-);
-debugBox.position.set(0, 0.5, 0);
-scene.add(debugBox);
-
-// レンダラー
-const renderer = new THREE.WebGLRenderer({ antialias: true });
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
-
-/* ========================
-   3. ポストプロセス設定
-   ======================== */
-const composer = new EffectComposer(renderer);
-composer.addPass(new RenderPass(scene, camera));
-
-// Bloom エフェクト
-const bloomPass = new UnrealBloomPass(
-  new THREE.Vector2(window.innerWidth, window.innerHeight),
-  2.0,   // strength (光の強さ)
-  1.0,   // radius   (光の広がり)
-  0.9    // threshold(閾値)
-);
-composer.addPass(bloomPass);
-
-/* ========================
-   4. ディスプレイスメントで丘を表現する Plane
-   ======================== */
-const planeGeo = new THREE.PlaneGeometry(20, 20, 200, 200);
-
-const hillVertexShader = `
-  uniform float time;
-  
-  // 簡易ノイズ
-  float pseudoNoise(vec2 p) {
-    return fract(sin(dot(p, vec2(12.9898,78.233))) * 43758.5453);
-  }
-
-  varying vec3 vNormal;
-  varying vec2 vUv;
-
-  void main() {
-    vUv = uv;
-    float n = pseudoNoise(uv * 10.0 + time * 0.1);
-    float displacement = n * 2.0;
-
-    vec3 newPosition = position + normal * displacement;
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
-
-    vNormal = normal;
-  }
-`;
-
-const hillFragmentShader = `
-  varying vec3 vNormal;
-  varying vec2 vUv;
-
-  void main() {
-    // 法線が上向きほど明るい簡単な色づけ
-    float intensity = dot(normalize(vNormal), vec3(0.0, 1.0, 0.0)) * 0.5 + 0.5;
-    // 青系のグラデーション
-    gl_FragColor = vec4(0.1, 0.3 + intensity*0.3, 0.6, 1.0);
-  }
-`;
-
-const hillUniforms = {
-  time: { value: 0 }
-};
-
-const hillMaterial = new THREE.ShaderMaterial({
-  vertexShader: hillVertexShader,
-  fragmentShader: hillFragmentShader,
-  uniforms: hillUniforms,
-  side: THREE.DoubleSide
-});
-
-const planeMesh = new THREE.Mesh(planeGeo, hillMaterial);
-// PlaneGeometryはXY平面なので、XZ平面に回転させる
-planeMesh.rotation.x = -Math.PI / 2;
-scene.add(planeMesh);
-
-/* ========================
-   5. 流れるパーティクル実装
-   ======================== */
-const particleVertexShader = `
-  uniform float time;
-  attribute vec3 initialPosition;
-
-  float pseudoNoise3D(vec3 p) {
-    return fract(sin(dot(p, vec3(12.9898,78.233, 37.425))) * 43758.5453);
-  }
-
-  void main() {
-    vec3 pos = initialPosition;
-
-    // time と初期位置から、Y方向の流れ＋XZの揺らぎを演出
-    float t = time * 0.2;
-    pos.y -= t * 2.0;
-
-    // 下まで行ったら上に戻す
-    float modY = mod(pos.y, 20.0);
-    pos.y = modY;
-
-    float nx = pseudoNoise3D(vec3(initialPosition.x, t, initialPosition.z));
-    float nz = pseudoNoise3D(vec3(initialPosition.z, initialPosition.x, t));
-    pos.x += (nx - 0.5) * 0.5;
-    pos.z += (nz - 0.5) * 0.5;
-
-    gl_PointSize = 2.0;
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
-  }
-`;
-
-const particleFragmentShader = `
-  void main() {
-    // パーティクルを中央からぼんやり発光させる
-    vec2 coord = gl_PointCoord - 0.5;
-    float dist = length(coord);
-    float alpha = 1.0 - smoothstep(0.0, 0.5, dist);
-
-    gl_FragColor = vec4(0.2, 0.6, 1.0, alpha);
-  }
-`;
-
-// 大量の頂点データ
-const particleCount = 30000;
-const positions = new Float32Array(particleCount * 3);
-
-for (let i = 0; i < particleCount; i++) {
-  const x = (Math.random() - 0.5) * 20;
-  const y = Math.random() * 20;
-  const z = (Math.random() - 0.5) * 20;
-  positions[i * 3 + 0] = x;
-  positions[i * 3 + 1] = y;
-  positions[i * 3 + 2] = z;
-}
-
-const particleGeometry = new THREE.BufferGeometry();
-particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-// attribute "initialPosition" としても同じデータを持たせる
-particleGeometry.setAttribute('initialPosition', new THREE.BufferAttribute(positions, 3));
-
-const particleUniforms = {
-  time: { value: 0 }
-};
-
-const particleMaterial = new THREE.ShaderMaterial({
-  vertexShader: particleVertexShader,
-  fragmentShader: particleFragmentShader,
-  uniforms: particleUniforms,
-  blending: THREE.AdditiveBlending,
-  depthTest: true,
-  depthWrite: false,
-  transparent: true
-});
-
-const particlePoints = new THREE.Points(particleGeometry, particleMaterial);
-scene.add(particlePoints);
-
-/* ========================
-   6. アニメーションループ
-   ======================== */
-function animate(t) {
-  requestAnimationFrame(animate);
-
-  // 経過時間を秒で取得
-  const elapsed = t * 0.001;
-  hillUniforms.time.value = elapsed;
-  particleUniforms.time.value = elapsed;
-
-  // ポストプロセスを介して描画
-  composer.render();
-}
-animate();
-
-/* ========================
-   7. リサイズ対応
-   ======================== */
-window.addEventListener('resize', onWindowResize);
-function onWindowResize() {
-  const w = window.innerWidth;
-  const h = window.innerHeight;
-  camera.aspect = w / h;
-  camera.updateProjectionMatrix();
-  renderer.setSize(w, h);
-  composer.setSize(w, h);
-}
-
-</script>
 </body>
 </html>

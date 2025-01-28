@@ -12,7 +12,12 @@ const cubeData = [
     { position: { x: 3, y: 3, z: -40 }, size: { x: 3, y: 3, z: 3 }, label: '欢迎' },
     { position: { x: 3, y: -3, z: -40 }, size: { x: 3, y: 3, z: 3 }, label: 'Bonjour' },
     { position: { x: -3, y: 3, z: -40 }, size: { x: 3, y: 3, z: 3 }, label:  "こんにちは"},
-    { position: { x: -3, y: -3, z: -40 }, size: { x: 3, y: 3, z: 3 }, label: 'Wellcome' }
+    { position: { x: -3, y: -3, z: -40 }, size: { x: 3, y: 3, z: 3 }, label: 'Wellcome' },
+    { position: { x: 0, y: 0, z: -45 }, size: { x: 1, y: 1, z: 1 }, label: 'Explore' },
+    { position: { x: 0, y: 3, z: -50 }, size: { x: 80, y: 80, z: 8 }, label: '↑' },
+    { position: { x: 0, y: -3, z: -50 }, size: { x: 80, y: 80, z: 8 }, label: '↓' },
+    { position: { x: 3, y: 0, z: -50 }, size: { x: 80, y: 80, z: 8 }, label: '→' },
+    { position: { x: -3, y: 0, z: -50 }, size: { x: 80, y: 80, z: 8 }, label: '←' },
     ];
 const textures = {
     dustTextures: [
@@ -67,7 +72,7 @@ const textures = {
     const loader = new THREE.TextureLoader(manager);
     const startTime = Date.now();
     manager.onProgress = (url, itemsLoaded, itemsTotal) => {
-        const progress = (itemsLoaded / itemsTotal) * 100;
+        const progress = (itemsLoaded / itemsTotal) * 80;
         document.getElementById("progress-bar").style.width = `${progress}%`;
         const elapsedTime = (Date.now() - startTime) / 1000;
         const estimatedTotalTime = (elapsedTime / itemsLoaded) * itemsTotal;
@@ -317,7 +322,7 @@ function createLabeledCube(position, size, labelText) {
     const textMaterial = new THREE.MeshBasicMaterial({ 
         map: texture,
         transparent: true,
-        opacity: 0.7
+        opacity: 1
         });
     const materials = [
         textMaterial,
@@ -523,7 +528,7 @@ const posY = x + Math.random() * 30 - 30;
 const posZ = z + random_1;
 sprite.position.set(posX, posY, posZ);
 sprite.scale.set(scale, scale, 1);
-const maxTilt = Math.PI / 4 + (posY + 40) / 100;
+const maxTilt = Math.PI / 4 + (posY + 40) / 80;
 const minTilt = Math.PI / 8 + (posY + 40) / 200;
 sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt; 
 growingFlowers3.push(sprite);
@@ -542,7 +547,7 @@ const posY = - x + Math.random() * 30 - 30;
 const posZ = z + random_1;
 sprite.position.set(posX, posY, posZ);
 sprite.scale.set(scale, scale, 1);
-const maxTilt = - Math.PI / 4 + (posY + 40) / 100;
+const maxTilt = - Math.PI / 4 + (posY + 40) / 80;
 const minTilt = - Math.PI / 8 + (posY + 40) / 200;
 sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt + 25 ;
 growingFlowers4.push(sprite);
