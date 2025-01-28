@@ -9,15 +9,21 @@ const flagImages = {
     zh: './flag/China.webp'
 }
 const cubeData = [
-    { position: { x: 3, y: 3, z: -40 }, size: { x: 3, y: 3, z: 3 }, label: '欢迎' },
-    { position: { x: 3, y: -3, z: -40 }, size: { x: 3, y: 3, z: 3 }, label: 'Bonjour' },
-    { position: { x: -3, y: 3, z: -40 }, size: { x: 3, y: 3, z: 3 }, label:  "こんにちは"},
-    { position: { x: -3, y: -3, z: -40 }, size: { x: 3, y: 3, z: 3 }, label: 'Wellcome' },
-    { position: { x: 0, y: 0, z: -45 }, size: { x: 1, y: 1, z: 1 }, label: 'Explore' },
-    { position: { x: 0, y: 3, z: -50 }, size: { x: 80, y: 80, z: 8 }, label: '↑' },
-    { position: { x: 0, y: -3, z: -50 }, size: { x: 80, y: 80, z: 8 }, label: '↓' },
-    { position: { x: 3, y: 0, z: -50 }, size: { x: 80, y: 80, z: 8 }, label: '→' },
-    { position: { x: -3, y: 0, z: -50 }, size: { x: 80, y: 80, z: 8 }, label: '←' },
+    { position: { x: 0, y: 0, z: 10 }, size: { x: 50, y: 50, z: 0}, label: '' },
+
+    { position: { x: 0, y: 6, z: -20 }, size: { x: 10, y: 4, z: 40}, label: '' },
+    { position: { x: 0, y: -6, z: -20 }, size: { x: 10, y: 4, z: 40}, label: '' },
+    { position: { x: -30, y: 30, z: -20 }, size: { x: 50, y: 100, z: 40 }, label: '' },
+    { position: { x: 30, y: 30, z: -20 }, size: { x: 50, y: 100, z: 40 }, label: '' },
+    { position: { x: 3, y: 3, z: -25 }, size: { x: 3, y: 3, z: 3 }, label: '欢迎' },
+    { position: { x: 3, y: -3, z: -25 }, size: { x: 3, y: 3, z: 3 }, label: 'Bonjour' },
+    { position: { x: -3, y: 3, z: -25 }, size: { x: 3, y: 3, z: 3 }, label:  "こんにちは"},
+    { position: { x: -3, y: -3, z: -25 }, size: { x: 3, y: 3, z: 3 }, label: 'Wellcome' },
+    { position: { x: 0, y: 0, z: -38 }, size: { x: 1, y: 1, z: 1 }, label: 'Explore' },
+    { position: { x: 0, y: 3, z: -35 }, size: { x: 5, y: 5, z: 8 }, label: '↑' },
+    { position: { x: 0, y: -3, z: -35 }, size: { x: 5, y: 5, z: 8 }, label: '↓' },
+    { position: { x: 3, y: 0, z: -35}, size: { x: 5, y: 5, z: 8 }, label: '→' },
+    { position: { x: -3, y: 0, z: -35}, size: { x: 5, y: 5, z: 8 }, label: '←' },
     ];
 const textures = {
     dustTextures: [
@@ -72,7 +78,7 @@ const textures = {
     const loader = new THREE.TextureLoader(manager);
     const startTime = Date.now();
     manager.onProgress = (url, itemsLoaded, itemsTotal) => {
-        const progress = (itemsLoaded / itemsTotal) * 80;
+        const progress = (itemsLoaded / itemsTotal) * 50;
         document.getElementById("progress-bar").style.width = `${progress}%`;
         const elapsedTime = (Date.now() - startTime) / 1000;
         const estimatedTotalTime = (elapsedTime / itemsLoaded) * itemsTotal;
@@ -357,7 +363,7 @@ let lastCameraZ = 0;
 let startX = 0;
 let startY = 0;
 let firstcount = 0;
-const renderRange = { zMin: -80, zMax:30};
+const renderRange = { zMin: -50, zMax:30};
 const shiftThreshold = 2;
 const scale = Math.random() * 2;
 const random_1 = Math.random() * 2;
@@ -479,7 +485,7 @@ sideFlowers.push(sprite);
 scene.add(sprite);
 }}}}
 function createtopGround(startZ, endZ) {
-for (let x = -12; x < 80; x += Math.random()*5) { 
+for (let x = -12; x < 50; x += Math.random()*5) { 
 for (let z = startZ; z < endZ; z += Math.random()*5) {
 const textureUrl = textures.groundTextures[Math.floor(Math.random() * textures.groundTextures.length)];
 const cachedTexture = textureCache.get(textureUrl);
@@ -528,7 +534,7 @@ const posY = x + Math.random() * 30 - 30;
 const posZ = z + random_1;
 sprite.position.set(posX, posY, posZ);
 sprite.scale.set(scale, scale, 1);
-const maxTilt = Math.PI / 4 + (posY + 40) / 80;
+const maxTilt = Math.PI / 4 + (posY + 40) / 50;
 const minTilt = Math.PI / 8 + (posY + 40) / 200;
 sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt; 
 growingFlowers3.push(sprite);
@@ -547,7 +553,7 @@ const posY = - x + Math.random() * 30 - 30;
 const posZ = z + random_1;
 sprite.position.set(posX, posY, posZ);
 sprite.scale.set(scale, scale, 1);
-const maxTilt = - Math.PI / 4 + (posY + 40) / 80;
+const maxTilt = - Math.PI / 4 + (posY + 40) / 50;
 const minTilt = - Math.PI / 8 + (posY + 40) / 200;
 sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt + 25 ;
 growingFlowers4.push(sprite);
@@ -565,22 +571,25 @@ function createDustSprites(textureArray, startZ, endZ, dustList) {
                 const posX = x + random_1 + 5;
                 const posY = Math.random() * 50 - (textureArray === textures.fallingTextures2 ? 0 : 15);
                 const posZ = z + Math.random() * (textureArray === textures.fallingTextures2 ? 10 : 2);
-                
+                if(posZ>50 || posZ<-50){
                 sprite.position.set(posX, posY, posZ);
                 sprite.scale.set(scale, scale, 1);
+                }
 
                 const maxTilt = Math.PI / 4 + (posY + 40) / 50;
                 const minTilt = Math.PI / 8 + (posY + 40) / 200;
                 sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt;
 
                 if (Math.random() <= 0.2) {
-                    dustList.push(sprite);
-                    scene.add(sprite);
+                    if(posZ>50 || posZ<-50){
+                            dustList.push(sprite);
+                            scene.add(sprite);
+                }
 
                     setTimeout(() => {
                         scene.remove(sprite);
                         dustList = dustList.filter(f => f !== sprite);
-                    }, Math.random() * 5000 + 10000);
+                    }, Math.random() * 5000 + 1000);
 }}}}}
 function dustFlowers(startZ, endZ) {
     createDustSprites(textures.dustTextures, startZ, endZ, dustPlants);
@@ -663,7 +672,7 @@ dustFlowers(renderRange.zMin, renderRange.zMax);
     if(Math.random()<=0.3){
 dustFlowers2(renderRange.zMin, renderRange.zMax);
 }}}
-if(Math.random()<=0.001) growAllFlowers();
+if(Math.random()<=0.2) growAllFlowers();
 renderer.render(scene, camera);
 }
 
