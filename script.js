@@ -583,7 +583,7 @@ function createDustSprites(textureArray, startZ, endZ, dustList) {
                 sprite.scale.set(scale, scale, 1);
                 }
 
-                const maxTilt = Math.PI / 4 + (posY + 40) / 50;
+                const maxTilt = Math.PI / 5 + (posY + 40) / 80;
                 const minTilt = Math.PI / 8 + (posY + 40) / 200;
                 sprite.material.rotation = Math.random() * (maxTilt - minTilt) + minTilt;
 
