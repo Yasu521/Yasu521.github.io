@@ -170,7 +170,8 @@ figcaption {
     background-color:#d9a23300;
     color: rgba(0, 0, 0);
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
+    font-size: 10px;
   }
   
   @keyframes circle-1 {

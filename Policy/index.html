@@ -5,41 +5,163 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy</title>
     <link rel="stylesheet" href="./styles.css">
+    <script>
+        function changeLanguage(lang) {
+            document.querySelectorAll('.policy').forEach(el => el.style.display = 'none');
+            document.getElementById(lang).style.display = 'block';
+        }
+    </script>
 </head>
 <body>
     <div class="container">
-        <h1>Privacy Policy</h1>
-        <p>This Privacy Policy explains how our website (hereinafter referred to as "the Site") handles user information, including the use of cookies by third-party advertising providers such as Google. By using the Site, you consent to the practices described in this Privacy Policy.</p>
+        <h1>Privacy Policy / Politique de confidentialité / プライバシーポリシー / 隐私政策</h1>
 
-        <h2>1. Use of Cookies by Third-Party Advertising Providers</h2>
-        <p>Third-party vendors, including Google, use cookies to serve ads based on users' prior visits to the Site or other websites.</p>
-        <p>Google's use of advertising cookies enables Google and its partners to serve ads to users based on their visit to the Site and/or other sites on the internet.</p>
+        <!-- Language selection buttons -->
+        <div class="language-switch">
+            <button onclick="changeLanguage('en')">English</button>
+            <button onclick="changeLanguage('fr')">Français</button>
+            <button onclick="changeLanguage('jp')">日本語</button>
+            <button onclick="changeLanguage('cn')">中文</button>
+        </div>
 
-        <h2>2. Personalization and User Control</h2>
-        <p>Users may opt-out of personalized advertising by visiting <a href="https://adssettings.google.com/">Google Ads Settings</a>. Alternatively, users can visit <a href="https://www.aboutads.info/">www.aboutads.info</a> to opt-out of the use of cookies for personalized advertising by third-party vendors.</p>
+        <!-- English Privacy Policy -->
+        <div id="en" class="policy">
+            <h2>Privacy Policy</h2>
+            <p>This Privacy Policy explains how our website (hereinafter referred to as "the Site") handles user information, including the use of cookies by third-party advertising providers such as Google. By using the Site, you consent to the practices described in this Privacy Policy.</p>
+    
+            <h2>1. Use of Cookies by Third-Party Advertising Providers</h2>
+            <p>Third-party vendors, including Google, use cookies to serve ads based on users' prior visits to the Site or other websites.</p>
+            <p>Google's use of advertising cookies enables Google and its partners to serve ads to users based on their visit to the Site and/or other sites on the internet.</p>
+    
+            <h2>2. Personalization and User Control</h2>
+            <p>Users may opt-out of personalized advertising by visiting <a href="https://adssettings.google.com/">Google Ads Settings</a>. Alternatively, users can visit <a href="https://www.aboutads.info/">www.aboutads.info</a> to opt-out of the use of cookies for personalized advertising by third-party vendors.</p>
+    
+            <h2>3. Third-Party Advertising Networks</h2>
+            <p>If third-party advertising networks or vendors are not opted out of delivering ads, their cookies may be used during ad serving. We explicitly provide the following details for transparency:</p>
+            <ul>
+                <li>Ads served by third-party vendors or ad networks may appear on the Site.</li>
+                <li>Links to the relevant third-party vendors and ad networks are provided below, where users can learn how to disable cookies used for personalized advertising, if supported by the vendor:</li>
+                <ul>
+                    <li><a href="https://policies.google.com/technologies/ads">Google</a></li>
+                    <li><a href="https://www.networkadvertising.org/">Network Advertising Initiative (NAI)</a></li>
+                </ul>
+                <li>Users can also visit <a href="https://www.aboutads.info/">www.aboutads.info</a> for general instructions on how to opt out of the use of cookies for personalized advertising by third-party vendors.</li>
+            </ul>
+            <h2>4. Managing Cookies</h2>
+            <p>Cookies are small text files stored on your device to enhance user experience and serve relevant advertisements. Users can manage their cookie preferences by modifying their browser settings to disable or delete cookies. Please note that disabling cookies may affect the functionality of the Site.</p>
+            <h2>5. Changes to this Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time to reflect changes in our practices or applicable laws. Any updates will be posted on this page, and users are encouraged to review this Privacy Policy periodically.</p>
+            <h3>6. Contact Information</h3>
+            <p>Email: <a href="mailto:yasuhiro.iwai@aicurion.com">yasuhiro.iwai@aicurion.com</a></p>
+            <p>Last updated: January 1, 2025</p>
+        </div>
 
-        <h2>3. Third-Party Advertising Networks</h2>
-        <p>If third-party advertising networks or vendors are not opted out of delivering ads, their cookies may be used during ad serving. We explicitly provide the following details for transparency:</p>
+        <!-- Japanese Privacy Policy -->
+        <div id="jp" class="policy" style="display: none;">
+            <h2>プライバシーポリシー</h2>
+            <p>本プライバシーポリシーは、本ウェブサイト（以下「本サイト」）におけるユーザー情報の取扱いについて説明するものです。本サイトでは、Googleなどの第三者広告提供者によるクッキーの使用を含め、個人情報を適切に管理し、保護することに努めます。本サイトを利用することにより、本ポリシーに同意したものとみなします。</p>
+
+            <h3>1. 第三者広告提供者によるクッキーの使用</h3>
+            <p>Googleを含む第三者の広告提供者は、ユーザーが本サイトまたは他のウェブサイトを訪問した履歴に基づき、広告を配信するためにクッキーを使用します。
+
+                Googleの広告クッキーの使用により、Googleおよびそのパートナーは、本サイトおよびその他のウェブサイトへの訪問履歴を基に、広告を配信することができます。
+                
+            </p>
+
+            <h3>2. パーソナライズおよびユーザーの選択</h3>
+            <p>ユーザーは、Googleの広告設定ページでパーソナライズ広告を無効化することができます。また、"www.aboutads.info" にアクセスすることで、第三者広告提供者によるパーソナライズ広告のクッキー使用を無効化することも可能です。</p>
+
+            <h3>3. 第三者広告ネットワーク</h3>
+            <p>ユーザーが第三者広告ネットワークのクッキー利用をオプトアウトしない場合、広告配信時にクッキーが使用される可能性があります。本サイトは、透明性を確保するために以下の詳細情報を提供します。</p>
         <ul>
-            <li>Ads served by third-party vendors or ad networks may appear on the Site.</li>
-            <li>Links to the relevant third-party vendors and ad networks are provided below, where users can learn how to disable cookies used for personalized advertising, if supported by the vendor:</li>
+            <li>本サイトには、第三者広告提供者または広告ネットワークによる広告が表示される場合があります。</li>
+            <li>パーソナライズ広告のクッキー無効化方法については、以下のリンクを参照してください。</li>
             <ul>
                 <li><a href="https://policies.google.com/technologies/ads">Google</a></li>
                 <li><a href="https://www.networkadvertising.org/">Network Advertising Initiative (NAI)</a></li>
             </ul>
-            <li>Users can also visit <a href="https://www.aboutads.info/">www.aboutads.info</a> for general instructions on how to opt out of the use of cookies for personalized advertising by third-party vendors.</li>
+            <li>また、<a href="https://www.aboutads.info/">www.aboutads.info</a> で、第三者広告提供者によるクッキーの使用をオプトアウトする方法についての一般的な情報を確認できます。</li>
         </ul>
-        <h2>4. Managing Cookies</h2>
-        <p>Cookies are small text files stored on your device to enhance user experience and serve relevant advertisements. Users can manage their cookie preferences by modifying their browser settings to disable or delete cookies. Please note that disabling cookies may affect the functionality of the Site.</p>
-        <h2>5. Changes to this Privacy Policy</h2>
-        <p>We may update this Privacy Policy from time to time to reflect changes in our practices or applicable laws. Any updates will be posted on this page, and users are encouraged to review this Privacy Policy periodically.</p>
-        <h2>6. Contact Information</h2>
-        <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
-        <p>Email: <a href="mailto:yasuhiro.iwai@aicurion.com">yasuhiro.iwai@aicurion.com</a></p>
-        <p>Last updated: January 1, 2025</p>
+            <h3>4. クッキーの管理</h3>
+            <p>クッキーは、ユーザー体験を向上させ、適切な広告を表示するために、ユーザーのデバイスに保存される小さなテキストファイルです。ユーザーは、ブラウザの設定を変更することで、クッキーの無効化や削除を行うことができます。ただし、クッキーを無効化すると、本サイトの機能に影響を与える場合があります。</p>
+
+            <h3>5. プライバシーポリシーの変更</h3>
+            <p>本サイトは、本プライバシーポリシーを随時改訂することがあります。改訂が行われた場合、本ページに最新の情報を掲載します。ユーザーには、定期的に本ポリシーを確認することを推奨します。</p>
+
+            <h3>6. お問い合わせ</h3>
+            <p>Email: <a href="mailto:yasuhiro.iwai@aicurion.com">yasuhiro.iwai@aicurion.com</a></p>
+            <p>最終更新日: 2025年1月1日</p>
+        </div>
+
+        <!-- French Privacy Policy -->
+        <div id="fr" class="policy" style="display: none;">
+            <h2>Politique de Confidentialité</h2>
+            <p>La présente Politique de Confidentialité explique la manière dont notre site web (ci-après dénommé "le Site") traite les informations des utilisateurs, y compris l'utilisation de cookies par des fournisseurs de publicité tiers tels que Google. En utilisant le Site, vous consentez aux pratiques décrites dans cette Politique de Confidentialité.</p>
+    
+            <h2>1. Utilisation des cookies par des fournisseurs de publicité tiers</h2>
+            <p>Des fournisseurs tiers, y compris Google, utilisent des cookies pour diffuser des annonces en fonction des visites précédentes des utilisateurs sur le Site ou d'autres sites Web.</p>
+            <p>L'utilisation des cookies publicitaires par Google permet à Google et à ses partenaires de proposer des annonces aux utilisateurs en fonction de leurs visites sur le Site et/ou sur d'autres sites Internet.</p>
+    
+            <h2>2. Personnalisation et contrôle utilisateur</h2>
+            <p>Les utilisateurs peuvent désactiver la publicité personnalisée en visitant les<a href="https://adssettings.google.com/">Paramètres des annonces Google</a>. Alternativement, ils peuvent visiter <a href="https://www.aboutads.info/">www.aboutads.info</a> pour désactiver l'utilisation des cookies pour la publicité personnalisée par des fournisseurs tiers.</p>
+    
+            <h2>3. Réseaux publicitaires tiers</h2>
+            <p>Si les utilisateurs ne désactivent pas les réseaux publicitaires tiers, leurs cookies peuvent être utilisés lors de la diffusion des annonces. Nous fournissons les informations suivantes pour plus de transparence :</p>
+            <ul>
+                <li>Des annonces servies par des fournisseurs tiers ou des réseaux publicitaires peuvent apparaître sur le Site.</li>
+                <li>Les utilisateurs peuvent consulter les liens suivants pour en savoir plus sur la désactivation des cookies publicitaires :</li>
+                <ul>
+                    <li><a href="https://policies.google.com/technologies/ads">Google</a></li>
+                    <li><a href="https://www.networkadvertising.org/">Network Advertising Initiative (NAI)</a></li>
+                </ul>
+                <li>Les utilisateurs peuvent également visiter <a href="https://www.aboutads.info/">www.aboutads.info</a> pour obtenir des instructions générales sur la manière de désactiver les cookies de publicité personnalisée par des fournisseurs tiers.</li>
+            </ul>
+            <h2>4. Gestion des cookies</h2>
+            <p>Les cookies sont de petits fichiers texte stockés sur votre appareil pour améliorer l'expérience utilisateur et diffuser des publicités pertinentes. Vous pouvez gérer vos préférences en modifiant les paramètres de votre navigateur pour désactiver ou supprimer les cookies. Notez que la désactivation des cookies peut affecter le bon fonctionnement du Site.</p>
+            <h2>5. Modifications de cette Politique de Confidentialité</h2>
+            <p>Nous pouvons mettre à jour cette Politique de Confidentialité de temps à autre pour refléter des modifications dans nos pratiques ou les lois applicables. Toute mise à jour sera publiée sur cette page. Nous encourageons les utilisateurs à consulter cette Politique de Confidentialité régulièrement.</p>
+            <h3>6. Contact Information</h3>
+            <p>Si vous avez des questions ou préoccupations concernant cette Politique de Confidentialité, veuillez nous contacter à l'adresse suivante :</p>
+            <p>Email: <a href="mailto:yasuhiro.iwai@aicurion.com">yasuhiro.iwai@aicurion.com</a></p>
+            <p>Dernière mise à jour : 1er janvier 2025</p>
+        </div>
+
+        <!-- Chinese Privacy Policy -->
+        <div id="cn" class="policy" style="display: none;">
+            <h2>隐私政策</h2>
+            <p>本隐私政策解释了我们的网站（以下简称“本网站”）如何处理用户信息，包括 Google 等第三方广告提供商对 Cookie 的使用。使用本网站即表示您同意本隐私政策中描述的相关做法。
+            </p>
+    
+            <h2>1. 第三方广告提供商对 Cookie 的使用</h2>
+            <p>包括 Google 在内的第三方供应商会使用 Cookie，根据用户之前访问本网站或其他网站的记录投放广告。</p>
+            <p>Google 及其合作伙伴可通过广告 Cookie 根据用户访问本网站和/或其他网站的情况投放个性化广告。</p>
+    
+            <h2>2. 个性化广告与用户控制</h2>
+            <p>用户可访问 <a href="https://adssettings.google.com/">Google 广告</a>设置页面关闭个性化广告。此外，用户还可以访问。<a href="https://www.aboutads.info/">www.aboutads.info</a> 选择关闭第三方广告供应商对 Cookie 的使用。</p>
+    
+            <h2>3. Third-Party Advertising Networks</h2>
+            <p>如果用户未选择退出第三方广告网络的 Cookie 追踪，则这些 Cookie 可能会在广告投放时使用。为确保透明度，我们提供以下信息：</p>
+            <ul>
+                <li>本网站可能会显示由第三方广告供应商或广告网络提供的广告。</li>
+                <li>用户可以访问以下链接以了解如何关闭广告 Cookie：</li>
+                <ul>
+                    <li><a href="https://policies.google.com/technologies/ads">Google</a></li>
+                    <li><a href="https://www.networkadvertising.org/">Network Advertising Initiative (NAI)</a></li>
+                </ul>
+                <li>用户还可以访问  <a href="https://www.aboutads.info/">www.aboutads.info</a> 了解更多关于如何关闭个性化广告 Cookie 的信息。</li>
+            </ul>
+            <h2>4. Managing Cookies</h2>
+            <p>用户可通过调整浏览器设置来禁用或删除 Cookie，但请注意，禁用 Cookie 可能会影响本网站的正常功能。</p>
+            <h2>5. Changes to this Privacy Policy</h2>
+            <p>本隐私政策可能会随时更新，更新内容将在本页面公布，建议用户定期查阅。</p>
+            <h3>6. 联系方式</h3>
+            <p>电子邮箱： <a href="mailto:yasuhiro.iwai@aicurion.com">yasuhiro.iwai@aicurion.com</a></p>
+            <p>最后更新日期： 2025年1月1日</p>
+        </div>
     </div>
+
     <footer>
-        &copy; 2025 Yasuhiro IWAI, <a href="https://aicurion.com" target="_blank">Aicurion</a>
+        &copy; 2025 Yasuhiro IWAI, <a href="https://aicurion.com">Aicurion</a>
     </footer>
 </body>
 </html>
