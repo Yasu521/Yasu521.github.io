@@ -679,7 +679,7 @@ dustFlowers(renderRange.zMin, renderRange.zMax);
     if(Math.random()<=0.3){
 dustFlowers2(renderRange.zMin, renderRange.zMax);
 }}}
-if(Math.random()<=0.2) growAllFlowers();
+if(Math.random()<=0.1) growAllFlowers();
 renderer.render(scene, camera);
 }
 
