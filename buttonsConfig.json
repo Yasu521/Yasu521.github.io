@@ -26,7 +26,7 @@
     {
         "id": "study",
         "texts": { "en": " Study", "ja": "学び", "fr": "Étudier", "zh": "学习" },
-        "position": { "top": "40%", "left": "20%" },
+        "position": { "top": "50%", "left": "20%" },
         "contentPosition": { "left": "0%", "right": "0%" },
         "contentFile": {
             "en": "./project/project-en.html",
@@ -38,25 +38,13 @@
     {
         "id": "work",
         "texts": { "en": "Project", "ja": "プロジェクト", "fr": "Œuvre", "zh": "项目" },
-        "position": { "top": "50%", "left": "20%" },
+        "position": { "top": "40%", "left": "20%" },
         "contentPosition": { "left": "0%", "right": "0%" },
         "contentFile": {
             "en": "./work/work-en.html",
             "fr": "./work/work-fr.html",
             "ja": "./work/work-ja.html",
             "zh": "./work/work-zh.html"
-        }
-    },
-    {
-        "id_comment": "news",
-        "texts_comment": { "en": "News", "ja": "ニュース", "fr": "Nouvelles", "zh": "消息" },
-        "position_comment": { "top": "60%", "left": "20%" },
-        "contentPosition_comment": { "left": "0%", "right": "0%" },
-        "links_comment": {
-            "en": "https://yasu521.github.io/News/",
-            "fr": "https://yasu521.github.io/News/",
-            "ja": "https://yasu521.github.io/News/",
-            "zh": "https://yasu521.github.io/News/"
         }
     }
   ]
