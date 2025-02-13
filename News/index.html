@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>News - Ciao | Yasuhiro：康洋</title>
+  <title>伝検道場｜TRADITIONAL JAPANESE CULTURE TEST DOJO </title>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y2FVBDQYBP"></script>
   <script>
   window.dataLayer = window.dataLayer || [];
@@ -35,19 +35,16 @@
     <p class="link"><a href="https://yasuhiroiwai.jp/news/">- 日本伝統文化検定 - 道場</a></p>
     <p class="english">TRADITIONAL JAPANESE CULTURE TEST DOJO</p>
   </header>
-  <main class="main-container">
-    <div class="container">
-    </div>
-    <button id="next-article">NEXT⇨</button>
-    <button id="previous-article">⇦PREVIOUS</button>
-  </main>
+  <div class="pagination" id="pagination"></div>
+  <div class="articles-container" id="articles-container"></div>
+  <main class="main-container"></main>
   <footer>
     &copy; 2025 ,TRADITIONAL JAPANESE CULTURE TEST DOJO </a>
   </footer>
   <script>
     const articlesData = [
       {
-        "title": "Jan 2025",
+        "title": "new",
         "description": "This is a short description for Article 1.",
         "image": "./content/image1.webp",
         "content": "./script1/script1-mobile.html",//mobile content
@@ -60,7 +57,7 @@
         "//cssfile2":"",//change css desktop
       },
       {
-        "title": "Article 2",
+        "title": "",
         "description": "This is a short description for Article 2.",
         "image": "./content/image2.webp",
 
@@ -74,7 +71,7 @@
         "//cssfile2":"",//change css desktop
       },
       {
-        "title": "Article 3",
+        "title": "",
         "description": "This is a short description for Article 1.",
         "image": "./content/image1.webp",
         "content": "./script1/script1-mobile.html",//mobile content
@@ -87,7 +84,7 @@
         "//cssfile2":"",//change css desktop
       },
       {
-        "title": "Article 4",
+        "title": "",
         "description": "This is a short description for Article 2.",
         "image": "./content/image2.webp",
 
@@ -99,7 +96,34 @@
         
         "//js2": "",//change js desktop
         "//cssfile2":"",//change css desktop
-      }
+      },
+      {
+        "title": "",
+        "description": "This is a short description for Article 2.",
+        "image": "./content/image2.webp",
+
+        "content": "./script2/script1-mobile.html",//mobile content
+        "content2": "./script2/script1-desktop.html",//desktop content
+
+        "//js": "",//change js mobile
+        "//cssfile":"",//change css mobile
+        
+        "//js2": "",//change js desktop
+        "//cssfile2":"",//change css desktop
+      },
+      {
+        "title": "",
+        "description": "This is a short description for Article 1.",
+        "image": "./content/image1.webp",
+        "content": "./script1/script1-mobile.html",//mobile content
+        "content2": "./script1/script1-desktop.html",//desktop content
+
+        "//js": "",//change js mobile
+        "//cssfile":"",//change css mobile
+        
+        "//js2": "",//change js desktop
+        "//cssfile2":"",//change css desktop
+      },
     ];
   </script>
   <script src="./script.js" defer></script>

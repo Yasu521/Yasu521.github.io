@@ -5,68 +5,80 @@ const isMobile = window.innerWidth <= 768;
 
 displayArticles();
 
-document.getElementById('next-article').addEventListener('click', () => {
-  currentIndex += calculateItemsPerPage();
-  if (currentIndex >= articlesData.length) {
-    currentIndex = 0;
-  }
-  displayArticles();
-});
-
-document.getElementById('previous-article').addEventListener('click', () => {
-    currentIndex -= calculateItemsPerPage();
-    if (currentIndex < 0) {
-      currentIndex = articlesData.length - (articlesData.length % calculateItemsPerPage()) - calculateItemsPerPage();
-    }
-    displayArticles();
-});
-
 function calculateItemsPerPage() {
-  const width = window.innerWidth;
-  if (width > 1200) return 3;
-  if (width > 768) return 2;
-  return articlesData.length;
+    const width = window.innerWidth;
+    if (width > 1200) return 4;
+    if (width > 768) return 2;
+    return 3;
 }
 
 function displayArticles() {
-  container.innerHTML = '';
+    const container = document.getElementById('articles-container');
+    const pagination = document.getElementById('pagination');
+    const itemsPerPage = calculateItemsPerPage();
+    const totalPages = Math.ceil(articlesData.length / itemsPerPage);
+    const currentPage = Math.floor(currentIndex / itemsPerPage) + 1;
 
-  const start = currentIndex;
-  const end = currentIndex + itemsPerPage;
-  const currentItems = articlesData.slice(start, end);
-  
-  currentItems.forEach(doc => {
-    const div = document.createElement('div');
-    div.classList.add('news-item');
+    container.innerHTML = "";
+    pagination.innerHTML = "";
 
-    div.innerHTML = `
-      <img src="${doc.image}" alt="${doc.title}" class="news-image">
-      <h3 class="news-title">${doc.title}</h3>
-      <p class="news-description">${doc.description}</p>
-      <button class="news-readmore">READ MORE</button>
-    `;
+    const currentItems = articlesData.slice(currentIndex, currentIndex + itemsPerPage);
+    currentItems.forEach(doc => {
+        const div = document.createElement('div');
+        div.classList.add('news-item');
 
-    container.appendChild(div);
-    if (window.innerWidth<= 768) {
-      document.getElementById('next-article').style.display = 'none';
-      container.style.flexDirection = 'column';
-      div.querySelector('.news-readmore').addEventListener('click', () => {
-        loadFullArticle(doc.content, doc.js, doc.cssfile, div,isMobile);
-      });
-      div.querySelector('.news-image').addEventListener('click', () => {
-        loadFullArticle(doc.content, doc.js, doc.cssfile, div,isMobile);
-      });
-    } else {
-      document.getElementById('next-article').style.display = 'block';
-      container.style.flexDirection = 'row';
-      div.querySelector('.news-readmore').addEventListener('click', () => {
-        loadFullArticle(doc.content2, doc.js2, doc.cssfile2, div,isMobile);
-      });
-      div.querySelector('.news-image').addEventListener('click', () => {
-        loadFullArticle(doc.content2, doc.js2, doc.cssfile2, div,isMobile);
-      });
-    }
+        div.innerHTML = `
+            <img src="${doc.image}" alt="${doc.title}" class="news-image">
+            <h3 class="news-title">${doc.title}</h3>
+            
+            <p class="news-description">${doc.description}<button class="news-readmore">+</button></p>
+            
+            
+        `;
+
+        container.appendChild(div);
+        
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+            container.style.flexDirection = 'column';
+            div.querySelector('.news-readmore').addEventListener('click', () => {
+                loadFullArticle(doc.content, doc.js, doc.cssfile, div, isMobile);
+            });
+            div.querySelector('.news-image').addEventListener('click', () => {
+                loadFullArticle(doc.content, doc.js, doc.cssfile, div, isMobile);
+            });
+        } else {
+            container.style.flexDirection = 'row';
+            div.querySelector('.news-readmore').addEventListener('click', () => {
+                loadFullArticle(doc.content2, doc.js2, doc.cssfile2, div, isMobile);
+            });
+            div.querySelector('.news-image').addEventListener('click', () => {
+                loadFullArticle(doc.content2, doc.js2, doc.cssfile2, div, isMobile);
+            });
+        }
     });
+    if( currentPage != 1) pagination.innerHTML += `<button onclick="prevPage()">❮</button>`;
+    for (let i = 1; i <= totalPages; i++) {
+        pagination.innerHTML += `<span class="${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</span>`;
+    }
+    pagination.innerHTML += `<button onclick="nextPage()">❯</button>`;
+}
+
+function nextPage() {
+    currentIndex += calculateItemsPerPage();
+    if (currentIndex >= articlesData.length) currentIndex = 0;
+    displayArticles();
+}
+
+function prevPage() {
+    currentIndex -= calculateItemsPerPage();
+    if (currentIndex < 0) currentIndex = articlesData.length - (articlesData.length % calculateItemsPerPage());
+    displayArticles();
+}
+
+function goToPage(page) {
+    currentIndex = (page - 1) * calculateItemsPerPage();
+    displayArticles();
 }
 function loadFullArticle(contentUrl, jsFile, cssfile ,parentElement, isMobile) {
   
